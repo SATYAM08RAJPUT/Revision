@@ -7,22 +7,20 @@ import Header from '../Home/Header/header';
 const MultiSectionViewer = () => {
     const [cheatsheetData, setCheatsheetData] = useState([]);
     console.log(cheatsheetData);
-
-
     const cheatSheetFetchData = async () => {
         const response = await fetch('/api/multiSections');
         const result = await response.json();
         console.log(result);
         setCheatsheetData(result.multiSections);
     };
-
+    
     useEffect(() => {
         cheatSheetFetchData(); 
     }, []);
 
     return (
         <>
-        <Header />
+        <Header /> 
         <div className='sidebar-main-container'>
             <div className='sidebar-right-div1'>
                 <h1 className='right1'>Hiii !</h1>

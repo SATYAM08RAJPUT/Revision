@@ -4,22 +4,23 @@
     margin-bottom: 28px;
     cursor: pointer;
     width: 100%;
-    /* border: solid 1px; */
+    border: solid 1px;
     padding: 10px;
     border-radius: 20px;
 }
 .sidebar:hover{
     background-color: hsl(24.6, 95%, 53.1%);
     color: white;
+    border: solid 1px hsl(24.6, 95%, 53.1%);
 }
 .leftList-Conatiner{
     width: 17%;
-    height: 566px;
+    height: 560px;
     overflow-y: scroll;
     /* border: solid red; */
     padding: 10px;
     margin-left: 20px;
-    border-radius: 10px;
+    border-radius: 16px;
     background-color: #3e3e3e;
 } 
 .leftList-Conatiner::-webkit-scrollbar{

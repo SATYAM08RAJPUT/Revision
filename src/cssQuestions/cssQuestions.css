@@ -1,10 +1,18 @@
 .question-container{
-    /* color: rgb(156, 129, 129); */
     color: white;
     max-width: 70%;
-    min-width: 70%;
-
+    /* border: solid red; */
+    height: 85vh;
+    overflow-x: scroll;
+    padding: 20px;
+    background-color: #3e3e3e;
+    margin-right:20px;
+    border-radius: 16px;
 } 
 body.light .question-container{
     color: black;
+    background-color: rgb(233, 231, 231);
+}
+.question-container::-webkit-scrollbar{
+    display: none;
 }

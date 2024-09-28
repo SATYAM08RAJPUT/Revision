@@ -4,8 +4,9 @@ import CssQuestions from './cssQuestions/CssQuestions'
 import Home from './Home/mainHome/mainhome'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import MultiSectionViewer from './MultiSectionViewer/multiSectionViewer'
+import TopicList from './Topic-List/Maintopic/maintopic'
 function App() {
-
+  
   return (
     <>
     <div className='app'>
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path="*" element={<Home />} />
         <Route path="/multiSectionViewer" element={<MultiSectionViewer />} />
-        {/* <Route path='/cssQuestion' element={<CssQuestions data = {cssQuestionsData} searchText = {searchText} SetSearchText = {SetSearchText} />} /> */}
+        <Route path="/topicList" element={<TopicList />} />
       </Routes>
     </Router>
       

@@ -6,7 +6,8 @@ export default function server({ environment = 'development' } = {}) {
         environment,
         models: {
             CSSFile: Model,
-            multiSection:Model
+            multiSection:Model,
+            SidebarContent:Model
         },
         seeds(server) {
             server.create("CSSFile", {
@@ -96,7 +97,42 @@ export default function server({ environment = 'development' } = {}) {
                       btn:'Go to Cheatsheet'
                      }
                   ]
+            }),
+            server.create('SidebarContent',{
+                sideBarData:[
+                    {
+                        id:"1",
+                        title:"Css Basic",
+                        type:"Basic"
+                    },
+                    {
+                        id:"2",
+                        title:"Box Model",
+                        type:"Box model"
+                    },
+                    {
+                        id:"3",
+                        title:"Display",
+                        type:"display"
+                    },
+                    {
+                        id:"4",
+                        title:"CSS Selector",
+                        type:"selector"
+                    },
+                    {
+                        id:"5",
+                        title:"Position",
+                        type:"position"
+                    },
+                    {
+                        id:"6",
+                        title:"Background",
+                        type:"background"
+                    }
+                ]
             })
+
         },
         routes() {
             this.namespace = "api"
@@ -107,6 +143,10 @@ export default function server({ environment = 'development' } = {}) {
             this.get('/multiSections', (schema) => {
                 console.log(schema);
                 return schema.multiSections.all()
+            })
+            this.get('/sidebarContents', (schema) => {
+                console.log(schema);
+                return schema.sidebarContents.all()
             })
         }
     })

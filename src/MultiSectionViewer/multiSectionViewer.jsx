@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './multiSectionViewer.css';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const MultiSectionViewer = () => {
     const [cheatsheetData, setCheatsheetData] = useState([]);
@@ -35,7 +36,9 @@ const MultiSectionViewer = () => {
                                 </div>
                                 <h2>{itm.title}</h2>
                                 <p>{itm.subtitle}</p>
-                                <Button variant="contained">{itm.btn}</Button>
+                                <Button variant="contained">
+                                    <Link to={"/topicList"}>{itm.btn}</Link>
+                                    </Button>
                             </div>
                         </div>
                     ))

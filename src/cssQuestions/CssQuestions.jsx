@@ -1,21 +1,13 @@
-
 import React, { useState } from "react";
+import './cssQuestions.css';
 
-const CssQuestions = ({ data, searchText, SetSearchText }) => {
-    console.log(data)
-
-    // const [showModal, setShowModal] = useState()
-    // // const filterableData = data.map(item => item.cssDataFile.map(item1 => ))
-    // console.log(filterableData)
-
-    // const handleModal = () =>{
-
-    // }
+const CssQuestions = ({ cssData,indexNumber}) => {
+    console.log(cssData)
 
     return (
         <div className="question-container">
             {
-                data.map((item) => item.cssDataFile[1].content.map((cont,index) => {
+                cssData.map((item) => item.cssDataFile[indexNumber].content.map((cont, index) => {
                     return (
                         <>
                             <h3>{cont.heading}</h3>

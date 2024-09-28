@@ -1,0 +1,14 @@
+.sidebar{
+    color: rgb(156, 129, 129);
+    margin-top: 85px;
+    margin-bottom: 28px;
+    cursor: pointer;
+    width: 100%;
+    padding-left: 10px;
+}
+.leftList-Conatiner{
+    width: 15%;
+    height: 600px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}

@@ -23,20 +23,24 @@
     color: hsl(24.6 95% 53.1%);
 }
 .content-items p{
-    font-size: 20px;
+    font-size: 20px; 
     /* border: solid; */
     width: 100%;
     font-weight: 600;
 }
 .content-items button{
+    width:150px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 21px;
+    background-color: #222222;;
+    color: black;
     border-radius: 50px;
-    background: transparent;
+    border: solid orange 1px;
+}
+a{
     text-decoration: none;
-    color: hsl(24.6, 95%, 53.1%);
-    font-size: 20px;
-    line-height: 22px;
-    padding: 10px 50px;
-    border: 1px solid hsl(24.6, 95%, 53.1%) !important;
+    color: orange;
 }
 .content-items img{
     /* border: solid; */
@@ -50,4 +54,14 @@
     text-decoration: none;
     transition: color 0.3s;
     /* font-size: 16px; */
+}
+body.light .content-items button{
+    width:150px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 21px;
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+    border: solid orange 1px;
 }

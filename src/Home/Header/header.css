@@ -8,6 +8,7 @@
     top: 2px;
     /* border: solid; */
     height: 80px;
+    position: fixed;
 }
 .left-sideheader{
     width: 15%;

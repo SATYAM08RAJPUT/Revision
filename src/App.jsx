@@ -10,7 +10,7 @@ function App() {
 
   const [cssData, setCssData] = useState([]);
   const [searchText, SetSearchText] = useState("");
-  // console.log(cssData)
+
 
   useEffect(() => {
     getCssQuestions();

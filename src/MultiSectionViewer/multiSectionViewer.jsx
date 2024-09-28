@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
-import './multiSectionViewer.css'
+import './multiSectionViewer.css';
 import { Button } from '@mui/material';
 
-
 const MultiSectionViewer = () => {
-    const [cheatsheet, setCheatSheet] = useState([]);
+    const [cheatsheetData, setCheatsheetData] = useState([]);
+    console.log(cheatsheetData);
+    
 
     const cheatSheetFetchData = async () => {
-        const response = await fetch('/api/chatsheets');
-        console.log(response);
+        const response = await fetch('/api/multiSections');
         const result = await response.json();
         console.log(result);
-        setCheatSheet(result.chatsheets);
-    }
+        setCheatsheetData(result.multiSections);
+    };
 
     useEffect(() => {
         cheatSheetFetchData();
@@ -20,29 +20,47 @@ const MultiSectionViewer = () => {
 
     return (
         <div className='sidebar-main-container'>
-                <div className='sidebar-right-div1'>
-                    <h1>Hiii ! <br /> Your <strong> Frontend Cheatsheet</strong> Awaits!</h1>
-                    <p>We bring designs to life with code and creativity!</p>
-                </div>
+            <div className='sidebar-right-div1'>
+                <h1>Hiii ! <br /> Your <strong>Frontend Cheatsheet</strong> Awaits!</h1>
+                <p>We bring designs to life with code and creativity!</p>
+            </div>
 
-                <div className='cheatsheet-main-container'>
-                    {cheatsheet.map((chtsheet) => {
-                        return (
-                            <div key={chtsheet.id}>
-                                <div className='center'>
-                                    <div className='image-circle'>
-                                        <img src={chtsheet.url} alt={chtsheet.title} />
-                                    </div>
-                                    <h2>{chtsheet.title}</h2>
-                                    <p>{chtsheet.subtitle}</p>
-                                    <Button variant="contained">{chtsheet.btn}</Button>
-                                </div>
+            <div className='cheatsheet-main-container'>
+                {cheatsheetData.map((cheatsheet) => (
+                    cheatsheet.chatsheets.map((itm) => (
+                        <div key={itm.id}>
+                        <div className='center'>
+                            <div className='image-circle'>
+                                <img src={itm.url} alt={itm.title} />
                             </div>
-                        )
-                    })}
-                </div>
+                            <h2>{itm.title}</h2>
+                            <p>{itm.subtitle}</p>
+                            <Button variant="contained">{itm.btn}</Button>
+                        </div>
+                    </div>
+                    ))
+                    
+                ))}
+            </div>
         </div>
-    )
-}
+    );
+};
 
 export default MultiSectionViewer;
+
+
+
+// return (
+//     <div key={chtsheet.id}>
+//         <div className='center'>
+//             <div className='image-circle'>
+//                 <img src={chtsheet.url} alt={chtsheet.title} />
+//             </div>
+//             <h2>{chtsheet.title}</h2>
+//             <p>{chtsheet.subtitle}</p>
+//             <Button variant="contained">{chtsheet.btn}</Button>
+//         </div>
+//     </div>
+// )
+
+

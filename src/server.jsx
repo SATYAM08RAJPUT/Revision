@@ -1,4 +1,3 @@
-
 import { createServer, Model } from "miragejs";
 
 export default function server({ environment = 'development' } = {}) {
@@ -16,20 +15,15 @@ export default function server({ environment = 'development' } = {}) {
                         content: [
                             {
                                 heading: "CSS Margins",
-                                def:"Margins are used to create space around elements, outside of any defined borders.",
-                                details: [
-                                    {name:"item1"},
-                                    {name:"item2"},
-                                    {name:"item3"}
-                                ]
+                                details: "Margins are used to create space around elements, outside of any defined borders."
                             },
                             {
                                 heading: "CSS Padding",
-                                details: "Padding is used to create space around an element's content, inside of any defined borders.",
-                                diff:"ahgfsdbfk"
+                                details: "Padding is used to create space around an element's content, inside of any defined borders."
                             },
                             {
                                 heading: "CSS Borders",
+                                deff:"The CSS border properties allow you to specify the style, width, and color of an element's border.",
                                 details: [
                                     {
                                     id:"1",

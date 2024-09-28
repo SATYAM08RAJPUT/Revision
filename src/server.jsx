@@ -1,4 +1,3 @@
-
 import { createServer, Model } from "miragejs";
 
 export default function server({ environment = 'development' } = {}) {
@@ -24,8 +23,23 @@ export default function server({ environment = 'development' } = {}) {
                             },
                             {
                                 heading: "CSS Borders",
-                                details: "The CSS border properties allow you to specify the style, width, and color of an element's border."
-                            }
+                                deff:"The CSS border properties allow you to specify the style, width, and color of an element's border.",
+                                details: [
+                                    {
+                                    id:"1",
+                                    url:"https://t4.ftcdn.net/jpg/06/31/94/07/360_F_631940703_olFOPib8TNgTO9vXF108GKci7daMsTld.jpg"
+                                },
+                                {
+                                    id:"1",
+                                    url:"https://t4.ftcdn.net/jpg/06/31/94/07/360_F_631940703_olFOPib8TNgTO9vXF108GKci7daMsTld.jpg"
+                                },
+                                           {
+                                    id:"1",
+                                    url:"https://t4.ftcdn.net/jpg/06/31/94/07/360_F_631940703_olFOPib8TNgTO9vXF108GKci7daMsTld.jpg"
+                                }
+                            ]
+                            },
+                            
 
                         ],
                         type: "cssBasic"
@@ -182,6 +196,36 @@ export default function server({ environment = 'development' } = {}) {
                         id:"6",
                         title:"Background",
                         type:"background"
+                    },
+                    {
+                        id:"7",
+                        title:"Units",
+                        type:"unit"
+                    },
+                    {
+                        id:"8",
+                        title:"Responsive",
+                        type:"responsive"
+                    },
+                    {
+                        id:"9",
+                        title:"Text & Font",
+                        type:"text"
+                    },
+                    {
+                        id:"10",
+                        title:"Transforming Elements",
+                        type:"tranforming"
+                    },
+                    {
+                        id:"11",
+                        title:"Transitioning & Animations",
+                        type:"transition"
+                    },
+                    {
+                        id:"12",
+                        title:"Advanced Css",
+                        type:"advance css"
                     }
                 ]
             })

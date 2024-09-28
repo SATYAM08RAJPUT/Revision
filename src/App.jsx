@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -29,6 +30,15 @@ function App() {
 
     </div>
 
+=======
+import './App.css'
+function App() {
+
+
+  return (
+    <>
+     
+>>>>>>> 8a3287dbca5a76ac75713a2d053adc92e2310f3e
     </>
   )
 }

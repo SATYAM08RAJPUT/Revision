@@ -1,0 +1,27 @@
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: sans-serif;
+}
+.content-items{
+    text-align: center;
+    line-height: 55px;
+}
+.content-items h1{
+    font-size: 45px;
+    opacity: 0.8;
+}
+.content-items p{
+    font-size: 18px;
+}
+.content-items button{
+    width: 150px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: gray;
+    color: white;
+    border-radius: 7px;
+}

@@ -5,10 +5,6 @@ const CssQuestions = ({ data, searchText, SetSearchText }) => {
 
     const [showModal,setShowModal] = useState()
     console.log(data)
-
-    // const filteredData = data.map((item) =>item.cssDataFile.map((item1,index) => item1.Questions.filter((ques,index) => ques.Question.includes(searchText.toLowerCase()))));
-    // console.log(filteredData)
-    
     const handleModal = () =>{
 
     }

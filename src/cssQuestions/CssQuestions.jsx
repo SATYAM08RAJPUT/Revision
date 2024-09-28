@@ -1,41 +1,22 @@
-
 import React, { useState } from "react";
+import './cssQuestions.css';
 
-const CssQuestions = ({ data, searchText, SetSearchText }) => {
+const CssQuestions = ({ cssData,indexNumber}) => {
+    console.log(cssData)
 
-    const [showModal,setShowModal] = useState()
-    console.log(data)
-    const handleModal = () =>{
- 
-    }
-    
     return (
         <div className="question-container">
-            <h3>css Question</h3>
-            <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
-                <form>
-                    <input type="search" value={searchText} placeholder="Search" onChange={(e) => SetSearchText(e.target.value)} ></input>
-                </form>
-                <button onClick={handleModal} >Add new question</button>
-            </div>
             {
-                data && data.map((item, index) => {
+                cssData.map((item) => item.cssDataFile[indexNumber].content.map((cont, index) => {
                     return (
                         <>
-                            {
-                                item.cssDataFile[0].Questions.map((item, index) => {
-                                    return (
-                                        <>
-                                            <h4>Question {index + 1} {item.Question}</h4>
-                                            <p>Answer: {item.Answer}</p>
-                                        </>
-                                    )
-                                })
-                            }
+                            <h3>{cont.heading}</h3>
+                            <p>{cont.details}</p>
                         </>
                     )
-                })
+                }))
             }
+
         </div>
     )
 }

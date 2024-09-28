@@ -38,7 +38,7 @@ const MultiSectionViewer = () => {
                                 <p>{itm.subtitle}</p>
                                 <Button variant="contained">
                                     <Link to={"/topicList"}>{itm.btn}</Link>
-                                    </Button>
+                                </Button>
                             </div>
                         </div>
                     ))

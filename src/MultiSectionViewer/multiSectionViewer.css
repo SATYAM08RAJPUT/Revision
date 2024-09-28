@@ -4,79 +4,37 @@
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
 }
-
-/* .sidebar-main-container {
+.sidebar-main-container {
     background-color: #222;
-    height: 100vh; 
+    height: auto; 
+    margin-top: 90px;
     width: 100%;
-}
-
-.sidebar-left-container {
-    background-color: rgb(255, 255, 255);
-    border: solid white;
-    height: 97%;
-    width: 20%;
-    position: fixed;
-    top: 10px;
-    margin-left: 20px;
-    border-radius: 13px;
-    padding: 20px;
-    cursor: pointer;
-}
-
-.sidebar-left {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    gap: 10px;
-    padding: 9px;
-    transition: background-color 0.3s;
-    color: gray;
-    border-radius: 10px;
-}
-
-.sidebar-left:hover {
-    background-color: hsl(24.6 95% 53.1%);
     color: white;
+    padding: 35px;
 }
-
-.sidebar-left h2 {
-    font-size: 13px;
-}
-
-.sidebar-left-icon {
-    font-size: 20px;
-}
-
- */
-
 .sidebar-right-div1 {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
     padding: 10px;
+    align-items: center;
+}
+.sidebar-right-div1 .right1{
+    font-size: 60px;
+    line-height: 60px; 
 }
 .sidebar-right-div1 h1{
     font-size: 52px;
     line-height: 60px;
 }
 .sidebar-right-div1 strong{
-
     color: hsl(24.6 95% 53.1%);
 }
 .sidebar-right-div1 p{
     font-size: 18px;
     line-height: 1.7;
 }
-.sidebar-main-container {
-    background-color: #222;
-    height: auto; 
-    margin-top: 80px;
-    width: 100%;
-    color: white;
-    /* border: solid; */
-    padding: 30px;
-}
+
 .cheatsheet-main-container {
     display: grid;
     grid-template-columns: auto auto;

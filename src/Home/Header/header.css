@@ -1,31 +1,41 @@
-.header{
+.header {
     display: flex;
     justify-content: space-around;
     font-family: sans-serif;
     width: 100%;
     align-items: center;
-    padding: 25px;
+    /* padding: 45px 25px 30px; */
     position: fixed;
     top: 0;
-    /* border: solid; */
     background-color: #222222;
-    height: 80px;
+    height: 88px;
+    /* border: solid; */
+    padding: 30px;
 }
-.left-sideheader{
+
+body.light .header {
+    background-color: white;
+    color: black; 
+}
+.left-sideheader {
     width: 15%;
     font-size: 21px; 
+    padding-top: 10px; 
 }
-.left-sideheader img{
+
+.left-sideheader img {
     width: 70px; 
     height: 70px; 
     border-radius: 50%;
     object-fit: cover;
 }
-.middle-sideheader{
+
+.middle-sideheader {
     width: 50%;
     align-items: center;
 }
-.middle-items{
+
+.middle-items {
     width: 100%;
     padding: 7px;
     border-radius: 30px; 
@@ -33,30 +43,34 @@
     display: flex;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* border: solid black; */
-    align-items: center;
     background-color: #3e3e3e;
+    /* border: solid ; */
 }
-.middle-sideheader input{
+
+.middle-sideheader input {
     width: 100%;
     padding: 6px; 
     border-radius: 5px; 
     font-size: 15px;
     border: 1px solid transparent; 
-    /* background-color: rgb(235, 236, 240); */
     background-color: #3e3e3e;
     transition: border 0.3s;
     color: white;
 }
-
+body.light .middle-items {
+    background-color: rgb(233, 231, 231);
+}
+body.light .middle-sideheader input{
+    background-color: rgb(233, 231, 231);
+    color: black;
+}
 .middle-items input:focus {
     outline: none;
     border: 1px solid hsl(24.6, 95%, 53.1%); 
     background-color: #3e3e3e;
-
 }
 
-.right-sideheader{
+.right-sideheader {
     width: 20%;
     display: flex;
     font-size: 17px;
@@ -65,21 +79,24 @@
     cursor: pointer;
     align-items: center;
 }
-.theme{
+
+.theme {
     font-size: 20px;
 }
-.serachicon{
+
+.serachicon {
     width: 30px;
     margin-top: 4px;
-    color:  hsl(24.6, 95%, 53.1%);
+    color: hsl(24.6, 95%, 53.1%);
     font-size: 20px;
 }
+
 body.light {
     background-color: white;
     color: black;
 }
   
-  body.dark {
-    background-color:#222222;
+body.dark {
+    background-color: #222222;
     color: white;
-  }
+}

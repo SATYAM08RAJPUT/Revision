@@ -17,7 +17,7 @@ const MultiSectionViewer = () => {
     };
 
     useEffect(() => {
-        cheatSheetFetchData();
+        cheatSheetFetchData(); 
     }, []);
 
     return (
@@ -25,7 +25,8 @@ const MultiSectionViewer = () => {
         <Header />
         <div className='sidebar-main-container'>
             <div className='sidebar-right-div1'>
-                <h1>Hiii ! <br /> Your <strong>Frontend Cheatsheet</strong> Awaits!</h1>
+                <h1 className='right1'>Hiii !</h1>
+                <h1>Your <strong>Frontend Cheatsheet</strong> Awaits!</h1>
                 <p>We bring designs to life with code and creativity!</p>
             </div>
 
@@ -55,20 +56,4 @@ const MultiSectionViewer = () => {
 };
 
 export default MultiSectionViewer;
-
-
-
-// return (
-//     <div key={chtsheet.id}>
-//         <div className='center'>
-//             <div className='image-circle'>
-//                 <img src={chtsheet.url} alt={chtsheet.title} />
-//             </div>
-//             <h2>{chtsheet.title}</h2>
-//             <p>{chtsheet.subtitle}</p>
-//             <Button variant="contained">{chtsheet.btn}</Button>
-//         </div>
-//     </div>
-// )
-
 

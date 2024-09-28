@@ -28,7 +28,6 @@ function App() {
             <Route path="*" element={<Home />} />
             <Route path="/multiSectionViewer" element={<MultiSectionViewer />} />
             <Route path="/topicList" element={<TopicList cssData={cssData} />} />
-
           </Routes>
         </Router>
 

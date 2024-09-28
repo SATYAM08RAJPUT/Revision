@@ -16,11 +16,17 @@ export default function server({ environment = 'development' } = {}) {
                         content: [
                             {
                                 heading: "CSS Margins",
-                                details: "Margins are used to create space around elements, outside of any defined borders."
+                                def:"Margins are used to create space around elements, outside of any defined borders.",
+                                details: [
+                                    {name:"item1"},
+                                    {name:"item2"},
+                                    {name:"item3"}
+                                ]
                             },
                             {
                                 heading: "CSS Padding",
-                                details: "Padding is used to create space around an element's content, inside of any defined borders."
+                                details: "Padding is used to create space around an element's content, inside of any defined borders.",
+                                diff:"ahgfsdbfk"
                             },
                             {
                                 heading: "CSS Borders",

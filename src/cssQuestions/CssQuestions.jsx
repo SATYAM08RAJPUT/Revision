@@ -9,16 +9,10 @@ const CssQuestions = ({ cssData,indexNumber}) => {
     {cssData.map((item) => 
         item.cssDataFile[indexNumber].content.map((cont) => {
             console.log(cont);
-            <div>
-                       <h3>{cont.heading}</h3>
-                       <p>{cont.details}</p>
-            </div>
             if (cont.heading === "CSS Borders") {
-                return cont.details.map((detail) => {
+                return cont.detailes.map((detail) => {
                     console.log(detail);
-                    return <div>
-                        <img key={detail.url} src={detail.url} />;
-                    </div> 
+                    return  <img key={detail.url} src={detail.url} className="border-image"/>;
                 });
             } else {
                 return (

@@ -24,7 +24,7 @@ export default function server({ environment = 'development' } = {}) {
                             },
                             {
                                 heading: "CSS Borders",
-                                details: [
+                                detailes: [
                                     {
                                     id:"1",
                                     url:"https://t4.ftcdn.net/jpg/06/31/94/07/360_F_631940703_olFOPib8TNgTO9vXF108GKci7daMsTld.jpg"

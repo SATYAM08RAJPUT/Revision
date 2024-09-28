@@ -7,11 +7,19 @@ const MultiSectionViewer = () => {
     const [cheatsheet, setCheatSheet] = useState([]);
 
     const cheatSheetFetchData = async () => {
+<<<<<<< HEAD
         const response = await fetch('/api/multisectionViwers');
         console.log(response);
         const result = await response.json();
         console.log(result);
         setCheatSheet(result.multisectionViwers);
+=======
+        const response = await fetch('/api/chatsheets');
+        console.log(response);
+        const result = await response.json();
+        console.log(result);
+        setCheatSheet(result.chatsheets);
+>>>>>>> 3e869df129892670edd1570a6090254ce0a2474d
     }
 
     useEffect(() => {
@@ -27,6 +35,7 @@ const MultiSectionViewer = () => {
 
                 <div className='cheatsheet-main-container'>
                     {cheatsheet.map((chtsheet) => {
+<<<<<<< HEAD
                         console.log(chtsheet)
                         {chtsheet.chatsheets.map((chtsheet) => {
                             return (
@@ -42,6 +51,20 @@ const MultiSectionViewer = () => {
                                 </div>
                             )
                         })}
+=======
+                        return (
+                            <div key={chtsheet.id}>
+                                <div className='center'>
+                                    <div className='image-circle'>
+                                        <img src={chtsheet.url} alt={chtsheet.title} />
+                                    </div>
+                                    <h2>{chtsheet.title}</h2>
+                                    <p>{chtsheet.subtitle}</p>
+                                    <Button variant="contained">{chtsheet.btn}</Button>
+                                </div>
+                            </div>
+                        )
+>>>>>>> 3e869df129892670edd1570a6090254ce0a2474d
                     })}
                 </div>
         </div>

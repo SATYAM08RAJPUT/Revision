@@ -8,9 +8,9 @@ import MultiSectionViewer from './MultiSectionViewer/multiSectionViewer';
 
 function App() {
 
-  const [cssQuestionsData, setCssQuestionsData] = useState([]);
+  const [cssData, setCssData] = useState([]);
   const [searchText, SetSearchText] = useState("");
-  console.log(searchText)
+  // console.log(cssData)
 
   useEffect(() => {
     getCssQuestions();
@@ -19,7 +19,7 @@ function App() {
   const getCssQuestions = () => {
     fetch("/api/codeccharya")
       .then(res => res.json())
-      .then(data => setCssQuestionsData(data.cssFiles))
+      .then(data => setCssData(data.cssFiles))
   }
 
   return (
@@ -29,7 +29,7 @@ function App() {
           <Routes>
             <Route path="*" element={<Home />} />
             <Route path="/multiSectionViewer" element={<MultiSectionViewer />} />
-            <Route path='/cssQuestion' element={<CssQuestions data={cssQuestionsData} searchText={searchText} SetSearchText={SetSearchText} />} />
+            <Route path='/questions' element={<CssQuestions data={cssData} searchText={searchText} SetSearchText={SetSearchText} />} />
           </Routes>
         </Router>
 

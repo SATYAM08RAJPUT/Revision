@@ -6,7 +6,7 @@ export default function server({ environment = 'development' } = {}) {
         environment,
         models: {
             CSSFile: Model,
-            multisectionViwer:Model
+            multiSection:Model
         },
         seeds(server) {
             server.create("CSSFile", {
@@ -15,11 +15,61 @@ export default function server({ environment = 'development' } = {}) {
                         content: [
                             {
                                 heading: "CSS Margins",
-                                details: "The CSS margin properties are used to create space around elements, outside of any defined borders."
+                                details: "Margins are used to create space around elements, outside of any defined borders."
                             },
                             {
-                                heading: "Margin - Individual Sides",
-                                details: "CSS has properties for specifying the margin for each side of an element",
+                                heading: "CSS Padding",
+                                details: "Padding is used to create space around an element's content, inside of any defined borders."
+                            },
+                            {
+                                heading: "CSS Borders",
+                                details: "The CSS border properties allow you to specify the style, width, and color of an element's border."
+                            }
+
+                        ],
+                        type: "cssBasic"
+                    },
+                    {
+                        content: [
+                            {
+                                heading: "Box Modal",
+                                details: "The CSS box model is a container that contains multiple properties including borders, margin, padding, and the content itself. It is used to create the design and layout of web pages. It can be used as a toolkit for customizing the layout of different elements. The web browser renders every element as a rectangular box according to the CSS box model."
+                            },
+                            {
+                                heading: "Box Sizing",
+                                details: "The box-sizing CSS property sets how the total width and height of an element is calculated."
+                            }
+
+                        ],
+                        type: "cssBoxModel"
+                    },
+                    {
+                        content: [
+                            {
+                                heading: "Display Block",
+                                details: "A block-level element ALWAYS starts on a new line and takes up the full width available ."
+                            },
+                            {
+                                heading: "Inline Display",
+                                details: "The inline display property ignores the height and the width set by the user."
+                            },
+                            {
+                                heading: "Inline-block",
+                                details: "it can edit the height and the width of the block. Basically, this will align the div both in block and inline fashion."
+                            }
+
+                        ],
+                        type: "cssDisplay"
+                    },
+                    {
+                        content: [
+                            {
+                                heading: "element Selector",
+                                details: "The element selector selects HTML elements based on the element name."
+                            },
+                            {
+                                heading: "id Selector",
+                                details: "The id selector uses the id attribute of an HTML element to select a specific element.",
                                 detailsProperty: [
                                     "margin-top",
                                     "margin-right",
@@ -28,68 +78,47 @@ export default function server({ environment = 'development' } = {}) {
                                 ]
                             },
                             {
-                                heading: "Margin - Shorthand Property",
-                                details: "To shorten the code, it is possible to specify all the margin properties in one property."
+                                heading: "class Selector",
+                                details: "The class selector selects HTML elements with a specific class attribute."
                             }
 
                         ],
-                        type: "cssBasic"
+                        type: "cssSelector"
                     },
                     {
-                        Questions: [
+                        content: [
                             {
-                                Question: "What is the difference between margin and padding?",
-                                Answer: "Margin is used to create space around elements and padding is used to create space around elements inside the border.We can set the margin property to auto but we cannot set the padding property to auto.In Margin property we can allow negative or float number but in padding we cannot allow negative values.Margin and padding target all the 4 sides of the element. Margin and padding will work without the border property also. The difference will be more clear with the following example."
+                                heading: "Position Static",
+                                details: "HTML elements are positioned static by default."
                             },
                             {
-                                Question: "What is CSS Box Model?",
-                                Answer: "The CSS box model is a container that contains multiple properties including borders, margin, padding, and the content itself. It is used to create the design and layout of web pages. It can be used as a toolkit for customizing the layout of different elements. The web browser renders every element as a rectangular box according to the CSS box model."
+                                heading: "Position relative",
+                                details: "An element with position: relative; is positioned relative to its normal position."
                             },
                             {
-                                Question: "What is the difference between CSS border and outline?",
-                                Answer: "CSS border properties allow us to set the style, color, and width of the border. CSS outline property allows us to draw a line around the element, outside the border."
-                            },
-                            {
-                                Question: "How can we hide an element in CSS?",
-                                Answer: "The style display property is used to hide and show the content of HTML DOM by accessing the DOM element using JavaScript/jQuery."
-                            },
-                            {
-                                Question: "Can we overlap elements in CSS?",
-                                Answer: "Creating an overlay effect simply means putting two div together at the same place but both the div appear when needed i.e while hovering or while clicking on one of the div to make the second one appear. Overlays are very clean and give the webpage a tidy look. It looks sophisticated and is simple to design. Overlays can create using two simple CSS properties:"
+                                heading: "Position Absolute",
+                                details: "An element with position: absolute; is positioned relative to the viewport."
                             }
-                        ],
-                        type: "display"
 
+                        ],
+                        type: "cssPosition"
                     },
                     {
-                        Questions: [
+                        content: [
                             {
-                                Question: "How does absolute positioning work?",
-                                Answer: "Absolute positioning is used to place the element which is then removed from the HTML document from the normal workflow without creating any space for the element in the HTML page layout. The element can be positioned respectively to the closest positioned ancestor; otherwise, if the ancestor is not found, the element is placed with respect to the initial container box. The values provided to the top, right, left and bottom determine the final position of the element."
+                                heading: "Background-attachment",
+                                details: "The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)"
                             },
                             {
-                                Question: "Does this property work overflow: hidden?",
-                                Answer: "Overflow: the hidden property is used to specify the content’s clipping. We need to add scrollbars to the content area at the time of specified container size exceeding the content limit where the content gets enclosed. This makes the content invisible via clipping; also the overflow value will be hidden."
-                            },
-                            {
-                                Question: "Tell us about CSS float property.",
-                                Answer: "The float property of CSS positions an image to the right or left as needed, including text wrapping around it. All properties of elements used before it remain unchanged. "
-                            },
-                            {
-                                Question: "What do you understand by pseudo-elements?",
-                                Answer: "Pseudo-elements provide special effects to some selectors. CSS finds use in applying styles in HTML markups. If additional markup or style is not feasible for a document, the pseudo-elements help by allowing extra markup without interfering with the original document."
-                            },
-
-                            {
-                                Question: "Differentiate between logical and physical tags.",
-                                Answer: "Logical tags mainly focus on content and are older as compared to physical ones. Logical ones do not find much usage in presentation and terms of aesthetics. At the same time, physical ones find application in presentation. "
+                                heading: "background gradient",
+                                details: "A background gradient is a way to create a smooth transition between two or more colors in a design. Gradients can be used to transform the look and feel of a design, from retro to modern. They can also add shadows and highlights to make a flat design pop out."
                             }
                         ],
-                        type: "positions"
+                        type: "cssBackground"
                     }
                 ]
-            })
-            server.create('multisectionViwer',{
+            }),
+            server.create('multiSection', {
                 chatsheets:[
                     { 
                       id:"1",
@@ -124,14 +153,13 @@ export default function server({ environment = 'development' } = {}) {
         },
         routes() {
             this.namespace = "api"
-            this.namespace = 'api'
             this.get("/codeccharya", (schema, request) => {
                 console.log(schema)
                 return schema.cssFiles.all()
             })
-            this.get("/multisectionViwers", (schema, request) => {
-                console.log(schema)
-                return schema.multisectionViwers.all()
+            this.get('/multiSections', (schema) => {
+                console.log(schema);
+                return schema.multiSections.all()
             })
         }
     })

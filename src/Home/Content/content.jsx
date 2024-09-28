@@ -13,10 +13,10 @@ export default function ContentCom() {
                     <p>Create an app that empowers users to manage their time and resource more Effectively</p>
                     <Button>
                         <Link to={"/multiSectionViewer"}>Learn</Link>
-                        </Button>
-                        <Button>
-                        <Link to={"/cssQuestion"}>Css Question</Link>
-                        </Button>
+                    </Button>
+                    <Button>
+                        <Link to={"/questions"}>question</Link>
+                    </Button>
                 </div>
             </div>
         </>

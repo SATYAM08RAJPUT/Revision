@@ -22,7 +22,7 @@ const MultiSectionViewer = () => {
 
     return (
         <>
-        <Header />
+        <Header /> 
         <div className='sidebar-main-container'>
             <div className='sidebar-right-div1'>
                 <h1 className='right1'>Hiii !</h1>

@@ -1,9 +1,23 @@
 .question-container{
     color: rgb(156, 129, 129);
     max-width: 70%;
-    min-width: 70%;
+    min-width: 83%;
+    text-align: left;
+    padding: 10px;
 
 }
 .border-image{
     width: 200px;
+}
+.question-heading{
+    font-size: 40px;
+    color: orange;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.question-definition{
+    font-size: 20px;
+}
+.first-heading{
+    font-size: 40px;
 }

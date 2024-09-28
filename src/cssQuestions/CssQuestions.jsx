@@ -3,20 +3,22 @@ import React, { useState } from "react";
 
 const CssQuestions = ({ data, searchText, SetSearchText }) => {
 
-    const [showModal,setShowModal] = useState()
-    console.log(data)
+    const [showModal, setShowModal] = useState()
+    const filterableData = data.map(item => item.cssDataFile.map(item1 => ))
+    console.log(filterableData)
 
-    // const filteredData = data.map((item) =>item.cssDataFile.map((item1,index) => item1.Questions.filter((ques,index) => ques.Question.includes(searchText.toLowerCase()))));
+    // const filteredData = filterableData.filter((ques, index) => ques.Question.includes(searchText.toLowerCase()))
+
     // console.log(filteredData)
-    
-    const handleModal = () =>{
+
+    const handleModal = () => {
 
     }
-    
+
     return (
         <div className="question-container">
             <h3>css Question</h3>
-            <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <form>
                     <input type="search" value={searchText} placeholder="Search" onChange={(e) => SetSearchText(e.target.value)} ></input>
                 </form>

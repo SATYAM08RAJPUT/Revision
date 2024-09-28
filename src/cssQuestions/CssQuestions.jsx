@@ -4,15 +4,11 @@ import React, { useState } from "react";
 const CssQuestions = ({ data, searchText, SetSearchText }) => {
 
     const [showModal, setShowModal] = useState()
-    const filterableData = data.map(item => item.cssDataFile.map(item1 => ))
+    // const filterableData = data.map(item => item.cssDataFile.map(item1 => ))
     console.log(filterableData)
 
-    // const filteredData = filterableData.filter((ques, index) => ques.Question.includes(searchText.toLowerCase()))
-
-    // console.log(filteredData)
-
-    const handleModal = () => {
-
+    const handleModal = () =>{
+ 
     }
 
     return (
@@ -25,7 +21,7 @@ const CssQuestions = ({ data, searchText, SetSearchText }) => {
                 <button onClick={handleModal} >Add new question</button>
             </div>
             {
-                data.map((item, index) => {
+                data && data.map((item, index) => {
                     return (
                         <>
                             {

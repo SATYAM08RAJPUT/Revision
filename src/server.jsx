@@ -6,6 +6,7 @@ export default function server({ environment = 'development' } = {}) {
         environment,
         models: {
             CSSFile: Model,
+            multisectionViwer:Model
         },
         seeds(server) {
             server.create("CSSFile", {
@@ -88,12 +89,49 @@ export default function server({ environment = 'development' } = {}) {
                     }
                 ]
             })
+            server.create('multisectionViwer',{
+                chatsheets:[
+                    { 
+                      id:"1",
+                      url:'//s3.amazonaws.com/shecodesio-production/cheatsheets/logos/000/000/001/original/html.png?1616282665',
+                      title:'HTML Cheatsheet',
+                      subtitle:'Codeccharya HTML cheatsheet',
+                      btn:'Go to Cheatsheet'
+                     },
+                     {
+                      id:"2",
+                      url:'//s3.amazonaws.com/shecodesio-production/cheatsheets/logos/000/000/002/original/css.png?1616282675',
+                      title:'Css Cheatsheet',
+                      subtitle:'Codeccharya Css cheatsheet',
+                      btn:'Go to Cheatsheet'
+                     },
+                     {
+                      id:"3",
+                      url:'//s3.amazonaws.com/shecodesio-production/cheatsheets/logos/000/000/003/original/javascript.png?1616282692',
+                      title:' Javascript Cheatsheet',
+                      subtitle:'Codeccharya Javascript cheatsheet',
+                      btn:'Go to Cheatsheet'
+                     },
+                     {
+                      id:"4",
+                      url:'//s3.amazonaws.com/shecodesio-production/cheatsheets/logos/000/000/006/original/react.jpg?1617889774',
+                      title:'React Cheatsheet',
+                      subtitle:'Codeccharya React cheatsheet',
+                      btn:'Go to Cheatsheet'
+                     }
+                  ]
+            })
         },
         routes() {
-            this.namespace = "api/codeccharya"
-            this.get("/", (schema, request) => {
+            this.namespace = "api"
+            this.namespace = 'api'
+            this.get("/codeccharya", (schema, request) => {
                 console.log(schema)
                 return schema.cssFiles.all()
+            })
+            this.get("/multisectionViwers", (schema, request) => {
+                console.log(schema)
+                return schema.multisectionViwers.all()
             })
         }
     })

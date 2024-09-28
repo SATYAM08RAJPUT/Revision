@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './multiSectionViewer.css';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import Header from '../Home/Header/header';
 
 const MultiSectionViewer = () => {
     const [cheatsheetData, setCheatsheetData] = useState([]);
@@ -20,6 +21,8 @@ const MultiSectionViewer = () => {
     }, []);
 
     return (
+        <>
+        <Header />
         <div className='sidebar-main-container'>
             <div className='sidebar-right-div1'>
                 <h1>Hiii ! <br /> Your <strong>Frontend Cheatsheet</strong> Awaits!</h1>
@@ -46,7 +49,26 @@ const MultiSectionViewer = () => {
                 ))}
             </div>
         </div>
+
+        </>
     );
 };
 
 export default MultiSectionViewer;
+
+
+
+// return (
+//     <div key={chtsheet.id}>
+//         <div className='center'>
+//             <div className='image-circle'>
+//                 <img src={chtsheet.url} alt={chtsheet.title} />
+//             </div>
+//             <h2>{chtsheet.title}</h2>
+//             <p>{chtsheet.subtitle}</p>
+//             <Button variant="contained">{chtsheet.btn}</Button>
+//         </div>
+//     </div>
+// )
+
+

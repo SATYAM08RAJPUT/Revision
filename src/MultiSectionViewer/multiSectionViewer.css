@@ -71,6 +71,7 @@
 .sidebar-main-container {
     background-color: #222;
     height: auto; 
+    margin-top: 80px;
     width: 100%;
     color: white;
     /* border: solid; */

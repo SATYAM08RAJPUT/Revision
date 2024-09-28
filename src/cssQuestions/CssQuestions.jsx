@@ -3,34 +3,33 @@ import './cssQuestions.css';
 
 const CssQuestions = ({ cssData, indexNumber }) => {
     console.log(cssData)
-
     return (
         <div className="question-container">
-            {
-                cssData.map((item) => item.cssDataFile[indexNumber].content.map((cont, index) => {
-                    return (
-                        (cont.heading == "CSS Margins") ?
+            {cssData.map((item) =>
+                item.cssDataFile[indexNumber].content.map((cont) => {
+                    console.log(cont);
+                    if (cont.heading === "CSS Borders") {
+                        return cont.detailes.map((detail) => {
+                            console.log(detail);
+                            return <img key={detail.url} src={detail.url} className="border-image" />;
+                        });
+                    }
+                    else {
+                        return (
                             <>
-                                <h3>{cont.heading}</h3>
-                                <p>{cont.def}</p>
-                                <ul>
-                                    {
-                                        cont.details.map(item => <li>{item.name}</li>)
-                                    }
-                                </ul>
-                            </> : <>
-                                <h3>{cont.heading}</h3>
+                                <h3 key={cont.heading}>{cont.heading}</h3>
                                 <p>{cont.details}</p>
-                                {
-                                    cont.diff ? <p style={{ border: "solid" }}>{cont.diff}</p> : ""
-                                }
                             </>
-                    )
-                }))
-            }
+                        );
+                    }
+                })
+            )
 
+            }
         </div>
     )
 }
+
+
 
 export default CssQuestions;

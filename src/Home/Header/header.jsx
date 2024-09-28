@@ -26,7 +26,7 @@ export default function Header() {
                 <div className='middle-items'>
                     <IoSearchOutline className='serachicon' />
                     <Input placeholder={"Searching..."} />
-                </div>
+                </div> 
             </div>
             <div className='right-sideheader'>
                 <div>Learn</div>
@@ -36,3 +36,4 @@ export default function Header() {
         </div>
     );
 }
+ 

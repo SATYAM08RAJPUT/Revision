@@ -1,14 +1,30 @@
 .sidebar{
-    color: rgb(156, 129, 129);
-    margin-top: 85px;
+    color: hsl(24.6, 95%, 53.1%);
+    margin-top: 15px;
     margin-bottom: 28px;
     cursor: pointer;
     width: 100%;
-    padding-left: 10px;
+    /* border: solid 1px; */
+    padding: 10px;
+    border-radius: 20px;
+}
+.sidebar:hover{
+    background-color: hsl(24.6, 95%, 53.1%);
+    color: white;
 }
 .leftList-Conatiner{
-    width: 15%;
-    height: 600px;
+    width: 17%;
+    height: 566px;
     overflow-y: scroll;
-    scrollbar-width: thin;
+    /* border: solid red; */
+    padding: 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: #3e3e3e;
+} 
+.leftList-Conatiner::-webkit-scrollbar{
+    display: none;
+}
+body.light  .leftList-Conatiner{
+    background-color: rgb(233, 231, 231);
 }

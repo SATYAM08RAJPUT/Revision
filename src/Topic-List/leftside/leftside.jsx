@@ -22,10 +22,9 @@ export default function LeftSideBar({onHandleIndex}) {
                     return item.sideBarData.map((item,index) => {
                         console.log("djbgdog", item)
                         return  <div onClick={() => onHandleIndex(index)} className="sidebar">{item.title}</div>
-                     
                     })
                 })}
             </div>
-        </>
+        </> 
     )
 }

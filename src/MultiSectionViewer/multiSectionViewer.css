@@ -11,6 +11,11 @@
     width: 100%;
     color: white;
     padding: 35px;
+    /* border: solid; */
+}
+body.light .sidebar-main-container {
+    background-color: white;
+    color: black;
 }
 .sidebar-right-div1 {
     display: flex;

@@ -1,6 +1,10 @@
 .question-container{
-    color: rgb(156, 129, 129);
+    /* color: rgb(156, 129, 129); */
+    color: white;
     max-width: 70%;
     min-width: 70%;
 
+} 
+body.light .question-container{
+    color: black;
 }

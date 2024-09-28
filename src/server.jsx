@@ -6,7 +6,7 @@ export default function server({ environment = 'development' } = {}) {
         environment,
         models: {
             CSSFile: Model,
-            multisectionViwer:Model
+            multiSection:Model
         },
         seeds(server) {
             server.create("CSSFile", {
@@ -64,8 +64,8 @@ export default function server({ environment = 'development' } = {}) {
                         type:"boxmodel"
                     }
                 ]
-            })
-            server.create('multisectionViwer',{
+            }),
+            server.create('multiSection', {
                 chatsheets:[
                     { 
                       id:1,
@@ -100,14 +100,13 @@ export default function server({ environment = 'development' } = {}) {
         },
         routes() {
             this.namespace = "api"
-            this.namespace = 'api'
             this.get("/codeccharya", (schema, request) => {
                 console.log(schema)
                 return schema.cssFiles.all()
             })
-            this.get("/multisectionViwers", (schema, request) => {
-                console.log(schema)
-                return schema.multisectionViwers.all()
+            this.get('/multiSections', (schema) => {
+                console.log(schema);
+                return schema.multiSections.all()
             })
         }
     })

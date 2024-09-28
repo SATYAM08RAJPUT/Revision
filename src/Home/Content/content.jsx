@@ -14,9 +14,6 @@ export default function ContentCom() {
                     <Button>
                         <Link to={"/multiSectionViewer"}>Learn</Link>
                         </Button>
-                        <Button>
-                        <Link to={"/cssQuestion"}>Css Question</Link>
-                        </Button>
                 </div>
             </div>
         </>

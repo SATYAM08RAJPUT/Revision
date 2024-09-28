@@ -3,19 +3,8 @@ import React, { useState } from "react";
 
 const CssQuestions = ({ data, searchText, SetSearchText }) => {
 
-<<<<<<< HEAD
     const [showModal,setShowModal] = useState()
     console.log(data)
-=======
-    // const [showModal,setShowModal] = useState()
-    // console.log(data)
-
-    // const filteredData = data.map((item) =>item.cssDataFile.map((item1,index) => item1.Questions.filter((ques,index) => ques.Question.includes(searchText.toLowerCase()))));
-    // console.log(filteredData)
-
-    // const [data , setData] = useState([])
-    
->>>>>>> 3e869df129892670edd1570a6090254ce0a2474d
     const handleModal = () =>{
  
     }

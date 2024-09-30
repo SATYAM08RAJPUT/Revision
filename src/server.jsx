@@ -231,7 +231,7 @@ export default function server({ environment = 'development' } = {}) {
             })
 
         },
-        routes() {
+        routes() {  
             this.namespace = "api"
             this.get("/codeccharya", (schema, request) => {
                 console.log(schema)

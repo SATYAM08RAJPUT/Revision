@@ -9,10 +9,7 @@ const CssQuestions = ({ cssData, indexNumber }) => {
                 cssData.map((item) => item.cssDataFile[indexNumber].content.map((cont) => {
                     return (
                         <>
-                        <h1 className="first-heading">
-                             {cont.heading}
-                        </h1>
-                            {cont.deff ? <p> border isssssssss{cont.deff}</p> : ""}
+                            {cont.deff ? <p>{cont.deff}</p> : ""}
 
                             {
                                 (cont.heading == "CSS Borders") ? (
@@ -25,8 +22,8 @@ const CssQuestions = ({ cssData, indexNumber }) => {
                                     })
                                 ) : (
                                     <>
-                                        <h3 key={cont.heading} className="question-heading">{cont.heading}</h3>
-                                        <p className="question-definition">{cont.details}</p>
+                                        <h3 key={cont.heading}>{cont.heading}</h3>
+                                        <p>{cont.details}</p>
                                     </>
                                 )
                             }

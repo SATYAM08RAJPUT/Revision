@@ -26,9 +26,9 @@ function App() {
         <Router>
           <Routes>
             <Route path="*" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/multiSectionViewer" element={<MultiSectionViewer />} />
             <Route path="/topicList" element={<TopicList cssData={cssData} />} />
-
           </Routes>
         </Router>
 

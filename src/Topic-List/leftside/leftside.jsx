@@ -1,7 +1,7 @@
 import './leftside.css'
 import { useState, useEffect } from "react";
 
-export default function LeftSideBar({onHandleIndex}) {
+export default function LeftSideBar({ onHandleIndex }) {
     const [leftSideData, setLeftSideData] = useState([]);
 
     const leftSideFetchData = async () => {
@@ -19,10 +19,9 @@ export default function LeftSideBar({onHandleIndex}) {
             <div className='leftList-Conatiner'>
                 {leftSideData.map((item) => {
                     console.log(item)
-                    return item.sideBarData.map((item,index) => {
+                    return item.sideBarData.map((item, index) => {
                         console.log("djbgdog", item)
-                        return  <div onClick={() => onHandleIndex(index)} className="sidebar">{item.title}</div>
-                     
+                        return <div onClick={() => onHandleIndex(index)} className="sidebar">{item.title}</div>
                     })
                 })}
             </div>

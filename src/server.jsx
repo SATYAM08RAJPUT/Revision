@@ -6,7 +6,8 @@ export default function server({ environment = 'development' } = {}) {
         models: {
             CSSFile: Model,
             multiSection:Model,
-            SidebarContent:Model
+            SidebarContent:Model,
+            htmlFile:Model
         },
         seeds(server) {
             server.create("CSSFile", {
@@ -130,6 +131,84 @@ export default function server({ environment = 'development' } = {}) {
                             }
                         ],
                         type: "cssBackground"
+                    },
+                    {
+                        content: [
+                            {
+                                heading: "Units",
+                                details: "The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)"
+                            },
+                            {
+                                heading: "background gradient",
+                                details: "A background gradient is a way to create a smooth transition between two or more colors in a design. Gradients can be used to transform the look and feel of a design, from retro to modern. They can also add shadows and highlights to make a flat design pop out."
+                            }
+                        ],
+                        type: "cssBackground"
+                    },
+                    {
+                        content: [
+                            {
+                                heading: "Responsive",
+                                details: "The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)"
+                            },
+                            {
+                                heading: "background gradient",
+                                details: "A background gradient is a way to create a smooth transition between two or more colors in a design. Gradients can be used to transform the look and feel of a design, from retro to modern. They can also add shadows and highlights to make a flat design pop out."
+                            }
+                        ],
+                        type: "cssBackground"
+                    },
+                    {
+                        content: [
+                            {
+                                heading: "Text & Font",
+                                details: "The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)"
+                            },
+                            {
+                                heading: "background gradient",
+                                details: "A background gradient is a way to create a smooth transition between two or more colors in a design. Gradients can be used to transform the look and feel of a design, from retro to modern. They can also add shadows and highlights to make a flat design pop out."
+                            }
+                        ],
+                        type: "cssBackground"
+                    },
+                    {
+                        content: [
+                            {
+                                heading: "Tranformation",
+                                details: "The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)"
+                            },
+                            {
+                                heading: "background gradient",
+                                details: "A background gradient is a way to create a smooth transition between two or more colors in a design. Gradients can be used to transform the look and feel of a design, from retro to modern. They can also add shadows and highlights to make a flat design pop out."
+                            }
+                        ],
+                        type: "cssBackground"
+                    },
+                    {
+                        content: [
+                            {
+                                heading: "Transition",
+                                details: "The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)"
+                            },
+                            {
+                                heading: "background gradient",
+                                details: "A background gradient is a way to create a smooth transition between two or more colors in a design. Gradients can be used to transform the look and feel of a design, from retro to modern. They can also add shadows and highlights to make a flat design pop out."
+                            }
+                        ],
+                        type: "cssBackground"
+                    },
+                    {
+                        content: [
+                            {
+                                heading: "Advance Css",
+                                details: "The background-attachment property specifies whether the background image should scroll or be fixed (will not scroll with the rest of the page)"
+                            },
+                            {
+                                heading: "background gradient",
+                                details: "A background gradient is a way to create a smooth transition between two or more colors in a design. Gradients can be used to transform the look and feel of a design, from retro to modern. They can also add shadows and highlights to make a flat design pop out."
+                            }
+                        ],
+                        type: "cssBackground"
                     }
                 ]
             }),
@@ -228,6 +307,10 @@ export default function server({ environment = 'development' } = {}) {
                         type:"advance css"
                     }
                 ]
+            })
+
+            server.create('htmlFile' ,{
+                
             })
 
         },

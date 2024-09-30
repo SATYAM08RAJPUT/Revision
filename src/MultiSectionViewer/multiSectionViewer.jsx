@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import './multiSectionViewer.css';
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+
 import Header from '../Home/Header/header';
+import { useNavigate } from 'react-router-dom';
 
 const MultiSectionViewer = ({onHandleCss,viewCss}) => {
+    const navigate = useNavigate();
     const [cheatsheetData, setCheatsheetData] = useState([]);
     console.log(cheatsheetData);
     const cheatSheetFetchData = async () => {
@@ -16,7 +18,19 @@ const MultiSectionViewer = ({onHandleCss,viewCss}) => {
 
     useEffect(() => {
         cheatSheetFetchData();
-    }, []);
+    }, []); 
+
+    const handleCss = (id) => {
+        if (id === 0) {
+          alert("Welcome to HTML Page");
+        } else if (id === 1) {
+          navigate('/topicList');
+        } else if (id === 2) {
+          alert("Welcome to JS page");
+        } else{
+            alert("Welcome to React Page")
+        }
+      };
 
 
     return (
@@ -39,8 +53,9 @@ const MultiSectionViewer = ({onHandleCss,viewCss}) => {
                                     </div>
                                     <h2>{itm.title}</h2>
                                     <p>{itm.subtitle}</p>
-                                    <Button variant="contained" onClick={() => onHandleCss(index)}>
-                                        <Link to={"/topicList"}>{itm.btn}</Link>
+                                    <Button variant="contained" onClick={() => handleCss(index)}>
+                                        {/* <Link to={"/topicList"}>{itm.btn}</Link> */}
+                                        {itm.btn}
                                     </Button>
                                 </div>
                             </div>

@@ -31,9 +31,12 @@ export default function Header() {
                 </div>
             </div>
             <div className='right-sideheader'>
-                <div><Link to={'/home'}>Learn</Link></div>
+                <div><Link to={'/multiSectionViewer'}>Learn to Code</Link></div>
                 <div onClick={toggleTheme} className={`theme ${theme}`}>{theme === 'light' ? '☀️' : '🌙'}</div>
             </div>
         </div>
     );
 }
+
+
+

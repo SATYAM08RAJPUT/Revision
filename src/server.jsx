@@ -6,7 +6,8 @@ export default function server({ environment = 'development' } = {}) {
         models: {
             CSSFile: Model,
             multiSection:Model,
-            SidebarContent:Model
+            SidebarContent:Model,
+            htmlFile:Model
         },
         seeds(server) {
             server.create("CSSFile", {
@@ -228,6 +229,10 @@ export default function server({ environment = 'development' } = {}) {
                         type:"advance css"
                     }
                 ]
+            })
+
+            server.create('htmlFile' ,{
+                
             })
 
         },

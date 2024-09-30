@@ -16,7 +16,7 @@ const MultiSectionViewer = () => {
 
     useEffect(() => {
         cheatSheetFetchData();
-    }, []);
+    }, []); 
 
     return (
         <>
@@ -44,7 +44,6 @@ const MultiSectionViewer = () => {
                                 </div>
                             </div>
                         ))
-
                     ))}
                 </div>
             </div>

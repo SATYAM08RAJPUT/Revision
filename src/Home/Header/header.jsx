@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { GoMoon } from "react-icons/go";
 import ImageCom from '../../Common-Components copy/Image/img';
 import logo from '../../../public/logoImage/logo.jpg'
+import { Link } from 'react-router-dom';
 
 export default function Header() {
     const [theme, setTheme] = useState('dark');
@@ -20,20 +21,19 @@ export default function Header() {
     return (
         <div className='header'>
             <div className='left-sideheader'>
-                <ImageCom src={logo}/>
+                <Link to={'/home'}> <ImageCom src={logo} /></Link>
+               
             </div>
             <div className='middle-sideheader'>
                 <div className='middle-items'>
                     <IoSearchOutline className='serachicon' />
                     <Input placeholder={"Searching..."} />
-                </div> 
+                </div>
             </div>
             <div className='right-sideheader'>
-                <div>Learn</div>
+                <div><Link to={'/home'}>Learn</Link></div>
                 <div onClick={toggleTheme} className={`theme ${theme}`}>{theme === 'light' ? '☀️' : '🌙'}</div>
-                <div>Blog</div>
             </div>
         </div>
     );
 }
- 

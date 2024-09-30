@@ -4,8 +4,10 @@ import LeftSideBar from "../leftside/leftside";
 import './maintopic.css'
 import { useState } from "react";
 
-export default function TopicList({cssData }){
+export default function TopicList({cssData,viewCSS }){
     const [indexNumber,setIndexNumber] =useState(0)
+    console.log(viewCSS)
+
     const onHandleIndex =(id) => {
         setIndexNumber(id)
     }

@@ -4,7 +4,7 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Header from '../Home/Header/header';
 
-const MultiSectionViewer = () => {
+const MultiSectionViewer = ({onHandleCss,viewCss}) => {
     const [cheatsheetData, setCheatsheetData] = useState([]);
     console.log(cheatsheetData);
     const cheatSheetFetchData = async () => {
@@ -18,6 +18,7 @@ const MultiSectionViewer = () => {
         cheatSheetFetchData();
     }, []);
 
+
     return (
         <>
             <Header />
@@ -30,7 +31,7 @@ const MultiSectionViewer = () => {
 
                 <div className='cheatsheet-main-container'>
                     {cheatsheetData.map((cheatsheet) => (
-                        cheatsheet.chatsheets.map((itm) => (
+                        cheatsheet.chatsheets.map((itm,index) => (
                             <div key={itm.id}>
                                 <div className='center'>
                                     <div className='image-circle'>
@@ -38,13 +39,12 @@ const MultiSectionViewer = () => {
                                     </div>
                                     <h2>{itm.title}</h2>
                                     <p>{itm.subtitle}</p>
-                                    <Button variant="contained">
+                                    <Button variant="contained" onClick={() => onHandleCss(index)}>
                                         <Link to={"/topicList"}>{itm.btn}</Link>
                                     </Button>
                                 </div>
                             </div>
                         ))
-
                     ))}
                 </div>
             </div>

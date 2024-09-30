@@ -18,6 +18,7 @@ export default function Header() {
         document.body.className = theme;
     }, [theme]);
 
+    
     return (
         <div className='header'>
             <div className='left-sideheader'>

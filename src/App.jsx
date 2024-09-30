@@ -1,15 +1,18 @@
 
 import { useEffect, useState } from 'react'
 import './App.css'
-import CssQuestions from './cssQuestions/CssQuestions'
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import MultiSectionViewer from './MultiSectionViewer/multiSectionViewer'
 import TopicList from './Topic-List/Maintopic/maintopic'
 import Home from './Home/mainHome/mainhome';
+import { useNavigate } from 'react-router-dom'
 
 
 function App() {
   const [cssData, setCssData] = useState([]);
+  // const navigate = useNavigate()
+  
   useEffect(() => {
     getCssQuestions();
   }, [])
@@ -20,6 +23,16 @@ function App() {
       .then(data => setCssData(data.cssFiles))
   }
 
+
+  function onHandleCss(id){
+    if(id ===0){
+      alert("Helo")
+    } else if(id===1){
+      navigate('/topicList')
+    }
+}
+
+
   return (
     <>
       <div className='app'>
@@ -27,8 +40,8 @@ function App() {
           <Routes>
             <Route path="*" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/multiSectionViewer" element={<MultiSectionViewer />} />
-            <Route path="/topicList" element={<TopicList cssData={cssData} />} />
+            <Route path="/multiSectionViewer" element={<MultiSectionViewer  onHandleCss ={onHandleCss} />} />
+            <Route path="/topicList" element={<TopicList cssData={cssData}/>} />
           </Routes>
         </Router>
 

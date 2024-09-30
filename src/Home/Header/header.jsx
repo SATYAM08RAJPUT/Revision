@@ -7,7 +7,7 @@ import ImageCom from '../../Common-Components copy/Image/img';
 import logo from '../../../public/logoImage/logo.jpg'
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({setSearch,serach}) {
     const [theme, setTheme] = useState('dark');
 
     const toggleTheme = () => {
@@ -18,6 +18,7 @@ export default function Header() {
         document.body.className = theme;
     }, [theme]);
 
+    
     return (
         <div className='header'>
             <div className='left-sideheader'>
@@ -27,7 +28,7 @@ export default function Header() {
             <div className='middle-sideheader'>
                 <div className='middle-items'>
                     <IoSearchOutline className='serachicon' />
-                    <Input placeholder={"Searching..."} />
+                    <Input placeholder={"Searching..."} type={"text"} value={serach} onchange={setSearch}/>
                 </div>
             </div>
             <div className='right-sideheader'>

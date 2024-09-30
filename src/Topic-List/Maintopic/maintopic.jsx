@@ -4,17 +4,19 @@ import LeftSideBar from "../leftside/leftside";
 import './maintopic.css'
 import { useState } from "react";
 
-export default function TopicList({cssData }){
-    const [indexNumber,setIndexNumber] =useState(0)
-    const onHandleIndex =(id) => {
-        setIndexNumber(id)
-    }
+export default function TopicList({cssData,filterData,onHandleIndex,indexNumber}){
+    
+    // const [indexNumber,setIndexNumber] =useState(0)
+    // const onHandleIndex =(id) => {
+    //     setIndexNumber(id)
+    // }
+
     return(
         <>
         <Header />
         <div className="section-list">
         <LeftSideBar  onHandleIndex ={onHandleIndex } />
-        <CssQuestions cssData ={cssData} indexNumber={indexNumber} />
+        <CssQuestions cssData ={cssData} indexNumber={indexNumber} filterData={filterData} />
         </div>
         </>
     )

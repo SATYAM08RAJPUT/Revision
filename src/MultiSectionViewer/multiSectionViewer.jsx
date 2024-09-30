@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import './multiSectionViewer.css';
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
-import Header from '../Home/Header/header';
 
-const MultiSectionViewer = () => {
+import Header from '../Home/Header/header';
+import { useNavigate } from 'react-router-dom';
+
+const MultiSectionViewer = ({onHandleCss,viewCss}) => {
+    const navigate = useNavigate();
     const [cheatsheetData, setCheatsheetData] = useState([]);
     console.log(cheatsheetData);
     const cheatSheetFetchData = async () => {
@@ -18,6 +20,19 @@ const MultiSectionViewer = () => {
         cheatSheetFetchData();
     }, []); 
 
+    const handleCss = (id) => {
+        if (id === 0) {
+          alert("Welcome to HTML Page");
+        } else if (id === 1) {
+          navigate('/topicList');
+        } else if (id === 2) {
+          alert("Welcome to JS page");
+        } else{
+            alert("Welcome to React Page")
+        }
+      };
+
+
     return (
         <>
             <Header />
@@ -30,7 +45,7 @@ const MultiSectionViewer = () => {
 
                 <div className='cheatsheet-main-container'>
                     {cheatsheetData.map((cheatsheet) => (
-                        cheatsheet.chatsheets.map((itm) => (
+                        cheatsheet.chatsheets.map((itm,index) => (
                             <div key={itm.id}>
                                 <div className='center'>
                                     <div className='image-circle'>
@@ -38,8 +53,9 @@ const MultiSectionViewer = () => {
                                     </div>
                                     <h2>{itm.title}</h2>
                                     <p>{itm.subtitle}</p>
-                                    <Button variant="contained">
-                                        <Link to={"/topicList"}>{itm.btn}</Link>
+                                    <Button variant="contained" onClick={() => handleCss(index)}>
+                                        {/* <Link to={"/topicList"}>{itm.btn}</Link> */}
+                                        {itm.btn}
                                     </Button>
                                 </div>
                             </div>

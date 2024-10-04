@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './TopicList.css';
+import Header from '../Home/Header/header';
 
 const AllDataFile = () => {
     const { courseId } = useParams();
     const [topicsData, setTopicsData] = useState([]);
-    const [selectContent , setSelectedContent] = useState({}); 
+    const [selectContent , setSelectedContent] = useState(0); 
 
     const navigate = useNavigate();
 
@@ -18,6 +19,8 @@ const AllDataFile = () => {
     useEffect(() => {
         fetchAllTopics();
     }, [courseId]); 
+
+    
 
     const filterData = topicsData.filter(item => item.id == courseId);
 
@@ -36,11 +39,10 @@ const AllDataFile = () => {
     }
 
     return (
-        <div style={{border:'solid', display:'flex', flexDirection:'row'}} className='allData-main-container'>
-            <div style={{border:'solid'}}>
-                {filterData.map((item) => {
-                    // console.log(item);
-                    
+        <div className='allData-main-container'>
+            <Header />
+            <div className='allData-cont-div1'>
+                {filterData.map((item) => {                    
                     const topicKey = Object.keys(item)[0]; 
                     console.log(topicKey);
                     
@@ -53,7 +55,7 @@ const AllDataFile = () => {
                                 {topicData.map((itm) => {
                                     // console.log(itm);
                                     return (
-                                        <li key={itm.id} style={{border:'solid' , padding:'20px', cursor:'pointer'}} onClick={() => handleTopicLi(itm)}>
+                                        <li key={itm.id} onClick={() => handleTopicLi(itm)}>
                                             <h2>{itm.title}</h2>
                                         </li>
                                     )
@@ -64,7 +66,7 @@ const AllDataFile = () => {
                 })}
             </div>
             
-            <div style={{border:'solid' , width:'100%'}}>
+            <div className='allData-cont-div2'>
                 {selectContent.content ? (
                     <div>
                         <h1>{selectContent.title}</h1>

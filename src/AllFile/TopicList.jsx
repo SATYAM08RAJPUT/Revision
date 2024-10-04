@@ -1,50 +1,6 @@
-// import { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-
-// const TopicLists = () => {
-//     const { courseId } = useParams();
-//     // console.log("courseId" ,courseId);
-
-//     const [topicsData, setTopicsData] = useState([]);
-//     // console.log("Topics" ,topicsData);
-
-//     const fetchAllTopics = async () => {
-//         const response = await fetch(`/api/topics`);
-//         console.log(response);
-//         const result = await response.json();
-//         // console.log("result.topic" , result);
-//         setTopicsData(result.topics);
-//     };
- 
-//     useEffect(() => {
-//         fetchAllTopics();
-//     }, [courseId]); 
-
-//     const filterData = topicsData.filter(item => item.id === courseId);
-//     // console.log("filterData", filterData);
-    
-    
-//     return (
-//         <>
-//             {filterData.map((item) =>{
-//                 // console.log(item);
-//                 return (
-//                     <>
-//                         <h1>{item.title}</h1>
-//                         <p>{item.content}</p>
-//                     </>
-//                 )
-//             })}
-//         </>
-//     )
-// };
-
-// export default TopicLists;
-
-
-
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import './TopicList.css';
 
 const AllDataFile = () => {
     const { courseId } = useParams();
@@ -80,7 +36,7 @@ const AllDataFile = () => {
     }
 
     return (
-        <div style={{border:'solid', display:'flex', flexDirection:'row'}}>
+        <div style={{border:'solid', display:'flex', flexDirection:'row'}} className='allData-main-container'>
             <div style={{border:'solid'}}>
                 {filterData.map((item) => {
                     // console.log(item);
@@ -93,7 +49,6 @@ const AllDataFile = () => {
 
                     return (
                         <div key={topicKey}>
-                            <h1>{topicKey}</h1>
                             <ul>
                                 {topicData.map((itm) => {
                                     // console.log(itm);
@@ -119,7 +74,6 @@ const AllDataFile = () => {
             </div>
         </div>
     );
-    
 };
 
 export default AllDataFile;

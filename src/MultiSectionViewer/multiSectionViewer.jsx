@@ -1,35 +1,28 @@
 import { useState, useEffect } from 'react';
 import './multiSectionViewer.css';
 import { Button } from '@mui/material';
-
 import Header from '../Home/Header/header';
 import { useNavigate } from 'react-router-dom';
 
-const MultiSectionViewer = ({onHandleCss,viewCss}) => {
+const CourseList = () => {
     const navigate = useNavigate();
+
     const [cheatsheetData, setCheatsheetData] = useState([]);
     console.log(cheatsheetData);
     const cheatSheetFetchData = async () => {
-        const response = await fetch('/api/multiSections');
+        const response = await fetch('/api/courseLists');
         const result = await response.json();
         console.log(result);
-        setCheatsheetData(result.multiSections);
+        setCheatsheetData(result.courseLists);
     };
 
     useEffect(() => {
         cheatSheetFetchData();
     }, []); 
 
-    const handleCss = (id) => {
-        if (id === 0) {
-          alert("Welcome to HTML Page");
-        } else if (id === 1) {
-          navigate('/topicList');
-        } else if (id === 2) {
-          alert("Welcome to JS page");
-        } else{
-            alert("Welcome to React Page")
-        }
+    const handleCoursebtn = (id) => {
+        console.log(id);
+        navigate(`/course/${id}`);
       };
 
 
@@ -53,8 +46,7 @@ const MultiSectionViewer = ({onHandleCss,viewCss}) => {
                                     </div>
                                     <h2>{itm.title}</h2>
                                     <p>{itm.subtitle}</p>
-                                    <Button variant="contained" onClick={() => handleCss(index)}>
-                                        {/* <Link to={"/topicList"}>{itm.btn}</Link> */}
+                                    <Button variant="contained" onClick={() => handleCoursebtn(itm.id)}>
                                         {itm.btn}
                                     </Button>
                                 </div>
@@ -68,5 +60,5 @@ const MultiSectionViewer = ({onHandleCss,viewCss}) => {
     );
 };
 
-export default MultiSectionViewer;
+export default CourseList;
 

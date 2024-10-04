@@ -1,37 +1,33 @@
-import { useState, useEffect } from 'react';
-import './multiSectionViewer.css';
+import { useEffect } from "react"
+import { useState } from "react"
+import { useParams } from "react-router-dom"
+import Header from "../Home/Header/header"
 import { Button } from '@mui/material';
-
-import Header from '../Home/Header/header';
 import { useNavigate } from 'react-router-dom';
-
-const MultiSectionViewer = ({onHandleCss,viewCss}) => {
+import { Link } from "react-router-dom";
+const AllQuestionFiles = () => {
     const navigate = useNavigate();
-    const [cheatsheetData, setCheatsheetData] = useState([]);
-    console.log(cheatsheetData);
-    const cheatSheetFetchData = async () => {
-        const response = await fetch('/api/multiSections');
-        const result = await response.json();
-        console.log(result);
-        setCheatsheetData(result.multiSections);
-    };
+    console.log(navigate)
+    const { id } = useParams()
+    console.log(id)
+    const [allQuestionData, setAllQuestionData] = useState([])
 
     useEffect(() => {
-        cheatSheetFetchData();
-    }, []); 
+        const fetchData = async () => {
+            const response = await fetch("/api/courseLists")
+            console.log(response)
+            const result = await response.json()
+            console.log(result)
+            setAllQuestionData(result[id])
+        }
+        fetchData()
+    }, [id])
+
+    console.log(allQuestionData)
 
     const handleCss = (id) => {
-        if (id === 0) {
-          alert("Welcome to HTML Page");
-        } else if (id === 1) {
-          navigate('/topicList');
-        } else if (id === 2) {
-          alert("Welcome to JS page");
-        } else{
-            alert("Welcome to React Page")
-        }
-      };
-
+        navigate(`/Course/${id}/topic`);
+    };
 
     return (
         <>
@@ -42,10 +38,9 @@ const MultiSectionViewer = ({onHandleCss,viewCss}) => {
                     <h1>Your <strong>Frontend Cheatsheet</strong> Awaits!</h1>
                     <p>We bring designs to life with code and creativity!</p>
                 </div>
-
                 <div className='cheatsheet-main-container'>
-                    {cheatsheetData.map((cheatsheet) => (
-                        cheatsheet.chatsheets.map((itm,index) => (
+                    {allQuestionData.map((cheatsheet) => (
+                        cheatsheet.chatsheets.map((itm) => (
                             <div key={itm.id}>
                                 <div className='center'>
                                     <div className='image-circle'>
@@ -53,8 +48,7 @@ const MultiSectionViewer = ({onHandleCss,viewCss}) => {
                                     </div>
                                     <h2>{itm.title}</h2>
                                     <p>{itm.subtitle}</p>
-                                    <Button variant="contained" onClick={() => handleCss(index)}>
-                                        {/* <Link to={"/topicList"}>{itm.btn}</Link> */}
+                                    <Button variant="contained" onClick={() => handleCss(itm.id)}>
                                         {itm.btn}
                                     </Button>
                                 </div>
@@ -63,10 +57,8 @@ const MultiSectionViewer = ({onHandleCss,viewCss}) => {
                     ))}
                 </div>
             </div>
-
         </>
     );
-};
+}
 
-export default MultiSectionViewer;
-
+export default AllQuestionFiles

@@ -1,10 +1,10 @@
 import ContentCom from "../Content/content";
 import Header from "../Header/header";
 
-export default function Home(){
+export default function Home({setSearch,serach}){
         return(
             <>
-            <Header />
+            <Header serach={serach} setSearch={setSearch}/>
             <ContentCom />
             </>
         )

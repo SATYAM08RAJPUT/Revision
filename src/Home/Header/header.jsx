@@ -7,12 +7,23 @@ import ImageCom from '../../Common-Components copy/Image/img';
 import logo from '../../../public/logoImage/logo.jpg'
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({setSearch,serach}) {
     const [theme, setTheme] = useState('dark');
 
     const toggleTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        sessionStorage.setItem('theme', newTheme);
     };
+
+    useEffect(() => {
+        const savedTheme = sessionStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        }  else{
+            setTheme(theme)
+        }
+    }, []);
 
     useEffect(() => {
         document.body.className = theme;
@@ -28,13 +39,17 @@ export default function Header() {
             <div className='middle-sideheader'>
                 <div className='middle-items'>
                     <IoSearchOutline className='serachicon' />
-                    <Input placeholder={"Searching..."} />
+                    <Input placeholder={"Searching..."} type={"text"} value={serach} onchange={setSearch}/>
                 </div>
             </div>
             <div className='right-sideheader'>
-                <div><Link to={'/home'}>Learn</Link></div>
+                <div><Link to={"/Course/courseLists"}>Learn to Code</Link></div>
                 <div onClick={toggleTheme} className={`theme ${theme}`}>{theme === 'light' ? '☀️' : '🌙'}</div>
             </div>
         </div>
     );
 }
+
+
+
+

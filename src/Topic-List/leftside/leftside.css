@@ -17,7 +17,6 @@
     width: 17%;
     height: 560px;
     overflow-y: scroll;
-    /* border: solid red; */
     padding: 10px;
     margin-left: 20px;
     border-radius: 16px;
@@ -28,4 +27,7 @@
 }
 body.light  .leftList-Conatiner{
     background-color: rgb(233, 231, 231);
+}
+.newsheet{
+    display: flex;
 }

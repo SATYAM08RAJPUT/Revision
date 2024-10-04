@@ -1,3 +1,4 @@
+import Header from '../../Home/Header/header';
 import './leftside.css'
 import { useState, useEffect } from "react";
 
@@ -16,7 +17,9 @@ export default function LeftSideBar({ onHandleIndex }) {
 
     return (
         <>
+           
             <div className='leftList-Conatiner'>
+            <Header />
                 {leftSideData.map((item) => {
                     console.log(item)
                     return item.sideBarData.map((item, index) => {

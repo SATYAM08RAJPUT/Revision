@@ -17,6 +17,7 @@ function App() {
             <Route path="/course" element={<CourseList />} />
             <Route path="/course/:courseId" element={<AllDataFile />} />
             <Route path="/course/:courseId/topics/:title" element={<AllDataFile />} />
+            <Route path="/course" element={<AllDataFile />} />
           </Routes>
         </Router>
       </div>

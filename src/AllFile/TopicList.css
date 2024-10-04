@@ -46,13 +46,13 @@ li{
     flex-direction: row;
     margin-top: 88px;
     /* border: solid red; */
-    border-top: 2px solid #3e3e3e;
+    border-top: 1px solid #555;
 }
 
 .allData-cont-div1 {
     /* background-color: #f4f4f4;  */
     /* border-right: 2px solid #dcdcdc; */
-    border-right: 2px solid #3e3e3e;
+    border-right: 1px solid #555;
     width: 25%;
     height: 86.60vh; 
     overflow-y: auto;
@@ -107,11 +107,22 @@ li:hover {
     margin-bottom: 15px;
     color: white; 
 }
-
+body.light .allData-cont-div2 h1{ 
+    color: black;
+}
 .allData-cont-div2 div {
     font-size: 16px; 
     /* color: #444;  */
     line-height: 1.5;
     color: white;
 }
-
+body.light .allData-cont-div2 div{ 
+    color: black;
+}
+.all-Data-BackBtn{
+    /* border: solid;/ */
+    display: flex;
+    justify-content: end;
+    font-size: 20px;
+    cursor: pointer;
+}

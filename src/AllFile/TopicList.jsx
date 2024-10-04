@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './TopicList.css';
 import Header from '../Home/Header/header';
+import { IoMdArrowRoundBack } from "react-icons/io";
+
 
 const AllDataFile = () => {
     const { courseId } = useParams();
@@ -38,6 +40,11 @@ const AllDataFile = () => {
         navigate(`/course/${courseId}/topics/${itm.id}`);
     }
 
+    const handleBackClick = () =>{
+        // window.history.back();
+        navigate(`/course`)
+    }
+
     return (
         <div className='allData-main-container'>
             <Header />
@@ -51,6 +58,9 @@ const AllDataFile = () => {
 
                     return (
                         <div key={topicKey}>
+                            <div className='all-Data-BackBtn'>
+                                <IoMdArrowRoundBack onClick={handleBackClick}/>
+                            </div>
                             <ul>
                                 {topicData.map((itm) => {
                                     // console.log(itm);

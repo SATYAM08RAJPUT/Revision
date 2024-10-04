@@ -8,7 +8,7 @@ export default function server({ environment = 'development' } = {}) {
             topic:Model
         },
         seeds(server) {
-            server.create('courseList', {
+            server.create('courseList', { 
                 chatsheets:[
                     { 
                       id:"1",
@@ -210,9 +210,65 @@ export default function server({ environment = 'development' } = {}) {
                             id: 9, 
                             title: 'JavaScript ES6 Features', 
                             content: 'ES6 (ECMAScript 2015) introduced several new features to JavaScript, including let and const for variable declarations, arrow functions, classes, and template literals.' 
+                        },
+                        { 
+                            id: 10, 
+                            title: 'JavaScript Promises', 
+                            content: 'Promises are a way to handle asynchronous operations in JavaScript. They represent a value that may be available now, or in the future, or never.' 
+                        },
+                        { 
+                            id: 11, 
+                            title: 'JavaScript Async/Await', 
+                            content: 'Async/Await is a syntactic sugar built on top of Promises that allows for writing asynchronous code in a more synchronous style.' 
+                        },
+                        { 
+                            id: 12, 
+                            title: 'JavaScript Modules', 
+                            content: 'Modules in JavaScript help in organizing code by allowing you to export and import functions, objects, or primitive values between different files.' 
+                        },
+                        { 
+                            id: 13, 
+                            title: 'JavaScript Error Handling', 
+                            content: 'Error handling in JavaScript can be done using try/catch blocks to manage exceptions and prevent program crashes.' 
+                        },
+                        { 
+                            id: 14, 
+                            title: 'JavaScript Fetch API', 
+                            content: 'The Fetch API provides a modern way to make network requests in JavaScript, allowing you to handle responses as Promises.' 
+                        },
+                        { 
+                            id: 15, 
+                            title: 'JavaScript Closures', 
+                            content: 'Closures are a feature in JavaScript where an inner function has access to the outer function’s variables, creating a private scope.' 
+                        },
+                        { 
+                            id: 16, 
+                            title: 'JavaScript Scope', 
+                            content: 'Scope defines the accessibility of variables in JavaScript. It can be global or local, and understanding it is crucial for avoiding errors.' 
+                        },
+                        { 
+                            id: 17, 
+                            title: 'JavaScript Callbacks', 
+                            content: 'Callbacks are functions that are passed as arguments to other functions, allowing for asynchronous execution and control flow management.' 
+                        },
+                        { 
+                            id: 18, 
+                            title: 'JavaScript Regular Expressions', 
+                            content: 'Regular expressions are patterns used to match character combinations in strings, providing powerful string manipulation capabilities.' 
+                        },
+                        { 
+                            id: 19, 
+                            title: 'JavaScript Object-Oriented Programming', 
+                            content: 'JavaScript supports object-oriented programming through prototypes, allowing for inheritance and encapsulation of data.' 
+                        },
+                        { 
+                            id: 20, 
+                            title: 'JavaScript Memory Management', 
+                            content: 'JavaScript automatically manages memory through garbage collection, freeing up memory that is no longer needed, but understanding it can help optimize performance.' 
                         }
                     ]
-                });     
+                });
+                   
                 server.create('topic', {
                     react: [
                         { 

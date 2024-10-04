@@ -87,11 +87,34 @@ export default function server({ environment = 'development' } = {}) {
                             id: 9, 
                             title: 'HTML Links', 
                             content: 'Links are created using the <a> tag, where the href attribute specifies the URL, connecting to external sites, internal pages, or email addresses.' 
+                        },
+                        { 
+                            id: 10, 
+                            title: 'HTML Meta Tag', 
+                            content: 'HTML meta tags provide metadata about the HTML document, which can include information such as the character set, page description, keywords, author, and viewport settings. They are placed within the <head> section of an HTML document.' 
+                        },
+                        { 
+                            id: 11, 
+                            title: 'HTML List', 
+                            content: 'In HTML, lists are used to group related items together. There are three main types of lists: ordered lists (<ol>), unordered lists (<ul>), and description lists. Here’s a quick overview of each type along with examples..' 
+                        },
+                        { 
+                            id: 12, 
+                            title: 'HTML input Tag', 
+                            content: 'The HTML <input> tag is used to create interactive fields in forms where users can enter data. It supports various types of input, each suited for different kinds of data. Here’s a breakdown of the most common types of the <input> tag along with examples.' 
+                        },
+                        { 
+                            id: 13, 
+                            title: 'Global attribute', 
+                            content: 'HTML global attributes are attributes that can be applied to any HTML element. They provide additional information or functionality and help enhance the behavior of elements. Here are some of the most commonly used global attributes' 
+                        },
+                        { 
+                            id: 14, 
+                            title: 'Template Element', 
+                            content: 'The <template> element holds client-side content that will not be rendered when the page loads but can be instantiated later using JavaScript.' 
                         }
                     ]
                 });
-                
-
                 server.create('topic', {
                     css: [
                         { 
@@ -141,9 +164,6 @@ export default function server({ environment = 'development' } = {}) {
                         }
                     ]
                 });
-                
-            
-
                 server.create('topic', {
                     javascript: [
                         { 
@@ -192,10 +212,7 @@ export default function server({ environment = 'development' } = {}) {
                             content: 'ES6 (ECMAScript 2015) introduced several new features to JavaScript, including let and const for variable declarations, arrow functions, classes, and template literals.' 
                         }
                     ]
-                });
-
-                
-                
+                });     
                 server.create('topic', {
                     react: [
                         { 

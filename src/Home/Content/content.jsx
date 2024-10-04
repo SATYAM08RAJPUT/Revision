@@ -14,7 +14,7 @@ export default function ContentCom() {
                     <h1>Codeccharya</h1>
                     <p>Elevate your web development skills with HTML, CSS, JavaScript, and React!</p>
                     <Button>
-                        <Link to={"Course/courseLists"}>Learn</Link>
+                        <Link to={"/course"}>Learn</Link>
                     </Button>
                 </div>
             </div>

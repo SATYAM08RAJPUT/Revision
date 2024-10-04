@@ -11,8 +11,19 @@ export default function Header({setSearch,serach}) {
     const [theme, setTheme] = useState('dark');
 
     const toggleTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
+        sessionStorage.setItem('theme', newTheme);
     };
+
+    useEffect(() => {
+        const savedTheme = sessionStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        }  else{
+            setTheme(theme)
+        }
+    }, []);
 
     useEffect(() => {
         document.body.className = theme;
@@ -32,12 +43,13 @@ export default function Header({setSearch,serach}) {
                 </div>
             </div>
             <div className='right-sideheader'>
-                <div><Link to={'/courseList'}>Learn to Code</Link></div>
+                <div><Link to={'/course'}>Learn to Code</Link></div>
                 <div onClick={toggleTheme} className={`theme ${theme}`}>{theme === 'light' ? '☀️' : '🌙'}</div>
             </div>
         </div>
     );
 }
+
 
 
 

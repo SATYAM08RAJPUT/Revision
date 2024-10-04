@@ -161,6 +161,16 @@ export default function server({ environment = 'development' } = {}) {
                             id: 9, 
                             title: 'CSS Variables', 
                             content: 'CSS variables, also known as custom properties, allow you to store values that can be reused throughout your stylesheets. They provide better maintainability and flexibility in design.' 
+                        },
+                        { 
+                            id: 10, 
+                            title: 'CSS Responsive', 
+                            content: 'Creating responsive designs with CSS ensures that your web pages look great on a variety of devices and screen sizes. Here are some key concepts and techniques to make your CSS responsive:.' 
+                        },
+                        { 
+                            id: 11, 
+                            title: 'CSS Units', 
+                            content: 'CSS offers a variety of units to define sizes, lengths, and dimensions in web design. Understanding these units is essential for effective layout and responsive design.' 
                         }
                     ]
                 });
@@ -210,6 +220,11 @@ export default function server({ environment = 'development' } = {}) {
                             id: 9, 
                             title: 'JavaScript ES6 Features', 
                             content: 'ES6 (ECMAScript 2015) introduced several new features to JavaScript, including let and const for variable declarations, arrow functions, classes, and template literals.' 
+                        },
+                        { 
+                            id: 9, 
+                            title: 'JavaScript ES6 Features', 
+                            content: 'ES6 (ECMAScript 2015) introduced several new features to JavaScript, including let and const for variable declarations, arrow functions, classes, and template literals.' 
                         }
                     ]
                 });     
@@ -232,7 +247,7 @@ export default function server({ environment = 'development' } = {}) {
                         },
                         { 
                             id: 4, 
-                            title: 'State and Props', 
+                            title: 'State', 
                             content: 'State is a built-in object that allows components to manage dynamic data. Props (short for properties) are used to pass data from parent to child components, making them reusable.' 
                         },
                         { 
@@ -259,6 +274,21 @@ export default function server({ environment = 'development' } = {}) {
                             id: 9, 
                             title: 'Managing Forms in React', 
                             content: 'React provides a way to manage forms by controlling their state through controlled components. This allows you to manage form data and handle user input effectively.' 
+                        },
+                        { 
+                            id: 10, 
+                            title: 'Props', 
+                            content: 'Props (short for properties) in React are a fundamental concept used to pass data and event handlers from one component to another. They enable components to be dynamic and reusable. Here’s a breakdown of how props work in React:' 
+                        },
+                        { 
+                            id: 11, 
+                            title: 'Context API', 
+                            content: 'The Context API in React provides a way to share values (like state or functions) between components without having to pass props down manually at every level. This can be particularly useful for global state management, theming, or any scenario where you want multiple components to access the same data)' 
+                        },
+                        { 
+                            id: 12, 
+                            title: 'Server-Side Rendering (SSR)', 
+                            content: 'Server-Side Rendering (SSR) is a technique used to render web pages on the server rather than in the browser. In a React application, SSR can improve performance, SEO, and the initial loading experience.' 
                         }
                     ]
                 });

@@ -1,55 +1,14 @@
-// import { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-
-// const TopicLists = () => {
-//     const { courseId } = useParams();
-//     // console.log("courseId" ,courseId);
-
-//     const [topicsData, setTopicsData] = useState([]);
-//     // console.log("Topics" ,topicsData);
-
-//     const fetchAllTopics = async () => {
-//         const response = await fetch(`/api/topics`);
-//         console.log(response);
-//         const result = await response.json();
-//         // console.log("result.topic" , result);
-//         setTopicsData(result.topics);
-//     };
- 
-//     useEffect(() => {
-//         fetchAllTopics();
-//     }, [courseId]); 
-
-//     const filterData = topicsData.filter(item => item.id === courseId);
-//     // console.log("filterData", filterData);
-    
-    
-//     return (
-//         <>
-//             {filterData.map((item) =>{
-//                 // console.log(item);
-//                 return (
-//                     <>
-//                         <h1>{item.title}</h1>
-//                         <p>{item.content}</p>
-//                     </>
-//                 )
-//             })}
-//         </>
-//     )
-// };
-
-// export default TopicLists;
-
-
-
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import './TopicList.css';
+import Header from '../Home/Header/header';
+import { IoMdArrowRoundBack } from "react-icons/io";
+
 
 const AllDataFile = () => {
     const { courseId } = useParams();
     const [topicsData, setTopicsData] = useState([]);
-    const [selectContent , setSelectedContent] = useState({}); 
+    const [selectContent , setSelectedContent] = useState(0); 
 
     const navigate = useNavigate();
 
@@ -62,6 +21,8 @@ const AllDataFile = () => {
     useEffect(() => {
         fetchAllTopics();
     }, [courseId]); 
+
+    
 
     const filterData = topicsData.filter(item => item.id == courseId);
 
@@ -79,12 +40,16 @@ const AllDataFile = () => {
         navigate(`/course/${courseId}/topics/${itm.id}`);
     }
 
+    const handleBackClick = () =>{
+        // window.history.back();
+        navigate(`/course`)
+    }
+
     return (
-        <div style={{border:'solid', display:'flex', flexDirection:'row'}}>
-            <div style={{border:'solid'}}>
-                {filterData.map((item) => {
-                    // console.log(item);
-                    
+        <div className='allData-main-container'>
+            <Header />
+            <div className='allData-cont-div1'>
+                {filterData.map((item) => {                    
                     const topicKey = Object.keys(item)[0]; 
                     console.log(topicKey);
                     
@@ -93,12 +58,14 @@ const AllDataFile = () => {
 
                     return (
                         <div key={topicKey}>
-                            <h1>{topicKey}</h1>
+                            <div className='all-Data-BackBtn'>
+                                <IoMdArrowRoundBack onClick={handleBackClick}/>
+                            </div>
                             <ul>
                                 {topicData.map((itm) => {
                                     // console.log(itm);
                                     return (
-                                        <li key={itm.id} style={{border:'solid' , padding:'20px', cursor:'pointer'}} onClick={() => handleTopicLi(itm)}>
+                                        <li key={itm.id} onClick={() => handleTopicLi(itm)}>
                                             <h2>{itm.title}</h2>
                                         </li>
                                     )
@@ -109,7 +76,7 @@ const AllDataFile = () => {
                 })}
             </div>
             
-            <div style={{border:'solid' , width:'100%'}}>
+            <div className='allData-cont-div2'>
                 {selectContent.content ? (
                     <div>
                         <h1>{selectContent.title}</h1>
@@ -119,7 +86,6 @@ const AllDataFile = () => {
             </div>
         </div>
     );
-    
 };
 
 export default AllDataFile;

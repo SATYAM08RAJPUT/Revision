@@ -43,7 +43,7 @@ export default function Header({setSearch,serach}) {
                 </div>
             </div>
             <div className='right-sideheader'>
-                <div><Link to={'/courseList'}>Learn to Code</Link></div>
+                <div><Link to={'/course'}>Learn to Code</Link></div>
                 <div onClick={toggleTheme} className={`theme ${theme}`}>{theme === 'light' ? '☀️' : '🌙'}</div>
             </div>
         </div>

@@ -1,58 +1,50 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import MultiSectionViewer from './MultiSectionViewer/multiSectionViewer'
 import TopicList from './Topic-List/Maintopic/maintopic'
 import Home from './Home/mainHome/mainhome';
+import CssQuestions from './cssQuestions/CssQuestions'
 
 function App() {
   const [cssData, setCssData] = useState([]);
-  const [serach,setSearch] = useState('')
-  const [indexNumber,setIndexNumber] =useState(0)
+  const [serach, setSearch] = useState('')
+  const [indexNumber, setIndexNumber] = useState(0)
 
-  const onHandleIndex =(id) => {
-      setIndexNumber(id)
+  const onHandleIndex = (id) => {
+    setIndexNumber(id)
   }
 
   useEffect(() => {
-    getCssQuestions();
-  }, [])
-
-  const getCssQuestions = () => {
-    fetch("/api/codeccharya")
-      .then(res => res.json())
-      .then(data => setCssData(data.cssFiles))
-  }
+    handleSearch()
+  }, [serach])
 
   const handleSetSearch = (e) => {
-      setSearch(e.target.value)
+    setSearch(e.target.value)
   }
 
-  const filterData = cssData.map((item) => {
-      console.log(item)
-      return item.cssDataFile.map((itm) => {
-          return itm.content.filter((ite) => {
-            return ite.heading.toLowerCase().includes(serach.toLowerCase())
-          })
-      })  
-  })
-  console.log(filterData)
-  console.log(serach)
-  
+  const handleSearch = async () => {
+    try {
+      const response = await fetch(`/api/codeccharya?q=${serach}`);
+      const data = await response.json();
+      setCssData(data.cssFiles);
+    } catch (error) {
+      console.error('Error fetching search results:', error);
+    }
+  };
 
   return (
-    <>
-      <div className='app'>
-        <Router>
-          <Routes>
-            <Route path="*" element={<Home serach={serach} setSearch={handleSetSearch} />} />
-            {/* <Route path="/home" element={<Home serach={serach} setSearch={handleSetSearch} />} /> */}
-            <Route path="/multiSectionViewer" element={<MultiSectionViewer />} />
-            <Route path="/topicList" element={<TopicList cssData={cssData} filterData={filterData} onHandleIndex={onHandleIndex} indexNumber={indexNumber}/>} />
-          </Routes>
-        </Router>
-      </div>
-    </>
+    <div className='app'>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home serach={serach} setSearch={handleSetSearch} />} />
+          <Route path="/courses" element={<MultiSectionViewer />} />
+          <Route path="/courses/:courseId/topicList" element={<TopicList />} />
+          <Route path="/courses/:courseId/topicList/:topicId" element={<CssQuestions />} />
+          {/* <Route path="/topicList/:courseid" element={<TopicList cssData={cssData} onHandleIndex={onHandleIndex} indexNumber={indexNumber} />} /> */}
+        </Routes>
+      </Router>
+    </div>
   )
 }
-export default App
+export default App;

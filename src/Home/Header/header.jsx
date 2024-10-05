@@ -2,7 +2,6 @@ import Input from '../../Common-Components/Input/input';
 import './header.css';
 import { IoSearchOutline } from "react-icons/io5";
 import { useState, useEffect } from 'react';
-import { GoMoon } from "react-icons/go";
 import ImageCom from '../../Common-Components copy/Image/img';
 import logo from '../../../public/logoImage/logo.jpg'
 import { Link } from 'react-router-dom';
@@ -22,7 +21,7 @@ export default function Header({setSearch,serach}) {
     return (
         <div className='header'>
             <div className='left-sideheader'>
-                <Link to={'/home'}> <ImageCom src={logo} /></Link>
+                <Link to={'/'}> <ImageCom src={logo} /></Link>
                
             </div>
             <div className='middle-sideheader'>
@@ -38,6 +37,3 @@ export default function Header({setSearch,serach}) {
         </div>
     );
 }
-
-
-

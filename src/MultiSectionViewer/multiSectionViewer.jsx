@@ -3,35 +3,26 @@ import './multiSectionViewer.css';
 import { Button } from '@mui/material';
 
 import Header from '../Home/Header/header';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const MultiSectionViewer = ({onHandleCss,viewCss}) => {
+const MultiSectionViewer = () => {
     const navigate = useNavigate();
     const [cheatsheetData, setCheatsheetData] = useState([]);
-    console.log(cheatsheetData);
+
     const cheatSheetFetchData = async () => {
-        const response = await fetch('/api/multiSections');
+        const response = await fetch(`/api/course`);
         const result = await response.json();
-        console.log(result);
-        setCheatsheetData(result.multiSections);
+        console.log(result.courses);
+        setCheatsheetData(result.courses);
     };
 
     useEffect(() => {
         cheatSheetFetchData();
-    }, []); 
+    }, []);
 
-    const handleCss = (id) => {
-        if (id === 0) {
-          alert("Welcome to HTML Page");
-        } else if (id === 1) {
-          navigate('/topicList');
-        } else if (id === 2) {
-          alert("Welcome to JS page");
-        } else{
-            alert("Welcome to React Page")
-        }
-      };
-
+    const handleCourseClick = (id) => {
+        navigate(`/courses/${id}/topicList`)
+    }
 
     return (
         <>
@@ -44,22 +35,19 @@ const MultiSectionViewer = ({onHandleCss,viewCss}) => {
                 </div>
 
                 <div className='cheatsheet-main-container'>
-                    {cheatsheetData.map((cheatsheet) => (
-                        cheatsheet.chatsheets.map((itm,index) => (
-                            <div key={itm.id}>
-                                <div className='center'>
-                                    <div className='image-circle'>
-                                        <img src={itm.url} alt={itm.title} />
-                                    </div>
-                                    <h2>{itm.title}</h2>
-                                    <p>{itm.subtitle}</p>
-                                    <Button variant="contained" onClick={() => handleCss(index)}>
-                                        {/* <Link to={"/topicList"}>{itm.btn}</Link> */}
-                                        {itm.btn}
-                                    </Button>
+                    {cheatsheetData.map((item, index) => (
+                        <div key={item.id}>
+                            <div className='center'>
+                                <div className='image-circle'>
+                                    <img src={item.url} alt={item.title} />
                                 </div>
+                                <h2>{item.title}</h2>
+                                <p>{item.subtitle}</p>
+                                <Button variant="contained" onClick={() => handleCourseClick(item.id)}>
+                                    {item.btn}
+                                </Button>
                             </div>
-                        ))
+                        </div>
                     ))}
                 </div>
             </div>

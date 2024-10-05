@@ -343,7 +343,7 @@ export default function server({ environment = 'development' } = {}) {
                         }
                     ]
                 });
-
+                
 
         },
 

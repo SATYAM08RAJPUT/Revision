@@ -6,7 +6,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 
 const AllDataFile = () => {
-    const { courseId } = useParams(0);
+    const { courseId } = useParams();
     console.log("CourseList",courseId)
     const [topicsData, setTopicsData] = useState([]);
     const [selectContent , setSelectedContent] = useState(null); 

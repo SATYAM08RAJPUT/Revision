@@ -19,7 +19,7 @@ function App() {
             <Route path="/course/:courseId" element={<AllDataFile />} />
             <Route path="/course/:courseId/topics/:title" element={<AllDataFile />} />
             <Route path="/course" element={<AllDataFile />} />
-            <Route path='/course/:searchId/topics/:id' element={<SearchModal />}/>
+            <Route path='/course/:courseId/topics/:id' element={<SearchModal />}/>
           </Routes>
           <SearchModal />
         </Router>

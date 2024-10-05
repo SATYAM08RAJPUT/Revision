@@ -3,7 +3,6 @@ import { Modal } from '@mui/material';
 import './search.css'; 
 import { useNavigate, useParams } from 'react-router-dom';
 
-
 const SearchModal = ({ open, onClose }) => {
     const searchId = useParams()
     const navigate = useNavigate()

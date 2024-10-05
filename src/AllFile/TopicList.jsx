@@ -7,6 +7,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 const AllDataFile = () => {
     const { courseId } = useParams();
+    console.log("CourseList",courseId)
     const [topicsData, setTopicsData] = useState([]);
     const [selectContent , setSelectedContent] = useState(0); 
 
@@ -22,26 +23,16 @@ const AllDataFile = () => {
         fetchAllTopics();
     }, [courseId]); 
 
-    
-
     const filterData = topicsData.filter(item => item.id == courseId);
 
-    const handleTopicLi = (itm) =>{
+    const handleTopicLi = (itm) => {
         console.log(itm);
         setSelectedContent(itm)
-        const encodedString = `${itm.title}`;
-        console.log(encodedString);
-        const decodedString = decodeURIComponent(encodedString);
-        console.log(decodedString);
-        // const pageUrl = `/courseLists/${id}/topics/${decodeURIComponent(itm.title)}`
-        // console.log(pageUrl);
-        
-        // navigate(pageUrl);
         navigate(`/course/${courseId}/topics/${itm.id}`);
     }
 
+    console.log(selectContent)
     const handleBackClick = () =>{
-        // window.history.back();
         navigate(`/course`)
     }
 
@@ -77,12 +68,10 @@ const AllDataFile = () => {
             </div>
             
             <div className='allData-cont-div2'>
-                {selectContent.content ? (
                     <div>
                         <h1>{selectContent.title}</h1>
                         <div>{selectContent.content}</div>
                     </div>
-                ) : ""}
             </div>
         </div>
     );

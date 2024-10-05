@@ -6,17 +6,29 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 
 const AllDataFile = () => {
-    const { courseId } = useParams();
+    const { courseId } = useParams(0);
     console.log("CourseList",courseId)
     const [topicsData, setTopicsData] = useState([]);
-    const [selectContent , setSelectedContent] = useState(0); 
+    const [selectContent , setSelectedContent] = useState(null); 
 
     const navigate = useNavigate();
 
     const fetchAllTopics = async () => {
         const response = await fetch(`/api/topics`);
         const result = await response.json();
+        console.log(result)
         setTopicsData(result.topics);
+         
+        console.log(result.topics)
+        const initialTopic = result.topics.find(topic => topic.id == courseId);
+        console.log(initialTopic)
+
+        if (initialTopic) {
+            const initialTopicKey = Object.keys(initialTopic)[0];
+            console.log(initialTopicKey)
+            setSelectedContent(initialTopic[initialTopicKey][0]);
+        }
+        
     };
  
     useEffect(() => {
@@ -68,10 +80,12 @@ const AllDataFile = () => {
             </div>
             
             <div className='allData-cont-div2'>
+            {selectContent && (
                     <div>
                         <h1>{selectContent.title}</h1>
                         <div>{selectContent.content}</div>
                     </div>
+                )}
             </div>
         </div>
     );

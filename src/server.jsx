@@ -357,12 +357,10 @@ export default function server({ environment = 'development' } = {}) {
                 console.log(schema);
                 return schema.courseLists.all()
             })
-            // this.get('/topics', (schema) => {
-            //     console.log(schema);
-            //     return schema.topics.all()
-            // })
+        
             this.get("/topics", (schema) => {
                 // console.log("topics" , schema)
+                
                 return schema.topics.all()
             })
         }

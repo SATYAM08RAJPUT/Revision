@@ -27,12 +27,12 @@ const AllDataFile = () => {
     const filterData = topicsData.filter(item => item.id == courseId);
 
     const handleTopicLi = (itm) =>{
-        console.log(itm);
+        // console.log(itm);
         setSelectedContent(itm)
         const encodedString = `${itm.title}`;
-        console.log(encodedString);
+        // console.log(encodedString);
         const decodedString = decodeURIComponent(encodedString);
-        console.log(decodedString);
+        // console.log(decodedString);
         // const pageUrl = `/courseLists/${id}/topics/${decodeURIComponent(itm.title)}`
         // console.log(pageUrl);
         
@@ -51,7 +51,7 @@ const AllDataFile = () => {
             <div className='allData-cont-div1'>
                 {filterData.map((item) => {                    
                     const topicKey = Object.keys(item)[0]; 
-                    console.log(topicKey);
+                    // console.log(topicKey);
                     
                     const topicData = item[topicKey]; 
                     console.log(topicData);

@@ -5,6 +5,7 @@ import Home from './Home/mainHome/mainhome';
 import CourseList from './MultiSectionViewer/multiSectionViewer'
 // import TopicLists from './AllFile/TopicList';
 import AllDataFile from './AllFile/TopicList';
+import SearchModal from './Search/search';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/course/:courseId" element={<AllDataFile />} />
             <Route path="/course/:courseId/topics/:title" element={<AllDataFile />} />
             <Route path="/course" element={<AllDataFile />} />
+            <Route path='/course/:searchId/topics/:id' element={<SearchModal />}/>
           </Routes>
         </Router>
       </div>

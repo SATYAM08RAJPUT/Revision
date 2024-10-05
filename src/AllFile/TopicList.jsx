@@ -53,7 +53,7 @@ const AllDataFile = () => {
             <div className='allData-cont-div1'>
                 {filterData.map((item) => {                    
                     const topicKey = Object.keys(item)[0]; 
-                    console.log(topicKey);
+                    // console.log(topicKey);
                     
                     const topicData = item[topicKey]; 
                     console.log(topicData);

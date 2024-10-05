@@ -41,10 +41,11 @@ body.light .header {
     border-radius: 30px; 
     background-color: rgb(235, 236, 240);
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #3e3e3e;
     /* border: solid ; */
+    gap: 5px;
 }
 
 .middle-sideheader input {
@@ -56,6 +57,15 @@ body.light .header {
     background-color: #3e3e3e;
     transition: border 0.3s;
     color: white;
+    /* margin-left: 10px; */
+
+}
+.searchicon{
+    /* border: solid; */
+    width: 26px;
+    height: 3vh;
+    color: hsl(24.6 95% 53.1%);
+    margin-left: 5px;
 }
 body.light .middle-items {
     background-color: rgb(233, 231, 231);
@@ -102,3 +112,5 @@ body.dark {
     background-color: #222222;
     color: white;
 }
+
+

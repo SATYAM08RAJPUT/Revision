@@ -1,0 +1,68 @@
+.MuiModal-root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(1px);
+}
+
+
+.modal-content {
+    background-color: #222222;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 700px; 
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    height: 90vh;
+}
+
+
+.modal-content h2 {
+    margin: 0 0 15px;
+    /* color: black;/ */
+}
+
+
+button {
+    background-color:hsl(24.6 95% 53.1%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: hsl(24.6 95% 53.1%);
+}
+
+.headerSearchInp-div {
+    width: 100%;
+    padding: 7px;
+    border-radius: 30px; 
+    background-color: #3e3e3e;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 5px;
+}
+
+.headerSearchInput {
+    border: 1px solid transparent; 
+    width: 100%; 
+    padding: 10px; 
+    border-radius: 30px; 
+    font-size: 15px;
+    background-color: #3e3e3e;
+    color: white;
+    transition: border 0.3s, box-shadow 0.3s; 
+}
+
+.headerSearchInput:focus {
+    border: 1px solid hsl(24.6, 95%, 53.1%);
+    outline: none; 
+}
+

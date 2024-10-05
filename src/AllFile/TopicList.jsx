@@ -20,15 +20,14 @@ const AllDataFile = () => {
         setTopicsData(result.topics);
          
         console.log(result.topics)
+
         const initialTopic = result.topics.find(topic => topic.id == courseId);
         console.log(initialTopic)
-
         if (initialTopic) {
             const initialTopicKey = Object.keys(initialTopic)[0];
             console.log(initialTopicKey)
             setSelectedContent(initialTopic[initialTopicKey][0]);
         }
-        
     };
  
     useEffect(() => {

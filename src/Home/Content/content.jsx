@@ -13,7 +13,11 @@ export default function ContentCom() {
                     <h1>Codeccharya</h1>
                     <p>Elevate your web development skills with HTML, CSS, JavaScript, and React!</p>
                     <Button>
+<<<<<<< HEAD
                         <Link to={"/courses"}>Learn</Link>
+=======
+                        <Link to={"/course"}>Learn</Link>
+>>>>>>> c42f6c2a2ce6de781ba14a815315458f925d52e4
                     </Button>
                 </div>
             </div>

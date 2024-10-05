@@ -13,7 +13,7 @@
     padding: 35px;
     /* border: solid; */
 }
-body.light .sidebar-main-container {
+body.light .sidebar-main-container { 
     background-color: white;
     color: black;
 }

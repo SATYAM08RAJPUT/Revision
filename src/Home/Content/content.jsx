@@ -9,11 +9,12 @@ export default function ContentCom() {
         <>
             <div className="content">
                 <div className="content-items">
+                    {/* <ImageCom src={"https://avatars.githubusercontent.com/u/1905708?s=200&v=4"} /> */}
                     <ImageCom src={logo} />
                     <h1>Codeccharya</h1>
                     <p>Elevate your web development skills with HTML, CSS, JavaScript, and React!</p>
                     <Button>
-                        <Link to={"/courses"}>Learn</Link>
+                        <Link to={"/course"}>Learn</Link>
                     </Button>
                 </div>
             </div>

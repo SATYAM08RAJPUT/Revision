@@ -5,38 +5,25 @@ import { useParams } from 'react-router-dom';
 
 const SearchModal = ({ open, onClose }) => {
     const [input, setInput] = useState("");
-    const { id } = useParams();
     const [data, setData] = useState([]);
 
-    const fetchData = async () => {
-        const response = await fetch(`/api/topics`);
-        const result = await response.json();
-        console.log(result);
-        setData(result.topics);
-    };
-
     useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(`/api/topics`);
+            const result = await response.json();
+            setData(result.topics);
+        };
+
         fetchData();
-    }, []); 
+    }, []);     
 
-    // const search = () =>{
-    //     const filteredSearchData = data.filter(item => {
-    //         console.log(item)
-    //         const databykey = Object.keys(item)[0]
-    //         console.log(databykey);
-    //         const allData = item[databykey]
-    //         console.log(allData);
-    //     })
-    //     console.log(filteredSearchData);
-    // }
-    
-    // search();
-
-
-    const handleSearch = (value) => {
-        console.log(value);
-        setInput(value);
-    };
+    const filteredData = data.flatMap(item => {
+        console.log(item); 
+        const key = Object.keys(item)[0];
+        return item[key].filter(subItem =>
+            subItem.title.toLowerCase().includes(input.toLowerCase())
+        );
+    });
 
     return (
         <Modal open={open} onClose={onClose}>
@@ -47,11 +34,19 @@ const SearchModal = ({ open, onClose }) => {
                         className='headerSearchInput'
                         placeholder="Search docs"
                         value={input}
-                        onChange={(e) => handleSearch(e.target.value)}
+                        onChange={(e) => setInput(e.target.value)}
                     />
                 </div>
-               
-               
+
+                <div className="search-results">
+                    {input && filteredData.map((item, id) => (
+                            <div key={id} className="search-item">
+                                {item.title}
+                            </div>
+                        ))}
+                        
+                </div>
+
                 <button onClick={onClose}>Close</button>
             </div>
         </Modal>

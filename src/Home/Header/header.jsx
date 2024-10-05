@@ -47,12 +47,4 @@ export default function Header({setSearch,serach}) {
             </div>
         </div>
     );
-<<<<<<< HEAD
 }
-=======
-}
-
-
-
-
->>>>>>> c42f6c2a2ce6de781ba14a815315458f925d52e4

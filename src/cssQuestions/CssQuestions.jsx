@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './cssQuestions.css';
+// import './cssQuestions.css';
 import { useParams } from "react-router-dom";
 
 const CssQuestions = ({filteredTopic}) => {

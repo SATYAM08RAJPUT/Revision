@@ -19,18 +19,18 @@ const SearchModal = ({ open, onClose }) => {
         fetchData();
     }, []); 
 
-    const search = () =>{
-        const filteredSearchData = data.filter(item => {
-            console.log(item)
-            const databykey = Object.keys(item)[0]
-            console.log(databykey);
-            const allData = item[databykey]
-            console.log(allData);
-        })
-        console.log(filteredSearchData);
-    }
+    // const search = () =>{
+    //     const filteredSearchData = data.filter(item => {
+    //         console.log(item)
+    //         const databykey = Object.keys(item)[0]
+    //         console.log(databykey);
+    //         const allData = item[databykey]
+    //         console.log(allData);
+    //     })
+    //     console.log(filteredSearchData);
+    // }
     
-    search();
+    // search();
 
 
     const handleSearch = (value) => {

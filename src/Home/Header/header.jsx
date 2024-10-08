@@ -40,17 +40,18 @@ export default function Header() {
     return (
         <div className='header'>
             <div className='left-sideheader'>
-                <Link to={'/'}> <ImageCom src={logo2} /></Link>
-                {/* <Link to={'/'}> <img src="https://code.google.com/images/developers.png" alt="" /></Link> */}
+                {/* <Link to={'/'}> <ImageCom src={logo2} /></Link> */}
+                <Link to={'/'}> <img src="https://code.google.com/images/developers.png" alt="" /></Link>
             </div>
             <div className='middle-sideheader'>
-                <div className='middle-items'>
+                <div className='middle-items' onClick={handleInput} >
                     <IoSearchOutline className='searchicon' />
-                    <input 
+                    {/* <input 
                         placeholder={"Searching..."} 
-                        type={"text"} 
+                        // type={"text"} 
                         onClick={handleInput} 
-                    />
+                    /> */}
+                    <p>Search</p>
                 </div>
             </div>
             <div className='right-sideheader'>

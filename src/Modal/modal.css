@@ -23,6 +23,9 @@
     width: 50%;
     overflow-y: scroll;
 }
+.modal-content::-webkit-scrollbar{
+    display: none;
+}
 
 .modal-close {
     cursor: pointer;
@@ -31,4 +34,28 @@
     border: none;
     font-size: 1rem;
     color: #007bff;
+}
+.search-search-div{
+    /* border: solid; */
+    width: 100%;
+    padding: 7px;
+    border-radius: 30px; 
+    background-color: rgb(235, 236, 240);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* background-color: #3e3e3e; */
+    /* border: solid ; */
+    gap: 5px;
+    cursor: pointer;
+}
+.search-search-div input{
+    width: 92%;
+    padding: 6px; 
+    border-radius: 5px; 
+    font-size: 15px;
+    border: 1px solid transparent; 
+    /* background-color: #3e3e3e; */
+    transition: border 0.3s;
+    /* color: white; */
 }

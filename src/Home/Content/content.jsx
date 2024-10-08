@@ -10,8 +10,8 @@ export default function ContentCom() {
             <div className="content">
                 <div className="content-items">
                     {/* <ImageCom src={"https://avatars.githubusercontent.com/u/1905708?s=200&v=4"} /> */}
-                    <ImageCom src={logo2} />
-                    {/* <img src="https://code.google.com/images/developers.png" alt="" /> */}
+                    {/* <ImageCom src={logo2} /> */}
+                    <img src="https://code.google.com/images/developers.png" alt="" />
                     <h1>Codeccharya</h1>
                     <p>Elevate your web development skills with HTML, CSS, JavaScript, and React!</p>
                     <Button>

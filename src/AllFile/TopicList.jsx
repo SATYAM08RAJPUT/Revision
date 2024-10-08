@@ -7,7 +7,9 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 const AllDataFile = () => {
     const { courseId , topicId} = useParams();
-    console.log("CourseList",courseId)
+    // console.log(courseId ,topicId);
+    
+    
     const [topicsData, setTopicsData] = useState([]);
     const [selectContent , setSelectedContent] = useState(null); 
     const [loading , setLoading] = useState(true);
@@ -17,34 +19,39 @@ const AllDataFile = () => {
     const fetchAllTopics = async () => {
         const response = await fetch(`/api/topics`);
         const result = await response.json(); 
-        console.log(result)
         setTopicsData(result.topics);
         setLoading(false);
          
-        console.log(result.topics)
-        const initialTopic = result.topics.find(topic => topic.id == courseId);
-        console.log(initialTopic)
+        // const initialTopic = result.topics.find(topic => topic.id == courseId);
+        
+        // if (initialTopic) {
+        //     const initialTopicKey = Object.keys(initialTopic)[0];
+        //     // console.log(initialTopicKey)
+        //     setSelectedContent(initialTopic[initialTopicKey][0]);
+        // }
 
-        if (initialTopic) {
-            const initialTopicKey = Object.keys(initialTopic)[0];
-            console.log(initialTopicKey)
-            setSelectedContent(initialTopic[initialTopicKey][0]);
+        if (!selectContent) {
+            const initialTopic = result.topics.find(topic => topic.id == courseId);
+            if (initialTopic) {
+                const initialTopicKey = Object.keys(initialTopic)[0];
+                setSelectedContent(initialTopic[initialTopicKey][0]);
+            }
         }
     };
  
     useEffect(() => {
         fetchAllTopics();
-    }, [courseId]); 
+    }, [courseId , topicId]); 
+    
 
     const filterData = topicsData.filter(item => item.id == courseId);
 
     const handleTopicLi = (itm) => {
-        console.log(itm);
-        setSelectedContent(itm)
+        console.log("topic" ,itm);
         navigate(`/course/${courseId}/topics/${itm.id}`);
+        setSelectedContent(itm)
     }
 
-    console.log(selectContent)
     const handleBackClick = () =>{
         navigate(`/course`)
     }
@@ -61,10 +68,8 @@ const AllDataFile = () => {
             <div className='allData-cont-div1'>
                 {filterData.map((item) => {                    
                     const topicKey = Object.keys(item)[0]; 
-                    // console.log(topicKey);
                     
                     const topicData = item[topicKey]; 
-                    console.log(topicData);
 
                     return (
                         <div key={topicKey}>
@@ -72,11 +77,10 @@ const AllDataFile = () => {
                                 <IoMdArrowRoundBack onClick={handleBackClick}/>
                             </div>
                             <ul>
-                                {topicData.map((itm) => {
-                                    // console.log(itm);
+                                {topicData.map((topic) => {
                                     return (
-                                        <li key={itm.id} onClick={() => handleTopicLi(itm)}>
-                                            <h2>{itm.title}</h2>
+                                        <li key={topic.id} onClick={() => handleTopicLi(topic)}>
+                                            <h2>{topic.title}</h2>
                                         </li>
                                     )
                                 })}

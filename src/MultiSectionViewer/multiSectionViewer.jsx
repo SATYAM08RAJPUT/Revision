@@ -8,12 +8,12 @@ const CourseList = () => {
     const navigate = useNavigate();
 
     const [cheatsheetData, setCheatsheetData] = useState([]);
-    console.log(cheatsheetData);
+    // console.log(cheatsheetData);
     const cheatSheetFetchData = async () => {
         const response = await fetch('/api/courseLists');
         const result = await response.json();
-        console.log(result);
-        setCheatsheetData(result.courseLists);
+        // console.log(result);
+        setCheatsheetData(result.courseLists); 
     };
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const CourseList = () => {
     }, []); 
 
     const handleCoursebtn = (id) => {
-        console.log(id);
+        // console.log(id);
         navigate(`/course/${id}`);
       };
 

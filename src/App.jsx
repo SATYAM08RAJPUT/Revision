@@ -1,11 +1,8 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import TopicList from './Topic-List/Maintopic/maintopic'
 import Home from './Home/mainHome/mainhome';
 import CourseList from './MultiSectionViewer/multiSectionViewer'
-// import TopicLists from './AllFile/TopicList';
 import AllDataFile from './AllFile/TopicList';
-import SearchModal from './Search/search';
 
 function App() {
 
@@ -18,9 +15,7 @@ function App() {
             <Route path="/course" element={<CourseList />} />
             <Route path="/course/:courseId" element={<AllDataFile />} />
             <Route path="/course/:courseId/topics/:title" element={<AllDataFile />} />
-            <Route path="/course" element={<AllDataFile />} />
           </Routes>
-          <SearchModal />
         </Router>
       </div>
     </>

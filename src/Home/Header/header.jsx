@@ -3,13 +3,14 @@ import { IoSearchOutline } from "react-icons/io5";
 import { useState, useEffect } from 'react';
 import { GoMoon } from "react-icons/go";
 import ImageCom from '../../Common-Components copy/Image/img';
-import logo from '../../../public/logoImage/logo.jpg';
+// import logo2 from '../../../public/logoImage/logo2.png';
+import logo2 from '../../../public/logoImage/logo2.png'
 import { Link } from 'react-router-dom';
-import SearchModal from '../../Search/search';
+import Search from '../../Search/search';
 
-export default function Header({ setSearch, search }) {
-    const [theme, setTheme] = useState('dark');
-    const [isModalOpen, setIsModalOpen] = useState(false);
+export default function Header() {
+    const [theme, setTheme] = useState('light');
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -29,17 +30,18 @@ export default function Header({ setSearch, search }) {
     }, [theme]);
 
     const handleInput = () => {
-        setIsModalOpen(true); 
+        setIsModalVisible(true); 
     };
 
     const closeModal = () => {
-        setIsModalOpen(false); 
+        setIsModalVisible(false);
     };
 
     return (
         <div className='header'>
             <div className='left-sideheader'>
-                <Link to={'/'}> <ImageCom src={logo} /></Link>
+                <Link to={'/'}> <ImageCom src={logo2} /></Link>
+                {/* <Link to={'/'}> <img src="https://code.google.com/images/developers.png" alt="" /></Link> */}
             </div>
             <div className='middle-sideheader'>
                 <div className='middle-items'>
@@ -58,7 +60,7 @@ export default function Header({ setSearch, search }) {
                 </div>
             </div>
 
-            <SearchModal open={isModalOpen} onClose={closeModal} />
+            <Search isOpen={isModalVisible} onClose={closeModal} />
         </div>
     );
 }

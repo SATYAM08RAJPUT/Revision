@@ -6,18 +6,20 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 
 const AllDataFile = () => {
-    const { courseId } = useParams(0);
+    const { courseId , topicId} = useParams();
     console.log("CourseList",courseId)
     const [topicsData, setTopicsData] = useState([]);
     const [selectContent , setSelectedContent] = useState(null); 
+    const [loading , setLoading] = useState(true);
 
     const navigate = useNavigate();
 
     const fetchAllTopics = async () => {
         const response = await fetch(`/api/topics`);
-        const result = await response.json();
+        const result = await response.json(); 
         console.log(result)
         setTopicsData(result.topics);
+        setLoading(false);
          
         console.log(result.topics)
         const initialTopic = result.topics.find(topic => topic.id == courseId);
@@ -28,7 +30,6 @@ const AllDataFile = () => {
             console.log(initialTopicKey)
             setSelectedContent(initialTopic[initialTopicKey][0]);
         }
-        
     };
  
     useEffect(() => {
@@ -46,6 +47,12 @@ const AllDataFile = () => {
     console.log(selectContent)
     const handleBackClick = () =>{
         navigate(`/course`)
+    }
+
+    if(loading){
+        return <div style={{display:'flex' , alignItems:'center' , justifyContent:'center' , fontSize:'30px'}}>
+            <i className="fa fa-spinner fa-spin" style={{fontSize:"74px"}}></i>
+        </div>
     }
 
     return (

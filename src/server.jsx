@@ -41,7 +41,7 @@ export default function server({ environment = 'development' } = {}) {
                   ]
             }),
 
-             server.create('topic', {
+                server.create('topic', {
                     html: [
                         { 
                             id: 1, 
@@ -350,15 +350,88 @@ export default function server({ environment = 'development' } = {}) {
         routes() {
             this.namespace = "api"
             this.get('/courseLists', (schema) => {
-                console.log(schema);
+                // console.log(schema);
                 return schema.courseLists.all()
             })
             this.get("/topics", (schema) => {
-                // console.log("topics" , schema)
                 return schema.topics.all()
             })
+
+            // this.get("/topics/search", (schema , request) => {                
+            //     // console.log("request" ,request);
+            //     let searchTerm = request.queryParams.term || "";
+
+            //     const topics = schema.topics.all()
+            //     console.log(topics);
+            
+
+            //     const filterData = topics.models.map((item) =>{
+            //         // console.log("itemsssssssssss" , item);
+                    
+            //         const modelAttrs = item.attrs;
+            //         console.log("Model Attributes:",modelAttrs);
+            //         const modelKeys = Object.keys(modelAttrs)[0];
+            //         // console.log(modelKeys);
+            //         const modelData = modelAttrs[modelKeys];
+            //         console.log(modelData);
+
+            //     })
+
+            //     return filterData;
+            // })
+            
+            this.get("/topics/search", (schema, request) => {
+                // console.log("request" ,request);
+                                
+                let searchTerm = request.queryParams.term.toLowerCase();
+                const topicsModels = schema.topics.all().models;
+                // console.log(topicsModels);
+
+                // const topicAttrs = topicsModels.map((item) =>{
+                    const topicAttrs = topicsModels.flatMap((item) =>{
+                    // console.log(item.attrs);
+                    const topicKey = Object.keys(item.attrs)[0];
+                    // console.log(topicKey);
+                    const topicData = item.attrs[topicKey];
+                    // console.log(topicData);
+                    return topicData.filter(itemFilter => 
+                        itemFilter.title.toLowerCase().includes(searchTerm)
+                    );
+                })
+                
+                // console.log(searchTerm)
+                // console.log(topicAttrs);
+                return topicAttrs;
+            });
         }
-        
+
     })
     return server;
 }
+
+  // const topicsModel = topics.models;
+                // console.log("topicsModel" ,topicsModel);
+
+                // const mapInTopicModels = topicsModel.forEach((topic) =>{
+                //     const modelAttrs = topic.attrs;
+                //     const modelkey = Object.keys(modelAttrs)[0];
+                //     console.log(modelkey);
+                //     const modelData = modelAttrs[modelkey]
+                //     console.log(modelData);
+                                    
+                // })
+
+// const filteredTitles = topics.models.filter(item =>{
+                //     // console.log(item);
+                //     return item.attrs;
+                // })
+                // .filter(attrs => {
+                //     // console.log("attrs" ,attrs);
+                //     attrs.
+                //     // return Object.values(attrs).find(arry =>
+                //     //     arry.filter(itm =>
+                //     //         // console.log(itm.title)
+                //     //         itm.title && itm.title.toLowerCase().includes(searchTerm.toLowerCase())
+                //     //     )   
+                //     // )
+                // })

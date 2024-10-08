@@ -51,13 +51,14 @@ export default function Header({ setSearch, search }) {
                     />
                 </div>
             </div>
+            <SearchModal handleClose={closeModal} handleOpen={isModalOpen} />
+            
             <div className='right-sideheader'>
                 <div><Link to={'/course'}>Learn to Code</Link></div>
                 <div onClick={toggleTheme} className={`theme ${theme}`}>
                     {theme === 'light' ? '☀️' : '🌙'}
                 </div>
             </div>
-            <SearchModal open={isModalOpen} onClose={closeModal} />
         </div>
     );
 }

@@ -47,14 +47,18 @@ const AllDataFile = () => {
         navigate(`/course`)
     }
 
+    if(!topicsData || !selectContent){
+        return <h2>Loading</h2>
+    }
+
+
     return (
         <div className='allData-main-container'>
             <Header />
             <div className='allData-cont-div1'>
                 {filterData.map((item) => {                    
                     const topicKey = Object.keys(item)[0]; 
-                    // console.log(topicKey);
-                    
+                    // console.log(topicKey)
                     const topicData = item[topicKey]; 
                     console.log(topicData);
 
@@ -79,7 +83,7 @@ const AllDataFile = () => {
             </div>
             
             <div className='allData-cont-div2'>
-            {selectContent && (
+            {selectContent.content && (
                     <div>
                         <h1>{selectContent.title}</h1>
                         <div>{selectContent.content}</div>

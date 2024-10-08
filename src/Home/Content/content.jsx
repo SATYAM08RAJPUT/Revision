@@ -4,6 +4,7 @@ import Button from '../../Common-Components copy/Button/button'
 import ImageCom from '../../Common-Components copy/Image/img'
 import './content.css'
 import logo from '../../../public/logoImage/logo.jpg'
+
 export default function ContentCom() {
     return (
         <>

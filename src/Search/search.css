@@ -104,3 +104,11 @@ body.light .headerSearchInp-div input{
     flex-direction: row;
     gap: 70vh;
 }
+.modal{
+    float: left;
+}
+.modal input{
+    width: 520px;
+    padding: 6px;
+    border-radius: 5px;
+}

@@ -6,24 +6,21 @@ import { useNavigate } from 'react-router-dom';
 
 const CourseList = () => {
     const navigate = useNavigate();
-
     const [cheatsheetData, setCheatsheetData] = useState([]);
-    console.log(cheatsheetData);
+
     const cheatSheetFetchData = async () => {
         const response = await fetch('/api/courseLists');
         const result = await response.json();
-        console.log(result);
         setCheatsheetData(result.courseLists);
     };
 
     useEffect(() => {
         cheatSheetFetchData();
-    }, []); 
+    }, []);
 
     const handleCoursebtn = (id) => {
-        console.log(id);
         navigate(`/course/${id}`);
-      };
+    };
 
 
     return (
@@ -38,7 +35,7 @@ const CourseList = () => {
 
                 <div className='cheatsheet-main-container'>
                     {cheatsheetData.map((cheatsheet) => (
-                        cheatsheet.chatsheets.map((itm,index) => (
+                        cheatsheet.chatsheets.map((itm, index) => (
                             <div key={itm.id}>
                                 <div className='center'>
                                     <div className='image-circle'>

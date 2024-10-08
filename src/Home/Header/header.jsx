@@ -1,7 +1,6 @@
 import './header.css';
 import { IoSearchOutline } from "react-icons/io5";
 import { useState, useEffect } from 'react';
-import { GoMoon } from "react-icons/go";
 import ImageCom from '../../Common-Components copy/Image/img';
 import logo from '../../../public/logoImage/logo.jpg';
 import { Link } from 'react-router-dom';

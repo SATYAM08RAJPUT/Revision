@@ -54,6 +54,8 @@ export default function Header() {
                     <p>Search</p>
                 </div>
             </div>
+            <SearchModal handleClose={closeModal} handleOpen={isModalOpen} />
+            
             <div className='right-sideheader'>
                 <div><Link to={'/course'}>Learn to Code</Link></div>
                 <div onClick={toggleTheme} className={`theme ${theme}`}>

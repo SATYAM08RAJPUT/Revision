@@ -16,7 +16,7 @@
     text-align: center;
     position: relative;
     height: 90vh;
-    /* border: solid white; */
+
 }
 body.light .modal-content{
     background-color: white;
@@ -78,7 +78,6 @@ body.light .headerSearchInp-div input{
 
 .headerSearchInput:focus {
     border: 1px solid hsl(24.6, 95%, 53.1%);
-    /* box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); */
     outline: none; 
 }
 
@@ -90,7 +89,6 @@ body.light .headerSearchInp-div input{
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    /* justify-content: start; */
     align-items: start;
 }
 .search-results::-webkit-scrollbar{
@@ -100,10 +98,17 @@ body.light .headerSearchInp-div input{
     padding: 10px;
     margin-top: 10px;
     cursor: pointer;
-    /* width: 100%; */
     font-size: 15px;
     font-family: "Raleway", sans-serif;
     display: flex;
     flex-direction: row;
     gap: 70vh;
+}
+.modal{
+    float: left;
+}
+.modal input{
+    width: 520px;
+    padding: 6px;
+    border-radius: 5px;
 }

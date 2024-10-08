@@ -49,13 +49,15 @@ export default function server({ environment = 'development' } = {}) {
                     html: [
                         { 
                             id: 1, 
+                            courseId:1,
                             title: 'Introduction to HTML', 
                             content: 'HTML stands for Hypertext Markup Language. It is the standard markup language for creating web pages. HTML elements are the building blocks of HTML pages, defining the structure and layout of a web document.',
                             courseId:'1',
                             topicId:'1' 
                         },
                         { 
-                            id: 2, 
+                            id:2, 
+                            courseId:1,
                             title: 'What is HTML?', 
                             content: 'HTML is a markup language used to create the structure of web pages. It allows web developers to format text, images, links, and other content on the internet using tags.' ,
                             courseId:'1',
@@ -63,6 +65,7 @@ export default function server({ environment = 'development' } = {}) {
                         },
                         { 
                             id: 3, 
+                            courseId:1,
                             title: 'HTML Tags', 
                             content: 'Tags are the fundamental building blocks of HTML, consisting of an opening tag and a closing tag, such as <p> for a paragraph. Some tags can be self-closing, like <img />.' ,
                             courseId:'1',
@@ -70,6 +73,7 @@ export default function server({ environment = 'development' } = {}) {
                         },
                         { 
                             id: 4, 
+                            courseId:1,
                             title: 'HTML Attributes', 
                             content: 'Attributes provide additional information about HTML elements and are specified in the opening tag in name/value pairs, like <a href="https://www.example.com">.',
                             courseId:'1',
@@ -77,6 +81,7 @@ export default function server({ environment = 'development' } = {}) {
                         },
                         { 
                             id: 5, 
+                            courseId:1,
                             title: 'HTML Elements', 
                             content: 'An HTML element is a complete structure that consists of an opening tag, content, and a closing tag, e.g., <h1>This is a Heading</h1>.' ,
                              courseId:'1',
@@ -141,14 +146,16 @@ export default function server({ environment = 'development' } = {}) {
                 server.create('topic', {
                     css: [
                         { 
-                            id: 1, 
+                            id: 1,
+                            courseId:2, 
                             title: 'Introduction to CSS', 
                             content: 'CSS, or Cascading Style Sheets, is a stylesheet language used to describe the presentation of a document written in HTML. It controls the layout and appearance of web pages, making them visually appealing.' ,
                             courseId:'2',
                             topicId:'2' 
                         },
                         { 
-                            id: 2, 
+                            id: 2,
+                            courseId:2,  
                             title: 'CSS Syntax', 
                             content: 'CSS syntax consists of selectors and declaration blocks. A selector points to the HTML element you want to style, and the declaration block contains property-value pairs, such as `color: blue;`.' ,
                             courseId:'2',
@@ -156,6 +163,7 @@ export default function server({ environment = 'development' } = {}) {
                         },
                         { 
                             id: 3, 
+                            courseId:2, 
                             title: 'CSS Selectors', 
                             content: 'Selectors are patterns used to select the elements you want to style. Common types include class selectors (e.g., `.className`), ID selectors (e.g., `#idName`), and element selectors (e.g., `div`).',
                             courseId:'2',
@@ -163,6 +171,7 @@ export default function server({ environment = 'development' } = {}) {
                         },
                         { 
                             id: 4, 
+                            courseId:2, 
                             title: 'CSS Box Model', 
                             content: 'The CSS box model describes how elements are structured and how they occupy space. It includes margins, borders, padding, and the content area, affecting layout and spacing.',
                             courseId:'2',
@@ -170,6 +179,7 @@ export default function server({ environment = 'development' } = {}) {
                         },
                         { 
                             id: 5, 
+                            courseId:2, 
                             title: 'CSS Flexbox', 
                             content: 'Flexbox is a layout model that provides an efficient way to arrange items in a one-dimensional space along a row or column. It allows for responsive design by adjusting item sizes and spacing.' ,
                             courseId:'2',
@@ -211,6 +221,7 @@ export default function server({ environment = 'development' } = {}) {
                     javascript: [
                         { 
                             id: 1, 
+                            courseId:3, 
                             title: 'Introduction to JavaScript', 
                             content: 'JavaScript is a versatile programming language primarily used for web development. It enables interactive web pages and is an essential part of web applications, alongside HTML and CSS.' ,
                             courseId:'3',
@@ -218,6 +229,7 @@ export default function server({ environment = 'development' } = {}) {
                         },
                         { 
                             id: 2, 
+                            courseId:3, 
                             title: 'JavaScript Variables', 
                             content: 'Variables in JavaScript are containers for storing data values. You can declare variables using var, let, or const, each with different scopes and mutability.' ,
                             courseId:'3',
@@ -225,6 +237,7 @@ export default function server({ environment = 'development' } = {}) {
                         },
                         { 
                             id: 3, 
+                            courseId:3, 
                             title: 'JavaScript Data Types', 
                             content: 'JavaScript has several data types, including primitive types like strings, numbers, booleans, null, and undefined, as well as complex types like objects and arrays.,' ,
                             courseId:'3',
@@ -232,13 +245,15 @@ export default function server({ environment = 'development' } = {}) {
                         },
                         { 
                             id: 4, 
+                            courseId:3, 
                             title: 'JavaScript Functions', 
                             content: 'Functions are reusable blocks of code in JavaScript. They can be declared using function declarations, expressions, or arrow functions, and can take parameters and return values.' ,
                             courseId:'3',
                             topicId:'3' 
                         },
                         { 
-                            id: 5, 
+                            id: 5,
+                            courseId:3,  
                             title: 'JavaScript Conditionals', 
                             content: 'Conditional statements in JavaScript, such as if, else if, and switch, allow you to execute different blocks of code based on specific conditions.' ,
                             courseId:'3',
@@ -394,8 +409,6 @@ export default function server({ environment = 'development' } = {}) {
                         }
                     ]
                 });
-                
-
         },
 
         routes() {

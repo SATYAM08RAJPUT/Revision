@@ -91,7 +91,7 @@ const AllDataFile = () => {
             </div>
             
             <div className='allData-cont-div2'>
-            {selectContent && (
+            {selectContent.content && (
                     <div>
                         <h1>{selectContent.title}</h1>
                         <div>{selectContent.content}</div>

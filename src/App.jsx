@@ -6,13 +6,16 @@ import AllDataFile from './AllFile/TopicList';
 import Search from './Search/search';
 
 function App() {
+  // const courseId = useParams()
+  // console.log(courseId)
+  // const navigate =useNavigate()
 
   return (
     <>
       <div className='app'>
         <Router>
           <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<Home />} />
             <Route path="/course" element={<CourseList />} />
             <Route path="/course/:courseId" element={<AllDataFile />} />
             <Route path="/course/:courseId/topics/:topicId" element={<AllDataFile />} />
@@ -22,6 +25,7 @@ function App() {
       </div>
     </>
   )
+
 }
 export default App
 

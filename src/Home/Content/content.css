@@ -65,3 +65,8 @@ body.light .content-items button{
     border-radius: 50px;
     border: solid orange 1px;
 }
+.content-icon{
+    /* border: solid; */
+    font-size: 10vh;
+    color: hsl(24.6 95% 53.1%);
+}

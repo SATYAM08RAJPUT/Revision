@@ -4,6 +4,8 @@ import Button from '../../Common-Components copy/Button/button'
 import ImageCom from '../../Common-Components copy/Image/img'
 import './content.css'
 import logo2 from '../../../public/logoImage/logo2.png'
+import { BsLightningCharge } from "react-icons/bs";
+
 export default function ContentCom() {
     return (
         <>
@@ -11,7 +13,8 @@ export default function ContentCom() {
                 <div className="content-items">
                     {/* <ImageCom src={"https://avatars.githubusercontent.com/u/1905708?s=200&v=4"} /> */}
                     {/* <ImageCom src={logo2} /> */}
-                    <img src="https://code.google.com/images/developers.png" alt="" />
+                    {/* <img src="https://code.google.com/images/developers.png" alt="" /> */}
+                    <BsLightningCharge className='content-icon'/>
                     <h1>Codeccharya</h1>
                     <p>Elevate your web development skills with HTML, CSS, JavaScript, and React!</p>
                     <Button>

@@ -114,5 +114,8 @@ body.dark {
     background-color: #222222;
     color: white;
 }
-
-
+.header-icon{
+    /* border: solid; */
+    font-size: 5vh;
+    color: hsl(24.6 95% 53.1%);
+}

@@ -6,9 +6,6 @@ import AllDataFile from './AllFile/TopicList';
 import Search from './Search/search';
 
 function App() {
-  // const courseId = useParams()
-  // console.log(courseId)
-  // const navigate =useNavigate()
 
   return (
     <>
@@ -18,7 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/course" element={<CourseList />} />
             <Route path="/course/:courseId" element={<AllDataFile />} />
-            <Route path="/course/:courseId/topics/:topicId" element={<AllDataFile />} />
+            <Route path="/course/:courseId/topics/:topicId" element={<AllDataFile />} /> 
             <Route path="/search" element={<Search />} />
           </Routes>
         </Router>

@@ -2,16 +2,17 @@ import { useState, useEffect } from 'react';
 import './multiSectionViewer.css';
 import { Button } from '@mui/material';
 import Header from '../Home/Header/header';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const CourseList = () => {
     const navigate = useNavigate();
+    // const  courseId  = useParams();
 
     const [cheatsheetData, setCheatsheetData] = useState([]);
     // console.log(cheatsheetData);
     const cheatSheetFetchData = async () => {
         const response = await fetch('/api/courseLists');
-        const result = await response.json();
+        const result = await response.json(); 
         // console.log(result);
         setCheatsheetData(result.courseLists); 
     };
@@ -20,15 +21,16 @@ const CourseList = () => {
         cheatSheetFetchData();
     }, []); 
 
-    const handleCoursebtn = (id) => {
+    const handleCoursebtn = (id , itm) => {
         // console.log(id);
-        navigate(`/course/${id}`);
+        navigate(`/course/${id}`); 
+        // navigate(`/course/${itm.id}/topics/${itm.id}`);
       };
 
 
     return (
         <>
-            <Header />
+            <Header  />
             <div className='sidebar-main-container'>
                 <div className='sidebar-right-div1'>
                     <h1 className='right1'>Hiii !</h1>

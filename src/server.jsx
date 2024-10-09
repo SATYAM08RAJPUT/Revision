@@ -52,40 +52,35 @@ export default function server({ environment = 'development' } = {}) {
                             courseId:1,
                             title: 'Introduction to HTML', 
                             content: 'HTML stands for Hypertext Markup Language. It is the standard markup language for creating web pages. HTML elements are the building blocks of HTML pages, defining the structure and layout of a web document.',
-                            courseId:'1',
-                            topicId:'1' 
+                            courseId:'1' 
                         },
                         { 
                             id:2, 
                             courseId:1,
                             title: 'What is HTML?', 
                             content: 'HTML is a markup language used to create the structure of web pages. It allows web developers to format text, images, links, and other content on the internet using tags.' ,
-                            courseId:'1',
-                            topicId:'1' 
+                            courseId:'1' 
                         },
                         { 
                             id: 3, 
                             courseId:1,
                             title: 'HTML Tags', 
                             content: 'Tags are the fundamental building blocks of HTML, consisting of an opening tag and a closing tag, such as <p> for a paragraph. Some tags can be self-closing, like <img />.' ,
-                            courseId:'1',
-                            topicId:'1' 
+                            courseId:'1' 
                         },
                         { 
                             id: 4, 
                             courseId:1,
                             title: 'HTML Attributes', 
                             content: 'Attributes provide additional information about HTML elements and are specified in the opening tag in name/value pairs, like <a href="https://www.example.com">.',
-                            courseId:'1',
-                            topicId:'1'  
+                            courseId:'1'  
                         },
                         { 
                             id: 5, 
                             courseId:1,
                             title: 'HTML Elements', 
                             content: 'An HTML element is a complete structure that consists of an opening tag, content, and a closing tag, e.g., <h1>This is a Heading</h1>.' ,
-                             courseId:'1',
-                             topicId:'1' 
+                            courseId:'1'
                         },
                         // { 
                         //     id: 6, 
@@ -150,40 +145,35 @@ export default function server({ environment = 'development' } = {}) {
                             courseId:2, 
                             title: 'Introduction to CSS', 
                             content: 'CSS, or Cascading Style Sheets, is a stylesheet language used to describe the presentation of a document written in HTML. It controls the layout and appearance of web pages, making them visually appealing.' ,
-                            courseId:'2',
-                            topicId:'2' 
+                            courseId:'2'
                         },
                         { 
                             id: 2,
                             courseId:2,  
                             title: 'CSS Syntax', 
                             content: 'CSS syntax consists of selectors and declaration blocks. A selector points to the HTML element you want to style, and the declaration block contains property-value pairs, such as `color: blue;`.' ,
-                            courseId:'2',
-                            topicId:'2' 
+                            courseId:'2'
                         },
                         { 
                             id: 3, 
                             courseId:2, 
                             title: 'CSS Selectors', 
                             content: 'Selectors are patterns used to select the elements you want to style. Common types include class selectors (e.g., `.className`), ID selectors (e.g., `#idName`), and element selectors (e.g., `div`).',
-                            courseId:'2',
-                            topicId:'2'  
+                            courseId:'2' 
                         },
                         { 
                             id: 4, 
                             courseId:2, 
                             title: 'CSS Box Model', 
                             content: 'The CSS box model describes how elements are structured and how they occupy space. It includes margins, borders, padding, and the content area, affecting layout and spacing.',
-                            courseId:'2',
-                            topicId:'2'  
+                            courseId:'2' 
                         },
                         { 
                             id: 5, 
                             courseId:2, 
                             title: 'CSS Flexbox', 
                             content: 'Flexbox is a layout model that provides an efficient way to arrange items in a one-dimensional space along a row or column. It allows for responsive design by adjusting item sizes and spacing.' ,
-                            courseId:'2',
-                            topicId:'2' 
+                            courseId:'2'
                         },
                         // { 
                         //     id: 6, 
@@ -224,40 +214,35 @@ export default function server({ environment = 'development' } = {}) {
                             courseId:3, 
                             title: 'Introduction to JavaScript', 
                             content: 'JavaScript is a versatile programming language primarily used for web development. It enables interactive web pages and is an essential part of web applications, alongside HTML and CSS.' ,
-                            courseId:'3',
-                            topicId:'3' 
+                            courseId:'3'
                         },
                         { 
                             id: 2, 
                             courseId:3, 
                             title: 'JavaScript Variables', 
                             content: 'Variables in JavaScript are containers for storing data values. You can declare variables using var, let, or const, each with different scopes and mutability.' ,
-                            courseId:'3',
-                            topicId:'3' 
+                            courseId:'3'
                         },
                         { 
                             id: 3, 
                             courseId:3, 
                             title: 'JavaScript Data Types', 
                             content: 'JavaScript has several data types, including primitive types like strings, numbers, booleans, null, and undefined, as well as complex types like objects and arrays.,' ,
-                            courseId:'3',
-                            topicId:'3' 
+                            courseId:'3'
                         },
                         { 
                             id: 4, 
                             courseId:3, 
                             title: 'JavaScript Functions', 
                             content: 'Functions are reusable blocks of code in JavaScript. They can be declared using function declarations, expressions, or arrow functions, and can take parameters and return values.' ,
-                            courseId:'3',
-                            topicId:'3' 
+                            courseId:'3'
                         },
                         { 
                             id: 5,
                             courseId:3,  
                             title: 'JavaScript Conditionals', 
                             content: 'Conditional statements in JavaScript, such as if, else if, and switch, allow you to execute different blocks of code based on specific conditions.' ,
-                            courseId:'3',
-                            topicId:'3' 
+                            courseId:'3'
                         },
                         // { 
                         //     id: 6, 
@@ -343,70 +328,66 @@ export default function server({ environment = 'development' } = {}) {
                             id: 1, 
                             title: 'Introduction to React', 
                             content: 'React is a popular JavaScript library for building user interfaces, developed by Facebook. It allows developers to create large web applications that can change data without reloading the page.',
-                            courseId:'4',
-                            topicId:'4'  
+                            courseId:'4'  
                         },
                         { 
                             id: 2, 
                             title: 'React Components', 
                             content: 'Components are the building blocks of a React application. They encapsulate the rendering logic and can be reused throughout the app. Components can be functional or class-based.',
-                            courseId:'4',
-                            topicId:'4' 
+                            courseId:'4' 
                         },
                         { 
                             id: 3, 
                             title: 'JSX in React', 
                             content: 'JSX (JavaScript XML) is a syntax extension that allows you to write HTML-like code within JavaScript. It makes it easier to create React elements and components.' ,
-                            courseId:'4',
-                            topicId:'4'
+                            courseId:'4'
                         },
                         { 
                             id: 4, 
                             title: 'State', 
                             content: 'State is a built-in object that allows components to manage dynamic data. Props (short for properties) are used to pass data from parent to child components, making them reusable.' ,
-                            courseId:'4',
-                            topicId:'4'
+                            courseId:'4'
                         },
-                        { 
-                            id: 5, 
-                            title: 'React Hooks', 
-                            content: 'Hooks are functions that let you use state and other React features in functional components. Common hooks include useState and useEffect, which simplify state management and side effects.' 
-                        },
-                        { 
-                            id: 6, 
-                            title: 'Handling Events in React', 
-                            content: 'React allows you to handle events in a declarative way. You can add event handlers directly to elements using camelCase syntax, like onClick for click events.' 
-                        },
-                        { 
-                            id: 7, 
-                            title: 'React Router', 
-                            content: 'React Router is a library for routing in React applications. It enables navigation between different components and allows for dynamic routing based on the URL.' 
-                        },
-                        { 
-                            id: 8, 
-                            title: 'React Lifecycle Methods', 
-                            content: 'Lifecycle methods are special methods in class components that allow you to run code at specific points in a components life, such as when it mounts, updates, or unmounts.' 
-                        },
-                        { 
-                            id: 9, 
-                            title: 'Managing Forms in React', 
-                            content: 'React provides a way to manage forms by controlling their state through controlled components. This allows you to manage form data and handle user input effectively.' 
-                        },
-                        { 
-                            id: 10, 
-                            title: 'Props', 
-                            content: 'Props (short for properties) in React are a fundamental concept used to pass data and event handlers from one component to another. They enable components to be dynamic and reusable. Here’s a breakdown of how props work in React:' 
-                        },
-                        { 
-                            id: 11, 
-                            title: 'Context API', 
-                            content: 'The Context API in React provides a way to share values (like state or functions) between components without having to pass props down manually at every level. This can be particularly useful for global state management, theming, or any scenario where you want multiple components to access the same data)' 
-                        },
-                        { 
-                            id: 12, 
-                            title: 'Server-Side Rendering (SSR)', 
-                            content: 'Server-Side Rendering (SSR) is a technique used to render web pages on the server rather than in the browser. In a React application, SSR can improve performance, SEO, and the initial loading experience.' 
-                        }
+                        // { 
+                        //     id: 5, 
+                        //     title: 'React Hooks', 
+                        //     content: 'Hooks are functions that let you use state and other React features in functional components. Common hooks include useState and useEffect, which simplify state management and side effects.' 
+                        // },
+                        // { 
+                        //     id: 6, 
+                        //     title: 'Handling Events in React', 
+                        //     content: 'React allows you to handle events in a declarative way. You can add event handlers directly to elements using camelCase syntax, like onClick for click events.' 
+                        // },
+                        // { 
+                        //     id: 7, 
+                        //     title: 'React Router', 
+                        //     content: 'React Router is a library for routing in React applications. It enables navigation between different components and allows for dynamic routing based on the URL.' 
+                        // },
+                        // { 
+                        //     id: 8, 
+                        //     title: 'React Lifecycle Methods', 
+                        //     content: 'Lifecycle methods are special methods in class components that allow you to run code at specific points in a components life, such as when it mounts, updates, or unmounts.' 
+                        // },
+                        // { 
+                        //     id: 9, 
+                        //     title: 'Managing Forms in React', 
+                        //     content: 'React provides a way to manage forms by controlling their state through controlled components. This allows you to manage form data and handle user input effectively.' 
+                        // },
+                        // { 
+                        //     id: 10, 
+                        //     title: 'Props', 
+                        //     content: 'Props (short for properties) in React are a fundamental concept used to pass data and event handlers from one component to another. They enable components to be dynamic and reusable. Here’s a breakdown of how props work in React:' 
+                        // },
+                        // { 
+                        //     id: 11, 
+                        //     title: 'Context API', 
+                        //     content: 'The Context API in React provides a way to share values (like state or functions) between components without having to pass props down manually at every level. This can be particularly useful for global state management, theming, or any scenario where you want multiple components to access the same data)' 
+                        // },
+                        // { 
+                        //     id: 12, 
+                        //     title: 'Server-Side Rendering (SSR)', 
+                        //     content: 'Server-Side Rendering (SSR) is a technique used to render web pages on the server rather than in the browser. In a React application, SSR can improve performance, SEO, and the initial loading experience.' 
+                        // }
                     ]
                 });
         },

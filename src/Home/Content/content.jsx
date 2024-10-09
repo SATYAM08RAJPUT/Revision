@@ -16,7 +16,7 @@ export default function ContentCom() {
                     {/* <img src="https://code.google.com/images/developers.png" alt="" /> */}
                     <BsLightningCharge className='content-icon'/>
                     <h1>Codeccharya</h1>
-                    <p>Elevate your web development skills with HTML, CSS, JavaScript, and React!</p>
+                    <div className='content-p-div'><p>Elevate your skills with HTML, CSS, JavaScript, and React !</p></div>
                     <Button>
                         <Link to={"/course"}>Learn</Link>
                     </Button>

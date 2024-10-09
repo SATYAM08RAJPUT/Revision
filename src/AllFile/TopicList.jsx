@@ -5,12 +5,11 @@ import Header from '../Home/Header/header';
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 
-const AllDataFile = () => {
-    const { courseId } = useParams();
+const AllDataFile = ({}) => {
+    const { courseId,topicId} = useParams();
     console.log("CourseList",courseId)
     const [topicsData, setTopicsData] = useState([]);
     const [selectContent , setSelectedContent] = useState(null); 
-
     const navigate = useNavigate();
 
     const fetchAllTopics = async () => {
@@ -18,28 +17,27 @@ const AllDataFile = () => {
         const result = await response.json();
         console.log(result)
         setTopicsData(result.topics);
-         
         console.log(result.topics)
 
         const initialTopic = result.topics.find(topic => topic.id == courseId);
-        console.log(initialTopic)
+   
         if (initialTopic) {
             const initialTopicKey = Object.keys(initialTopic)[0];
             console.log(initialTopicKey)
-            setSelectedContent(initialTopic[initialTopicKey][0]);
+            setSelectedContent(initialTopic[initialTopicKey][(parseInt(topicId)-1) || 0]);
         }
     };
  
     useEffect(() => {
         fetchAllTopics();
-    }, [courseId]); 
+    }, [courseId,topicId]); 
 
     const filterData = topicsData.filter(item => item.id == courseId);
 
     const handleTopicLi = (itm) => {
         console.log(itm);
+        navigate(`/course/${itm.courseId}/topics/${itm.id}`);
         setSelectedContent(itm)
-        navigate(`/course/${courseId}/topics/${itm.id}`);
     }
 
     console.log(selectContent)

@@ -4,9 +4,13 @@ import './search.css';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const SearchModal = ({ handleClose, handleOpen }) => {
-    const [input, setInput] = useState('')
-    const [inputData, setInputData] = useState("")
+    // const {courseId} = useParams()
 
+    // console.log("in search Components:-----------",courseId)
+    const [input, setInput] = useState('')
+    const [inputData, setInputData] = useState([]) 
+
+    
     const navigate = useNavigate()
     const handleSearch = (e) => {
         setInput(e.target.value)

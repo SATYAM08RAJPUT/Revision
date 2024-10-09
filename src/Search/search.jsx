@@ -1,42 +1,64 @@
-import { useEffect, useState } from 'react';
-import Modal from '../Modal/modal';
-import './search.css';
+import React, { useEffect, useState } from 'react';
+import ModalJi from "../Modal/modal";
 import { useNavigate, useParams } from 'react-router-dom';
+import '../Modal/modal.css'
+import { IoSearchOutline } from "react-icons/io5";
 
-const SearchModal = ({ handleClose, handleOpen }) => {
-    const [input, setInput] = useState('')
-    const [inputData, setInputData] = useState("")
-    const navigate = useNavigate()
-    
-    const handleSearch = async(e) => {
-        setInput(e.target.value)
-        const response = await fetch(`/api/search?q=${input}`)
-        const result = await response.json()
-        // console.log(result,"///////////////////")
-        setInputData(result)
-    }
+const Search = ({ isOpen, onClose }) => {
+    const [input, setInput] = useState('');
+    const [searchedData, setSearchData] = useState([]);
+    const navigate = useNavigate();
 
-    const handleFindIt = (item) => {
-        navigate(`/course/${item.courseId}/topics/${item.id}`)
-    }
+    useEffect(() => {
+        const fetchApi = async () => {
+            if (input) {
+                try {
+                    const response = await fetch(`/api/topics/search?term=${input}`);
+                    const result = await response.json();
+                    console.log(result)
+                    setSearchData(result);
+                } catch (error) {
+                    setSearchData([])
+                }
+            } else {
+                setSearchData([]);
+            }
+        };
+
+        const umMountTimeOut = setTimeout(() => {
+            fetchApi();
+        }, 300);
+
+        return () => {
+            clearTimeout(umMountTimeOut);
+        };
+    }, [input]);
+
+    const handleInput = (e) => {
+        setInput(e.target.value);
+    };
+
+    const handleFilterDataTopic = (topic) => {
+        navigate(`/topics/${topic.id}`);
+    };
 
     return (
-        <>
-            <Modal isclose={handleClose} isopen={handleOpen}>
-                <div className='modal'>
-                    <div>
-                        <input type='search' placeholder='Search a Topic......' onChange={handleSearch} value={input} />
-                    </div>
-                    {/* {inputData && inputData.map((item) => {
-                        // console.log(item)
-                        return <>
-                            <h2 onClick={() => handleFindIt(item)}>{item.title}</h2>
-                        </>
-                    })} */}
-                </div>
-            </Modal>
-        </>
-    )
+        <ModalJi isOpen={isOpen} onClose={onClose}>
+            <div className='search-search-div'>
+                <IoSearchOutline className='searchicon' />
+                <input type='search' value={input} onChange={handleInput} />
+            </div>
+            <ul>
+                {searchedData.map((topic, index) => (
+
+                    <li key={topic.id} onClick={() => handleFilterDataTopic(topic)}>
+                        {topic.title}
+                    </li>
+
+                ))}
+            </ul>
+        </ModalJi>
+    );
 };
 
-export default SearchModal;
+export default Search;

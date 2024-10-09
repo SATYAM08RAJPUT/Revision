@@ -7,11 +7,10 @@ import { useNavigate } from 'react-router-dom';
 const CourseList = () => {
     const navigate = useNavigate();
     const [cheatsheetData, setCheatsheetData] = useState([]);
-
     const cheatSheetFetchData = async () => {
         const response = await fetch('/api/courseLists');
         const result = await response.json();
-        setCheatsheetData(result.courseLists);
+        setCheatsheetData(result.courseLists); 
     };
 
     useEffect(() => {
@@ -21,8 +20,7 @@ const CourseList = () => {
     const handleCoursebtn = (id) => {
         navigate(`/course/${id}`);
     };
-
-
+    
     return (
         <>
             <Header />

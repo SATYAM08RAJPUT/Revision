@@ -64,13 +64,27 @@ body.dark .modal-content {
     gap: 5px;
     cursor: pointer;
 }
+body.dark .search-search-div{
+    /* border: solid black; */
+    background-color: #3e3e3e;
+}
 .search-search-div input{
     width: 90%;
     padding: 6px; 
     border-radius: 5px; 
     font-size: 15px;
-    border: 1px solid transparent; 
+    border: 1px solid none; 
     transition: border 0.3s;
+    background-color: rgb(235, 236, 240);
+}
+.search-search-div input:focus {
+    outline: none;
+    border: none;
+}
+body.dark .search-search-div input{
+    border: none;
+    background-color: #3e3e3e;
+    color: white;
 }
 @media screen and (max-width: 400px){
     .modal-content{

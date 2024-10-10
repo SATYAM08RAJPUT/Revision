@@ -16,18 +16,20 @@
     gap: 13px;
 } 
 .content-items h1{
+    /* border: solid; */
     font-size: 50px;
     opacity: 0.8;
-    color: hsl(25, 96%, 54%);
+    color: hsl(24.6 95% 53.1%);;
+    /* color: #F05D0E; */
 }
 .content-items p{
-    font-size: 20px; 
+    font-size: 21px; 
     width: 100%;
     font-weight: 600;
 }
 a{
     text-decoration: none;
-    color: orange;
+    color: hsl(24.6 95% 53.1%);
 }
 .content-items img{
     width: 100px; 
@@ -43,9 +45,7 @@ a{
 body.dark .content-items a {
     color: white;
 }
-body.light .content-items a {
-    color: white;
-}
+
 
 body.dark .content-items button{
     width:150px;
@@ -55,8 +55,15 @@ body.dark .content-items button{
     color: white;
     border-radius: 50px;
     border: solid orange 1px;
-    background-color: hsl(24.6 95% 53.1%)
+    background-color: hsl(24.6 95% 53.1%);
+    transition: all 1s ease;
 }
+body.dark .content-items button:hover {
+    background: hsl(24.6, 95%, 53.1%);
+    color: black; 
+    transform: translateY(-5px);
+}
+
 body.light .content-items button{
     width:150px;
     padding: 8px;
@@ -66,10 +73,24 @@ body.light .content-items button{
     border-radius: 50px;
     border: solid orange 1px;
     background-color: hsl(24.6 95% 53.1%);
+    transition: all 1s ease;
+}
+body.light .content-items a {
+    color: white;
+    /* color: hsl(24.6, 95%, 53.1%); */
+}
+body.light .content-items button:hover {
+    background: hsl(25, 72%, 58%);
+    color: white; 
+    transform: translateY(-5px);
+}
+
+body.light .content-items a:hover {
+    color: white;
 }
 
 .content-icon{
-    font-size: 10vh;
+    font-size: 13vh;
     color: hsl(24.6 95% 53.1%);
 }
 

@@ -74,7 +74,7 @@ const AllDataFile = () => {
                                          console.log(isSelected)
                                     return (
                                         <li key={topic.id} onClick={() => handleTopicLi(topic)} className={isSelected ? "selectedTopic" : ""}>
-                                            <h2>{topic.title}</h2>
+                                            <p>{topic.title}</p>
                                         </li>
                                     )
                                 })}

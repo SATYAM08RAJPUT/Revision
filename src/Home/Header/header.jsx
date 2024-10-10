@@ -3,7 +3,6 @@ import { IoSearchOutline } from "react-icons/io5";
 import { useState, useEffect } from 'react';
 import { GoMoon } from "react-icons/go";
 import ImageCom from '../../Common-Components copy/Image/img';
-// import logo2 from '../../../public/logoImage/logo2.png';
 import logo2 from '../../../public/logoImage/logo2.png'
 import { Link, useNavigate } from 'react-router-dom';
 import Search from '../../Search/search';
@@ -13,7 +12,6 @@ import { FaBars } from "react-icons/fa";
 export default function Header() {
     const [theme, setTheme] = useState('light');
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const navigate = useNavigate();
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -39,11 +37,6 @@ export default function Header() {
     const closeModal = () => {
         setIsModalVisible(false);
     };
-    
-    // const handleSearchSelect = (topic) =>{
-    //     console.log('header Wala Data' , topic);
-    //     navigate(`/course/${topic.courseId}/topics/${topic.id}`);
-    // }
 
     return (
         <div className='header'>

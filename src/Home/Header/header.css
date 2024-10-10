@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-evenly; 
     font-family: sans-serif;
     width: 100%;
     align-items: center;
@@ -10,6 +10,7 @@
     height: 88px;
     padding: 30px;
     z-index: 1;
+    /* border: solid; */
 } 
 
 body.light .header {
@@ -117,7 +118,7 @@ body.dark {
         align-items: center;
     }
     .middle-items {
-        width: 124%;
+        width: 117%;
         padding: 10px;
         border-radius: 30px; 
         background-color: rgb(235, 236, 240);
@@ -127,12 +128,13 @@ body.dark {
         background-color: #3e3e3e;
         gap: 5px;
         cursor: pointer;
+        font-size: 15px;
     }
     
     .middle-sideheader input {
         width: 10%;
         font-size: 15px;
-        border: 1px solid transparent; 
+        border: solid; 
         background-color: #3e3e3e;
         transition: border 0.3s;
         color: white;

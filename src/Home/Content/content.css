@@ -26,6 +26,7 @@
     font-size: 21px; 
     width: 100%;
     font-weight: 600;
+    color: #363738;
 }
 a{
     text-decoration: none;
@@ -106,23 +107,25 @@ button {
         flex-direction: column;
         align-items: center;
         gap: 13px;
+        /* border: solid; */
+        margin-top: 70px;
     } 
     .content-items h1{
-        font-size: 35px;
+        font-size: 45px;
         opacity: 0.8;
         color: hsl(25, 96%, 54%);
     }
     .content-items p{
-        font-size: 18px; 
+        font-size: 15px; 
         width: 100%;
         opacity: 0.9;
-        font-weight: 600;
+        font-weight: 500;
     }
     a{
         text-decoration: none;
     }
     .content-icon{
-        font-size: 10vh;
+        font-size: 15vh;
         opacity: 0.8;
         color: hsl(24.6 95% 53.1%);
     }

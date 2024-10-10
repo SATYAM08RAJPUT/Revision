@@ -40,7 +40,6 @@ body.dark .modal-content {
     color: #007bff;
 }
 .search-search-div{
-    /* border: solid; */
     width: 100%;
     padding: 7px;
     border-radius: 30px; 
@@ -62,4 +61,14 @@ body.dark .modal-content {
     /* background-color: #3e3e3e; */
     transition: border 0.3s;
     /* color: white; */
+}
+@media screen and (max-width: 400px){
+    .modal-content{
+        /* border: solid red; */
+        width: 100%;
+    }
+    .search-search-div input{
+        /* border: solid; */
+        width: 82%;
+    }
 }

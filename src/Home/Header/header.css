@@ -93,13 +93,14 @@ body.light .middle-sideheader input{
     font-size: 20px;
 }
 
-.serachicon {
+/* .serachicon {
     width: 30px;
     margin-top: 4px;
     color: hsl(24.6, 95%, 53.1%);
-    font-size: 20px;
+    font-size: 25px;
     margin-top: 5px;
-}
+    border: solid darkblue;
+} */
 
 body.light {
     background-color: white;
@@ -136,5 +137,10 @@ body.dark {
     .theme {
         font-size: 25px;
         margin-bottom: 6px;
+    }
+    .searchicon{
+        /* border: solid; */
+        width: 26px;
+        height: 3vh;
     }
 } 

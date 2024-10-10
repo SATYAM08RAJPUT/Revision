@@ -47,24 +47,17 @@ export default function Header() {
     return (
         <div className='header'>
             <div className='left-sideheader'>
-                {/* <Link to={'/'}> <ImageCom src={logo2} /></Link> */}
-                {/* <Link to={'/'}> <img src="https://code.google.com/images/developers.png" alt="" /></Link> */}
                 <Link to={'/'}><BsLightningCharge className='header-icon'/></Link>
             </div>
             <div className='middle-sideheader'>
                 <div className='middle-items' onClick={handleInput} >
                     <IoSearchOutline className='searchicon' />
-                    {/* <input 
-                        placeholder={"Searching..."} 
-                        // type={"text"} 
-                        onClick={handleInput} 
-                    /> */}
                     <p>Search</p>
                 </div>
             </div>
             
             <div className='right-sideheader'>
-                <Link to={'/course'}>Learn to code</Link>
+                <Link to={'/course'}>Learn</Link>
                 <div onClick={toggleTheme} className={`theme ${theme}`}>
                     {theme === 'light' ? '☀️' : '🌙'}
                 </div>

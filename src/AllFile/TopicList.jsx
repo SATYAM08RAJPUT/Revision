@@ -14,7 +14,7 @@ const AllDataFile = () => {
 
     const navigate = useNavigate();
 
-    const fetchAllTopics = async () => {
+    const fetchAllTopics = async () => {    
         const response = await fetch(`/api/topics`);
         
         const result = await response.json(); 
@@ -70,10 +70,10 @@ const AllDataFile = () => {
                             </div>
                             <ul>
                                 {topicData.map((topic) => {
-                                    const isSelected = topic.id == topicId;
-                                    
+                                         const isSelected = topic.id == topicId;
+                                         console.log(isSelected)
                                     return (
-                                        <li key={topic.id} onClick={() => handleTopicLi(topic)} className={isSelected ? "selectContent" :""}>
+                                        <li key={topic.id} onClick={() => handleTopicLi(topic)} className={isSelected ? "selectedTopic" : ""}>
                                             <h2>{topic.title}</h2>
                                         </li>
                                     )

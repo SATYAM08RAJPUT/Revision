@@ -8,6 +8,7 @@ import logo2 from '../../../public/logoImage/logo2.png'
 import { Link, useNavigate } from 'react-router-dom';
 import Search from '../../Search/search';
 import { BsLightningCharge } from "react-icons/bs";
+import { FaBars } from "react-icons/fa";
 
 export default function Header() {
     const [theme, setTheme] = useState('light');
@@ -46,6 +47,7 @@ export default function Header() {
 
     return (
         <div className='header'>
+            <FaBars className='bar'/>
             <div className='left-sideheader'>
                 <Link to={'/'}><BsLightningCharge className='header-icon'/></Link>
             </div>

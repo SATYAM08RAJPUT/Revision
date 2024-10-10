@@ -77,26 +77,30 @@ import Header from '../Home/Header/header';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const CourseList = () => {
-    const navigate = useNavigate();
-    const { courseId } = useParams();
     const [cheatsheetData, setCheatsheetData] = useState([]);
+    const navigate = useNavigate();
+    const topicId = useParams();
+    console.log(topicId)
+
 
     const cheatSheetFetchData = async () => {
         const response = await fetch('/api/courseLists');
-        const result = await response.json(); 
+        const result = await response.json();
         setCheatsheetData(result.courseLists);
     };
 
     useEffect(() => {
         cheatSheetFetchData();
-    }, []); 
+    }, [topicId]);
 
     const handleCoursebtn = (itm) => {
-        navigate(`/course/${itm.courseId}/topics/${itm.select}`);
+        console.log(itm);
+        navigate(`/course/${itm.courseId}/topics/${1}`);
     };
 
+
     return (
-        <> 
+        <>
             <Header />
             <div className='sidebar-main-container'>
                 <div className='sidebar-right-div1'>
@@ -115,12 +119,7 @@ const CourseList = () => {
                                     </div>
                                     <h2>{itm.title}</h2>
                                     <p>{itm.subtitle}</p>
-                                    <Button 
-                                        variant="contained" 
-                                        onClick={() => {
-                                            console.log('itm before click:', itm);
-                                            handleCoursebtn(itm);
-                                        }}>
+                                    <Button variant="contained" onClick={() => handleCoursebtn(itm)}>
                                         {itm.btn}
                                     </Button>
                                 </div>

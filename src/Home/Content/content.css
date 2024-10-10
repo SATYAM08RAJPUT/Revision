@@ -20,7 +20,8 @@
 .content-items h1{
     font-size: 50px;
     opacity: 0.8;
-    color: hsl(24.6 95% 53.1%);
+    /* color: hsl(24.6 95% 53.1%); */
+    color: hsl(25, 96%, 54%);
 }
 .content-items p{
     font-size: 20px; 
@@ -28,16 +29,15 @@
     width: 100%;
     font-weight: 600;
 }
-.content-items button{
+/* .content-items button{
     width:150px;
     padding: 8px;
     cursor: pointer;
     font-size: 21px;
-    background-color: #222222;;
-    color: black;
     border-radius: 50px;
     border: solid orange 1px;
-}
+    background-color: hsl(24.6 95% 53.1%);
+} */
 a{
     text-decoration: none;
     color: orange;
@@ -50,23 +50,44 @@ a{
     object-fit: cover;
 }
 .content-items a {
-    color: hsl(24.6, 95%, 53.1%); 
+    /* color: hsl(24.6, 95%, 53.1%);  */
     text-decoration: none;
     transition: color 0.3s;
     font-size: 18px;
+}
+body.dark .content-items a {
+    color: white;
+}
+body.light .content-items a {
+    color: white;
+}
+body.dark .content-items button{
+    width:150px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 21px;
+    color: white;
+    border-radius: 50px;
+    border: solid orange 1px;
+    background-color: hsl(24.6 95% 53.1%)
 }
 body.light .content-items button{
     width:150px;
     padding: 8px;
     cursor: pointer;
     font-size: 21px;
-    background-color: white;
-    color: black;
+    /* background-color: white; */
+    color: white;
     border-radius: 50px;
     border: solid orange 1px;
+    background-color: hsl(24.6 95% 53.1%);
 }
 .content-icon{
     /* border: solid; */
     font-size: 10vh;
     color: hsl(24.6 95% 53.1%);
+}
+
+button {
+    color: white;
 }

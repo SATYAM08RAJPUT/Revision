@@ -7,10 +7,9 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 
 const AllDataFile = () => {
     const { courseId , topicId} = useParams();
-    console.log("all Data " ,courseId ,topicId);
     
     const [topicsData, setTopicsData] = useState([]);
-    const [selectContent , setSelectedContent] = useState([]); 
+    const [selectContent , setSelectedContent] = useState(0); 
     const [loading , setLoading] = useState(true);
 
     const navigate = useNavigate();
@@ -19,19 +18,15 @@ const AllDataFile = () => {
         const response = await fetch(`/api/topics`);
         
         const result = await response.json(); 
-        console.log("all Data result" ,result);
-        
         setTopicsData(result.topics);
         setLoading(false);
-         
+          
 
             const course = result.topics.find(topic => topic.id == courseId);
-            console.log("course Data" ,course);
             
             if (course) {
                 const initialTopicKey = Object.keys(course)[0];
-                console.log("initialTopicKey" ,initialTopicKey);
-                setSelectedContent(course[initialTopicKey][(parseInt(topicId)-1) || 0]);             
+                setSelectedContent(course[initialTopicKey][(parseInt(topicId)-1) || 0])
             }
     };
  
@@ -43,7 +38,6 @@ const AllDataFile = () => {
     const filterData = topicsData.filter(item => item.id == courseId);
 
     const handleTopicLi = (itm) => {
-        console.log("topicList" ,itm.id);
         navigate(`/course/${courseId}/topics/${itm.id}`);
     }
 

@@ -90,7 +90,6 @@ const Search = ({ isOpen, onClose }) => {
                 try {
                     const response = await fetch(`/api/topics/search?term=${input}`);
                     const result = await response.json();
-                    console.log(result);
                     setSearchData(result);
                 } catch (error) {
                     console.log(error);
@@ -115,7 +114,6 @@ const Search = ({ isOpen, onClose }) => {
     };
 
     const handleFilterDataTopic = (topic) => {
-        console.log("topic.id" ,topic.id);
         setInput(topic.title);
         navigate(`/course/${topic.courseId}/topics/${topic.id}`);
         onClose();

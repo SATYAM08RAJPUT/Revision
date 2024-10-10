@@ -31,13 +31,26 @@ body.dark .modal-content {
     background-color: #222222;
     color: white;
 }
+.modal-close-btn-div{
+    /* border: solid; */
+    display: flex;
+    justify-content:end;
+}
 .modal-close {
     cursor: pointer;
     margin-bottom: 1rem;
     background: none;
     border: none;
     font-size: 1rem;
-    color: #007bff;
+    /* color: #007bff; */
+    border: solid;
+    width: 25px;
+    border-radius: 50%;
+    height: 25px;
+    background-color: hsl(24.6 95% 53.1%);
+}
+.modal-cross-icon{
+    margin-top: 3px;
 }
 .search-search-div{
     width: 100%;
@@ -47,28 +60,26 @@ body.dark .modal-content {
     display: flex;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* background-color: #3e3e3e; */
     /* border: solid ; */
     gap: 5px;
     cursor: pointer;
 }
 .search-search-div input{
-    width: 92%;
+    width: 90%;
     padding: 6px; 
     border-radius: 5px; 
     font-size: 15px;
     border: 1px solid transparent; 
-    /* background-color: #3e3e3e; */
     transition: border 0.3s;
-    /* color: white; */
 }
 @media screen and (max-width: 400px){
     .modal-content{
-        /* border: solid red; */
         width: 100%;
     }
     .search-search-div input{
-        /* border: solid; */
         width: 82%;
+    }
+    .modal-close {
+
     }
 }

@@ -87,9 +87,9 @@ body.light .allData-cont-div2 div{
     cursor: pointer;
 }
 .selectedTopic{
-    background-color: #e5e1c7;
+    background-color: hsl(24.6 95% 53.1%);;
     font-weight: bold;
-    border-left: 4px solid #eeda56;
+    border-left: 4px solid white;
     padding-left: 10px;
 }
 

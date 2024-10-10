@@ -16,7 +16,8 @@ export default function server({ environment = 'development' } = {}) {
                       title:'HTML Cheatsheet',
                       subtitle:'Codeccharya HTML cheatsheet',
                       btn:'Go to Cheatsheet',
-                      courseId:'1'
+                      courseId:'1',
+                      select:'1'
                      },
                      {
                       id:"2",
@@ -24,7 +25,8 @@ export default function server({ environment = 'development' } = {}) {
                       title:'Css Cheatsheet',
                       subtitle:'Codeccharya Css cheatsheet',
                       btn:'Go to Cheatsheet',
-                      courseId:'2'
+                      courseId:'2',
+                      select:'1'
                      },
                      {
                       id:"3",
@@ -32,7 +34,8 @@ export default function server({ environment = 'development' } = {}) {
                       title:' Javascript Cheatsheet',
                       subtitle:'Codeccharya Javascript cheatsheet',
                       btn:'Go to Cheatsheet',
-                      courseId:'3'
+                      courseId:'3',
+                      select:'1'
                      },
                      {
                       id:"4",
@@ -40,7 +43,8 @@ export default function server({ environment = 'development' } = {}) {
                       title:'React Cheatsheet',
                       subtitle:'Codeccharya React cheatsheet',
                       btn:'Go to Cheatsheet',
-                      courseId:'4'
+                      courseId:'4',
+                      select:'1'
                      }
                   ]
             }),

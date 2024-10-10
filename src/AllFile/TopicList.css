@@ -1,40 +1,3 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.allData-main-container{
-    border: solid red;
-    display: flex;
-    flex-direction: row;
-    margin-top: 88px;
-
-}
-.allData-cont-div1{
-    border: solid rebeccapurple;
-    width: 25%;
-    height: 86vh;
-    overflow-y: scroll;
-    cursor: pointer;
-    padding: 10px;
-}
-li{
-    list-style: none;
-    font-size: 12px;
-    border: solid;
-    margin-top: 10px;
-    padding: 10px;
-}
-.allData-cont-div1::-webkit-scrollbar{
-    display: none;
-}
-.allData-cont-div2{
-    border: solid;
-    width: 75%;
-    padding: 15px;
-} */
-
-
 * {
     margin: 0;
     padding: 0;
@@ -125,4 +88,7 @@ body.light .allData-cont-div2 div{
     justify-content: end;
     font-size: 20px;
     cursor: pointer;
+}
+.selectContent{
+    border: solid;
 }

@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    justify-content: center; 
+    justify-content: space-around; 
     font-family: sans-serif;
     width: 100%;
     align-items: center;

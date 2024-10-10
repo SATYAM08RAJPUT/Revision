@@ -11,13 +11,10 @@ export default function ContentCom() {
         <>
             <div className="content">
                 <div className="content-items">
-                    {/* <ImageCom src={"https://avatars.githubusercontent.com/u/1905708?s=200&v=4"} /> */}
-                    {/* <ImageCom src={logo2} /> */}
-                    {/* <img src="https://code.google.com/images/developers.png" alt="" /> */}
                     <BsLightningCharge className='content-icon'/>
                     <h1>Codeccharya</h1>
                     <div className='content-p-div'><p>Elevate your skills with HTML, CSS, JavaScript, and React !</p></div>
-                    <Button>
+                    <Button classNameButton={"learnButton"}>
                         <Link to={"/course"}>Learn</Link>
                     </Button>
                 </div>

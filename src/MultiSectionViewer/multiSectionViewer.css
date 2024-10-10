@@ -65,7 +65,7 @@ body.light .sidebar-main-container {
 }
 
 .center:hover {
-    transform: scale(1.05);
+    transform: scale(0.95);
 }
 
 .center img {
@@ -76,7 +76,7 @@ body.light .sidebar-main-container {
 }
 
 .center img:hover {
-    transform: scale(1.1);
+    transform: scale(1.4);
 }
 
 .image-circle {
@@ -99,14 +99,15 @@ body.light .sidebar-main-container {
     line-height: 22px;
     padding: 10px 20px;
     border: 1px solid hsl(24.6, 95%, 53.1%) !important;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
 }
 
 .center button:hover {
     background: hsl(24.6, 95%, 53.1%);
-    color: white; 
-    transform: translateY(-3px);
+    color: black; 
+    transform: translateY(-5px);
 }
+
 
 
 @media (max-width: 400px) {

@@ -56,7 +56,8 @@ export default function server({ environment = 'development' } = {}) {
                             courseId:1,
                             title: 'Introduction to HTML', 
                             content: 'HTML stands for Hypertext Markup Language. It is the standard markup language for creating web pages. HTML elements are the building blocks of HTML pages, defining the structure and layout of a web document.',
-                            courseId:'1' 
+                            courseId:'1' ,
+                            
                         },
                         { 
                             id:2, 
@@ -86,60 +87,61 @@ export default function server({ environment = 'development' } = {}) {
                             content: 'An HTML element is a complete structure that consists of an opening tag, content, and a closing tag, e.g., <h1>This is a Heading</h1>.' ,
                             courseId:'1'
                         },
-                        // { 
-                        //     id: 6, 
-                        //     title: 'HTML Forms', 
-                        //     content: 'HTML forms are used to collect user input, including text fields, checkboxes, and submit buttons, created with the <form> tag.',
-                        //     courseId:'1' 
-                        // },
-                        // { 
-                        //     id: 7, 
-                        //     title: 'HTML Semantic Elements', 
-                        //     content: 'Semantic HTML elements clearly describe their meaning, such as <header>, <footer>, <article>, and <section>, improving accessibility and SEO.' ,
-                        //      courseId:'1'
-                        // },
-                        // { 
-                        //     id: 8, 
-                        //     title: 'HTML Images', 
-                        //     content: 'Images are embedded using the <img> tag, with the src attribute for the image source and the alt attribute for alternative text.' ,
-                        //      courseId:'1'
-                        // },
-                        // { 
-                        //     id: 9, 
-                        //     title: 'HTML Links', 
-                        //     content: 'Links are created using the <a> tag, where the href attribute specifies the URL, connecting to external sites, internal pages, or email addresses.' ,
-                        //      courseId:'1'
-                        // },
-                        // { 
-                        //     id: 10, 
-                        //     title: 'HTML Meta Tag', 
-                        //     content: 'HTML meta tags provide metadata about the HTML document, which can include information such as the character set, page description, keywords, author, and viewport settings. They are placed within the <head> section of an HTML document.' ,
-                        //      courseId:'1'
-                        // },
-                        // { 
-                        //     id: 11, 
-                        //     title: 'HTML List', 
-                        //     content: 'In HTML, lists are used to group related items together. There are three main types of lists: ordered lists (<ol>), unordered lists (<ul>), and description lists. Here’s a quick overview of each type along with examples..',
-                        //     courseId:'1' 
-                        // },
-                        // { 
-                        //     id: 12, 
-                        //     title: 'HTML input Tag', 
-                        //     content: 'The HTML <input> tag is used to create interactive fields in forms where users can enter data. It supports various types of input, each suited for different kinds of data. Here’s a breakdown of the most common types of the <input> tag along with examples.' ,
-                        //      courseId:'1'
-                        // },
-                        // { 
-                        //     id: 13, 
-                        //     title: 'Global attribute', 
-                        //     content: 'HTML global attributes are attributes that can be applied to any HTML element. They provide additional information or functionality and help enhance the behavior of elements. Here are some of the most commonly used global attributes' ,
-                        //      courseId:'1'
-                        // },
-                        // { 
-                        //     id: 14, 
-                        //     title: 'Template Element', 
-                        //     content: 'The <template> element holds client-side content that will not be rendered when the page loads but can be instantiated later using JavaScript.' ,
-                        //      courseId:'1'
-                        // }
+                        
+                        { 
+                            id: 6, 
+                            title: 'HTML Forms', 
+                            content: 'HTML forms are used to collect user input, including text fields, checkboxes, and submit buttons, created with the <form> tag.',
+                            courseId:'1' 
+                        },
+                        { 
+                            id: 7, 
+                            title: 'HTML Semantic Elements', 
+                            content: 'Semantic HTML elements clearly describe their meaning, such as <header>, <footer>, <article>, and <section>, improving accessibility and SEO.' ,
+                             courseId:'1'
+                        },
+                        { 
+                            id: 8, 
+                            title: 'HTML Images', 
+                            content: 'Images are embedded using the <img> tag, with the src attribute for the image source and the alt attribute for alternative text.' ,
+                             courseId:'1'
+                        },
+                        { 
+                            id: 9, 
+                            title: 'HTML Links', 
+                            content: 'Links are created using the <a> tag, where the href attribute specifies the URL, connecting to external sites, internal pages, or email addresses.' ,
+                             courseId:'1'
+                        },
+                        { 
+                            id: 10, 
+                            title: 'HTML Meta Tag', 
+                            content: 'HTML meta tags provide metadata about the HTML document, which can include information such as the character set, page description, keywords, author, and viewport settings. They are placed within the <head> section of an HTML document.' ,
+                             courseId:'1'
+                        },
+                        { 
+                            id: 11, 
+                            title: 'HTML List', 
+                            content: 'In HTML, lists are used to group related items together. There are three main types of lists: ordered lists (<ol>), unordered lists (<ul>), and description lists. Here’s a quick overview of each type along with examples..',
+                            courseId:'1' 
+                        },
+                        { 
+                            id: 12, 
+                            title: 'HTML input Tag', 
+                            content: 'The HTML <input> tag is used to create interactive fields in forms where users can enter data. It supports various types of input, each suited for different kinds of data. Here’s a breakdown of the most common types of the <input> tag along with examples.' ,
+                             courseId:'1'
+                        },
+                        { 
+                            id: 13, 
+                            title: 'Global attribute', 
+                            content: 'HTML global attributes are attributes that can be applied to any HTML element. They provide additional information or functionality and help enhance the behavior of elements. Here are some of the most commonly used global attributes' ,
+                             courseId:'1'
+                        },
+                        { 
+                            id: 14, 
+                            title: 'Template Element', 
+                            content: 'The <template> element holds client-side content that will not be rendered when the page loads but can be instantiated later using JavaScript.' ,
+                             courseId:'1'
+                        }
                     ]
                 });
                 server.create('topic', {

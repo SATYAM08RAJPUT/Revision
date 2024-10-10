@@ -17,7 +17,7 @@ body.light .header {
     color: black; 
 }
 .left-sideheader {
-    width: 15%;
+    width: 10%;
     font-size: 21px; 
     padding-top: 10px; 
 }
@@ -30,7 +30,7 @@ body.light .header {
 } */
 
 .middle-sideheader {
-    width: 50%;
+    width: 70%;
     align-items: center;
 }
 
@@ -49,7 +49,7 @@ body.light .header {
 }
 
 .middle-sideheader input {
-    width: 93%;
+    width: 103%;
     padding: 6px; 
     border-radius: 5px; 
     font-size: 15px;
@@ -112,6 +112,9 @@ body.dark {
 .header-icon{
     font-size: 6vh;
     color: hsl(24.6 95% 53.1%);
+}
+.bar{
+    display: none;
 }
 
 @media screen and (max-width: 400px){

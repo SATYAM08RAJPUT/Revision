@@ -3,13 +3,17 @@ import { IoSearchOutline } from "react-icons/io5";
 import { useState, useEffect } from 'react';
 import { GoMoon } from "react-icons/go";
 import ImageCom from '../../Common-Components copy/Image/img';
-import logo from '../../../public/logoImage/logo.jpg';
-import { Link } from 'react-router-dom';
-import SearchModal from '../../Search/search';
+// import logo2 from '../../../public/logoImage/logo2.png';
+import logo2 from '../../../public/logoImage/logo2.png'
+import { Link, useNavigate } from 'react-router-dom';
+import Search from '../../Search/search';
+import { BsLightningCharge } from "react-icons/bs";
+import { FaBars } from "react-icons/fa";
 
-export default function Header({ setSearch, search }) {
-    const [theme, setTheme] = useState('dark');
-    const [isModalOpen, setIsModalOpen] = useState(false);
+export default function Header() {
+    const [theme, setTheme] = useState('light');
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const navigate = useNavigate();
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -29,36 +33,39 @@ export default function Header({ setSearch, search }) {
     }, [theme]);
 
     const handleInput = () => {
-        setIsModalOpen(true); 
+        setIsModalVisible(true); 
     };
 
     const closeModal = () => {
-        setIsModalOpen(false); 
+        setIsModalVisible(false);
     };
+    
+    // const handleSearchSelect = (topic) =>{
+    //     console.log('header Wala Data' , topic);
+    //     navigate(`/course/${topic.courseId}/topics/${topic.id}`);
+    // }
 
     return (
         <div className='header'>
+            <FaBars className='bar'/>
             <div className='left-sideheader'>
-                <Link to={'/'}> <ImageCom src={logo} /></Link>
+                <Link to={'/'}><BsLightningCharge className='header-icon'/></Link>
             </div>
             <div className='middle-sideheader'>
-                <div className='middle-items'>
+                <div className='middle-items' onClick={handleInput} >
                     <IoSearchOutline className='searchicon' />
-                    <input 
-                        placeholder={"Searching..."} 
-                        type={"text"} 
-                        onClick={handleInput} 
-                    />
+                    <p>Search</p>
                 </div>
             </div>
-            <SearchModal handleClose={closeModal} handleOpen={isModalOpen} />
             
             <div className='right-sideheader'>
-                <div><Link to={'/course'}>Learn to Code</Link></div>
+                <div className='learntocode'><Link to={'/course'}>Learn to Code</Link></div>
                 <div onClick={toggleTheme} className={`theme ${theme}`}>
                     {theme === 'light' ? '☀️' : '🌙'}
                 </div>
             </div>
+
+            <Search isOpen={isModalVisible} onClose={closeModal} />
         </div>
     );
 }

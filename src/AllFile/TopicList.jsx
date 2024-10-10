@@ -5,50 +5,60 @@ import Header from '../Home/Header/header';
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 
-const AllDataFile = ({}) => {
-    const { courseId,topicId} = useParams();
-    console.log("CourseList",courseId)
+const AllDataFile = () => {
+    const { courseId , topicId} = useParams();
+    console.log("all Data " ,courseId ,topicId);
+    
     const [topicsData, setTopicsData] = useState([]);
-    const [selectContent , setSelectedContent] = useState(null); 
+    const [selectContent , setSelectedContent] = useState([]); 
+    const [loading , setLoading] = useState(true);
+
     const navigate = useNavigate();
 
-    const fetchAllTopics = async () => {
+    const fetchAllTopics = async () => {    
         const response = await fetch(`/api/topics`);
-        const result = await response.json();
-        console.log(result)
+        
+        const result = await response.json(); 
+        console.log("all Data result" ,result);
+        
         setTopicsData(result.topics);
-        console.log(result.topics)
+        setLoading(false);
+         
 
-        const initialTopic = result.topics.find(topic => topic.id == courseId);
-   
-        if (initialTopic) {
-            const initialTopicKey = Object.keys(initialTopic)[0];
-            console.log(initialTopicKey)
-            setSelectedContent(initialTopic[initialTopicKey][(parseInt(topicId)-1) || 0]);
-        }
+            const course = result.topics.find(topic => topic.id == courseId);
+            console.log("course Data" ,course);
+            
+            if (course) {
+                const initialTopicKey = Object.keys(course)[0];
+                console.log("initialTopicKey" ,initialTopicKey);
+                setSelectedContent(course[initialTopicKey][(parseInt(topicId)-1) || 0]);             
+            }
     };
  
     useEffect(() => {
         fetchAllTopics();
-    }, [courseId,topicId]); 
+    }, [courseId , topicId]); 
+    
 
     const filterData = topicsData.filter(item => item.id == courseId);
 
     const handleTopicLi = (itm) => {
-        console.log(itm);
-        navigate(`/course/${itm.courseId}/topics/${itm.id}`);
-        setSelectedContent(itm)
+        console.log("topicList" ,itm.id);
+        navigate(`/course/${courseId}/topics/${itm.id}`);
     }
 
-    console.log(selectContent)
+
     const handleBackClick = () =>{
         navigate(`/course`)
     }
 
-    if(!topicsData || !selectContent){
-        return <h2>Loading</h2>
-    }
+   
 
+    if(loading){
+        return <div style={{display:'flex' , alignItems:'center' , justifyContent:'center' , fontSize:'30px'}}>
+            <i className="fa fa-spinner fa-spin" style={{fontSize:"74px"}}></i>
+        </div>
+    }
 
     return (
         <div className='allData-main-container'>
@@ -56,9 +66,8 @@ const AllDataFile = ({}) => {
             <div className='allData-cont-div1'>
                 {filterData.map((item) => {                    
                     const topicKey = Object.keys(item)[0]; 
-                    // console.log(topicKey)
+                    
                     const topicData = item[topicKey]; 
-                    console.log(topicData);
 
                     return (
                         <div key={topicKey}>
@@ -66,11 +75,12 @@ const AllDataFile = ({}) => {
                                 <IoMdArrowRoundBack onClick={handleBackClick}/>
                             </div>
                             <ul>
-                                {topicData.map((itm) => {
-                                    // console.log(itm);
+                                {topicData.map((topic) => {
+                                         const isSelected = topic.id == topicId;
+                                         console.log(isSelected)
                                     return (
-                                        <li key={itm.id} onClick={() => handleTopicLi(itm)}>
-                                            <h2>{itm.title}</h2>
+                                        <li key={topic.id} onClick={() => handleTopicLi(topic)} className={isSelected ? "selectedTopic" : ""}>
+                                            <h2>{topic.title}</h2>
                                         </li>
                                     )
                                 })}

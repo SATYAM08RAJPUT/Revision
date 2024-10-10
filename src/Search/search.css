@@ -1,4 +1,4 @@
-.MuiModal-root {
+/* .MuiModal-root {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,10 +20,10 @@
 }
 body.light .modal-content{
     background-color: white;
-}
+} */
 
 .search-closeBtn-div{
-    /* border: solid; */
+    border: solid;
     display: flex;
     /* align-items: end; */
     justify-content: end;
@@ -62,6 +62,14 @@ body.light .headerSearchInp-div {
     color: black;
 }
 body.light .headerSearchInp-div input{
+    background-color: rgb(233, 231, 231);
+    color: black;
+} 
+body.dark .headerSearchInp-div {
+    background-color: rgb(233, 231, 231);
+    color: black;
+}
+body.dark .headerSearchInp-div input{
     background-color: rgb(233, 231, 231);
     color: black;
 } 
@@ -111,4 +119,8 @@ body.light .headerSearchInp-div input{
     width: 520px;
     padding: 6px;
     border-radius: 5px;
+}
+body.dark .search-search-div input{
+    background-color:  #3e3e3e;
+    color: white;
 }

@@ -76,3 +76,43 @@ body.light .content-items button{
 button {
     color: white;
 }
+
+@media screen and (max-width: 400px){
+    .content-items{
+        text-align: center;
+        line-height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+    } 
+    .content-items h1{
+        font-size: 35px;
+        opacity: 0.8;
+        color: hsl(25, 96%, 54%);
+    }
+    .content-items p{
+        font-size: 18px; 
+        width: 100%;
+        opacity: 0.9;
+        font-weight: 600;
+    }
+    a{
+        text-decoration: none;
+    }
+    .content-icon{
+        font-size: 10vh;
+        opacity: 0.8;
+        color: hsl(24.6 95% 53.1%);
+    }
+    .content-items .content-items button{
+        width:180px;
+        padding: 8px;
+        cursor: pointer;
+        font-size: 21px;
+        color: white;
+        border-radius: 50px;
+        border: solid orange 1px;
+        background-color: hsl(24.6 95% 53.1%);
+    }
+}

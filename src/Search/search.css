@@ -117,3 +117,8 @@ body.dark .search-search-div input{
 .search-results{
     border: solid !important;
 }
+
+li{
+    color: black;
+}
+

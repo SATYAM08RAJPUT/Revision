@@ -29,10 +29,19 @@ const CourseList = () => {
     };
 
     
-    if(isLoading){
-        return <div style={{display:'flex' , alignItems:'center' , justifyContent:'center' , fontSize:'30px'}}>
-            <i className="fa fa-spinner fa-spin" style={{fontSize:"74px"}}></i>
-        </div>
+    if (isLoading) {
+        return (
+            <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '100vh',
+                width: '100%',
+                fontSize: '30px'
+            }}>
+                <i className="fa fa-spinner fa-spin" style={{ fontSize: "74px" }}></i>
+            </div>
+        );
     }
 
     return (

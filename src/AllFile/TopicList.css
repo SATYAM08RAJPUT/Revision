@@ -88,16 +88,19 @@ body.light .allData-cont-div2 div{
     cursor: pointer;
 }
 .selectedTopic{
-    background-color: hsl(24.6 95% 53.1%);;
-    font-weight: bold;
+    background-color: #e0e0e0;
     border-left: 4px solid white;
     padding-left: 10px;
-    /* border: solid; */
+    color: hsl(24.6 95% 53.1%);
     transition: background-color 0.1s;
 }
-.selectedTopic:hover{
-    color: hsl(24.6 95% 53.1%);
+body.light .selectedTopic{
+    border-left: 4px solid black;
+    /* background-color: hsl(25, 82%, 56%);; */
 }
+/* .selectedTopic:hover{
+    color: hsl(24.6 95% 53.1%);
+} */
 
 @media (max-width:400px){
     .allData-main-container{

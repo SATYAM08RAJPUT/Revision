@@ -95,7 +95,11 @@ body.light .allData-cont-div2 div{
     transition: background-color 0.1s;
 }
 body.light .selectedTopic{
-    border-left: 4px solid black;
+    border-left: 4px solid hsl(24.6 95% 53.1%);
+    /* background-color: hsl(25, 82%, 56%);; */
+}
+body.dark .selectedTopic{
+    border-left: 4px solid          ;
     /* background-color: hsl(25, 82%, 56%);; */
 }
 /* .selectedTopic:hover{
@@ -115,7 +119,7 @@ body.light .selectedTopic{
     }
     .allData-cont-div2 {
         width: 100%;
-        height: 27.6vh;
+        height: 54vh;
         overflow-y: auto;
         padding: 15px;
     }

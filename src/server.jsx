@@ -220,111 +220,406 @@ export default function server({ environment = 'development' } = {}) {
                             courseId:3, 
                             title: 'Introduction to JavaScript', 
                             content: 'JavaScript is a versatile programming language primarily used for web development. It enables interactive web pages and is an essential part of web applications, alongside HTML and CSS.' ,
-                            courseId:'3'
+                            courseId:'3',
+                            code:`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <h1>Hello, JavaScript!</h1>
+    <button id="myButton">Click me!</button>
+
+    <script src="script.js"></script>
+</body>
+</html>`
                         },
                         { 
                             id: 2, 
                             courseId:3, 
                             title: 'JavaScript Variables', 
-                            content: 'Variables in JavaScript are containers for storing data values. You can declare variables using var, let, or const, each with different scopes and mutability.' ,
-                            courseId:'3'
+                            content: 'JavaScript variables are containers used to store data values. You can think of them as labels that hold information which can be referenced and manipulated throughout your code. There are three ways to declare variables in JavaScript: using var, let, and const..' ,
+                            courseId:'3',
+                            code:`1. var
+Scope: Function-scoped or globally scoped.
+Redeclaration: Can be redeclared.
+Hoisting: Hoisted to the top of their scope.
+
+var name = "Alice";
+console.log(name); // Output: Alice
+
+var name = "Bob"; // Redeclaring
+console.log(name); // Output: Bob
+
+2. let
+Scope: Block-scoped.
+Redeclaration: Cannot be redeclared in the same scope.
+Hoisting: Hoisted, but not initialized.
+
+let age = 25;
+console.log(age); // Output: 25
+// let age = 30; // Error: Identifier 'age' has already been declared
+age = 30; // This is fine
+console.log(age); // Output: 30
+
+3. const
+Scope: Block-scoped.
+Redeclaration: Cannot be redeclared or reassigned.
+Hoisting: Hoisted, but not initialized.
+
+const pi = 3.14;
+console.log(pi); // Output: 3.14
+
+// pi = 3.14159; // Error: Assignment to constant variable
+// const pi = 3.14159; // Error: Identifier 'pi' has already been declared
+
+`
                         },
                         { 
                             id: 3, 
                             courseId:3, 
                             title: 'JavaScript Data Types', 
-                            content: 'JavaScript has several data types, including primitive types like strings, numbers, booleans, null, and undefined, as well as complex types like objects and arrays.,' ,
-                            courseId:'3'
+                            content: 'JavaScript has several data types, including primitive types like strings, numbers, booleans, null, and undefined, as well as complex types like objects and arrays.' ,
+                            courseId:'3',
+                            code: `
+1. Primitive Types: Primitive types are the most basic data types and include the following:
+String: Represents a sequence of characters.
+
+let greeting = "Hello, world!";
+
+Number: Represents both integer and floating-point numbers.
+
+let age = 30;        // Integer
+let price = 19.99;  // Floating-point
+
+Boolean: Represents a logical entity that can be either true or false.
+
+let isStudent = true;
+
+Undefined: Indicates that a variable has been declared but has not been assigned a value
+
+let value;
+console.log(value); // Output: undefined
+
+Null: Represents the intentional absence of any object value.
+
+let emptyValue = null;
+
+Symbol: A unique and immutable primitive value, primarily used as object property keys (introduced in ES6).
+
+const uniqueKey = Symbol("description");
+
+BigInt: A numeric type that can represent integers with arbitrary precision (introduced in ES11).
+
+const bigNumber = BigInt(123456789012345678901234567890);
+
+`
                         },
                         { 
                             id: 4, 
                             courseId:3, 
                             title: 'JavaScript Functions', 
-                            content: 'Functions are reusable blocks of code in JavaScript. They can be declared using function declarations, expressions, or arrow functions, and can take parameters and return values.' ,
-                            courseId:'3'
+                            content: 'Functions in JavaScript are reusable blocks of code designed to perform a specific task. They help organize code, make it more readable, and enable modular programming. Here’s a breakdown of how functions work in JavaScript, along with examples.' ,
+                            courseId:'3',
+                            code: `
+1. Function Declaration: A function can be defined using the function keyword, followed by a name, parentheses, and a block of code.
+
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+console.log(greet("Alice")); // Output: Hello, Alice!
+
+2. Function Expression: A function can also be defined as an expression and assigned to a variable.
+
+const square = function(x) {
+    return x * x;
+};
+console.log(square(5)); // Output: 25
+
+3. Arrow Functions: Introduced in ES6, arrow functions provide a more concise syntax for writing functions.
+
+const multiply = (a, b) => a * b;
+console.log(multiply(2, 3)); // Output: 6
+
+Summary
+Function Declaration: Defined with the function keyword.
+Function Expression: Assigned to a variable.
+Arrow Functions: Concise syntax for functions.
+Default Parameters: Default values for parameters.
+Rest Parameters: Capture variable numbers of arguments.
+Return Values: Functions can return values.
+IIFE: Functions executed immediately upon definition.
+Callback Functions: Functions passed as arguments to other functions.
+`
                         },
                         { 
                             id: 5,
                             courseId:3,  
                             title: 'JavaScript Conditionals', 
-                            content: 'Conditional statements in JavaScript, such as if, else if, and switch, allow you to execute different blocks of code based on specific conditions.' ,
-                            courseId:'3'
+                            content: 'JavaScript conditionals allow you to execute different code based on whether a condition is true or false. The most common conditional statements are if, else if, and else. Here’s a breakdown with examples:' ,
+                            courseId:'3',
+                            code: `
+1. if Statement: The if statement executes a block of code if the specified condition is true.
+
+let age = 18;
+
+if (age >= 18) {
+    console.log("You are an adult.");
+}
+
+2. else Statement: The else statement can be used to execute a block of code when the condition in the if statement is false.
+let age = 16;
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are a minor.");
+}
+
+3. else if Statement: You can chain multiple conditions using else if.
+
+let age = 20;
+if (age < 13) {
+    console.log("You are a child.");
+} else if (age < 18) {
+    console.log("You are a teenager.");
+} else {
+    console.log("You are an adult.");
+}
+
+4. Ternary Operator: For simple conditional assignments, you can use the ternary operator.
+
+let age = 15;
+let status = (age >= 18) ? "Adult" : "Minor";
+
+console.log(status); // Output: Minor
+
+5. Switch Statement: The switch statement is another way to handle multiple conditions based on the value of a variable.
+
+let day = 3;
+let dayName;
+
+switch (day) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    default:
+        dayName = "Invalid day";
+}
+
+console.log(dayName); // Output: Wednesday
+
+                        }`
                         },
-                        // { 
-                        //     id: 6, 
-                        //     title: 'JavaScript Loops', 
-                        //     content: 'Loops are used to execute a block of code repeatedly. Common loop structures in JavaScript include for, while, and do...while loops.' 
-                        // },
-                        // { 
-                        //     id: 7, 
-                        //     title: 'JavaScript Events', 
-                        //     content: 'Events are actions that occur in the browser, such as clicks or key presses. JavaScript allows you to respond to these events using event listeners.' 
-                        // },
-                        // { 
-                        //     id: 8, 
-                        //     title: 'JavaScript DOM Manipulation', 
-                        //     content: 'The Document Object Model (DOM) represents the structure of a web page. JavaScript can manipulate the DOM to change content, structure, and styles dynamically.' 
-                        // },
-                        // { 
-                        //     id: 9, 
-                        //     title: 'JavaScript ES6 Features', 
-                        //     content: 'ES6 (ECMAScript 2015) introduced several new features to JavaScript, including let and const for variable declarations, arrow functions, classes, and template literals.' 
-                        // },
-                        // { 
-                        //     id: 10, 
-                        //     title: 'JavaScript Promises', 
-                        //     content: 'Promises are a way to handle asynchronous operations in JavaScript. They represent a value that may be available now, or in the future, or never.' 
-                        // },
-                        // { 
-                        //     id: 11, 
-                        //     title: 'JavaScript Async/Await', 
-                        //     content: 'Async/Await is a syntactic sugar built on top of Promises that allows for writing asynchronous code in a more synchronous style.' 
-                        // },
-                        // { 
-                        //     id: 12, 
-                        //     title: 'JavaScript Modules', 
-                        //     content: 'Modules in JavaScript help in organizing code by allowing you to export and import functions, objects, or primitive values between different files.' 
-                        // },
-                        // { 
-                        //     id: 13, 
-                        //     title: 'JavaScript Error Handling', 
-                        //     content: 'Error handling in JavaScript can be done using try/catch blocks to manage exceptions and prevent program crashes.' 
-                        // },
-                        // { 
-                        //     id: 14, 
-                        //     title: 'JavaScript Fetch API', 
-                        //     content: 'The Fetch API provides a modern way to make network requests in JavaScript, allowing you to handle responses as Promises.' 
-                        // },
-                        // { 
-                        //     id: 15, 
-                        //     title: 'JavaScript Closures', 
-                        //     content: 'Closures are a feature in JavaScript where an inner function has access to the outer function’s variables, creating a private scope.' 
-                        // },
-                        // { 
-                        //     id: 16, 
-                        //     title: 'JavaScript Scope', 
-                        //     content: 'Scope defines the accessibility of variables in JavaScript. It can be global or local, and understanding it is crucial for avoiding errors.' 
-                        // },
-                        // { 
-                        //     id: 17, 
-                        //     title: 'JavaScript Callbacks', 
-                        //     content: 'Callbacks are functions that are passed as arguments to other functions, allowing for asynchronous execution and control flow management.' 
-                        // },
-                        // { 
-                        //     id: 18, 
-                        //     title: 'JavaScript Regular Expressions', 
-                        //     content: 'Regular expressions are patterns used to match character combinations in strings, providing powerful string manipulation capabilities.' 
-                        // },
-                        // { 
-                        //     id: 19, 
-                        //     title: 'JavaScript Object-Oriented Programming', 
-                        //     content: 'JavaScript supports object-oriented programming through prototypes, allowing for inheritance and encapsulation of data.' 
-                        // },
-                        // { 
-                        //     id: 20, 
-                        //     title: 'JavaScript Memory Management', 
-                        //     content: 'JavaScript automatically manages memory through garbage collection, freeing up memory that is no longer needed, but understanding it can help optimize performance.' 
-                        // }
+                        { 
+                            id: 6, 
+                            courseId:3,  
+                            title: 'JavaScript Loops', 
+                            content: 'Loops are used to execute a block of code repeatedly. Common loop structures in JavaScript include for, while, and do...while loops.',
+                            code:  `1. For Loop: The for loop is often used when the number of iterations is known.
+                            
+                            for (let i = 0; i < 5; i++) {
+                                console.log("Iteration: " + i);
+                            }
+ 2. While Loop: The while loop continues to execute as long as the specified condition is true.
+                            
+                            let i = 0;
+                            while (i < 5) {
+                                console.log("Iteration: " + i);
+                            i++;
+                            }
+3. Do...While Loop: The do...while loop executes the block of code once before checking the condition.
+
+                            let i = 0;
+                            do {
+                                console.log(i); // Outputs 0, 1, 2, 3, 4
+                                i++;
+                            } while (i < 5);
+
+4. For...of Loop: The for...of loop is used to iterate over iterable objects like arrays or strings.
+                            const array = [10, 20, 30];
+                            for (const value of array) {
+                                console.log(value); // Outputs 10, 20, 30
+                            }
+                                
+5. For...in Loop: The for...in loop is used to iterate over the properties of an object.
+                            const obj = { a: 1, b: 2, c: 3 };
+                            for (const key in obj) {
+                                console.log(key, obj[key]); // Outputs: a 1, b 2, c 3
+                            }
+
+6. Array Methods (forEach): You can also use array methods like forEach to loop through an array.
+                            const array = [1, 2, 3];
+                            array.forEach((value) => {
+                                console.log(value); // Outputs 1, 2, 3
+                            });
+`
+                        },
+                        { 
+                            id: 7, 
+                            courseId:3,  
+                            title: 'JavaScript Events', 
+                            content: 'Events are actions that occur in the browser, such as clicks or key presses. JavaScript allows you to respond to these events using event listeners.',
+                            code:`
+1. Event Types: 
+Some common types of events include:
+Mouse Events: click, dblclick, mouseover, mouseout
+Keyboard Events: keydown, keyup, keypress
+Form Events: submit, change, focus, blur
+Window Events: load, resize, scroll
+
+2. Adding Event Listeners:You can add event listeners to elements using the addEventListener method.
+
+<button id="myButton">Click Me!</button>
+<script>
+    const button = document.getElementById("myButton");
+
+    button.addEventListener("click", function() {
+        alert("Button was clicked!");
+    });
+</script>
+
+3. Event Object: When an event occurs, an event object is created that contains useful information about the event.
+
+<input type="text" id="myInput">
+<script>
+    const input = document.getElementById("myInput");
+
+    input.addEventListener("focus", function(event) {
+        console.log("Input focused", event);
+    });
+</script>
+
+4. Removing Event Listeners: You can remove an event listener using the removeEventListener method.
+
+<button id="myButton">Click Me!</button>
+<script>
+    const button = document.getElementById("myButton");
+
+    function handleClick() {
+        alert("Button was clicked!");
+        button.removeEventListener("click", handleClick);
+    }
+
+    button.addEventListener("click", handleClick);
+</script>
+
+5. Event Delegation: Event delegation is a technique where you add a single event listener to a parent element to manage events for multiple child elements.
+
+<ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+<script>
+    const list = document.getElementById("myList");
+
+    list.addEventListener("click", function(event) {
+        if (event.target.tagName === "LI") {
+            alert("Clicked on " + event.target.textContent);
+        }
+    });
+</script>
+
+6. Keyboard Events Example: You can also listen for keyboard events and respond accordingly.
+
+<input type="text" id="myInput">
+<script>
+    const input = document.getElementById("myInput");
+
+    input.addEventListener("keydown", function(event) {
+        console.log("Key pressed:", event.key);
+    });
+</script>
+
+`
+                        },
+                        { 
+                            id: 8, 
+                            courseId:3,  
+                            title: 'JavaScript DOM Manipulation', 
+                            content: 'The Document Object Model (DOM) represents the structure of a web page. JavaScript can manipulate the DOM to change content, structure, and styles dynamically.' 
+                        },
+                        { 
+                            id: 9, 
+                            courseId:3,  
+                            title: 'JavaScript ES6 Features', 
+                            content: 'ES6 (ECMAScript 2015) introduced several new features to JavaScript, including let and const for variable declarations, arrow functions, classes, and template literals.' 
+                        },
+                        { 
+                            id: 10, 
+                            courseId:3,  
+                            title: 'JavaScript Promises', 
+                            content: 'Promises are a way to handle asynchronous operations in JavaScript. They represent a value that may be available now, or in the future, or never.' 
+                        },
+                        { 
+                            id: 11, 
+                            courseId:3,  
+                            title: 'JavaScript Async/Await', 
+                            content: 'Async/Await is a syntactic sugar built on top of Promises that allows for writing asynchronous code in a more synchronous style.' 
+                        },
+                        { 
+                            id: 12, 
+                            courseId:3,  
+                            title: 'JavaScript Modules', 
+                            content: 'Modules in JavaScript help in organizing code by allowing you to export and import functions, objects, or primitive values between different files.' 
+                        },
+                        { 
+                            id: 13, 
+                            courseId:3,  
+                            title: 'JavaScript Error Handling', 
+                            content: 'Error handling in JavaScript can be done using try/catch blocks to manage exceptions and prevent program crashes.' 
+                        },
+                        { 
+                            id: 14, 
+                            courseId:3,  
+                            title: 'JavaScript Fetch API', 
+                            content: 'The Fetch API provides a modern way to make network requests in JavaScript, allowing you to handle responses as Promises.' 
+                        },
+                        { 
+                            id: 15, 
+                            title: 'JavaScript Closures', 
+                            content: 'Closures are a feature in JavaScript where an inner function has access to the outer function’s variables, creating a private scope.' 
+                        },
+                        { 
+                            id: 16, 
+                            courseId:3,  
+                            title: 'JavaScript Scope', 
+                            content: 'Scope defines the accessibility of variables in JavaScript. It can be global or local, and understanding it is crucial for avoiding errors.' 
+                        },
+                        { 
+                            id: 17, 
+                            courseId:3,  
+                            title: 'JavaScript Callbacks', 
+                            content: 'Callbacks are functions that are passed as arguments to other functions, allowing for asynchronous execution and control flow management.' 
+                        },
+                        { 
+                            id: 18, 
+                            courseId:3,  
+                            title: 'JavaScript Regular Expressions', 
+                            content: 'Regular expressions are patterns used to match character combinations in strings, providing powerful string manipulation capabilities.' 
+                        },
+                        { 
+                            id: 19, 
+                            courseId:3,  
+                            title: 'JavaScript Object-Oriented Programming', 
+                            content: 'JavaScript supports object-oriented programming through prototypes, allowing for inheritance and encapsulation of data.' 
+                        },
+                        { 
+                            id: 20, 
+                            courseId:3,  
+                            title: 'JavaScript Memory Management', 
+                            content: 'JavaScript automatically manages memory through garbage collection, freeing up memory that is no longer needed, but understanding it can help optimize performance.' 
+                        }
                     ]                
                 });
                    

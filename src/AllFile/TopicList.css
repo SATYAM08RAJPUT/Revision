@@ -50,9 +50,6 @@ li:hover {
     background-color: hsl(24.6 95% 53.1%);;
 }
 
-/* .allData-cont-div1::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-} */
 
 .allData-cont-div2 {
     /* background-color: #fff; */
@@ -70,18 +67,18 @@ li:hover {
 }
 body.light .allData-cont-div2 h1{ 
     color: black;
+    background-color: #ffff;
 }
 .allData-cont-div2 div {
     font-size: 16px; 
-    /* color: #444;  */
     line-height: 1.5;
     color: white;
 }
 body.light .allData-cont-div2 div{ 
     color: black;
+    background-color: #ffff;
 }
 .all-Data-BackBtn{
-    /* border: solid;/ */
     display: flex;
     justify-content: end;
     font-size: 20px;
@@ -92,12 +89,27 @@ body.light .allData-cont-div2 div{
     font-weight: bold;
     border-left: 4px solid white;
     padding-left: 10px;
-    /* border: solid; */
     transition: background-color 0.1s;
 }
 .selectedTopic:hover{
     color: hsl(24.6 95% 53.1%);
 }
+body.light .allData-cont-div2 .code-example{
+    margin-top: 20px;
+    background-color: #f2f1f1;
+    /* color: white; */
+    /* padding: 10px; */
+    border-radius: 10px;
+}
+body.light .allData-cont-div2 .code-example pre{
+    margin: 20px;
+}
+/* body.dark .allData-cont-div2 .code-example pre{
+    background-color: #f2f1f1;
+    color: black;
+    padding: 20px;
+} */
+
 
 @media (max-width:400px){
     .allData-main-container{

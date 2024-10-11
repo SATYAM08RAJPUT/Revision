@@ -9,7 +9,11 @@ const AllDataFile = () => {
     const { courseId , topicId} = useParams();
     
     const [topicsData, setTopicsData] = useState([]);
-    const [selectContent , setSelectedContent] = useState(0); 
+    // console.log(topicsData);
+    
+    const [selectContent , setSelectedContent] = useState(0);
+    // console.log(selectContent);
+     
     const [loading , setLoading] = useState(true);
 
     const navigate = useNavigate();
@@ -47,16 +51,24 @@ const AllDataFile = () => {
     }
 
    
-
-    if(loading){
-        return <div style={{display:'flex' , alignItems:'center' , justifyContent:'center' , fontSize:'30px'}}>
-            <i className="fa fa-spinner fa-spin" style={{fontSize:"74px"}}></i>
-        </div>
+    if (loading) {
+        return (
+            <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '100vh',
+                width: '100%',
+                fontSize: '30px'
+            }}>
+                <i className="fa fa-spinner fa-spin" style={{ fontSize: "74px" }}></i>
+            </div>
+        );
     }
 
     return (
         <div className='allData-main-container'>
-            <Header />
+            <Header topicData={filterData} />
             <div className='allData-cont-div1'>
                 {filterData.map((item) => {                    
                     const topicKey = Object.keys(item)[0]; 
@@ -70,8 +82,8 @@ const AllDataFile = () => {
                             </div>
                             <ul>
                                 {topicData.map((topic) => {
-                                         const isSelected = topic.id == topicId;
-                                         console.log(isSelected)
+                                        const isSelected = topic.id == topicId;
+                                        // console.log(isSelected)
                                     return (
                                         <li key={topic.id} onClick={() => handleTopicLi(topic)} className={isSelected ? "selectedTopic" : ""}>
                                             <p>{topic.title}</p>

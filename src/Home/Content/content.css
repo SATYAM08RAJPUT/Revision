@@ -28,6 +28,9 @@
     font-weight: 600;
     color: #363738;
 }
+body.dark .content-items p{
+    color: white;
+}
 a{
     text-decoration: none;
     color: hsl(24.6 95% 53.1%);

@@ -1,15 +1,85 @@
-import React, { useEffect, useState } from 'react';
-import ModalJi from "../Modal/modal";
-import { useNavigate, useParams } from 'react-router-dom';
-import '../Modal/modal.css'
-import { IoSearchOutline } from "react-icons/io5";
+// import React, { useEffect, useState } from 'react';
+// import ModalJi from "../Modal/modal";
+// import { useNavigate, useParams } from 'react-router-dom';
+// import '../Modal/modal.css'
+// import { IoSearchOutline } from "react-icons/io5";
 
-const Search = ({ isOpen, onClose }) => {
+// const Search = ({ isOpen, onClose }) => {
+//     const [input, setInput] = useState('');
+//     const [searchedData, setSearchData] = useState([]);
+//     const navigate = useNavigate();
+
+
+//     useEffect(() => {
+//         const fetchApi = async () => {
+//             if (input) {
+//                 try {
+//                     const response = await fetch(`/api/topics/search?term=${input}`);
+//                     const result = await response.json();
+//                     setSearchData(result);
+//                 } catch (error) {
+//                     console.log(error);
+//                     setSearchData([])
+//                 }
+//             } else {
+//                 setSearchData([]);
+//             }
+//         };
+
+//         const umMountTimeOut = setTimeout(() => {
+//             fetchApi();
+//         }, 300);
+
+//         return () => {
+//             clearTimeout(umMountTimeOut);
+//         };
+//     }, [input]);
+
+//     const handleInput = (e) => {
+//         setInput(e.target.value);
+//     };
+
+//     const handleFilterDataTopic = (topic) => {
+//         setInput(topic.title);
+//         navigate(`/course/${topic.courseId}/topics/${topic.id}`);
+//         onClose();
+//     };
+
+//     return (
+//         <>
+//             <ModalJi isOpen={isOpen} onClose={onClose}>
+//                 <div className='search-search-div'>
+//                     <IoSearchOutline className='searchicon' />
+//                     <input type='search' value={input} onChange={handleInput} placeholder='Search docs'/>
+//                 </div>
+//                 <div className='search-results'>
+//                     <ul className='search-content-div'>
+//                         {searchedData.map(topic => (
+//                             <li key={topic.id} onClick={() => handleFilterDataTopic(topic)}>
+//                                 {topic.title}
+//                             </li>
+//                         ))}
+//                     </ul>
+//                 </div>
+//             </ModalJi>
+//         </>
+//     );
+// };
+
+// export default Search;
+
+
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../Modal/modal.css';
+import { IoSearchOutline } from "react-icons/io5";
+import { CiSearch } from "react-icons/ci";
+
+const Search = ({ handleCloseModal }) => {
     const [input, setInput] = useState('');
     const [searchedData, setSearchData] = useState([]);
     const [activeIndex, setActiveIndex] = useState(0)
     const navigate = useNavigate();
-
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -20,19 +90,19 @@ const Search = ({ isOpen, onClose }) => {
                     setSearchData(result);
                 } catch (error) {
                     console.log(error);
-                    setSearchData([])
+                    setSearchData([]);
                 }
             } else {
                 setSearchData([]);
             }
         };
 
-        const umMountTimeOut = setTimeout(() => {
+        const umountTimeout = setTimeout(() => {
             fetchApi();
         }, 300);
 
         return () => {
-            clearTimeout(umMountTimeOut);
+            clearTimeout(umountTimeout);
         };
     }, [input]);
 
@@ -42,7 +112,7 @@ const Search = ({ isOpen, onClose }) => {
 
     const handleFilterDataTopic = (topic) => {
         navigate(`/course/${topic.courseId}/topics/${topic.id}`);
-        onClose();
+        handleCloseModal();
     };
 
     console.log(searchedData)
@@ -68,11 +138,14 @@ const Search = ({ isOpen, onClose }) => {
     }, [activeIndex])
 
     return (
-        <>
-            <ModalJi isOpen={isOpen} onClose={onClose}>
-                <div className='search-search-div'>
-                    <IoSearchOutline className='searchicon' />
-                    <input type='search' value={input} onChange={handleInput} />
+        <div className="modalContainer">
+            <div className="modal">
+                <div className="modalHeader">
+                    <div className="searchWrapper">
+                        <CiSearch className="searchIcon" />
+                        <input type='search' value={input} onChange={handleInput} placeholder='Search docs' />
+                    </div>
+                    <button onClick={handleCloseModal}>Close</button>
                 </div>
                 <ul>
                     {searchedData.map((topic, index) => (
@@ -81,11 +154,11 @@ const Search = ({ isOpen, onClose }) => {
                         </li>
                     ))}
                 </ul>
-            </ModalJi>
-        </>
+          </div>
+          </div>
+               
     );
 };
 
 export default Search;
-
 

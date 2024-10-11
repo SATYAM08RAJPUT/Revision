@@ -4,7 +4,7 @@
 // import '../Modal/modal.css'
 // import { IoSearchOutline } from "react-icons/io5";
 
-// const Search = ({ isOpen, onClose , onSearchSelect}) => {
+// const Search = ({ isOpen, onClose }) => {
 //     const [input, setInput] = useState('');
 //     const [searchedData, setSearchData] = useState([]);
 //     const navigate = useNavigate();
@@ -16,7 +16,6 @@
 //                 try {
 //                     const response = await fetch(`/api/topics/search?term=${input}`);
 //                     const result = await response.json();
-//                     console.log(result);
 //                     setSearchData(result);
 //                 } catch (error) {
 //                     console.log(error);
@@ -41,11 +40,9 @@
 //     };
 
 //     const handleFilterDataTopic = (topic) => {
-//         console.log("topic.id" ,topic.id);
 //         setInput(topic.title);
-//         // navigate(`/course/${topic.courseId}/topics/${topic.id}`);
-//         onSearchSelect(topic)
-//         onclose();
+//         navigate(`/course/${topic.courseId}/topics/${topic.id}`);
+//         onClose();
 //     };
 
 //     return (
@@ -53,15 +50,17 @@
 //             <ModalJi isOpen={isOpen} onClose={onClose}>
 //                 <div className='search-search-div'>
 //                     <IoSearchOutline className='searchicon' />
-//                     <input type='search' value={input} onChange={handleInput} />
+//                     <input type='search' value={input} onChange={handleInput} placeholder='Search docs'/>
 //                 </div>
-//                 <ul>
-//                     {searchedData.map(topic => (
-//                         <li key={topic.id} onClick={() => handleFilterDataTopic(topic)}>
-//                             {topic.title}
-//                         </li>
-//                     ))}
-//                 </ul>
+//                 <div className='search-results'>
+//                     <ul className='search-content-div'>
+//                         {searchedData.map(topic => (
+//                             <li key={topic.id} onClick={() => handleFilterDataTopic(topic)}>
+//                                 {topic.title}
+//                             </li>
+//                         ))}
+//                     </ul>
+//                 </div>
 //             </ModalJi>
 //         </>
 //     );
@@ -71,18 +70,16 @@
 
 
 
-
 import React, { useEffect, useState } from 'react';
 import ModalJi from "../Modal/modal";
-import { useNavigate, useParams } from 'react-router-dom';
-import '../Modal/modal.css'
+import { useNavigate } from 'react-router-dom';
+import '../Modal/modal.css';
 import { IoSearchOutline } from "react-icons/io5";
 
 const Search = ({ isOpen, onClose }) => {
     const [input, setInput] = useState('');
     const [searchedData, setSearchData] = useState([]);
     const navigate = useNavigate();
-
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -93,7 +90,7 @@ const Search = ({ isOpen, onClose }) => {
                     setSearchData(result);
                 } catch (error) {
                     console.log(error);
-                    setSearchData([])
+                    setSearchData([]);
                 }
             } else {
                 setSearchData([]);
@@ -122,22 +119,28 @@ const Search = ({ isOpen, onClose }) => {
     return (
         <>
             <ModalJi isOpen={isOpen} onClose={onClose}>
-                <div className='search-search-div'>
-                    <IoSearchOutline className='searchicon' />
-                    <input type='search' value={input} onChange={handleInput} />
+                <div className='search-content-div'>
+                    <div className='search-content-inner-div'>
+                        <div className='search-close'>
+                            <IoSearchOutline className='searchicon' />
+                            <input type='search' value={input} onChange={handleInput} placeholder='Search docs' />
+                        </div>
+                    </div>
+
+
+                    <div className='search-results'>
+                        <ul>
+                            {searchedData.map(topic => (
+                                <li key={topic.id} onClick={() => handleFilterDataTopic(topic)}>
+                                    {topic.title}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-                <ul>
-                    {searchedData.map(topic => (
-                        <li key={topic.id} onClick={() => handleFilterDataTopic(topic)}>
-                            {topic.title}
-                        </li>
-                    ))}
-                </ul>
             </ModalJi>
         </>
     );
 };
 
 export default Search;
-
-

@@ -1,4 +1,4 @@
-.modal-overlay {
+/* .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -9,63 +9,48 @@
     justify-content: center; 
     align-items: center;  
     z-index: 1000;   
-    /* border: solid;   */
+    
 }
 
 .modal-content {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    max-width: 90%;
-    color: black;
-    height: 90vh;
-    width: 60%;
-    overflow-y: scroll;
-    /* border: solid; */
-}
-.modal-content::-webkit-scrollbar{
-    display: none;
+    border: solid black;
+    width: 696px;
+    height: 400px;
 }
 body.dark .modal-content {
     background-color: #222222;
     color: white;
 }
 .modal-close-btn-div{
-    /* border: solid; */
     display: flex;
     justify-content:end;
 }
 .modal-close {
-    cursor: pointer;
-    margin-bottom: 1rem;
-    background: none;
+
+    color: hsl(24.6 95% 53.1%);
     border: none;
-    font-size: 1rem;
-    /* color: #007bff; */
-    border: solid;
-    width: 25px;
-    border-radius: 50%;
-    height: 25px;
-    background-color: hsl(24.6 95% 53.1%);
+    background-color: white;
+    display: none; 
 }
 .modal-cross-icon{
     margin-top: 3px;
 }
-.search-search-div{
-    width: 100%;
+
+.search-search-div {
+    position: absolute;
+    top: 1rem; 
+    left: 1rem; 
+    right: 1rem; 
     padding: 7px;
-    border-radius: 30px; 
+    border-radius: 30px;
     background-color: rgb(235, 236, 240);
     display: flex;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* border: solid ; */
     gap: 5px;
-    cursor: pointer;
+    z-index: 1; 
 }
 body.dark .search-search-div{
-    /* border: solid black; */
     background-color: #3e3e3e;
 }
 .search-search-div input{
@@ -73,7 +58,7 @@ body.dark .search-search-div{
     padding: 6px; 
     border-radius: 5px; 
     font-size: 15px;
-    border: 1px solid none; 
+    border:none; 
     transition: border 0.3s;
     background-color: rgb(235, 236, 240);
 }
@@ -86,14 +71,76 @@ body.dark .search-search-div input{
     background-color: #3e3e3e;
     color: white;
 }
+.modal-children {
+    border: 1px solid rgba(0, 0, 0, 0.2); 
+    padding: 1rem; 
+    border-radius: 10px; 
+    margin-top: 1rem;
+}
+
 @media screen and (max-width: 400px){
     .modal-content{
         width: 100%;
+        height: 100%; 
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+    }
+    .search-search-div {
+        position: fixed;
+        left: 11px;
+        width: 79%;
+        padding: 7px;
+        border-radius: 30px;
+        background-color: rgb(235, 236, 240);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        gap: 5px;
+        cursor: pointer;
+        top: 13px;
     }
     .search-search-div input{
         width: 82%;
+        font-size: 15px;
     }
     .modal-close {
-
+        display: block;
+        position: relative;
+        bottom: 8px;
+        font-size: 15px;
+        left: 12px;
     }
+    .modal-overlay{
+        width: 100%;
+    }
+}
+
+.modal-Content-inner-div{
+    border: solid red;
+} */
+
+
+.modal-overlay{
+    border: solid red;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+    z-index: 1000; 
+}
+.modal-content{
+    border: solid white;
+    width: 700px;
+    height: 500px;
+    background-color: white;
+}
+.modal-content-inner-div{
+    border: solid black;
+}
+.modal-Content-Children-div{
+    border: solid;
 }

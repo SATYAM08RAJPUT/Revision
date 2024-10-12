@@ -101,6 +101,9 @@ const AllDataFile = () => {
                     <div>
                         <h1>{selectContent.title}</h1>
                         <div>{selectContent.content}</div>
+                        <div className='code-example'>
+                            <pre><code>{selectContent.code}</code></pre>
+                        </div>
                     </div>
                 )}
             </div>

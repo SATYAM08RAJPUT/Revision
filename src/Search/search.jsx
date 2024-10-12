@@ -78,6 +78,7 @@ import { CiSearch } from "react-icons/ci";
 const Search = ({ handleCloseModal }) => {
     const [input, setInput] = useState('');
     const [searchedData, setSearchData] = useState([]);
+    const [activeIndex, setActiveIndex] = useState(0)
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -110,10 +111,31 @@ const Search = ({ handleCloseModal }) => {
     };
 
     const handleFilterDataTopic = (topic) => {
-        setInput(topic.title);
         navigate(`/course/${topic.courseId}/topics/${topic.id}`);
         handleCloseModal();
     };
+
+    console.log(searchedData)
+
+    const handleKeyDown = (event) => {
+        console.log(event)
+        if (event.key === "ArrowUp") {
+            setActiveIndex((preIndex) => Math.max(preIndex - 1, 0))
+            console.log(activeIndex)
+        } else if (event.key === "ArrowDown") {
+            setActiveIndex((preIndex) => Math.min(preIndex + 1, searchedData.length - 1))
+            console.log(activeIndex)
+        } else if (event.key === "Enter") {
+            handleFilterDataTopic(searchedData[activeIndex])
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('keydown', handleKeyDown)
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown)
+        }
+    }, [activeIndex])
 
     return (
         <div className="modalContainer">
@@ -125,18 +147,16 @@ const Search = ({ handleCloseModal }) => {
                     </div>
                     <button onClick={handleCloseModal}>Close</button>
                 </div>
-
-                <div className="searchedDataContainer">
-                    <ul>
-                        {searchedData.map(topic => (
-                            <li key={topic.id} onClick={() => handleFilterDataTopic(topic)}>
-                                {topic.title}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </div>
+                <ul>
+                    {searchedData.map((topic, index) => (
+                        <li key={topic.id} onClick={() => handleFilterDataTopic(topic)} style={{ backgroundColor: index === activeIndex ? "hsl(24.6 95% 53.1%)" : "" }}>
+                            {topic.title}
+                        </li>
+                    ))}
+                </ul>
+          </div>
+          </div>
+               
     );
 };
 

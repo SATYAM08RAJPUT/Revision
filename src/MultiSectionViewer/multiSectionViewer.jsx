@@ -26,6 +26,10 @@ const CourseList = () => {
     const handleCoursebtn = (itm) => {
         console.log(itm);
         navigate(`/course/${itm.courseId}/topics/${1}`);
+        if(itm.title ==="Css Cheatsheet"){
+            navigate(`/course/cssRoadMap`);
+        }
+        
     };
 
     

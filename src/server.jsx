@@ -5,7 +5,8 @@ export default function server({ environment = 'development' } = {}) {
         environment,
         models: {
             courseList: Model,
-            topic:Model
+            topic:Model,
+            CssRoadmap:Model
         },
         seeds(server) {
             server.create('courseList', { 
@@ -628,107 +629,413 @@ Window Events: load, resize, scroll
                         { 
                             id: 1, 
                             title: 'Introduction to React', 
-                            content: 'React is a popular JavaScript library for building user interfaces, developed by Facebook. It allows developers to create large web applications that can change data without reloading the page.',
-                            courseId:'4'  
+                            content: 'React is a popular JavaScript library for building user interfaces, especially for single-page applications. It allows developers to create reusable UI components that can efficiently update and render based on changing data.',
+                            courseId:'4',  
+                            code:`
+Key Concepts
+Components: The building blocks of a React application. Components can be functional or class-based.
+JSX: A syntax extension that allows you to write HTML-like code in your JavaScript files.
+State: An object that holds data that may change over time, affecting how the component renders.
+Props: Short for "properties," these are used to pass data from one component to another.`
                         },
                         { 
                             id: 2, 
                             title: 'React Components', 
                             content: 'Components are the building blocks of a React application. They encapsulate the rendering logic and can be reused throughout the app. Components can be functional or class-based.',
-                            courseId:'4' 
+                            courseId:'4',
+                            code:`import React from 'react';
+function Greeting(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+// Usage
+function App() {
+  return <Greeting name="Alice" />;
+}
+
+export default App;
+` 
                         },
                         { 
                             id: 3, 
                             title: 'JSX in React', 
-                            content: 'JSX (JavaScript XML) is a syntax extension that allows you to write HTML-like code within JavaScript. It makes it easier to create React elements and components.' ,
-                            courseId:'4'
+                            content: 'JSX (JavaScript XML) is a syntax extension for JavaScript that looks similar to HTML. It allows you to write HTML-like code within your JavaScript files, making it easier to create and visualize your React components. While JSX is not required to use React, it is widely adopted because of its readability and ease of use.' ,
+                            courseId:'4',
+                            code:`const element = (
+  <div>
+    <h1>Hello, world!</h1>
+    <p>This is a paragraph.</p>
+  </div>
+);
+`
                         },
                         { 
                             id: 4, 
                             title: 'State', 
-                            content: 'State is a built-in object that allows components to manage dynamic data. Props (short for properties) are used to pass data from parent to child components, making them reusable.' ,
-                            courseId:'4'
+                            content: 'In React, state is a built-in object that allows components to manage and respond to dynamic data. Unlike props, which are read-only and passed from parent to child, state is managed within the component itself and can be updated to reflect changes in the UI..' ,
+                            courseId:'4',
+                            code:`
+Key Concepts of State
+Initialization: State is initialized in the constructor for class components or using the useState hook for functional components.
+Updating State: State can be updated using setState in class components or the setter function returned by useState in functional components.
+Reactivity: When state changes, React re-renders the component to reflect the new state.
+
+import React, { useState } from 'react';
+
+function Counter() {
+  // Initialize state
+  const [count, setCount] = useState(0);
+
+  // Functions to update state
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>Count: {count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+}
+
+export default Counter;
+`
                         },
-                        // { 
-                        //     id: 5, 
-                        //     title: 'React Hooks', 
-                        //     content: 'Hooks are functions that let you use state and other React features in functional components. Common hooks include useState and useEffect, which simplify state management and side effects.' 
-                        // },
-                        // { 
-                        //     id: 6, 
-                        //     title: 'Handling Events in React', 
-                        //     content: 'React allows you to handle events in a declarative way. You can add event handlers directly to elements using camelCase syntax, like onClick for click events.' 
-                        // },
-                        // { 
-                        //     id: 7, 
-                        //     title: 'React Router', 
-                        //     content: 'React Router is a library for routing in React applications. It enables navigation between different components and allows for dynamic routing based on the URL.' 
-                        // },
-                        // { 
-                        //     id: 8, 
-                        //     title: 'React Lifecycle Methods', 
-                        //     content: 'Lifecycle methods are special methods in class components that allow you to run code at specific points in a components life, such as when it mounts, updates, or unmounts.' 
-                        // },
-                        // { 
-                        //     id: 9, 
-                        //     title: 'Managing Forms in React', 
-                        //     content: 'React provides a way to manage forms by controlling their state through controlled components. This allows you to manage form data and handle user input effectively.' 
-                        // },
-                        // { 
-                        //     id: 10, 
-                        //     title: 'Props', 
-                        //     content: 'Props (short for properties) in React are a fundamental concept used to pass data and event handlers from one component to another. They enable components to be dynamic and reusable. Here’s a breakdown of how props work in React:' 
-                        // },
-                        // { 
-                        //     id: 11, 
-                        //     title: 'Context API', 
-                        //     content: 'The Context API in React provides a way to share values (like state or functions) between components without having to pass props down manually at every level. This can be particularly useful for global state management, theming, or any scenario where you want multiple components to access the same data)' 
-                        // },
-                        // { 
-                        //     id: 12, 
-                        //     title: 'Server-Side Rendering (SSR)', 
-                        //     content: 'Server-Side Rendering (SSR) is a technique used to render web pages on the server rather than in the browser. In a React application, SSR can improve performance, SEO, and the initial loading experience.' 
-                        // }
+                        { 
+                            id: 5, 
+                            courseId:'4',
+                            title: 'React Hooks', 
+                            content: 'Hooks are functions that let you use state and other React features in functional components. Common hooks include useState and useEffect, which simplify state management and side effects.' ,
+                            code:`
+Here are some commonly used hooks:
+useState
+useEffect
+useContext
+useReducer
+useRef
+import React, { useState, useEffect } from 'react';
+
+const Counter = () => {
+  // State to keep track of the count
+  const [count, setCount] = useState(0);
+
+  // Effect that runs whenever the count changes
+  useEffect(() => {
+    document.title = Count: {count};
+
+    // Cleanup function (if needed)
+    return () => {
+      console.log(Cleaning up for count: {count});
+    };
+  }, [count]); // Dependency array
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+    </div>
+  );
+};
+
+export default Counter;
+
+`
+                        },
+                        { 
+                            id: 6, 
+                            courseId:'4',
+                            title: 'Handling Events in React', 
+                            content: 'React allows you to handle events in a declarative way. You can add event handlers directly to elements using camelCase syntax, like onClick for click events.', 
+                            code:
+                            `
+import React, { useState } from 'react';
+const EventExample = () => {
+  const [count, setCount] = useState(0);
+
+  // Event handler function
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <h1>Button Click Example</h1>
+      <p>Count: {count}</p>
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+};
+
+export default EventExample;
+
+`
+                        },
+                        { 
+                            id: 7, 
+                            courseId:'4',
+                            title: 'React Router', 
+                            content: 'React Router is a library for routing in React applications. It enables navigation between different components and allows for dynamic routing based on the URL.',
+                            code:`
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+
+const App = () => {
+  return (
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+      </Switch>
+    </Router>
+  );
+};
+
+export default App;
+`
+                        },
+                        { 
+                            id: 8, 
+                            courseId:'4',
+                            title: 'React Lifecycle Methods', 
+                            content: 'Lifecycle methods are special methods in class components that allow you to run code at specific points in a components life, such as when it mounts, updates, or unmounts.',
+                            code: `
+Lifecycle Methods Overview
+Here are the main lifecycle methods in class components:
+
+constructor: Initializes state and binds methods.
+componentDidMount: Invoked immediately after a component is mounted.
+componentDidUpdate: Invoked immediately after updating occurs.
+componentWillUnmount: Invoked immediately before a component is unmounted and destroyed.
+
+import React, { Component } from 'react';
+
+class LifecycleExample extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+    console.log('Constructor: Initializing state');
+  }
+
+  componentDidMount() {
+    console.log('ComponentDidMount: Component is mounted');
+    // Simulating a network request
+    this.timer = setInterval(() => {
+      this.setState((prevState) => ({ count: prevState.count + 1 }));
+    }, 1000);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('ComponentDidUpdate: Component updated');
+    if (prevState.count !== this.state.count) {
+      console.log(Count updated to: {this.state.count});
+    }
+  }
+
+  componentWillUnmount() {
+    console.log('ComponentWillUnmount: Cleaning up');
+    clearInterval(this.timer); // Clean up timer
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Lifecycle Methods Example</h1>
+        <p>Count: {this.state.count}</p>
+      </div>
+    );
+  }
+}
+
+export default LifecycleExample;
+
+`
+                        },
+                        { 
+                            id: 9, 
+                            courseId:'4',
+                            title: 'Managing Forms in React', 
+                            content: 'React provides a way to manage forms by controlling their state through controlled components. This allows you to manage form data and handle user input effectively.',
+                            code:`
+import React, { useState } from 'react';
+const FormExample = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent the default form submission
+    console.log('Form submitted:', formData);
+    // You can perform actions like API calls here
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Email:
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default FormExample;
+
+`
+                        },
+                        { 
+                            id: 10, 
+                            courseId:'4',
+                            title: 'Props', 
+                            content: 'Props (short for properties) in React are a fundamental concept used to pass data and event handlers from one component to another. They enable components to be dynamic and reusable. Here’s a breakdown of how props work in React:', 
+                            code:`
+import React from 'react';
+const Greeting = ({ name }) => {
+  return <h1>Hello, {name}!</h1>;
+};
+
+export default Greeting;
+
+`
+                        },
+                        { 
+                            id: 11, 
+                            courseId:'4',
+                            title: 'Context API', 
+                            content: 'The Context API in React provides a way to share values (like state or functions) between components without having to pass props down manually at every level. This can be particularly useful for global state management, theming, or any scenario where you want multiple components to access the same data)' 
+                        },
+                        { 
+                            id: 12, 
+                            courseId:'4',
+                            title: 'Server-Side Rendering (SSR)', 
+                            content: 'Server-Side Rendering (SSR) is a technique used to render web pages on the server rather than in the browser. In a React application, SSR can improve performance, SEO, and the initial loading experience.' 
+                        }
                     ]
                 });
+                server.create('CssRoadmap',{
+                  roadMap: [
+                    {
+                      id:"1",
+                      courseId:'2',
+                      topicName: "Basic",
+                      subTopics:["HTML Basic Tag","Css Basic Properties","One Page Site demo"]
+                    },
+                    {
+                      id:"2",
+                      courseId:'2',
+                      topicName: "Box Modal",
+                      subTopics:["Box Modal","Box Sizing","Display","Css Selectors"]
+                    },
+                    {
+                      id:"3",
+                      courseId:'2',
+                      topicName: "Positions",
+                      subTopics:["Css Positions","Z-index","OverFlow"]
+                    },
+                    {
+                      id:"4",
+                      courseId:'2',
+                      topicName: "Background",
+                      subTopics:["Background-size","Background-position","Orign,clip & Attachment","Gradient","Filters","Styling svgs"]
+                    },
+                    {
+                      id:"5",
+                      courseId:'2',
+                      topicName: "Units",
+                      subTopics:["%","Min-height & min-width","Rem % em","vh & vw","Auto"]
+                    },
+                    {
+                      id:"6",
+                      courseId:'2',
+                      topicName: "Responsive",
+                      subTopics:["Media queries","viewport meta tag","Mobile first","fluid designs","Adaptive designs"]
+                    },
+                    {
+                      id:"7",
+                      courseId:'2',
+                      topicName: "Text & Fonts",
+                      subTopics:["Font families","google font","Custom fonts","Font format & prop","Letter spacing","Line height","Text-decoration & shadom"]
+                    },
+                    {
+                      id:"8",
+                      courseId:'2',
+                      topicName: "Transforming Elements",
+                      subTopics:["Transform-origin","Rotate & translate","Skew & Scale","Transformation shorthands","Rotation in 3D","perspective,z-axis,translate-z","Flipping elements"]
+                    },
+                    {
+                      id:"9",
+                      courseId:'2',
+                      topicName: "Transitionings & Animations",
+                      subTopics:["Transitions","Timing function","Animations","multiple Keyframes"]
+                    },
+                    {
+                      id:"10",
+                      courseId:'2',
+                      topicName: "Adavnces Css",
+                      subTopics:["Css Modules","Css Variables","Vendor Prefixes","@support","Polyfills","Cross-browser compatibility","naming conventions","Vanila Css & Frameworks"]
+                    }
+                  ]
+                })
         },
 
         routes() {
             this.namespace = "api"
             this.get('/courseLists', (schema) => {
-                // console.log(schema);
+                console.log(schema);
                 return schema.courseLists.all()
             })
             this.get("/topics", (schema) => {
                 return schema.topics.all()
             })
-
-            // this.get("/topics/search", (schema , request) => {                
-            //     // console.log("request" ,request);
-            //     let searchTerm = request.queryParams.term || "";
-
-            //     const topics = schema.topics.all()
-            //     console.log(topics);
-            
-
-            //     const filterData = topics.models.map((item) =>{
-            //         // console.log("itemsssssssssss" , item);
-                    
-            //         const modelAttrs = item.attrs;
-            //         console.log("Model Attributes:",modelAttrs);
-            //         const modelKeys = Object.keys(modelAttrs)[0];
-            //         // console.log(modelKeys);
-            //         const modelData = modelAttrs[modelKeys];
-            //         console.log(modelData);
-
-            //     })
-
-            //     return filterData;
-            // })
-            
+            this.get("/cssRoadmaps",(schema) => {
+              return schema.cssRoadmaps.all()
+            })
             this.get("/topics/search", (schema, request) => {
-                // console.log("request" ,request);
-                                
+
                 let searchTerm = request.queryParams.term.toLowerCase();
                 const topicsModels = schema.topics.all().models;
                 // console.log(topicsModels);
@@ -744,9 +1051,6 @@ Window Events: load, resize, scroll
                         itemFilter.title.toLowerCase().includes(searchTerm)
                     );
                 })
-                
-                // console.log(searchTerm)
-                // console.log(topicAttrs);
                 return topicAttrs;
             });
         }

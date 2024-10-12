@@ -1,0 +1,36 @@
+.cssRoaaMap{
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto ;
+    gap: 20px;
+    margin-top: 20px;
+}
+.cssBox-Conatiner{
+    width: 270px;
+    height: 270px;
+    background-color: #54C3F0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.cssBox-Conatiner h2{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+.order-listRoadMap{
+    line-height: 10px;
+}
+.order-listRoadMap li{
+    list-style: none;
+    font-size: 16px;
+    margin: 2px;
+    line-height: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+}

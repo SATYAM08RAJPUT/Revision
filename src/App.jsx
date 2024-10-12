@@ -4,6 +4,7 @@ import CourseList from './MultiSectionViewer/multiSectionViewer'
 import AllDataFile from './AllFile/TopicList';
 import Search from './Search/search';
 import './App.css'
+import CssRoadMap from './Css-Roadmap/cssRoadMap';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/course/:courseId/topics/:topicId" element={<AllDataFile />} />
             <Route path="/course/:courseId/topics/:topicId" element={<AllDataFile />} /> 
             <Route path="/search" element={<Search />} />
+            <Route path="/course/cssRoadMap" element={<CssRoadMap />} />
           </Routes>
         </Router>
       </div>

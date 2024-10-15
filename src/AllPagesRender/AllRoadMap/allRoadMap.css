@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cssPage-main-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    padding: 20px;
+}
+.cssPage-items-div{
+    padding: 20px;
+    background-color: hsl(24.6 95% 53.1%);
+    color: white;
+    /* height: ; */
+    border-radius: 10px;
+    /* border: solid red; */
+    height: 35vh;
+    width: 100%;
+    overflow-y: scroll;
+}
+.cssPage-items-div::-webkit-scrollbar{
+    display: none;
+}
+.allRoadData-main-container{
+    margin-top: 88px;
+}
+.allRoadMap-btn-div{
+    display: flex;
+    justify-content:space-between;
+    padding: 30px;
+    margin-right: 35px;
+}
+.allRoadMap-btn-div button{
+    border: solid;
+    background-color: hsl(24.6 95% 53.1%);
+    color: white;
+    padding: 15px 30px;
+    font-size: 15px;
+}

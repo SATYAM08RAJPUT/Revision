@@ -1,14 +1,14 @@
 // import React, { useEffect, useState } from 'react';
-// import ModalJi from "../Modal/modal";
-// import { useNavigate, useParams } from 'react-router-dom';
-// import '../Modal/modal.css'
+// import { useNavigate } from 'react-router-dom';
+// import '../Modal/modal.css';
 // import { IoSearchOutline } from "react-icons/io5";
+// import { CiSearch } from "react-icons/ci";
 
-// const Search = ({ isOpen, onClose }) => {
+// const Search = ({ handleCloseModal }) => {
 //     const [input, setInput] = useState('');
 //     const [searchedData, setSearchData] = useState([]);
+//     const [activeIndex, setActiveIndex] = useState(0)
 //     const navigate = useNavigate();
-
 
 //     useEffect(() => {
 //         const fetchApi = async () => {
@@ -19,19 +19,19 @@
 //                     setSearchData(result);
 //                 } catch (error) {
 //                     console.log(error);
-//                     setSearchData([])
+//                     setSearchData([]);
 //                 }
 //             } else {
 //                 setSearchData([]);
 //             }
 //         };
 
-//         const umMountTimeOut = setTimeout(() => {
+//         const umountTimeout = setTimeout(() => {
 //             fetchApi();
 //         }, 300);
 
 //         return () => {
-//             clearTimeout(umMountTimeOut);
+//             clearTimeout(umountTimeout);
 //         };
 //     }, [input]);
 
@@ -40,33 +40,58 @@
 //     };
 
 //     const handleFilterDataTopic = (topic) => {
-//         setInput(topic.title);
 //         navigate(`/course/${topic.courseId}/topics/${topic.id}`);
-//         onClose();
+//         handleCloseModal();
 //     };
 
+//     console.log(searchedData)
+
+//     const handleKeyDown = (event) => {
+//         console.log(event)
+//         if (event.key === "ArrowUp") {
+//             setActiveIndex((preIndex) => Math.max(preIndex - 1, 0))
+//             console.log(activeIndex)
+//         } else if (event.key === "ArrowDown") {
+//             setActiveIndex((preIndex) => Math.min(preIndex + 1, searchedData.length - 1))
+//             console.log(activeIndex)
+//         } else if (event.key === "Enter") {
+//             handleFilterDataTopic(searchedData[activeIndex])
+//         }
+//     }
+
+//     useEffect(() => {
+//         window.addEventListener('keydown', handleKeyDown)
+//         return () => {
+//             window.removeEventListener('keydown', handleKeyDown)
+//         }
+//     }, [activeIndex])
+
 //     return (
-//         <>
-//             <ModalJi isOpen={isOpen} onClose={onClose}>
-//                 <div className='search-search-div'>
-//                     <IoSearchOutline className='searchicon' />
-//                     <input type='search' value={input} onChange={handleInput} placeholder='Search docs'/>
+//         <div className="modalContainer">
+//             <div className="modal">
+//                 <div className="modalHeader">
+//                     <div className="searchWrapper">
+//                         <CiSearch className="searchIcon" />
+//                         <input type='search' value={input} onChange={handleInput} placeholder='Search docs' />
+//                     </div>
+//                     <button onClick={handleCloseModal}>Close</button>
 //                 </div>
-//                 <div className='search-results'>
-//                     <ul className='search-content-div'>
-//                         {searchedData.map(topic => (
-//                             <li key={topic.id} onClick={() => handleFilterDataTopic(topic)}>
-//                                 {topic.title}
-//                             </li>
-//                         ))}
-//                     </ul>
-//                 </div>
-//             </ModalJi>
-//         </>
+//                 <ul>
+//                     {searchedData.map((topic, index) => (
+//                         <li key={topic.id} onClick={() => handleFilterDataTopic(topic)} style={{ backgroundColor: index === activeIndex ? "hsl(24.6 95% 53.1%)" : "" }}>
+//                             {topic.title}
+//                         </li>
+//                     ))}
+//                 </ul>
+//           </div>
+//           </div>
+               
 //     );
 // };
 
 // export default Search;
+
+
 
 
 import React, { useEffect, useState } from 'react';

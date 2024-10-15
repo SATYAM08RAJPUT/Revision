@@ -257,7 +257,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import './TopicList.css';
 import Header from '../Home/Header/header';
 import { IoMdArrowRoundBack } from "react-icons/io";
-
+import useArrowPress from '../CustomHook/useArrowPress';
 
 const AllDataFile = () => {
     const { courseId, topicId } = useParams();
@@ -293,15 +293,32 @@ const AllDataFile = () => {
 
 
     const filterData = topicsData.filter(item => item.id == courseId);
+    console.log(filterData)
 
+    // const topicData = filterData.length > 0 ? Object.values(filterData[0])[0] : [];
+    
     const handleTopicLi = (itm) => {
         navigate(`/course/${courseId}/topics/${itm.id}`);
     }
+    
+    // const {activeIndex} = useArrowPress(topicData,handleTopicLi)
+    // console.log(activeIndex);
+    
 
 
     const handleBackClick = () => {
         // navigate(`/course`)
-        navigate(`/course/${courseId}/allRoadmaps/${courseId}`)
+        // navigate(`/course/${courseId}/allRoadmaps/${courseId}`)
+
+        if(courseId === "1"){
+             navigate(`/course/HTMLRoadMap`);
+        } else if(courseId === "2"){
+            navigate(`/course/cssRoadMap`);
+        } else if(courseId === "3"){
+            navigate(`/course/JavaScriptRoadMap`);
+        }else if(courseId === "4"){
+            navigate(`/course/ReactRoadMap`);
+        }
     }
 
 
@@ -353,14 +370,11 @@ const AllDataFile = () => {
             <div className='allData-cont-div2'>
                 {selectContent.content && (
                     <div>
-                        <h1>{selectContent.title}</h1>
+                        <h1 style={{color:'hsl(24.6 95% 53.1%)' , fontSize:'40px'}}>{selectContent.title}</h1>
                         <h3>{selectContent.Definition}</h3>
                         <div>{selectContent.content}</div>
-                        <br />
                         <h3>{selectContent.ex}</h3>
-                        <br />
                         <h2>{selectContent.function}</h2>
-                        <br />
 
                         <div className='code-example'>
                             {selectContent && selectContent.info ? (
@@ -373,18 +387,50 @@ const AllDataFile = () => {
                                 </>
                             ) : ""}
                             <pre><code>{selectContent.code}</code></pre>
-                            <br />
+
                             <h3>{selectContent.ex2}</h3>    
-                            <br />
+
                             {selectContent && selectContent.code2 ? (
                                 <pre><code>{selectContent.code2}</code></pre>
                             ):''}
-                            {/* <pre><code>{selectContent.code2}</code></pre> */}
                         </div>
                     </div>
                 )}
             </div>
         </div >
+        
+        // <div className='allData-main-container'>
+        // <Header topicData={filterData} />
+        // <div className='allData-cont-div1'>
+        // <div className='all-Data-BackBtn'>
+        //             <IoMdArrowRoundBack onClick={handleBackClick} />
+        //         </div>
+        //         <ul>
+        //             {topicData.map((topic,index) => {
+        //                 const isSelected = topic.id == topicId;
+        //                 return (
+        //                     <li key={topic.id} onClick={() => handleTopicLi(topic)} className={isSelected ? "selectedTopic" : ""} >
+        //                         <p>{topic.title}</p>
+        //                     </li>
+        //                 );
+        //             })}
+        //         </ul>
+        //         );
+      
+        // </div>
+
+        // <div className='allData-cont-div2'>
+        //     {selectContent.content && (
+        //         <div>
+        //             <h1>{selectContent.title}</h1>
+        //             <div>{selectContent.content}</div>
+        //             <div className='code-example'>
+        //                 <pre><code>{selectContent.code}</code></pre>
+        //             </div>
+        //         </div>
+        //     )}
+        // </div>
+    // </div>
     );
 };
 

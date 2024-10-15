@@ -99,12 +99,12 @@ import { useNavigate } from 'react-router-dom';
 import '../Modal/modal.css';
 import { IoSearchOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
-
+import useArrowPress from '../CustomHook/useArrowPress';
 const Search = ({ handleCloseModal }) => {
     const [input, setInput] = useState('');
     const [searchedData, setSearchData] = useState([]);
-    const [activeIndex, setActiveIndex] = useState(0)
     const navigate = useNavigate();
+  
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -139,28 +139,8 @@ const Search = ({ handleCloseModal }) => {
         navigate(`/course/${topic.courseId}/topics/${topic.id}`);
         handleCloseModal();
     };
-
-    console.log(searchedData)
-
-    const handleKeyDown = (event) => {
-        console.log(event)
-        if (event.key === "ArrowUp") {
-            setActiveIndex((preIndex) => Math.max(preIndex - 1, 0))
-            console.log(activeIndex)
-        } else if (event.key === "ArrowDown") {
-            setActiveIndex((preIndex) => Math.min(preIndex + 1, searchedData.length - 1))
-            console.log(activeIndex)
-        } else if (event.key === "Enter") {
-            handleFilterDataTopic(searchedData[activeIndex])
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('keydown', handleKeyDown)
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown)
-        }
-    }, [activeIndex])
+    const {activeIndex }= useArrowPress(searchedData,handleFilterDataTopic)
+    console.log(searchedData);
 
     return (
         <div className="modalContainer">

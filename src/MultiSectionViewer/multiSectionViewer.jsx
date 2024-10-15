@@ -107,9 +107,22 @@ const CourseList = () => {
     }, [topicId]);
 
     const handleCoursebtn = (itm) => {
-        console.log(itm);
+        console.log("item" ,itm);
         // navigate(`/course/${itm.courseId}/topics/${1}`);
-        navigate(`/course/${itm.courseId}/allRoadmaps/${itm.courseId}`);
+        // navigate(`/course/${itm.courseId}/allRoadmaps/${itm.courseId}`);
+
+        navigate(`/course/${itm.courseId}/topics/${1}`);
+        
+        if(itm.title ==="Css Cheatsheet"){
+            navigate(`/course/cssRoadMap`);
+        } else if(itm.title === "HTML Cheatsheet"){
+                navigate(`/course/HTMLRoadMap`)
+        }  else if(itm.courseId === "3"){
+            navigate(`/course/JavaScriptRoadMap`);
+        } else if(itm.title === "React Cheatsheet"){
+            navigate(`/course/ReactRoadMap`)
+        } 
+        
     };
 
     

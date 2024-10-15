@@ -35,9 +35,10 @@ import CourseList from './MultiSectionViewer/multiSectionViewer'
 import AllDataFile from './AllFile/TopicList';
 import Search from './Search/search';
 import './App.css'
-import AllRoadMapData from './AllPagesRender/AllRoadMap/allRoadMap';
-
-
+import CssRoadMap from './Css-Roadmap/cssRoadMap';
+import HtmlRoadMap from './HTML-ROADMAP/htmlroadmap';
+import JavaScriptRoadMap from './JAVASCRIPT-ROADMAP/javascriptroadmap';
+import ReactRoadMap from './REACT-ROADMAP/reactRoadMap';
 
 function App() {
   return (
@@ -47,8 +48,15 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/course" element={<CourseList />} />
-            <Route path="/course/:courseId/allRoadmaps/:courseId" element={<AllRoadMapData />} />
-            <Route path="/course/:courseId/topics/:topicId" element={<AllDataFile />} />
+            {/* <Route path="/course/:courseId/allRoadmaps/:courseId" element={<AllRoadMapData />} /> */}
+            {/* <Route path="/course/:courseId/topics/:topicId" element={<AllDataFile />} /> */}
+            {/* <Route path="/course/:courseId/topics/:topicId" eleqment={<AllDataFile />} />  */}
+            {/* <Route path="/search" element={<Search />} /> */}
+            <Route path="/course/cssRoadMap" element={<CssRoadMap />} />
+            <Route path='/course/HTMLRoadMap' element={<HtmlRoadMap />}/>
+            <Route path='/course/JavaScriptRoadMap' element={<JavaScriptRoadMap />}/>
+            <Route path='/course/ReactRoadMap' element={<ReactRoadMap />}/>
+            <Route path="/course/:courseId/topics/:topicId" element={<AllDataFile />} /> 
           </Routes>
         </Router>
       </div>

@@ -88,6 +88,8 @@ body.dark .back-button{
 body.light .back-button{
     background-color: hsl(24.6, 95%, 53.1%);
     color: white;
-    padding: 15px 25px;
+    /* padding: 15px 25px; */
     font-size: 15px;
+    height: 40px;
+    width: 100px;
 }

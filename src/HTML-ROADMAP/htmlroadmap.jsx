@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react"
-import './cssRoadMap.css'
+import './htmlroadmap.css'
 import { useNavigate } from "react-router-dom"
 import Header from "../Home/Header/header"
-export default function CssRoadMap() {
+
+export default function HtmlRoadMap() {
     const navigate = useNavigate()
 
-    const [cssRoadMap, setCssRoadMap] = useState([])
+    const [htmlRoadMap, setHtmlRoadMap] = useState([])
     const fetchCssRoad = async () => {
-        const response = await fetch("/api/cssRoadmaps")
+        const response = await fetch("/api/htmlRoadmaps")
         console.log(response)
         const result = await response.json()
-        setCssRoadMap(result.cssRoadmaps[0].roadMap)
-        console.log(result.cssRoadmaps[0].roadMap)
+        console.log(result)
+        setHtmlRoadMap(result.htmlRoadmaps[0].roadMap)
+        console.log(result.htmlRoadmaps[0].roadMap)
     }
     useEffect(() => {
         fetchCssRoad()
     }, [])
-    console.log(cssRoadMap)
+    console.log(htmlRoadMap)
 
     const handleTopiclick = (item) => {
         navigate(`/course/${item.courseId}/topics/${item.id}`);
@@ -30,10 +32,9 @@ export default function CssRoadMap() {
 
     return (
         <>  
-        
             <div className="cssRoaaMap">
                 <Header />
-                {cssRoadMap.map((item) => (
+                {htmlRoadMap.map((item) => (
                     <div className="cssBox-Conatiner" onClick={() => handleTopiclick(item)}>
                         <h2>{item.topicName}</h2>
                         <ul className="order-listRoadMap">

@@ -28,7 +28,11 @@ const CourseList = () => {
         navigate(`/course/${itm.courseId}/topics/${1}`);
         if(itm.title ==="Css Cheatsheet"){
             navigate(`/course/cssRoadMap`);
-        }
+        } else if(itm.title === "HTML Cheatsheet"){
+                navigate(`/course/HTMLRoadMap`)
+        }  else if(itm.title === "Javascript Cheatsheet"){
+            navigate(`/course/JavaScriptRoadMap`)
+        } 
         
     };
 

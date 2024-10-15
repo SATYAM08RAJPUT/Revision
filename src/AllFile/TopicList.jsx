@@ -3,54 +3,62 @@ import { useNavigate, useParams } from 'react-router-dom';
 import './TopicList.css';
 import Header from '../Home/Header/header';
 import { IoMdArrowRoundBack } from "react-icons/io";
-
+import useArrowPress from '../CustomHook/useArrowPress';
 
 const AllDataFile = () => {
-    const { courseId , topicId} = useParams();
-    
+    const { courseId, topicId } = useParams();
+
     const [topicsData, setTopicsData] = useState([]);
-    // console.log(topicsData);
-    
-    const [selectContent , setSelectedContent] = useState(0);
-    // console.log(selectContent);
-     
-    const [loading , setLoading] = useState(true);
+    const [selectContent, setSelectedContent] = useState(0);
+
+    const [loading, setLoading] = useState(true);
 
     const navigate = useNavigate();
 
-    const fetchAllTopics = async () => {    
+    const fetchAllTopics = async () => {
         const response = await fetch(`/api/topics`);
-        
-        const result = await response.json(); 
+
+        const result = await response.json();
         setTopicsData(result.topics);
         setLoading(false);
-          
 
-            const course = result.topics.find(topic => topic.id == courseId);
-            
-            if (course) {
-                const initialTopicKey = Object.keys(course)[0];
-                setSelectedContent(course[initialTopicKey][(parseInt(topicId)-1) || 0])
-            }
+
+        const course = result.topics.find(topic => topic.id == courseId);
+
+        if (course) {
+            const initialTopicKey = Object.keys(course)[0];
+            setSelectedContent(course[initialTopicKey][(parseInt(topicId) - 1) || 0])
+        }
     };
- 
+
     useEffect(() => {
         fetchAllTopics();
-    }, [courseId , topicId]); 
-    
+    }, [courseId, topicId]);
+
 
     const filterData = topicsData.filter(item => item.id == courseId);
+    console.log(filterData)
 
+    const topicData = filterData.length > 0 ? Object.values(filterData[0])[0] : [];
+    
     const handleTopicLi = (itm) => {
         navigate(`/course/${courseId}/topics/${itm.id}`);
     }
+    
+    const {activeIndex} = useArrowPress(topicData,handleTopicLi)
 
 
-    const handleBackClick = () =>{
-        navigate(`/course`)
+    const handleBackClick = () => {
+        if(courseId === "1"){
+             navigate(`/course/HTMLRoadMap`)
+        } else if(courseId === "2"){
+            navigate(`/course/cssRoadMap`)
+        } else if(courseId === "3"){
+            navigate(`/course/JavaScriptRoadMap`)
+        }
     }
 
-   
+
     if (loading) {
         return (
             <div style={{
@@ -67,47 +75,77 @@ const AllDataFile = () => {
     }
 
     return (
-        <div className='allData-main-container'>
-            <Header topicData={filterData} />
-            <div className='allData-cont-div1'>
-                {filterData.map((item) => {                    
-                    const topicKey = Object.keys(item)[0]; 
-                    
-                    const topicData = item[topicKey]; 
+        // <div className='allData-main-container'>
+        //     <Header topicData={filterData} />
+        //     <div className='allData-cont-div1'>
+        //         {filterData.map((item) => {
+        //             const topicKey = Object.keys(item)[0];
 
-                    return (
-                        <div key={topicKey}>
-                            <div className='all-Data-BackBtn'>
-                                <IoMdArrowRoundBack onClick={handleBackClick}/>
-                            </div>
-                            <ul>
-                                {topicData.map((topic) => {
-                                        const isSelected = topic.id == topicId;
-                                        // console.log(isSelected)
-                                    return (
-                                        <li key={topic.id} onClick={() => handleTopicLi(topic)} className={isSelected ? "selectedTopic" : ""}>
-                                            <p>{topic.title}</p>
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                    );
-                })}
-            </div>
-            
-            <div className='allData-cont-div2'>
-            {selectContent.content && (
-                    <div>
-                        <h1>{selectContent.title}</h1>
-                        <div>{selectContent.content}</div>
-                        <div className='code-example'>
-                        <pre><code>{selectContent.code}</code></pre>
-                        </div>
-                    </div>
-                )}
-            </div>
+        //             const topicData = item[topicKey];
+        //             return (
+        //                 <div key={topicKey}>
+        //                     <div className='all-Data-BackBtn'>
+        //                         <IoMdArrowRoundBack onClick={handleBackClick} />
+        //                     </div>
+        //                     <ul>
+        //                         {topicData.map((topic) => {
+        //                             const isSelected = topic.id == topicId;
+        //                             return (
+        //                                 <li key={topic.id} onClick={() => handleTopicLi(topic)} className={isSelected ? "selectedTopic" : ""} >
+        //                                     <p>{topic.title}</p>
+        //                                 </li>
+        //                             )
+        //                         })}
+        //                     </ul>
+        //                 </div>
+        //             );
+        //         })}
+        //     </div>
+
+        //     <div className='allData-cont-div2'>
+        //         {selectContent.content && (
+        //             <div>
+        //                 <h1>{selectContent.title}</h1>
+        //                 <div>{selectContent.content}</div>
+        //                 <div className='code-example'>
+        //                     <pre><code>{selectContent.code}</code></pre>
+        //                 </div>
+        //             </div>
+        //         )}
+        //     </div>
+        // </div>
+        <div className='allData-main-container'>
+        <Header topicData={filterData} />
+        <div className='allData-cont-div1'>
+        <div className='all-Data-BackBtn'>
+                    <IoMdArrowRoundBack onClick={handleBackClick} />
+                </div>
+                <ul>
+                    {topicData.map((topic,index) => {
+                        const isSelected = topic.id == topicId;
+                        return (
+                            <li key={topic.id} onClick={() => handleTopicLi(topic)} className={isSelected ? "selectedTopic" : ""} >
+                                <p>{topic.title}</p>
+                            </li>
+                        );
+                    })}
+                </ul>
+                );
+      
         </div>
+
+        <div className='allData-cont-div2'>
+            {selectContent.content && (
+                <div>
+                    <h1>{selectContent.title}</h1>
+                    <div>{selectContent.content}</div>
+                    <div className='code-example'>
+                        <pre><code>{selectContent.code}</code></pre>
+                    </div>
+                </div>
+            )}
+        </div>
+    </div>
     );
 };
 

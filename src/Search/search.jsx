@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import ModalJi from "../Modal/modal";
-import { useNavigate, useParams } from 'react-router-dom';
-import '../Modal/modal.css'
-import { IoSearchOutline } from "react-icons/io5";
 
-const Search = ({ isOpen, onClose }) => {
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../Modal/modal.css';
+import { CiSearch } from "react-icons/ci";
+import useArrowPress from '../CustomHook/useArrowPress';
+const Search = ({ handleCloseModal }) => {
     const [input, setInput] = useState('');
     const [searchedData, setSearchData] = useState([]);
     const navigate = useNavigate();
+
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -15,22 +16,22 @@ const Search = ({ isOpen, onClose }) => {
                 try {
                     const response = await fetch(`/api/topics/search?term=${input}`);
                     const result = await response.json();
-                    console.log(result)
                     setSearchData(result);
                 } catch (error) {
-                    setSearchData([])
+                    console.log(error);
+                    setSearchData([]);
                 }
             } else {
                 setSearchData([]);
             }
         };
 
-        const umMountTimeOut = setTimeout(() => {
+        const umountTimeout = setTimeout(() => {
             fetchApi();
         }, 300);
 
         return () => {
-            clearTimeout(umMountTimeOut);
+            clearTimeout(umountTimeout);
         };
     }, [input]);
 
@@ -39,26 +40,32 @@ const Search = ({ isOpen, onClose }) => {
     };
 
     const handleFilterDataTopic = (topic) => {
-        navigate(`/topics/${topic.id}`);
+        navigate(`/course/${topic.courseId}/topics/${topic.id}`);
+        handleCloseModal();
     };
+    const { activeIndex } = useArrowPress(searchedData, handleFilterDataTopic)
 
     return (
-        <ModalJi isOpen={isOpen} onClose={onClose}>
-            <div className='search-search-div'>
-                <IoSearchOutline className='searchicon' />
-                <input type='search' value={input} onChange={handleInput} />
+        <div className="modalContainer">
+            <div className="modal">
+                <div className="modalHeader">
+                    <div className="searchWrapper">
+                        <CiSearch className="searchIcon" />
+                        <input type='search' value={input} onChange={handleInput} placeholder='Search docs' />
+                    </div>
+                    <button onClick={handleCloseModal}>Close</button>
+                </div>
+                <ul>
+                    {searchedData.map((topic, index) => (
+                        <li key={topic.id} onClick={() => handleFilterDataTopic(topic)} style={{ backgroundColor: index === activeIndex ? "hsl(24.6 95% 53.1%)" : "" }}>
+                            {topic.title}
+                        </li>
+                    ))}
+                </ul>
             </div>
-            <ul>
-                {searchedData.map((topic, index) => (
-
-                    <li key={topic.id} onClick={() => handleFilterDataTopic(topic)}>
-                        {topic.title}
-                    </li>
-
-                ))}
-            </ul>
-        </ModalJi>
+        </div>
     );
 };
 
 export default Search;
+

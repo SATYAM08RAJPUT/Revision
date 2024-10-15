@@ -1,15 +1,18 @@
+
 import './header.css';
 import { IoSearchOutline } from "react-icons/io5";
 import { useState, useEffect } from 'react';
-import ImageCom from '../../Common-Components copy/Image/img';
-// import logo2 from '../../../public/logoImage/logo2.png';
-import logo2 from '../../../public/logoImage/logo2.png'
 import { Link } from 'react-router-dom';
 import Search from '../../Search/search';
+import { BsLightningCharge } from "react-icons/bs";
+import { useMediaQuery } from 'react-responsive';
+import { IoIosMenu } from "react-icons/io";
 
-export default function Header() {
+
+export default function Header({topicData}) {
     const [theme, setTheme] = useState('light');
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const isSmallScreen = useMediaQuery({maxWidth:400});
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -28,38 +31,46 @@ export default function Header() {
         document.body.className = theme;
     }, [theme]);
 
-    const handleInput = () => {
-        setIsModalVisible(true); 
+    const handleToggleModal = () => {
+        setIsModalVisible(!isModalVisible);
     };
 
-    const closeModal = () => {
-        setIsModalVisible(false);
+    const handleMenuClick = () => {
+        console.log(topicData);
     };
 
     return (
         <div className='header'>
+            <IoIosMenu className='bar' onClick={handleMenuClick} />
             <div className='left-sideheader'>
-                <Link to={'/'}> <img src="https://code.google.com/images/developers.png" alt="" /></Link>
+                <Link to={'/'}>
+                    <BsLightningCharge className='header-icon' />
+                </Link>
             </div>
+
             <div className='middle-sideheader'>
-                <div className='middle-items' onClick={handleInput} >
+                {isSmallScreen ? (
+                    <IoSearchOutline className='reponsive-search-icon' onClick={handleToggleModal} />
+                ): (
+                    <div className='middle-items' onClick={handleToggleModal}>
                     <IoSearchOutline className='searchicon' />
                     <p>Search</p>
                 </div>
+                )}
             </div>
-            {/* <SearchModal handleClose={closeModal} handleOpen={isModalOpen} /> */}
-            
             <div className='right-sideheader'>
-                <div><Link to={'/course'}>Learn to Code</Link></div>
+                <Link to={'/course'}>Learn</Link>
                 <div onClick={toggleTheme} className={`theme ${theme}`}>
                     {theme === 'light' ? '☀️' : '🌙'}
                 </div>
             </div>
 
-            <Search isOpen={isModalVisible} onClose={closeModal} />
+            {isModalVisible && <Search handleCloseModal={handleToggleModal} />}
         </div>
     );
 }
+
+
 
 
 

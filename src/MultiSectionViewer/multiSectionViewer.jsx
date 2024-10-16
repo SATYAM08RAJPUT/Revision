@@ -26,7 +26,6 @@ const CourseList = () => {
 
     const handleCoursebtn = (itm) => {
         navigate(`/course/${itm.courseId}/RoadMap`);
-
     };
 
 

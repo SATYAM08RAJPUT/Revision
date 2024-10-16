@@ -50,7 +50,7 @@ export default function HtmlRoadMap() {
         );
     }
 
-    const selectedRoadmap = htmlRoadMap.filter(item => item.id == courseId)
+    const selectedRoadmap = htmlRoadMap.filter(item => item.id == courseId);
 
     return (
         <>
@@ -84,7 +84,7 @@ export default function HtmlRoadMap() {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </div> 
                     ))}
                 </div>
             </div>

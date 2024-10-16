@@ -1,4 +1,3 @@
-
 import { createServer, Model } from "miragejs";
 
 
@@ -61,239 +60,102 @@ export default function server({ environment = 'development' } = {}) {
                             courseId: '1',
                             topicName: "Introduction of HTML",
                             subTopics: [
-                                {
-                                    id: "2",
-                                    courseId: '1',
-                                    subtitle: "What is HTML"
-                                },
-                                {
-                                    id: "33",
-                                    courseId: '1',
-                                    subtitle: "Basic structure of an HTML document"
-                                },
-                                {
-                                    id: "4",
-                                    courseId: '1',
-                                    subtitle: "HTML tags"
-                                },
-                                {
-                                    id: "3",
-                                    courseId: '1',
-                                    subtitle: "HTML elements."
-                                },
-                                {
-                                    id: "5",
-                                    courseId: '1',
-                                    subtitle: "HTML attributes"
-                                }
+                                { id: "2", courseId: '1', subtitle: "What is HTML" },
+                                { id: "3", courseId: '1', subtitle: "Basic structure of an HTML document" },
+                                { id: "4", courseId: '1', subtitle: "HTML tags" },
+                                { id: "5", courseId: '1', subtitle: "HTML elements." },
+                                { id: "6", courseId: '1', subtitle: "HTML attributes" }
                             ]
                         },
                         {
-                            id: "4",
+                            id: "7",
                             courseId: '1',
-                            topicName: " Basic HTML Tags",
+                            topicName: "Basic HTML Tags",
                             subTopics: [
-                                {
-                                    id: "34",
-                                    courseId: '1',
-                                    subtitle: "Headings (<h1> to <h6>)"
-                                },
-                                {
-                                    id: 7,
-                                    courseId: '1',
-                                    subtitle: "Paragraphs (<p>)"
-                                },
-                                {
-                                    id: "11",
-                                    courseId: '1',
-                                    subtitle: "Links (<a>)"
-                                },
-                                {
-                                    id: "12",
-                                    courseId: '1',
-                                    subtitle: "Images (<img>)"
-                                },
-                                {
-                                    id: "15",
-                                    courseId: '1',
-                                    subtitle: "HTML Lists (ordered <ol> and unordered <ul>)"
-                                }
+                                { id: "8", courseId: '1', subtitle: "Headings (<h1> to <h6>)" },
+                                { id: "9", courseId: '1', subtitle: "Paragraphs (<p>)" },
+                                { id: "10", courseId: '1', subtitle: "Links (<a>)" },
+                                { id: "11", courseId: '1', subtitle: "Images (<img>)" },
+                                { id: "12", courseId: '1', subtitle: "HTML Lists (ordered <ol> and unordered <ul>)" }
                             ]
-
                         },
                         {
-                            id: "9",
+                            id: "13",
                             courseId: '1',
                             topicName: "HTML Formatting",
                             subTopics: [
-                                {
-                                    id: "35",
-                                    courseId: '1',
-                                    subtitle: "Bold (<strong>), Italics (<em>), Underline (<u>)"
-                                },
-                                {
-                                    id: "36",
-                                    courseId: '1',
-                                    subtitle: "Blockquotes (<blockquote>)"
-                                },
-                                {
-                                    id: "37",
-                                    courseId: '1',
-                                    subtitle: "Horizontal rules (<hr>)"
-                                }
+                                { id: "14", courseId: '1', subtitle: "Bold (<strong>), Italics (<em>), Underline (<u>)" },
+                                { id: "15", courseId: '1', subtitle: "Blockquotes (<blockquote>)" },
+                                { id: "16", courseId: '1', subtitle: "Horizontal rules (<hr>)" }
                             ]
                         },
                         {
-                            id: "23",
+                            id: "17",
                             courseId: '1',
                             topicName: "HTML Forms",
                             subTopics: [
-                                {
-                                    id: "23",
-                                    courseId: '1',
-                                    subtitle: "Form element (<form>)"
-                                },
-                                {
-                                    id: "39",
-                                    courseId: '1',
-                                    subtitle: "Input types (text, email, password, radio, checkbox)"
-                                },
-                                {
-                                    id: "40",
-                                    courseId: '1',
-                                    subtitle: "Labels (<label>)"
-                                },
-                                {
-                                    id: "41",
-                                    courseId: '1',
-                                    subtitle: "Buttons (<button>, <input type=submit>)"
-                                },
-                                {
-                                    id: "42",
-                                    courseId: '1',
-                                    subtitle: "Textareas (<textarea>)"
-                                },
-                                {
-                                    id: "43",
-                                    courseId: '1',
-                                    subtitle: "Select dropdowns (<select>)"
-                                }
+                                { id: "18", courseId: '1', subtitle: "Form element (<form>)" },
+                                { id: "19", courseId: '1', subtitle: "Input types (text, email, password, radio, checkbox)" },
+                                { id: "20", courseId: '1', subtitle: "Labels (<label>)" },
+                                { id: "21", courseId: '1', subtitle: "Buttons (<button>, <input type=submit>)" },
+                                { id: "22", courseId: '1', subtitle: "Textareas (<textarea>)" },
+                                { id: "23", courseId: '1', subtitle: "Select dropdowns (<select>)" }
+                            ]
+                        },
+                        {
+                            id: "24",
+                            courseId: '1',
+                            topicName: "HTML Semantic Elements",
+                            subTopics: [
+                                { id: "25", courseId: '1', subtitle: "Using semantic tags (<header>, <nav>, <section>, <article>, <footer>)" },
+                                { id: "26", courseId: '1', subtitle: "Importance of semantic HTML for accessibility and SEO" }
                             ]
                         },
                         {
                             id: "27",
                             courseId: '1',
-                            topicName: "HTML Semantic Elements",
-                            subTopics: [
-                                {
-                                    id: "25",
-                                    courseId: '1',
-                                    subtitle: "Using semantic tags (<header>, <nav>, <section>, <article>, <footer>)"
-                                },
-                                {
-                                    id: "26",
-                                    courseId: '1',
-                                    subtitle: "Importance of semantic HTML for accessibility and SEO"
-                                }
-                            ]
-                        },
-                        {
-                            id: "5",
-                            courseId: '1',
                             topicName: "HTML Attributes",
-
                             subTopics: [
-                                {
-                                    id: "20",
-                                    courseId: '1',
-                                    subtitle: "HTML class"
-                                },
-                                {
-                                    id: "21",
-                                    courseId: '1',
-                                    subtitle: "HTML id"
-                                },
-                                {
-                                    id: "8",
-                                    courseId: '1',
-                                    subtitle: "HTML style"
-                                },
-                                {
-                                    id: "44",
-                                    courseId: '1',
-                                    subtitle: "Data attributes (data-*)"
-                                }
-                            ]
-                        },
-                        {
-                            id: "29",
-                            courseId: '1',
-                            topicName: "Multimedia Elements",
-                            subTopics: [
-                                {
-                                    id: "45",
-                                    courseId: '1',
-                                    subtitle: "Embedding videos (<video>)"
-                                },
-                                {
-                                    id: "46",
-                                    courseId: '1',
-                                    subtitle: "Embedding audio (<audio>)"
-                                },
-                                {
-                                    id: "16",
-                                    courseId: '1',
-                                    subtitle: "Using iframes (<iframe>)"
-                                }
-                            ]
-                        },
-                        {
-                            id: "30",
-                            courseId: '1',
-                            topicName: "Responsive Design Basics",
-                            subTopics: [
-                                {
-                                    id: "30",
-                                    courseId: '1',
-                                    subtitle: "Introduction to responsive design"
-                                },
-                                {
-                                    id: "47",
-                                    courseId: '1',
-                                    subtitle: "The role of the viewport (<meta name=viewport>)"
-                                }
+                                { id: "28", courseId: '1', subtitle: "HTML class" },
+                                { id: "29", courseId: '1', subtitle: "HTML id" },
+                                { id: "30", courseId: '1', subtitle: "HTML style" },
+                                { id: "31", courseId: '1', subtitle: "Data attributes (data-*)" }
                             ]
                         },
                         {
                             id: "32",
                             courseId: '1',
+                            topicName: "Multimedia Elements",
+                            subTopics: [
+                                { id: "33", courseId: '1', subtitle: "Embedding videos (<video>)" },
+                                { id: "34", courseId: '1', subtitle: "Embedding audio (<audio>)" },
+                                { id: "35", courseId: '1', subtitle: "Using iframes (<iframe>)" }
+                            ]
+                        },
+                        {
+                            id: "36",
+                            courseId: '1',
+                            topicName: "Responsive Design Basics",
+                            subTopics: [
+                                { id: "37", courseId: '1', subtitle: "Introduction to responsive design" },
+                                { id: "38", courseId: '1', subtitle: "The role of the viewport (<meta name=viewport>)" }
+                            ]
+                        },
+                        {
+                            id: "39",
+                            courseId: '1',
                             topicName: "Introduction to HTML5 API",
                             subTopics: [
-                                {
-                                    id: "48",
-                                    courseId: '1',
-                                    subtitle: "Canvas API"
-                                },
-                                {
-                                    id: "49",
-                                    courseId: '1',
-                                    subtitle: "Geolocation API"
-                                },
-                                {
-                                    id: "50",
-                                    courseId: '1',
-                                    subtitle: "Local storage API"
-                                },
-                                {
-                                    id: "51",
-                                    courseId: '1',
-                                    subtitle: "session storage API"
-                                }
+                                { id: "40", courseId: '1', subtitle: "Canvas API" },
+                                { id: "41", courseId: '1', subtitle: "Geolocation API" },
+                                { id: "42", courseId: '1', subtitle: "Local storage API" },
+                                { id: "43", courseId: '1', subtitle: "Session storage API" }
                             ]
                         }
                     ],
-                    id:'1'
+                    id: '1'
                 });
+
             server.create('roadmap', {
                 roadMap: [
                     {
@@ -304,7 +166,7 @@ export default function server({ environment = 'development' } = {}) {
                             {
                                 id: "1",
                                 courseId: '2',
-                                subtitle: "HTML Basic Tag"
+                                subtitle: "Introduction to css"
                             },
                             {
                                 id: "2",
@@ -322,7 +184,6 @@ export default function server({ environment = 'development' } = {}) {
                         id: "2",
                         courseId: '2',
                         topicName: "Box Modal",
-                        //   subTopics:["Box Modal","Box Sizing","Display","Css Selectors"]
                         subTopics: [
                             {
                                 id: "2",
@@ -345,13 +206,11 @@ export default function server({ environment = 'development' } = {}) {
                                 subtitle: "Css Selectors"
                             }
                         ]
-
                     },
                     {
                         id: "6",
                         courseId: '2',
                         topicName: "Positions",
-                        //   subTopics:["Css Positions","Z-index","OverFlow"]
                         subTopics: [
                             {
                                 id: "6",
@@ -374,7 +233,6 @@ export default function server({ environment = 'development' } = {}) {
                         id: "9",
                         courseId: '2',
                         topicName: "Background",
-                        //   subTopics:["Background-size","Background-position","Orign,clip & Attachment","Gradient","Filters","Styling svgs"]
                         subTopics: [
                             {
                                 id: "10",
@@ -407,7 +265,6 @@ export default function server({ environment = 'development' } = {}) {
                         id: "16",
                         courseId: '2',
                         topicName: "Units",
-                        //   subTopics:["%","Min-height & min-width","Rem % em","vh & vw","Auto"]
                         subTopics: [
                             {
                                 id: "13",
@@ -435,8 +292,6 @@ export default function server({ environment = 'development' } = {}) {
                         id: "17",
                         courseId: '2',
                         topicName: "Responsive",
-                        //   subTopics:["Media queries","viewport meta tag","Mobile first","fluid designs","Adaptive designs"]
-
                         subTopics: [
                             {
                                 id: "18",
@@ -469,7 +324,6 @@ export default function server({ environment = 'development' } = {}) {
                         id: "23",
                         courseId: '2',
                         topicName: "Text & Fonts",
-                        //   subTopics:["Font families","google font","Custom fonts","Font format & prop","Letter spacing","Line height","Text-decoration & shadom"]
                         subTopics: [
                             {
                                 id: "27",
@@ -586,7 +440,6 @@ export default function server({ environment = 'development' } = {}) {
                         id: "26",
                         courseId: '2',
                         topicName: "Adavnces Css",
-                        //   subTopics:["Css Modules","Css Variables","Vendor Prefixes","@support","Polyfills","Cross-browser compatibility","naming conventions","Vanila Css & Frameworks"]
                         subTopics: [
                             {
                                 id: "1",
@@ -631,7 +484,7 @@ export default function server({ environment = 'development' } = {}) {
                         ]
                     }
                 ],
-                id:"2"
+                id: "2"
             });
 
             server.create('roadmap', {
@@ -842,7 +695,7 @@ export default function server({ environment = 'development' } = {}) {
                         ]
                     }
                 ],
-                id:"3"
+                id: "3"
             })
 
             server.create('roadmap', {
@@ -923,7 +776,7 @@ export default function server({ environment = 'development' } = {}) {
                         ]
                     }
                 ],
-                id:"4"
+                id: "4"
             }
             );
 
@@ -938,7 +791,6 @@ export default function server({ environment = 'development' } = {}) {
                         courseId: 1,
                         title: 'Introduction to HTML',
                         content: 'HTML stands for Hypertext Markup Language. It is the standard markup language for creating web pages. HTML elements are the building blocks of HTML pages, defining the structure and layout of a web document.',
-                        courseId: '1',
                         code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>Introduction to HTML</title>\n</head>\n<body>\n    <h1>Welcome to HTML</h1>\n    <p>HTML is the foundation of web development.</p>\n</body>\n</html>'
                     },
                     {
@@ -946,187 +798,135 @@ export default function server({ environment = 'development' } = {}) {
                         courseId: 1,
                         title: 'What is HTML?',
                         content: 'HTML is a markup language used to create the structure of web pages. It allows web developers to format text, images, links, and other content on the internet using tags.',
-                        courseId: '1',
-                        code: '"<p>This is a paragraph in HTML.</p>\n<a href=\"https://www.example.com\">Visit Example</a>'
+                        code: '<p>This is a paragraph in HTML.</p>\n<a href="https://www.example.com">Visit Example</a>'
                     },
                     {
                         id: 3,
                         courseId: 1,
-                        title: 'HTML Elements',
-                        content: 'An HTML element is a complete structure that consists of an opening tag, content, and a closing tag, e.g., <h1>This is a Heading</h1>.',
-                        courseId: '1',
-                        code: '<html>\n<body>\n\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\n\n</body>\n</html>'
+                        title: 'Basic Structure of an HTML Document',
+                        content: 'HTML (HyperText Markup Language) is the standard markup language used to create web pages. It structures content on the web, allowing browsers to interpret and display text, images, links, and other elements.',
+                        code: `<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Sample Page</title>
+            </head>
+            <body>
+                <h1>Hello, World!</h1>
+                <p>This is a sample HTML document.</p>
+            </body>
+            </html>`
                     },
                     {
                         id: 4,
                         courseId: 1,
                         title: 'HTML Tags',
                         content: 'Tags are the fundamental building blocks of HTML, consisting of an opening tag and a closing tag, such as <p> for a paragraph. Some tags can be self-closing, like <img />.',
-                        courseId: '1',
-                        code: '<p>This is a paragraph.</p>\n<img src=\"image.jpg\" alt=\"Description\" />'
+                        code: '<p>This is a paragraph.</p>\n<img src="image.jpg" alt="Description" />'
                     },
                     {
                         id: 5,
-                        courseId: 1,
-                        title: 'HTML Attributes',
-                        content: 'Attributes provide additional information about HTML elements and are specified in the opening tag in name/value pairs, like <a href="https://www.example.com">.',
-                        courseId: '1',
-                        code: '<!DOCTYPE html>\n<html>\n<body>\n\n<h2>The href Attribute</h2>\n\n<p>HTML links are defined with the a tag. The link address is specified in the href attribute:</p>\n\n<a href=\"https://www.w3schools.com\">Visit W3Schools</a>\n\n</body>\n</html>'
+                        "courseId": "1",
+                        "title": "HTML Elements",
+                        "content": "HTML elements are the building blocks of HTML pages. An HTML element consists of a start tag, content, and an end tag. Here are some common elements:",
+                        "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Elements</title>\n</head>\n<body>\n    <h1>This is a heading</h1>\n    <p>This is a paragraph.</p>\n    <a href=\"#\">This is a link</a>\n    <img src=\"image.jpg\" alt=\"Image description\">\n</body>\n</html>"
                     },
                     {
                         id: 6,
-                        title: "HTML Headings",
-                        content: "HTML headings are defined with the <h1> to <h6> tags. The <h1> tag defines the most important heading, typically used for the main title, while the <h6> tag represents the least important heading. Headings help organize content and improve accessibility and SEO.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Headings</title>\n</head>\n<body>\n\n<h1>This is a Heading 1</h1>\n<h2>This is a Heading 2</h2>\n<h3>This is a Heading 3</h3>\n<h4>This is a Heading 4</h4>\n<h5>This is a Heading 5</h5>\n<h6>This is a Heading 6</h6>\n\n<p>Headings are important for structuring your content. They allow readers and search engines to understand the hierarchy of the information presented.</p>\n\n</body>\n</html>"
+                        courseId: 1,
+                        title: 'HTML Attributes',
+                        content: 'Attributes provide additional information about HTML elements and are specified in the opening tag in name/value pairs, like <a href="https://www.example.com">',
+                        code: '<!DOCTYPE html>\n<html>\n<body>\n<h2>The href Attribute</h2>\n<p>HTML links are defined with the a tag. The link address is specified in the href attribute:</p>\n<a href="https://www.w3schools.com">Visit W3Schools</a>\n</body>\n</html>'
                     },
                     {
-                        id: 7,
-                        title: "HTML Paragraph",
-                        content: "HTML paragraphs are defined with the <p> tag. Paragraphs can contain text and other inline elements. They are used to structure blocks of text and make content more readable.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Paragraph</title>\n</head>\n<body>\n\n<h1>HTML Paragraph</h1>\n<p>This is a paragraph.</p>\n<p>This is another paragraph. It can contain <strong>bold</strong> text, <em>italic</em> text, and <a href=\"#\">links</a>.</p>\n\n</body>\n</html>"
+                        id:7,
+                        "courseId": "1",
+                        "title": "Basic HTML Tags",
+                        "content": "Basic HTML tags are essential for structuring a web page. They include tags for headings, paragraphs, links, images, and more.",
+                        "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Basic HTML Tags</title>\n</head>\n<body>\n    <h1>This is a Heading</h1>\n    <p>This is a paragraph of text.</p>\n    <a href=\"https://example.com\">This is a link</a>\n    <img src=\"image.jpg\" alt=\"Image description\">\n</body>\n</html>"
                     },
                     {
                         id: 8,
-                        title: "HTML Style",
-                        content: "You can use the style attribute to add CSS styles to HTML elements, allowing you to change their appearance directly within the HTML. This is useful for quick styling but is generally better handled with external CSS files for larger projects.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Style</title>\n</head>\n<body>\n\n<h1 style=\"color: blue;\">This is a blue heading</h1>\n<p style=\"font-size: 20px;\">This is a larger paragraph. Inline styles can be applied directly to individual elements.</p>\n\n</body>\n</html>"
+                        courseId: 1,
+                        title: 'HTML Headings',
+                        content: 'HTML headings are defined with the <h1> to <h6> tags. The <h1> tag defines the most important heading, typically used for the main title, while the <h6> tag represents the least important heading.',
+                        code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Headings</title>\n</head>\n<body>\n<h1>This is a Heading 1</h1>\n<h2>This is a Heading 2</h2>\n<h3>This is a Heading 3</h3>\n<h4>This is a Heading 4</h4>\n<h5>This is a Heading 5</h5>\n<h6>This is a Heading 6</h6>\n<p>Headings are important for structuring your content.</p>\n</body>\n</html>'
                     },
                     {
                         id: 9,
-                        title: "HTML Formatting",
-                        content: "HTML provides various tags for text formatting, including <b>, <i>, <u>, and <strong>. These tags allow you to emphasize text in different ways, helping to convey meaning and importance within your content.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Formatting</title>\n</head>\n<body>\n\n<h1>HTML Formatting</h1>\n<p><b>This text is bold</b></p>\n<p><i>This text is italic</i></p>\n<p><u>This text is underlined</u></p>\n<p><strong>This text is strong</strong></p>\n\n</body>\n</html>"
+                        courseId: 1,
+                        title: 'HTML Paragraph',
+                        content: 'HTML paragraphs are defined with the <p> tag. Paragraphs can contain text and other inline elements.',
+                        code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Paragraph</title>\n</head>\n<body>\n<h1>HTML Paragraph</h1>\n<p>This is a paragraph.</p>\n<p>This is another paragraph. It can contain <strong>bold</strong> text, <em>italic</em> text, and <a href="#">links</a>.</p>\n</body>\n</html>'
                     },
                     {
                         id: 10,
-                        title: "HTML Comments",
-                        content: "HTML comments are not displayed in the browser and are used to leave notes in the code. They are useful for explaining sections of your code or for temporary code that you want to keep for reference but not display.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Comments</title>\n</head>\n<body>\n\n<h1>HTML Comments</h1>\n<p>This is a paragraph.</p>\n<!-- This is a comment and will not be displayed in the browser. -->\n<p>Another paragraph.</p>\n\n</body>\n</html>"
-                    },
-                    {
-                        id: 11,
                         title: "HTML Links",
                         content: "Links are created using the <a> tag, where the href attribute specifies the URL. Links can connect to external websites, internal pages, or even specific sections within the same page, making navigation easier for users.",
                         courseId: "1",
                         code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Links</title>\n</head>\n<body>\n\n<h1>HTML Links</h1>\n<p>To visit an example website, click the link below:</p>\n<a href=\"https://www.example.com\">Visit Example</a>\n\n</body>\n</html>"
                     },
                     {
-                        id: 12,
+                        id: 11,
                         title: "HTML Images",
                         content: "Images are embedded using the <img> tag, which requires the src attribute for the image source and the alt attribute for alternative text. The alt attribute is important for accessibility and SEO, as it describes the image when it cannot be displayed.",
                         courseId: "1",
                         code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Images</title>\n</head>\n<body>\n\n<h1>HTML Images</h1>\n<p>Here is an example of an image:</p>\n<img src=\"image.jpg\" alt=\"Description of the image\">\n\n</body>\n</html>"
                     },
                     {
+                        id: 12,
+                        "courseId": "1",
+                        "title": "HTML Lists (ordered <ol> and unordered <ul>)",
+                        "content": "HTML provides two main types of lists: ordered lists (<ol>) for numbered items and unordered lists (<ul>) for bullet points. Both types can be nested and styled using CSS.",
+                        "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Lists</title>\n</head>\n<body>\n    <h1>HTML Lists Example</h1>\n    <h2>Ordered List</h2>\n    <ol>\n        <li>First item</li>\n        <li>Second item</li>\n        <li>Third item</li>\n    </ol>\n    <h2>Unordered List</h2>\n    <ul>\n        <li>Bullet point one</li>\n        <li>Bullet point two</li>\n        <li>Bullet point three</li>\n    </ul>\n</body>\n</html>"
+                    },
+                    {
                         id: 13,
-                        title: "HTML Page Title",
-                        content: "The title of an HTML page is set in the <title> tag within the <head> section. This title is displayed in the browser's title bar or tab, and it is also important for search engine optimization (SEO) as it helps describe the page's content.",
+                        title: "HTML Formatting",
+                        content: "HTML provides various tags for text formatting, including <b>, <i>, <u>, and <strong>. These tags allow you to emphasize text in different ways, helping to convey meaning and importance within your content.",
                         courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>My First HTML Page</title>\n</head>\n<body>\n\n<h1>HTML Page Title</h1>\n<p>This page demonstrates how to set the title of an HTML document.</p>\n\n</body>\n</html>"
+                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Formatting</title>\n</head>\n<body>\n\n<h1>HTML Formatting</h1>\n<p><b>This text is bold</b></p>\n<p><i>This text is italic</i></p>\n<p><u>This text is underlined</u></p>\n<p><strong>This text is strong</strong></p>\n\n</body>\n</html>"
                     },
                     {
                         id: 14,
-                        title: "HTML Tables",
-                        content: "HTML tables are defined with the <table> tag. They consist of rows and cells, making it easy to organize and display data in a structured format. Each row is defined with the <tr> tag, headers with <th>, and data cells with <td>.",
-                        courseId: "1",
+                        courseId: '1',
+                        title: 'Bold (<strong>), Italics (<em>), Underline (<u>)',
+                        content: 'In HTML, you can emphasize text using various tags to make it bold, italicized, or underlined. Here’s a breakdown of the <strong>, <em>, and <u> tags:',
                         code: `
-                            <!DOCTYPE html>
-                            <html>
-                            <head>
-                                <title>HTML Tables</title>
-                            </head>
-                            <body>
-                            
-                            <h1>HTML Tables</h1>
-                            <p>HTML tables are defined using the table tag. They consist of rows and cells.</p>
-                            
-                            <h2>Example Table</h2>
-                            <table border="1">
-                                <tr>
-                                    <th>Header 1</th>
-                                    <th>Header 2</th>
-                                </tr>
-                                <tr>
-                                    <td>Row 1, Cell 1</td>
-                                    <td>Row 1, Cell 2</td>
-                                </tr>
-                                <tr>
-                                    <td>Row 2, Cell 1</td>
-                                    <td>Row 2, Cell 2</td>
-                                </tr>
-                            </table>
-                            
-                            </body>
-                            </html>
-                        `
+                    Text Formatting Tags
+                    1. Bold Text (<strong>)
+                    
+                    The <strong> tag is used to make text bold and indicates that the text is of strong importance.
+                    
+                    Bold: <strong>Your text here</strong>
+                    2. Italics: <em>Your text here</em>
+                    3. <u>Underline</u>: <u>Your text here</u>
+                    .`
                     },
                     {
-                        id: 15,
-                        title: "HTML List",
-                        content: "HTML lists can be ordered (<ol>) or unordered (<ul>). Unordered lists use bullet points, while ordered lists use numbers to indicate the sequence of items. Lists are useful for organizing information clearly.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Lists</title>\n</head>\n<body>\n\n<h1>HTML Lists</h1>\n<h2>Unordered List</h2>\n<ul>\n    <li>Item 1</li>\n    <li>Item 2</li>\n</ul>\n<h2>Ordered List</h2>\n<ol>\n    <li>First Item</li>\n    <li>Second Item</li>\n</ol>\n\n</body>\n</html>"
+                        "id": "15",
+                        "courseId": "1",
+                        "title": "Blockquotes (<blockquote>)",
+                        "content": "In HTML, you can create a blockquote using the <blockquote> tag. This tag is used to denote a section that is being quoted from another source. Blockquotes are typically indented and may include a citation.",
+                        "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Blockquote Example</title>\n</head>\n<body>\n    <h1>Using Blockquotes</h1>\n    <blockquote>\n        <p>This is a quote from someone or something important.</p>\n        <footer>— Author Name</footer>\n    </blockquote>\n</body>\n</html>"
                     },
                     {
                         id: 16,
-                        title: "Using iframes (<iframe>)",
-                        content: "The <iframe> element in HTML is used to embed another HTML document within the current document. This allows you to display content such as videos, maps, or other web pages directly within your page. Here’s a guide on how to use <iframe>, along with its attributes, best practices, and examples..",
-                        courseId: "1",
+                        courseId: '1',
+                        title: 'Horizontal rules (<hr>)',
+                        content: 'In HTML, you can create a horizontal rule (a line) using the <hr> tag. This tag is self-closing and is typically used to separate content or sections. Here’s a simple example:',
                         code: `
-    Basic Syntax:
-
-    <iframe src="https://www.example.com" width="600" height="400" title="Description of the content"></iframe>
-    `
+                    <p>First section of text.</p>
+                    <hr>
+                    <p>Second section of text.</p>
+                    
+                    You can also customize the appearance of the horizontal rule with CSS. For example
+                    
+                    <hr style="border: 1px solid black; width: 50%; margin: auto;">`
                     },
                     {
                         id: 17,
-                        title: "HTML Iframes",
-                        content: "Iframes (Inline Frames) allow you to embed another document within the current HTML document. This is useful for displaying content from other websites or documents seamlessly within your own page.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Iframes</title>\n</head>\n<body>\n\n<h1>HTML Iframes</h1>\n<iframe src=\"https://www.example.com\" width=\"300\" height=\"200\"></iframe>\n\n</body>\n</html>"
-                    },
-                    {
-                        id: 18,
-                        title: "HTML Block and Inline",
-                        content: "HTML elements can be classified as block elements or inline elements. Block elements take up the full width of their parent container, while inline elements take only the width of their content, allowing them to sit side by side.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Block and Inline</title>\n</head>\n<body>\n\n<h1>HTML Block and Inline Elements</h1>\n<div>This is a block element.</div>\n<span>This is an inline element.</span>\n\n</body>\n</html>"
-                    },
-                    {
-                        id: 19,
-                        title: "HTML Div",
-                        content: "The <div> tag is a block-level container used to group other elements. It is often used for styling purposes and to organize content on a webpage.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Div</title>\n</head>\n<body>\n\n<div>\n    <h2>Title</h2>\n    <p>Content goes here.</p>\n</div>\n\n</body>\n</html>"
-                    },
-                    {
-                        id: 20,
-                        title: "HTML Classes",
-                        content: "The class attribute is used to specify a class for an HTML element, which can be styled with CSS. Multiple elements can share the same class to apply the same styles.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Classes</title>\n    <style>\n        .my-class {\n            color: blue;\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n\n<div class=\"my-class\">This div has a class.</div>\n\n</body>\n</html>"
-                    },
-                    {
-                        id: 21,
-                        title: "HTML Id",
-                        content: "The id attribute is used to specify a unique id for an HTML element. It is often used for styling and scripting purposes, allowing you to target specific elements.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Id</title>\n    <style>\n        #uniqueId {\n            color: green;\n            font-size: 20px;\n        }\n    </style>\n</head>\n<body>\n\n<div id=\"uniqueId\">This div has a unique id.</div>\n\n</body>\n</html>"
-                    },
-                    {
-                        id: 22,
-                        title: "HTML Fonts",
-                        content: "You can change the font of text using the <font> tag (deprecated) or CSS. It is recommended to use CSS for font styling in modern web design.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Fonts</title>\n    <style>\n        .arial {\n            font-family: Arial;\n        }\n    </style>\n</head>\n<body>\n\n<span class=\"arial\">This text is Arial.</span>\n\n</body>\n</html>"
-                    },
-                    {
-                        id: 23,
                         title: "HTML Forms",
                         content: "HTML forms are used to collect user input. They can include various input types such as text fields, checkboxes, radio buttons, and more. Forms are essential for user interactions on web pages.",
                         courseId: "1",
@@ -1162,69 +962,110 @@ export default function server({ environment = 'development' } = {}) {
                         `
                     },
                     {
+                        id: 18,
+                        "courseId": "1",
+                        "title": "Form element (<form>)",
+                        "content": "The <form> element is used to create interactive controls in a web page that users can use to submit data to a server. Forms can contain various input types, including text fields, checkboxes, radio buttons, and submit buttons.",
+                        "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Form Example</title>\n</head>\n<body>\n    <h1>HTML Form Example</h1>\n    <form action=\"/submit\" method=\"post\">\n        <label for=\"name\">Name:</label>\n        <input type=\"text\" id=\"name\" name=\"name\"><br><br>\n        <label for=\"email\">Email:</label>\n        <input type=\"email\" id=\"email\" name=\"email\"><br><br>\n        <input type=\"submit\" value=\"Submit\">\n    </form>\n</body>\n</html>"
+                    },
+                    {
+                        id: 19,
+                        "courseId": "1",
+                        "title": "Input types (text, email, password, radio, checkbox)",
+                        "content": "HTML provides various input types for forms, enhancing user experience and validation. Common input types include text, email, password, radio buttons, and checkboxes.",
+                        "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Input Types Example</title>\n</head>\n<body>\n    <h1>Input Types Example</h1>\n    <form>\n        <label for=\"text\">Text Input:</label>\n        <input type=\"text\" id=\"text\" name=\"text\"><br><br>\n        <label for=\"email\">Email Input:</label>\n        <input type=\"email\" id=\"email\" name=\"email\"><br><br>\n        <label for=\"password\">Password:</label>\n        <input type=\"password\" id=\"password\" name=\"password\"><br><br>\n        <label>Choose a fruit:</label><br>\n        <input type=\"radio\" id=\"apple\" name=\"fruit\" value=\"apple\">\n        <label for=\"apple\">Apple</label><br>\n        <input type=\"radio\" id=\"banana\" name=\"fruit\" value=\"banana\">\n        <label for=\"banana\">Banana</label><br><br>\n        <label for=\"checkbox\">Select Options:</label><br>\n        <input type=\"checkbox\" id=\"option1\" name=\"option1\" value=\"Option 1\">\n        <label for=\"option1\">Option 1</label><br>\n        <input type=\"checkbox\" id=\"option2\" name=\"option2\" value=\"Option 2\">\n        <label for=\"option2\">Option 2</label><br><br>\n        <input type=\"submit\" value=\"Submit\">\n    </form>\n</body>\n</html>"
+                    },
+                    {
+                        id: 20,
+                        courseId: '1',
+                        title: 'Labels (<label>) ',
+                        content: 'The <label> element in HTML is used to define a label for form controls. It improves accessibility and usability by associating a descriptive text with a corresponding input element. Here’s how it works:',
+                        code: `
+                    Basic Example: 1.
+                    <label for="inputId">Label Text</label>
+                    <input type="text" id="inputId" name="inputName">
+                    
+                    Basic Example: 2. 
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                    
+                    Checkbox Example: 3.
+                    <label for="subscribe">
+                    <input type="checkbox" id="subscribe" name="subscribe"> Subscribe to newsletter
+                    </label>
+                    
+                    Radio Button Example: 4.
+                    <label>
+                    <input type="radio" name="gender" value="male"> Male
+                    </label>
+                    <label>
+                    <input type="radio" name="gender" value="female"> Female
+                    </label>`
+                    },
+                    {
+                        id: 21,
+                        "courseId": "1",
+                        "title": "Buttons (<button>, <input type=submit>)",
+                        "content": "HTML provides different ways to create buttons in forms. The <button> tag and the <input type='submit'> are commonly used to submit forms or trigger actions.",
+                        "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Button Example</title>\n</head>\n<body>\n    <h1>Button Example</h1>\n    <form>\n        <label for=\"name\">Name:</label>\n        <input type=\"text\" id=\"name\" name=\"name\"><br><br>\n        <button type=\"button\" onclick=\"alert('Button Clicked!')\">Click Me!</button><br><br>\n        <input type=\"submit\" value=\"Submit\">\n    </form>\n</body>\n</html>"
+                    },
+                    {
+                        id: 22,
+                        courseId: '1',
+                        title: 'Textareas (<textarea>)',
+                        content: 'The <textarea> element in HTML is used for multi-line text input, allowing users to enter larger amounts of text. Here’s an overview of how to use <textarea>, its attributes, and best practices:',
+                        code: `
+                    1. <textarea name="message" rows="4" cols="50"></textarea>
+                    
+                    Key Attributes
+                    name: The name of the textarea, used to identify the form data after submission.
+                    
+                    rows: Specifies the number of visible text lines.
+                    
+                    cols: Specifies the visible width of the textarea, measured in character units.
+                    
+                    placeholder: Provides a short hint that describes the expected value of the textarea (e.g., "Type your message here...").
+                    
+                    maxlength: Limits the maximum number of characters that can be entered.
+                    
+                    required: Indicates that the textarea must be filled out before submitting the form.
+                    
+                    readonly: Makes the textarea non-editable, allowing users to see the text but not change it.
+                    
+                    disabled: Disables the textarea, preventing user interaction and submission.
+                    
+                    <form action="/submit" method="post">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message here..." required></textarea>
+                    <button type="submit">Send</button>
+                    </form>`
+                    },
+                    {
+                        id: 23,
+                        courseId: '1',
+                        title: 'Select dropdowns (<select>)',
+                        content: 'The <select> element in HTML is used to create a dropdown list, allowing users to choose one or more options from a predefined list. Here’s a detailed overview of how to use <select> elements, their attributes, and best practices.:',
+                        code: `
+                    <select name="options" id="options">
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                    </select>
+                    .`
+                    },
+                    {
                         id: 24,
-                        title: "HTML Marquees",
-                        content: "Marquees are used to create scrolling text. The <marquee> tag is deprecated in HTML5, and its use is discouraged. CSS animations are recommended for similar effects in modern web design.",
+                        title: "HTML Semantic Elements",
+                        content: "Semantic elements clearly describe their meaning in a human- and machine-readable way, such as <article>, <section>, and <aside>.",
                         courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Marquees</title>\n</head>\n<body>\n\n<marquee>Scrolling Text</marquee>\n\n</body>\n</html>"
+                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Semantic Elements</title>\n</head>\n<body>\n    <article>\n        <h2>Article Title</h2>\n        <p>This is the content of the article.</p>\n    </article>\n    <section>\n        <h2>Section Title</h2>\n        <p>This is a section of the document.</p>\n    </section>\n    <aside>\n        <h2>Related Information</h2>\n        <p>This is some related information.</p>\n    </aside>\n</body>\n</html>"
                     },
                     {
                         id: 25,
-                        title: "Using semantic tags (<header>, <nav>, <section>, <article>, <footer>)",
-                        content: "The <header> element represents introductory content or navigational links. It is typically used at the top of a page or section and can contain headings, logos, and navigation menus.",
-                        courseId: "1",
-                        code: `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semantic HTML Example</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header, footer { background-color: #f4f4f4; padding: 20px; text-align: center; }
-        nav { margin: 20px 0; }
-        section { padding: 20px; }
-        article { margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; }
-    </style>
-    </head>
-    <body>
-
-    <header>
-    <h1>My Blog</h1>
-    <p>Welcome to my blog where I share my thoughts and experiences.</p>
-    </header>
-
-    <nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    </nav>
-
-    <section>
-    <h2>Latest Articles</h2>
-
-    <article>
-        <h3>Understanding Semantic HTML</h3>
-        <p>Semantic HTML tags clearly describe their meaning in a human- and machine-readable way.</p>
-        <p><a href="#">Read more...</a></p>
-    </article>
-
-    <article>
-        <h3>The Benefits of Clean Code</h3>
-        <p>Writing clean code improves maintainability and reduces errors.</p>
-        <p><a href="#">Read more...</a></p>
-    </article>
-    </section>
-
-    <footer>
-    <p>&copy; 2024 My Blog. All rights reserved.</p>
-    </footer>
-
-    </body>
-    </html>
-    `
+                        "courseId": "1",
+                        "title": "Using semantic tags (<header>, <nav>, <section>, <article>, <footer>)",
+                        "content": "Semantic tags in HTML5 clearly define the structure and meaning of the content, enhancing accessibility and SEO. The <header>, <nav>, <section>, <article>, and <footer> tags are essential for organizing web pages.",
+                        "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Semantic HTML Example</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }\n        header, footer { background-color: #f4f4f4; padding: 20px; text-align: center; }\n        nav { margin: 20px 0; }\n        section { padding: 20px; }\n        article { margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; }\n    </style>\n</head>\n<body>\n\n<header>\n    <h1>My Blog</h1>\n    <p>Welcome to my blog where I share my thoughts and experiences.</p>\n</header>\n\n<nav>\n    <ul>\n        <li><a href=\"#home\">Home</a></li>\n        <li><a href=\"#about\">About</a></li>\n        <li><a href=\"#contact\">Contact</a></li>\n    </ul>\n</nav>\n\n<section>\n    <h2>Latest Articles</h2>\n\n    <article>\n        <h3>Understanding Semantic HTML</h3>\n        <p>Semantic HTML tags clearly describe their meaning in a human- and machine-readable way.</p>\n        <p><a href=\"#\">Read more...</a></p>\n    </article>\n\n    <article>\n        <h3>The Benefits of Clean Code</h3>\n        <p>Writing clean code improves maintainability and reduces errors.</p>\n        <p><a href=\"#\">Read more...</a></p>\n    </article>\n</section>\n\n<footer>\n    <p>&copy; 2024 My Blog. All rights reserved.</p>\n</footer>\n\n</body>\n</html>"
                     },
                     {
                         id: 26,
@@ -1232,668 +1073,351 @@ export default function server({ environment = 'development' } = {}) {
                         content: "HTML provides a wide range of tags for various functionalities, from structuring content to creating forms and multimedia elements. Below is a list of commonly used HTML tags.",
                         courseId: "1",
                         code: `
-    Importance for Accessibility: 
-    Clear Structure: Semantic tags (like <header>, <nav>, <section>, <article>, and <footer>) help create a logical structure for web content. This makes it easier for assistive technologies (like screen readers) to navigate and interpret the page.
-
-    Meaningful Elements: Each semantic element conveys meaning about the content it contains. For example, <article> indicates that the content is a standalone piece, while <nav> clearly defines navigation links. This helps users understand the context and purpose of different sections.
-
-    Enhanced Navigation: Screen readers can announce the roles of different parts of the page, allowing users to quickly jump to relevant sections, such as the main content or navigation.
-
-    Improved Focus Management: Semantic elements can help manage focus more effectively, allowing keyboard users to navigate through a webpage in a meaningful way.
-
-    Accessibility Standards Compliance: Using semantic HTML helps meet web accessibility standards, such as the Web Content Accessibility Guidelines (WCAG), making your site more inclusive for all users.
-    `
+                    Importance for Accessibility: 
+                    Clear Structure: Semantic tags (like <header>, <nav>, <section>, <article>, and <footer>) help create a logical structure for web content. This makes it easier for assistive technologies (like screen readers) to navigate and interpret the page.
+                    
+                    Meaningful Elements: Each semantic element conveys meaning about the content it contains. For example, <article> indicates that the content is a standalone piece, while <nav> clearly defines navigation links. This helps users understand the context and purpose of different sections.
+                    
+                    Enhanced Navigation: Screen readers can announce the roles of different parts of the page, allowing users to quickly jump to relevant sections, such as the main content or navigation.
+                    
+                    Improved Focus Management: Semantic elements can help manage focus more effectively, allowing keyboard users to navigate through a webpage in a meaningful way.
+                    
+                    Accessibility Standards Compliance: Using semantic HTML helps meet web accessibility standards, such as the Web Content Accessibility Guidelines (WCAG), making your site more inclusive for all users.
+                    `
                     },
                     {
                         id: 27,
-                        title: "HTML Semantic Elements",
-                        content: "Semantic elements clearly describe their meaning in a human- and machine-readable way, such as <article>, <section>, and <aside>.",
-                        courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Semantic Elements</title>\n</head>\n<body>\n    <article>\n        <h2>Article Title</h2>\n        <p>This is the content of the article.</p>\n    </article>\n    <section>\n        <h2>Section Title</h2>\n        <p>This is a section of the document.</p>\n    </section>\n    <aside>\n        <h2>Related Information</h2>\n        <p>This is some related information.</p>\n    </aside>\n</body>\n</html>"
+                        courseId: 1,
+                        title: 'HTML Attributes',
+                        content: 'Attributes provide additional information about HTML elements and are specified in the opening tag in name/value pairs, like <a href="https://www.example.com">.',
+                        courseId: '1',
+                        code: '<!DOCTYPE html>\n<html>\n<body>\n\n<h2>The href Attribute</h2>\n\n<p>HTML links are defined with the a tag. The link address is specified in the href attribute:</p>\n\n<a href=\"https://www.w3schools.com\">Visit W3Schools</a>\n\n</body>\n</html>'
                     },
                     {
                         id: 28,
-                        title: "HTML Graphics",
-                        content: "HTML5 supports graphics through the <canvas> element, allowing for dynamic, scriptable rendering.",
+                        title: "HTML Classes",
+                        content: "The class attribute is used to specify a class for an HTML element, which can be styled with CSS. Multiple elements can share the same class to apply the same styles.",
                         courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Graphics</title>\n</head>\n<body>\n    <h1>HTML Graphics</h1>\n    <p>The <canvas> element is used for drawing graphics via scripting (usually JavaScript).</p>\n    <canvas id=\"myCanvas\" width=\"200\" height=\"100\" style=\"border:1px solid #000000;\"></canvas>\n    <script>\n        var canvas = document.getElementById('myCanvas');\n        var ctx = canvas.getContext('2d');\n        ctx.fillStyle = '#FF0000';\n        ctx.fillRect(20, 20, 150, 50);\n    </script>\n</body>\n</html>"
+                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Classes</title>\n    <style>\n        .my-class {\n            color: blue;\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n\n<div class=\"my-class\">This div has a class.</div>\n\n</body>\n</html>"
                     },
                     {
                         id: 29,
-                        title: "HTML Media",
-                        content: "HTML5 introduced <audio> and <video> tags for embedding media content, allowing developers to integrate audio and video directly into web pages without the need for plugins. These tags support various formats and provide built-in controls for user interaction.",
+                        title: "HTML Id",
+                        content: "The id attribute is used to specify a unique id for an HTML element. It is often used for styling and scripting purposes, allowing you to target specific elements.",
                         courseId: "1",
-                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Media</title>\n</head>\n<body>\n\n<h1>HTML Media</h1>\n<p>HTML5 introduced the &lt;audio&gt; and &lt;video&gt; tags for embedding media content directly into web pages, enhancing the user experience without relying on external plugins.</p>\n\n<h2>Embedding Audio</h2>\n<p>The &lt;audio&gt; tag allows you to embed sound content. You can provide multiple source files for different formats.</p>\n<audio controls>\n    <source src=\"audio.mp3\" type=\"audio/mpeg\">\n    Your browser does not support the audio element.\n    <p>Please download the audio file: <a href=\"audio.mp3\">audio.mp3</a></p>\n</audio>\n\n<h2>Embedding Video</h2>\n<p>The &lt;video&gt; tag allows you to embed video content. Like the audio tag, you can provide different formats for compatibility.</p>\n<video width=\"320\" height=\"240\" controls>\n    <source src=\"video.mp4\" type=\"video/mp4\">\n    Your browser does not support the video tag.\n    <p>Please download the video file: <a href=\"video.mp4\">video.mp4</a></p>\n</video>\n\n</body>\n</html>"
+                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Id</title>\n    <style>\n        #uniqueId {\n            color: green;\n            font-size: 20px;\n        }\n    </style>\n</head>\n<body>\n\n<div id=\"uniqueId\">This div has a unique id.</div>\n\n</body>\n</html>"
                     },
                     {
                         id: 30,
-                        title: "Responsive Design Basic",
-                        content: "Responsive design ensures that your website looks good on all devices, from desktops to smartphones. Here are some basic concepts and techniques you can use in HTML and CSS to achieve responsive design.",
+                        title: "HTML Style",
+                        content: "You can use the style attribute to add CSS styles to HTML elements, allowing you to change their appearance directly within the HTML. This is useful for quick styling but is generally better handled with external CSS files for larger projects.",
                         courseId: "1",
-                        code: `
-    1. Viewport Meta Tag: Include the viewport meta tag in the <head> section of your HTML to control the layout on mobile browsers.
-
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-
-    2. Fluid Layouts: Use relative units like percentages or vw (viewport width) and vh (viewport height) instead of fixed units like pixels for widths and heights.
-
-    .container {
-    width: 80%; /* 80% of the viewport width */
-    }
-
-    3. CSS Media Queries: Media queries allow you to apply different styles based on the screen size.
-
-    /* Base styles */
-    body {
-    font-size: 16px;
-    }
-
-    /* Styles for devices with a max-width of 600px */
-    @media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-    }
-
-                        `
+                        code: "<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Style</title>\n</head>\n<body>\n\n<h1 style=\"color: blue;\">This is a blue heading</h1>\n<p style=\"font-size: 20px;\">This is a larger paragraph. Inline styles can be applied directly to individual elements.</p>\n\n</body>\n</html>"
                     },
                     {
                         id: 31,
-                        title: "Introduction of HTML features",
-                        content: "Responsive design ensures that your website looks good on all devices, from desktops to smartphones. Here are some basic concepts and techniques you can use in HTML and CSS to achieve responsive design.",
-                        courseId: "1",
-                        code: `
-    1. Viewport Meta Tag: Include the viewport meta tag in the <head> section of your HTML to control the layout on mobile browsers.
-
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-
-    2. Fluid Layouts: Use relative units like percentages or vw (viewport width) and vh (viewport height) instead of fixed units like pixels for widths and heights.
-
-    .container {
-    width: 80%; /* 80% of the viewport width */
-    }
-
-    3. CSS Media Queries: Media queries allow you to apply different styles based on the screen size.
-
-    /* Base styles */
-    body {
-    font-size: 16px;
-    }
-
-    /* Styles for devices with a max-width of 600px */
-    @media (max-width: 600px) {
-    body {
-        font-size: 14px;
-    }
-    }
-
-                        `
-                    },
-                    {
-                        id: 32,
-                        title: "Introduction of HTML5 API",
-                        content: "HTML5 introduced a range of APIs that enhance web applications by enabling rich interactions, multimedia capabilities, and better data handling. Here’s a brief overview of some key HTML5 APIs:",
-                        courseId: "1",
-                        code: `
-    1. Local storage & Session storage
-    2. Canvas API`
-                    },
-                    {
-                        id: 33,
-                        title: 'Basic Structure of an HTML Document',
-                        content: 'HTML (HyperText Markup Language) is the standard markup language used to create web pages. It structures content on the web, allowing browsers to interpret and display text, images, links, and other elements.',
-                        courseId: '1',
-                        code: `
-    Basic Structure of an HTML Document
-
-    <!DOCTYPE html>: Declares the document as an HTML5 document.
-
-    <html>: The root element that encompasses all HTML content.
-
-    <head>: Contains meta-information about the document, such as:
-
-    <meta charset="UTF-8">: Specifies the character encoding.
-
-    <title>: Sets the title of the webpage displayed in the browser tab.
-
-    <link>: Links to external resources like stylesheets.
-
-    <body>: Contains the content of the webpage that is visible to users, including:
-
-    Text elements: Headings (<h1>, <h2>, etc.), paragraphs (<p>).
-
-    Lists: Ordered (<ol>) and unordered (<ul>).
-
-    Links: Hyperlinks using the <a> tag.
-
-    Images: Displayed using the <img> tag.
-
-    Sections: Organized using <header>, <nav>, <main>, <footer>, and <section> elements.
-
-    Example of Basic HTML Structure: 
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Page</title>
-    </head>
-    <body>
-    <h1>Hello, World!</h1>
-    <p>This is a sample HTML document.</p>
-    </body>
-    </html>
-
-                            `
-                    },
-                    {
-                        id: 34,
-                        title: 'Headings (<h1> to <h6>)',
-                        content: 'Headings in HTML are used to define the hierarchy and structure of content on a webpage. They range from <h1> to <h6>, with <h1> being the highest level and most important, and <h6> being the lowest. Here s a brief overview:',
-                        courseId: '1',
-                        code: `
-    Headings Overview: 
-    1.<h1>: The main heading of the page. There should generally be only one <h1> per page to indicate the primary topic.
-    <h1>Main Title of the Page</h1>
-
-    <h2>: Subheading that introduces a new section under the <h1>.
-    <h2>First Subheading</h2>
-
-    <h3>: Further divides sections introduced by <h2>.
-    <h3>Subsection under First Subheading</h3>
-
-    <h4>: A subheading under <h3>.
-    <h4>Details of the Subsection</h4>
-
-    <h5>: A subheading under <h4>.
-    <h5>Additional Information</h5>
-
-    <h6>: The lowest level heading, used for the least important headings.
-    <h6>Minor Details</h6>
-
-
-    Example of Headings in HTML
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heading Example</title>
-    </head>
-    <body>
-    <h1>Main Title</h1>
-    <h2>First Subheading</h2>
-    <h3>Subsection</h3>
-    <h4>More Details</h4>
-    <h5>Additional Info</h5>
-    <h6>Minor Points</h6>
-    </body>
-    </html>
-
-
-                        `
-                    },
-                    {
-                        id: 35,
-                        courseId: '1',
-                        title: 'Bold (<strong>), Italics (<em>), Underline (<u>)',
-                        content: 'In HTML, you can emphasize text using various tags to make it bold, italicized, or underlined. Here’s a breakdown of the <strong>, <em>, and <u> tags:',
-                        code: `
-    Text Formatting Tags
-    1. Bold Text (<strong>)
-
-    The <strong> tag is used to make text bold and indicates that the text is of strong importance.
-
-    Bold: <strong>Your text here</strong>
-    2. Italics: <em>Your text here</em>
-    3. <u>Underline</u>: <u>Your text here</u>
-    .`
-                    },
-                    {
-                        id: 36,
-                        courseId: '1',
-                        title: 'Blockquotes (<blockquote>)',
-                        content: 'In HTML, you can create a blockquote using the <blockquote> tag. This tag is used to denote a section that is being quoted from another source. Here’s an example:',
-                        code: `
-    <blockquote>: 
-    <blockquote>
-    <p>This is a quote from someone or something important.</p>
-    <footer>— Author Name</footer>
-    </blockquote>
-
-    .`
-                    },
-                    {
-                        id: 37,
-                        courseId: '1',
-                        title: 'Horizontal rules (<hr>)',
-                        content: 'In HTML, you can create a horizontal rule (a line) using the <hr> tag. This tag is self-closing and is typically used to separate content or sections. Here’s a simple example:',
-                        code: `
-    <p>First section of text.</p>
-    <hr>
-    <p>Second section of text.</p>
-
-    You can also customize the appearance of the horizontal rule with CSS. For example
-
-    <hr style="border: 1px solid black; width: 50%; margin: auto;">
-
-
-    .`
-                    },
-                    {
-                        id: 38,
-                        courseId: '1',
-                        title: 'Input types',
-                        content: 'HTML5 introduced new input types such as email, url, tel, number, range, date, time, datetime-local, color, and search to improve form usability and validation.:',
-                        code: `
-    <p>First section of text.</p>
-    <hr>
-    <p>Second section of text.</p>
-
-    You can also customize the appearance of the horizontal rule with CSS. For example
-
-    <hr style="border: 1px solid black; width: 50%; margin: auto;">
-
-
-    .`
-                    },
-                    {
-                        id: 39,
-                        courseId: '1',
-                        title: 'Input types',
-                        content: 'HTML provides a variety of input types for forms, allowing for different types of data entry. Here’s a list of common input types::',
-                        code: `
-    1. Text Input
-    <input type="text"> - Single-line text input.
-
-    2. Password Input
-    <input type="password"> - Similar to text but obscures the input.
-
-    3. Email Input
-    <input type="email"> - For email addresses, with basic validation.
-
-    4. URL Input
-
-    <input type="url"> - For web addresses, with basic validation.
-
-    5. Number Input
-    <input type="number"> - For numeric values, can include min, max, and step attributes.
-
-    6. Range Input
-    <input type="range"> - Slider for selecting a number within a range.
-
-    7. Checkbox Input
-    <input type="checkbox"> - Allows selection of multiple options.
-
-    8. Radio Input
-    <input type="radio"> - Allows selection of one option from a set.
-
-    9. File Input
-    <input type="file"> - For file uploads.
-
-    10. Date Input
-    <input type="date"> - For selecting dates.
-
-    11. Time Input
-    <input type="time"> - For selecting time.
-
-    12. Color Input
-    <input type="color"> - For selecting a color.
-
-    13. Search Input
-    <input type="search"> - For search fields, typically styled differently.
-
-    14. Tel Input
-    <input type="tel"> - For telephone numbers, with no validation.
-
-    15.Textarea
-    <textarea> - Multi-line text input.
-
-    16. Button Input
-    <input type="button"> - A clickable button.
-
-    17. Submit Button
-    <input type="submit"> - Submits the form.
-
-    18. Reset Button
-    <input type="reset"> - Resets the form fields to default values.
-
-    .`
-                    },
-                    {
-                        id: 40,
-                        courseId: '1',
-                        title: 'Labels (<label>) ',
-                        content: 'The <label> element in HTML is used to define a label for form controls. It improves accessibility and usability by associating a descriptive text with a corresponding input element. Here’s how it works:',
-                        code: `
-    Basic Example: 1.
-    <label for="inputId">Label Text</label>
-    <input type="text" id="inputId" name="inputName">
-
-    Basic Example: 2. 
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username">
-
-    Checkbox Example: 3.
-    <label for="subscribe">
-    <input type="checkbox" id="subscribe" name="subscribe"> Subscribe to newsletter
-    </label>
-
-    Radio Button Example: 4.
-    <label>
-    <input type="radio" name="gender" value="male"> Male
-    </label>
-    <label>
-    <input type="radio" name="gender" value="female"> Female
-    </label>
-
-
-    .`
-                    },
-                    {
-                        id: 41,
-                        courseId: '1',
-                        title: 'Buttons (<button>, <input type=submit>',
-                        content: 'In HTML, buttons are created using the <button> element or various <input> types. Here’s an overview of how to use buttons, their types, and best practices:',
-                        code: `
-    Button Types:
-
-    1.Button Element
-    <button type="button">Click Me</button>
-
-    2. Submit Button
-    <button type="submit">Submit</button>
-
-    3. Reset Button
-    <button type="reset">Reset</button>
-
-    Input Button Types: 
-
-    1. Input Button:
-    <input type="button" value="Click Me">
-
-    2. Input Submit
-    <input type="submit" value="Submit">
-
-    3. Input Reset:
-    <input type="reset" value="Reset">
-
-
-    .`
-                    },
-                    {
-                        id: 42,
-                        courseId: '1',
-                        title: 'Textareas (<textarea>)',
-                        content: 'The <textarea> element in HTML is used for multi-line text input, allowing users to enter larger amounts of text. Here’s an overview of how to use <textarea>, its attributes, and best practices:',
-                        code: `
-    1. <textarea name="message" rows="4" cols="50"></textarea>
-
-    Key Attributes
-    name: The name of the textarea, used to identify the form data after submission.
-
-    rows: Specifies the number of visible text lines.
-
-    cols: Specifies the visible width of the textarea, measured in character units.
-
-    placeholder: Provides a short hint that describes the expected value of the textarea (e.g., "Type your message here...").
-
-    maxlength: Limits the maximum number of characters that can be entered.
-
-    required: Indicates that the textarea must be filled out before submitting the form.
-
-    readonly: Makes the textarea non-editable, allowing users to see the text but not change it.
-
-    disabled: Disables the textarea, preventing user interaction and submission.
-
-    <form action="/submit" method="post">
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message here..." required></textarea>
-    <button type="submit">Send</button>
-    </form>
-
-
-    .`
-                    },
-                    {
-                        id: 43,
-                        courseId: '1',
-                        title: 'Select dropdowns (<select>)',
-                        content: 'The <select> element in HTML is used to create a dropdown list, allowing users to choose one or more options from a predefined list. Here’s a detailed overview of how to use <select> elements, their attributes, and best practices.:',
-                        code: `
-    <select name="options" id="options">
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-    </select>
-    .`
-                    },
-                    {
-                        id: 44,
                         title: 'Data attributes (data-*)',
                         content: 'The data-* attribute is used to store custom data private to the page or application. It provides a way to embed custom data attributes on all HTML elements.',
                         courseId: '1',
                         code: '<div data-user-id="12345">User Info</div>'
                     },
                     {
-                        id: 45,
+                        "id": "32",
+                        "courseId": "1",
+                        "title": "Multimedia Elements",
+                        "content": "HTML5 introduced multimedia elements like <audio> and <video> that allow developers to embed audio and video directly into web pages. These elements support various formats and come with built-in controls for playback.",
+                        "code": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Multimedia Elements</title>\n</head>\n<body>\n    <h1>Embedding Multimedia</h1>\n    <h2>Audio Example</h2>\n    <audio controls>\n        <source src=\"audio.mp3\" type=\"audio/mpeg\">\n        Your browser does not support the audio element.\n        <p>Please download the audio file: <a href=\"audio.mp3\">audio.mp3</a></p>\n    </audio>\n    <h2>Video Example</h2>\n    <video width=\"320\" height=\"240\" controls>\n        <source src=\"video.mp4\" type=\"video/mp4\">\n        Your browser does not support the video tag.\n        <p>Please download the video file: <a href=\"video.mp4\">video.mp4</a></p>\n    </video>\n</body>\n</html>"
+                    },
+                    {
+                        id: 33,
                         title: 'Embedding videos (<video>)',
                         content: 'The <video> element in HTML is used to embed video content directly into a web page. It provides a standardized way to play videos without relying on external plugins. Here’s how to use the <video> element, along with its attributes and best practices..',
                         courseId: '1',
                         code: `
-    Basic Syntax:
-
-    <video width="640" height="360" controls>
-    <source src="video.mp4" type="video/mp4">
-    <source src="video.webm" type="video/webm">
-    Your browser does not support the video tag.
-    </video>
-
-    Example.2:
-
-    <video width="640" height="360" controls poster="thumbnail.jpg">
-    <source src="video.mp4" type="video/mp4">
-    <source src="video.webm" type="video/webm">
-    Your browser does not support the video tag.
-    </video>
-
+                    Basic Syntax:
+                    
+                    <video width="640" height="360" controls>
+                    <source src="video.mp4" type="video/mp4">
+                    <source src="video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                    </video>
+                    
+                    Example.2:
+                    
+                    <video width="640" height="360" controls poster="thumbnail.jpg">
+                    <source src="video.mp4" type="video/mp4">
+                    <source src="video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                    </video>
+                    
                             `
                     },
                     {
-                        id: 46,
+                        id: 34,
                         title: 'Embedding audio (<audio>)',
                         content: 'The <audio> element in HTML is used to embed audio content directly into a web page. It provides a standardized way to play audio files without relying on external plugins. Here’s how to use the <audio> element, along with its attributes and best practices.',
                         courseId: '1',
                         code: `
-    <audio controls>
-    <source src="audio.mp3" type="audio/mpeg">
-    <source src="audio.ogg" type="audio/ogg">
-    Your browser does not support the audio tag.
-    </audio>
-
-    Example.2: 
-
-    <audio controls>
-    <source src="audio.mp3" type="audio/mpeg">
-    <source src="audio.ogg" type="audio/ogg">
-    Your browser does not support the audio tag.
-    </audio>
-
-                            `
+                    <audio controls>
+                    <source src="audio.mp3" type="audio/mpeg">
+                    <source src="audio.ogg" type="audio/ogg">
+                    Your browser does not support the audio tag.
+                    </audio>
+                    
+                    Example.2: 
+                    
+                    <audio controls>
+                    <source src="audio.mp3" type="audio/mpeg">
+                    <source src="audio.ogg" type="audio/ogg">
+                    Your browser does not support the audio tag.
+                    </audio>`
                     },
                     {
-                        id: 47,
-                        title: 'The role of the viewport (<meta name=viewport>)',
-                        content: 'The <meta name="viewport"> tag is an essential element for responsive web design. It helps control the layout of a web page on different devices, particularly on mobile screens. Here’s an overview of its role and importance:',
-                        courseId: '1',
+                        id: 35,
+                        title: "Using iframes (<iframe>)",
+                        content: "The <iframe> element in HTML is used to embed another HTML document within the current document. This allows you to display content such as videos, maps, or other web pages directly within your page. Here’s a guide on how to use <iframe>, along with its attributes, best practices, and examples..",
+                        courseId: "1",
                         code: `
-    Example.1:
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    Key Attributes
-    width: This can be set to a specific pixel value or to device-width, which makes the width of the viewport equal to the width of the device screen.
-
-    initial-scale: Sets the initial zoom level when the page is first loaded. A value of 1.0 means no zoom.
-
-    maximum-scale: Defines the maximum zoom level the user can achieve.
-
-    user-scalable: Allows or disallows users to zoom in/out. Setting it to no prevents zooming, which can affect accessibility.
-
-
-                            `
+                    Basic Syntax:
+                    
+                    <iframe src="https://www.example.com" width="600" height="400" title="Description of the content"></iframe>`
                     },
                     {
-                        id: 48,
-                        title: 'Canvas API',
-                        content: 'The Canvas API in HTML5 provides a powerful way to draw graphics and animations directly in the browser using JavaScript. It enables developers to create dynamic, interactive content like games, charts, and visual effects. Here’s an overview of how to use the Canvas API, its features, and some examples.',
-                        courseId: '1',
-                        code: `
-    Basic Setup:
-    <canvas id="myCanvas" width="600" height="400" style="border:1px solid #000;"></canvas>
-
-    Accessing the Canvas:
-    You can access and manipulate the canvas using JavaScript:
-
-    const canvas = document.getElementById('myCanvas');
-    const ctx = canvas.getContext('2d'); // Get the 2D drawing context
-
-    Drawing Shapes:
-    1. Rectangles: You can draw filled and outlined rectangles.
-
-    ctx.fillStyle = 'blue';
-    ctx.fillRect(50, 50, 200, 100); // Fill a blue rectangle
-    ctx.strokeStyle = 'red';
-    ctx.strokeRect(50, 50, 200, 100); // Draw a red outline
-
-    2. Circles: To draw a circle, you use the arc method.
-
-    ctx.beginPath(); // Start a new path
-    ctx.arc(300, 200, 50, 0, Math.PI * 2); // Draw a circle
-    ctx.fillStyle = 'green';
-    ctx.fill(); // Fill the circle with green
-    ctx.stroke(); // Outline the circle
-
-    3. Lines: You can draw lines by moving the "pen" to a starting point and then drawing to an endpoint.
-
-    ctx.beginPath();
-    ctx.moveTo(50, 50); // Starting point
-    ctx.lineTo(200, 200); // Endpoint
-    ctx.strokeStyle = 'black';
-    ctx.stroke(); // Draw the line
-
-                            `
+                        "id": "36",
+                        "courseId": "1",
+                        "title": "Responsive Design Basics",
+                        "content": "Responsive design ensures that your website looks good on all devices, from desktops to smartphones. Here are some basic concepts and techniques you can use in HTML and CSS to achieve responsive design.",
+                        "code": `<!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Responsive Design Basics</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; }
+                            .container { width: 80%; margin: auto; }
+                            
+                            @media (max-width: 600px) {
+                                .container {
+                                    width: 100%; /* Full width on smaller screens */
+                                }
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <h1>Responsive Design</h1>
+                            <p>This content adjusts based on screen size.</p>
+                        </div>
+                    </body>
+                    </html>`
                     },
                     {
-                        id: 49,
-                        title: 'Geolocation API',
-                        content: 'The Geolocation API allows web applications to access the geographical location of a device. It provides a simple way to retrieve the user  current position, which can enhance user experience by offering location-based services. Here s an overview of how to use the Geolocation API, its feature and some practical examples..',
-                        courseId: '1',
-                        code: `
-    Basic Usage:
-
-    To use the Geolocation API, you typically call navigator.geolocation.getCurrentPosition() to get the user's current location.
-
-    Requesting Location:
-
-    Here's a basic example of how to request the user's location::
-
-    if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    } else {
-    console.log("Geolocation is not supported by this browser.");
-    }
-
-    function successCallback(position) {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-    console.log(Latitude: {latitude}, Longitude: {longitude});
-    }
-
-    function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            console.log("User denied the request for Geolocation.");
-            break;
-        case error.POSITION_UNAVAILABLE:
-            console.log("Location information is unavailable.");
-            break;
-        case error.TIMEOUT:
-            console.log("The request to get user location timed out.");
-            break;
-        case error.UNKNOWN_ERROR:
-            console.log("An unknown error occurred.");
-            break;
-    }
-    }
-
-                            `
+                        "id": "37",
+                        "courseId": "1",
+                        "title": "Introduction to Responsive Design",
+                        "content": "Responsive design is an approach to web development that ensures websites provide an optimal viewing experience across a wide range of devices. It involves fluid grids, flexible images, and CSS media queries.",
+                        "code": `<!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Introduction to Responsive Design</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; }
+                            .container { width: 80%; margin: auto; }
+                            
+                            @media (max-width: 600px) {
+                                .container {
+                                    width: 100%; /* Full width on smaller screens */
+                                }
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <h1>Introduction to Responsive Design</h1>
+                            <p>Responsive design ensures that your website looks good on all devices, from desktops to smartphones.</p>
+                        </div>
+                    </body>
+                    </html>`
                     },
                     {
-                        id: 50,
-                        title: 'Local storage API',
-                        content: 'The Local Storage API is part of the Web Storage API that allows web applications to store data in the user browser persistently. This means that data stored in local storage remains even after the browser is closed or the user navigates away from the page. It’s useful for storing small amounts of data that you want to keep between sessions, such as user preferences, settings, or game progress.',
-                        courseId: '1',
-                        code: `
-    Basic Usage:
-
-    Setting Items
-    To store data in local storage, use the setItem method:
-    localStorage.setItem('key', 'value');
-
-    Getting Items
-    To retrieve data, use the getItem method:
-
-    const value = localStorage.getItem('key');
-    console.log(value); // Outputs: 'value'
-
-    Removing Items
-    To remove a specific item, use the removeItem method
-    localStorage.removeItem('key');
-
-    Clearing All Items
-    To clear all data stored in local storage, use the clear method:
-    localStorage.clear();
-
-
+                        "id": "38",
+                        "courseId": "1",
+                        "title": "The Role of the Viewport",
+                        "content": "The viewport meta tag controls the layout of a webpage on mobile browsers. It allows developers to specify the width and scaling of the viewport, ensuring proper rendering on different devices.",
+                        "code": `<!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>The Role of the Viewport</title>
+                    </head>
+                    <body>
+                        <h1>The Role of the Viewport</h1>
+                        <p>The <code>&lt;meta name="viewport"&gt;</code> tag is essential for responsive web design. It helps ensure that the website is displayed correctly on all devices.</p>
+                        <p>Example of a viewport meta tag:</p>
+                        <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                    </body>
+                    </html>`
+                    },
+                    {
+                        "id": "39",
+                        "courseId": "1",
+                        "title": "Introduction to HTML5 API",
+                        "content": "HTML5 introduced a range of APIs that enhance web applications by enabling rich interactions, multimedia capabilities, and better data handling. Here’s a brief overview of some key HTML5 APIs:",
+                        "code": `
+                        <h2>Key HTML5 APIs:</h2>
+                        <ul>
+                            <li><strong>Local Storage:</strong> Allows web applications to store data locally within the user's browser.</li>
+                            <li><strong>Session Storage:</strong> Similar to local storage but the data is cleared when the page session ends.</li>
+                            <li><strong>Canvas API:</strong> Enables drawing graphics via JavaScript on a web page.</li>
+                            <li><strong>Geolocation API:</strong> Allows the user's location to be accessed and used in applications.</li>
+                            <li><strong>Web Audio API:</strong> Provides powerful audio processing capabilities.</li>
+                        </ul>
+                        <p>These APIs allow developers to create more interactive and dynamic web applications.</p>
                         `
                     },
                     {
-                        id: 51,
-                        title: 'session storage API',
-                        content: 'TThe Session Storage API is part of the Web Storage API that allows web applications to store data temporarily in the user browser for the duration of a page session. Data stored in session storage is accessible only within the same tab or window, and it is cleared when the tab or window is closed. This makes it useful for storing information that should not persist beyond the current session, such as form data or user interface states.',
-                        courseId: '1',
-                        code: `
-    Basic Usage:
-
-    Setting Items
-    To store data in local storage, use the setItem method:
-    localStorage.setItem('key', 'value');
-
-    Getting Items
-    To retrieve data, use the getItem method:
-
-    const value = localStorage.getItem('key');
-    console.log(value); // Outputs: 'value'
-
-    Removing Items
-    To remove a specific item, use the removeItem method
-    localStorage.removeItem('key');
-
-    Clearing All Items
-    To clear all data stored in local storage, use the clear method:
-    localStorage.clear();
-
-
+                        "id": "40",
+                        "courseId": "1",
+                        "title": "Canvas API",
+                        "content": "The Canvas API in HTML5 allows for dynamic, scriptable rendering of 2D shapes and bitmap images. It provides a powerful way to draw graphics and create animations directly in the browser using JavaScript.",
+                        "code": `
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>Canvas API Example</title>
+                        </head>
+                        <body>
+                            <h1>Canvas API Example</h1>
+                            <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000000;"></canvas>
+                            <script>
+                                var canvas = document.getElementById('myCanvas');
+                                var ctx = canvas.getContext('2d');
+                    
+                                // Draw a rectangle
+                                ctx.fillStyle = '#FF0000';
+                                ctx.fillRect(10, 10, 150, 100);
+                    
+                                // Draw a circle
+                                ctx.beginPath();
+                                ctx.arc(200, 100, 50, 0, 2 * Math.PI);
+                                ctx.fillStyle = '#00FF00';
+                                ctx.fill();
+                                ctx.stroke();
+                            </script>
+                        </body>
+                        </html>
                         `
-                    }
+                    },
+                    {
+                        "id": "41",
+                        "courseId": "1",
+                        "title": "Geolocation API",
+                        "content": "The Geolocation API allows web applications to access the geographical location of the user’s device. This can be used for location-based services, such as mapping and location tracking.",
+                        "code": `
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>Geolocation API Example</title>
+                        </head>
+                        <body>
+                            <h1>Geolocation API Example</h1>
+                            <button onclick="getLocation()">Get Location</button>
+                            <p id="location"></p>
+                    
+                            <script>
+                                function getLocation() {
+                                    if (navigator.geolocation) {
+                                        navigator.geolocation.getCurrentPosition(showPosition);
+                                    } else { 
+                                        document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
+                                    }
+                                }
+                    
+                                function showPosition(position) {
+                                    document.getElementById("location").innerHTML = "Latitude: " + position.coords.latitude + 
+                                    "<br>Longitude: " + position.coords.longitude;
+                                }
+                            </script>
+                        </body>
+                        </html>
+                        `
+                    },
+                    {
+                        "id": "42",
+                        "courseId": "1",
+                        "title": "Local Storage API",
+                        "content": "The Local Storage API allows web applications to store data locally within the user's browser. This data persists even after the browser is closed, making it useful for saving user preferences and other information.",
+                        "code": `
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>Local Storage API Example</title>
+                        </head>
+                        <body>
+                            <h1>Local Storage API Example</h1>
+                            <input type="text" id="myInput" placeholder="Enter some text">
+                            <button onclick="saveData()">Save to Local Storage</button>
+                            <button onclick="loadData()">Load from Local Storage</button>
+                            <p id="output"></p>
+                    
+                            <script>
+                                function saveData() {
+                                    var input = document.getElementById("myInput").value;
+                                    localStorage.setItem("myData", input);
+                                }
+                    
+                                function loadData() {
+                                    var data = localStorage.getItem("myData");
+                                    document.getElementById("output").innerHTML = data ? data : "No data found.";
+                                }
+                            </script>
+                        </body>
+                        </html>
+                        `
+                    },
+                    {
+                        "id": "43",
+                        "courseId": "1",
+                        "title": "Session Storage API",
+                        "content": "The Session Storage API allows web applications to store data temporarily for the duration of the page session. Unlike Local Storage, the data is cleared when the page session ends.",
+                        "code": `
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>Session Storage API Example</title>
+                        </head>
+                        <body>
+                            <h1>Session Storage API Example</h1>
+                            <input type="text" id="myInput" placeholder="Enter some text">
+                            <button onclick="saveData()">Save to Session Storage</button>
+                            <button onclick="loadData()">Load from Session Storage</button>
+                            <p id="output"></p>
+                    
+                            <script>
+                                function saveData() {
+                                    var input = document.getElementById("myInput").value;
+                                    sessionStorage.setItem("myData", input);
+                                }
+                    
+                                function loadData() {
+                                    var data = sessionStorage.getItem("myData");
+                                    document.getElementById("output").innerHTML = data ? data : "No data found.";
+                                }
+                            </script>
+                        </body>
+                    </html>`
+                    },                    
+                    
+                    
+
+
                 ]
-            });
+            })
+
 
             server.create('topic', {
                 css: [

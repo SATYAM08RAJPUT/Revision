@@ -15,6 +15,7 @@ function App() {
           <Route path="/course" element={<CourseList />} />
           <Route path='/course/:courseId/RoadMap' element={<HtmlRoadMap />} />
           <Route path="/course/:courseId/topics/:topicId" element={<AllDataFile />} />
+          {/* <Route path="/course/:courseId/RoadMap/:roadmapID/topics/:topicId" element={<AllDataFile />} /> */}
         </Routes>
       </Router>
     </div>

@@ -14,7 +14,7 @@ export default function HtmlRoadMap() {
     const fetchCssRoad = async () => {
         const response = await fetch("/api/roadmaps")
         const result = await response.json()
-        setHtmlRoadMap(result.roadmaps)
+        setHtmlRoadMap(result.roadmaps);
         setLoading(false);
     }
     useEffect(() => {
@@ -26,6 +26,7 @@ export default function HtmlRoadMap() {
         navigate(`/course/${item.courseId}/topics/${item.id}`);
     }
 
+    //Li ka hai 
     const handleSubTitle = (event, subitem) => {
         event.stopPropagation()
         navigate(`/course/${subitem.courseId}/topics/${subitem.id}`);
@@ -78,8 +79,7 @@ export default function HtmlRoadMap() {
                                 {item.subTopics.map((subitem) => (
                                     <li
                                         key={subitem.subtitle}
-                                        onClick={(event) => handleSubTitle(event, subitem)}
-                                    >
+                                        onClick={(event) => handleSubTitle(event, subitem)}>
                                         {subitem.subtitle}
                                     </li>
                                 ))}

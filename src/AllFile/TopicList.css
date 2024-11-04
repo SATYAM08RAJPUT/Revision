@@ -7,38 +7,59 @@
 .allData-main-container {
     display: flex;
     flex-direction: row;
-    margin-top: 88px;
+    margin-top: 98px;
     border-top: 1px solid #555;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
 }
 
 .allData-cont-div1 {
     border-right: 1px solid #555;
     width: 25%;
     height: 86.60vh; 
-    overflow-y: auto;
+    overflow: scroll;
     padding: 15px;
+    scroll-behavior: smooth;
 }
 
 .allData-cont-div1 h2 {
     font-size: 14px;
-    /* color: #333; */
 }
-
+/* .leftside-ul li{
+    margin-top: 20px;
+} */
 li {
     list-style: none;
-    font-size: 14px;
-    /* background-color: #fff;  */
+    font-size: 13px;
     margin: 10px 0;
     padding: 10px;
     border-radius: 4px;
     transition: background-color 0.3s;
     cursor: pointer;
+    font-family: sans-serif;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.sub-container{
+    border-radius: 4px;
+    padding: 10px;
+    height: 35vh;    
+    cursor: pointer;
+    scrollbar-width: thin;
+    overflow: scroll;
+    margin-top: 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.sub-container::-webkit-scrollbar{
+    width: 3px;
 }
 
-li:hover {
+/* li:hover {
     background-color: #e0e0e0;
     color: black;
-}
+} */
 
 .allData-cont-div1::-webkit-scrollbar {
     width: 4px;
@@ -85,6 +106,14 @@ body.light .allData-cont-div2 div{
 .selectedTopic{
     background-color: #e0e0e0;
     border-left: 4px solid white;
+    /* padding-left: 10px; */
+    padding: 10px;
+    color: hsl(24.6 95% 53.1%);
+    transition: background-color 0.1s;
+}
+.selectedSubTopic{
+    background-color: #e0e0e0;
+    border-left: 4px solid white;
     padding-left: 10px;
     color: hsl(24.6 95% 53.1%);
     transition: background-color 0.1s;
@@ -100,6 +129,17 @@ body.light .selectedTopic{
     padding: 20px;
     border-radius: 10px;
     font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
+
+.arrowUp{
+   position: relative;
+   left: 280px;
+   top: -15px;
+}
+.titleName{
+    opacity: 0.8;
+    font-size: 20px;
 }
 
 @media (max-width:400px){

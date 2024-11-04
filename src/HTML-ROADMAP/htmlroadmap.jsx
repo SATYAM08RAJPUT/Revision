@@ -2,12 +2,13 @@ import { useEffect, useState } from "react"
 import './htmlroadmap.css'
 import { useNavigate, useParams } from "react-router-dom"
 import Header from "../Home/Header/header"
-
+import { useRef } from "react"
 export default function HtmlRoadMap() {
     const navigate = useNavigate()
-    const [loading , setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [htmlRoadMap, setHtmlRoadMap] = useState([]);
-    const {courseId} = useParams();
+    const { courseId } = useParams();
+    const topRef = useRef(null);
     console.log(courseId)
 
 
@@ -23,21 +24,27 @@ export default function HtmlRoadMap() {
     console.log(htmlRoadMap)
 
     const handleTopicClick = (item) => {
-        navigate(`/course/${item.courseId}/topics/${item.id}`);
+        navigate(`/course/${item.courseId}/RoadMap/${item.id}`);
+        // navigate(`/course/${item.courseId}/topics/${item.id}`);
     }
+    const handleScroll = () => {
+        if (textRef.current) {
+          textRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
 
     const handleSubTitle = (event, subitem) => {
         event.stopPropagation()
         navigate(`/course/${subitem.courseId}/topics/${subitem.id}`);
     }
 
-    const handleBack = () =>{
+    const handleBack = () => {
         navigate(`/course`)
     }
 
     if (loading) {
         return (
-            <div style={{
+            <div style={{ 
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -51,17 +58,16 @@ export default function HtmlRoadMap() {
     }
 
     const selectedRoadmap = htmlRoadMap.filter(item => item.id == courseId)
-
+    console.log(selectedRoadmap)
     return (
         <>
             <div>
                 <Header />
-
                 <div className="back-button-div">
                     <div>
-                        <h1>Road Map:</h1>
+                        {/* <h1>Road Map:{selectedRoadmap[0]. roadMapTitle}</h1> */}
                         <br />
-                        <h1 style={{color:'hsl(24.6, 95%, 53.1%)', fontSize:'50px'}}>Road Map</h1>
+                        <h1 style={{ color: 'hsl(24.6, 95%, 53.1%)', fontSize: '50px' }}>Road Map: {selectedRoadmap[0].roadMapTitle}</h1>
                     </div>
                     <button className="back-button" onClick={handleBack}>Back</button>
                 </div>
@@ -76,6 +82,7 @@ export default function HtmlRoadMap() {
                             <h2>{item.topicName}</h2>
                             <ul className="order-listRoadMap">
                                 {item.subTopics.map((subitem) => (
+                                    
                                     <li
                                         key={subitem.subtitle}
                                         onClick={(event) => handleSubTitle(event, subitem)}

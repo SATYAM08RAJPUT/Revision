@@ -1,56 +1,93 @@
-
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './TopicList.css';
 import Header from '../Home/Header/header';
 import { IoMdArrowRoundBack } from "react-icons/io";
-import useArrowPress from '../CustomHook/useArrowPress';
+import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
+import React, { useRef } from 'react';
 
 const AllDataFile = () => {
-    const { courseId, topicId } = useParams();
+    const { courseId, topicId, commomId } = useParams();
     const [topicsData, setTopicsData] = useState([]);
+    const [expandedTopicId, setExpandedTopicId] = useState(null);
     const [selectContent, setSelectedContent] = useState(0);
     const [loading, setLoading] = useState(true);
+    const [roadmap, setRoadMap] = useState([])
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedTopicId, setSelectedTopicId] = useState(null);
+    const [topPosition, setTopPosition] = useState('0px')
     const navigate = useNavigate();
+    const subContainersRef = useRef([]);
+
 
     const fetchAllTopics = async () => {
         const response = await fetch(`/api/topics`);
         const result = await response.json();
+        console.log(result.topics[0])
         setTopicsData(result.topics);
         setLoading(false);
-
         const course = result.topics.find(topic => topic.id == courseId);
-
         if (course) {
             const initialTopicKey = Object.keys(course)[0];
             setSelectedContent(course[initialTopicKey][(parseInt(topicId) - 1) || 0])
         }
+
     };
 
     useEffect(() => {
         fetchAllTopics();
     }, [courseId, topicId]);
 
+    const filterData = roadmap.filter(item => item.id == courseId);
+    console.log(filterData)
 
-    const filterData = topicsData.filter(item => item.id == courseId);
+    const fetchRoadMap = async () => {
+        const response = await fetch("/api/roadmaps")
+        const result = await response.json()
+        console.log("Roadmap Result", result)
+        setRoadMap(result.roadmaps)
+        console.log(result.roadmaps)
+        const course = result.roadmaps.find(topic => topic.id == id);
+        console.log(course)
+    }
+
+    useEffect(() => {
+        fetchRoadMap()
+    }, [courseId])
+    console.log(roadmap)
+
 
     const handleTopicLi = (itm) => {
+        setSelectedTopicId(itm.id);
         navigate(`/course/${courseId}/topics/${itm.id}`);
     }
 
     const handleBackClick = () => {
-
-        if (courseId === "1") {
-            navigate(`/course/HTMLRoadMap`);
-        } else if (courseId === "2") {
-            navigate(`/course/cssRoadMap`);
-        } else if (courseId === "3") {
-            navigate(`/course/JavaScriptRoadMap`);
-        } else if (courseId === "4") {
-            navigate(`/course/ReactRoadMap`);
-        }
+        navigate(`/course/${courseId}/RoadMap`);
     }
 
+    const handleToggle = (topicId) => {
+        console.log("Toggle;----------", topicId)
+        setExpandedTopicId((prevId) => (prevId === topicId.id ? null : topicId.id));
+        navigate(`/course/${topicId.courseId}/RoadMap/${topicId.id}`);
+    };
+
+    const handleScroll = (index) => {
+        subContainersRef.current[index].scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    };
+  
+
+
+    
+    const handleSubTitle = (event, itm, index) => {
+        console.log(itm)
+        event.stopPropagation()
+        navigate(`/course/${courseId}/topics/${itm.id}`);
+    
+    }
 
     if (loading) {
         return (
@@ -67,10 +104,12 @@ const AllDataFile = () => {
         );
     }
 
+    console.log("SelecContent:-------------", selectContent)
+
     return (
         <div className='allData-main-container'>
             <Header topicData={filterData} />
-            <div className='allData-cont-div1'>
+            <div className='allData-cont-div1' >
                 {filterData.map((item, index) => {
                     const topicKey = Object.keys(item)[0];
 
@@ -78,28 +117,65 @@ const AllDataFile = () => {
 
                     return (
                         <div key={index}>
-                            <div className='all-Data-BackBtn'>
+                            <div className='all-Data-BackBtn' >
                                 <IoMdArrowRoundBack onClick={handleBackClick} />
-                            </div>
-                            <ul>
-                                {topicData.map((topic) => {
-                                    const isSelected = topic.id == topicId;
+                            </div>  
+                            <ul className='leftside-ul'>
+                                {topicData.map((topic,index) => {
+                                    const isSelected = topic.id === topicId;
+                                    console.log("isSelected=====", isSelected)
                                     return (
-                                        <li key={topic.id} onClick={() => handleTopicLi(topic)} className={isSelected ? "selectedTopic" : ""}>
-                                            <p>{topic.title}</p>
-                                        </li>
+                                        // <li key={topic.id} onClick={() => { handleTopicLi(topic); handleToggle(topic);handleScroll(index) }}  ref={el => subContainersRef.current[index] = el} >
+                                        //     <h2 onClick={(event) => handleToggle(topic)} className={isSelected ? "selectedTopic" : ""} >{topic.topicName}</h2>
+                                        //     <span className='arrowUp' onClick={(event) => { event.stopPropagation(); handleToggle(topic) }}>
+                                        //     </span>
+                                        //     {(
+                                        //         <ul>
+                                        //             {topic.subTopics && topic.subTopics.map((itm,subIndex) => {
+                                        //                 const isSubSelected = itm.id === topicId;
+                                        //                 return (
+                                        //                     <li
+                                        //                     onClick={(event) => handleSubTitle(event, itm,subIndex)} className={isSubSelected ? "selectedSubTopic" : ""}
+                                        //                     >{itm.subtitle}</li>
+                                        //                 )
+                                        //             })}
+                                        //         </ul>
+                                        //     )
+                                        //     }
+                                        // </li>
+                                        <div key={topic.id} onClick={() => { handleTopicLi(topic); handleToggle(topic);handleScroll(index) }}  ref={el => subContainersRef.current[index] = el}  className='sub-container'>
+                                        <h2 onClick={(event) => handleToggle(topic)} className={isSelected ? "selectedTopic" : ""} >{topic.topicName}</h2>
+                                        <span className='arrowUp' onClick={(event) => { event.stopPropagation(); handleToggle(topic) }}>
+                                        </span>
+                                        {(
+                                            <ul>
+                                                {topic.subTopics && topic.subTopics.map((itm,subIndex) => {
+                                                    const isSubSelected = itm.id === topicId;
+                                                    return (
+                                                        <li
+                                                        onClick={(event) => handleSubTitle(event, itm,subIndex)} className={isSubSelected ? "selectedSubTopic" : ""}
+                                                        >{itm.subtitle}</li>
+                                                    )
+                                                })}
+                                            </ul>
+                                        )
+                                        }
+                                    </div>
                                     )
                                 })}
                             </ul>
                         </div>
                     );
                 })}
+
+
             </div>
 
             <div className='allData-cont-div2'>
                 {selectContent.content && (
                     <div>
                         <h1 style={{ color: 'hsl(24.6 95% 53.1%)', fontSize: '40px' }}>{selectContent.title}</h1>
+
                         <h3>{selectContent.Definition}</h3>
                         <div>{selectContent.content}</div>
                         <h3>{selectContent.ex}</h3>

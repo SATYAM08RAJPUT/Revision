@@ -50,40 +50,54 @@ export default function server({ environment = 'development' } = {}) {
                         btn: 'Go to Cheatsheet',
                         courseId: '4',
                         select: '1'
+                    },
+                    {
+                        id: "5",
+                        url: 'https://static.wixstatic.com/media/d6c009_ebfffd3f5541444f8ddcefefaad3f86f~mv2.png',
+                        title: 'React Recipe',
+                        subtitle: 'Codeccharya React Recipe',
+                        btn: 'Go to React Recipe',
+                        courseId: '5',
+                        select: '1'
                     }
                 ]
             }),
-
                 server.create('roadmap', {
                     roadMap: [
                         {
                             id: "1",
                             courseId: '1',
+                            commomId:"1",
                             topicName: "Introduction of HTML",
                             subTopics: [
                                 {
                                     id: "2",
                                     courseId: '1',
+                                    commomId:"1",
                                     subtitle: "What is HTML"
                                 },
                                 {
                                     id: "33",
                                     courseId: '1',
+                                    commomId:"33",
                                     subtitle: "Basic structure of an HTML document"
                                 },
                                 {
                                     id: "4",
                                     courseId: '1',
+                                    commomId:"4",
                                     subtitle: "HTML tags"
                                 },
                                 {
                                     id: "3",
                                     courseId: '1',
+                                    commomId:"3",
                                     subtitle: "HTML elements."
                                 },
                                 {
                                     id: "5",
                                     courseId: '1',
+                                    commomId:"5",
                                     subtitle: "HTML attributes"
                                 }
                             ]
@@ -292,7 +306,8 @@ export default function server({ environment = 'development' } = {}) {
                             ]
                         }
                     ],
-                    id:'1'
+                    id:'1',
+                    roadMapTitle:"HTML"
                 });
             server.create('roadmap', {
                 roadMap: [
@@ -631,7 +646,8 @@ export default function server({ environment = 'development' } = {}) {
                         ]
                     }
                 ],
-                id:"2"
+                id:"2",
+                roadMapTitle:"CSS"
             });
 
             server.create('roadmap', {
@@ -842,7 +858,8 @@ export default function server({ environment = 'development' } = {}) {
                         ]
                     }
                 ],
-                id:"3"
+                id:"3",
+                roadMapTitle:"JavaScript"
             })
 
             server.create('roadmap', {
@@ -923,13 +940,191 @@ export default function server({ environment = 'development' } = {}) {
                         ]
                     }
                 ],
-                id:"4"
+                id:"4",
+                roadMapTitle:"React"
             }
             );
-
-
-
-
+            server.create('roadmap', {
+                roadMap: [
+                    {
+                        id: "1",
+                        courseId: '5',
+                        topicName: "Grid-Recipe",
+                        subTopics: [
+                            {
+                                id: "2",
+                                courseId: '5',
+                                subtitle: "Search functionality(Backend) with Mirage Js"
+                            },
+                            {
+                                id: "3",
+                                courseId: '5',
+                                subtitle: "Delete functionality (Backend) with Mirage Js"
+                            },
+                            {
+                                id: "4",
+                                courseId: '5',
+                                subtitle: "Edit functionality (Backend) with Mirage Js"
+                            }
+                        ]
+                    },
+                    {
+                        id: "5",
+                        courseId: '5',
+                        topicName: "Tab-Recipe",
+                        subTopics: [
+                            {
+                                id: "6",
+                                courseId: '5',
+                                subtitle: "How can be take Data"
+                            },
+                            {
+                                id: "7",
+                                courseId: '5',
+                                subtitle: "How can be implement with index"
+                            }
+                        ]
+                    },
+                    {
+                        id: "8",
+                        courseId: '5',
+                        topicName: "Nested Comment-Recipe",
+                        subTopics: [
+                            {
+                                id: "9",
+                                courseId: '5',
+                                subtitle: "How can be take Nexted Data"
+                            },
+                            {
+                                id: "10",
+                                courseId: '5',
+                                subtitle: "How can be implement on UI"
+                            }
+                        ]
+                    },
+                    {
+                        id: "11",
+                        courseId: '5',
+                        topicName: "Nested Menu- Recipe",
+                        subTopics: [
+                            {
+                                id: "12",
+                                courseId: '5',
+                                subtitle: "How can be take Nested Data"
+                            },
+                            {
+                                id: "13",
+                                courseId: '5',
+                                subtitle: "How can be implement on UI"
+                            }
+                        ]
+                    },
+                    {
+                        id: "14",
+                        courseId: '5',
+                        topicName: "Router-Recipe",
+                        subTopics: [
+                            {
+                                id: "15",
+                                courseId: '5',
+                                subtitle: "How can be Setup Step by Step"
+                            },
+                            {
+                                id: "16",
+                                courseId: '5',
+                                subtitle: "Navigating Between Routes"
+                            },
+                            {
+                                id: "17",
+                                courseId: '5',
+                                subtitle: "1. What is React Router? How do you install React Router?"
+                            },
+                            {
+                                id: "18",
+                                courseId: '5',
+                                subtitle: "2. What are the benefits of using React Router?"
+                            }
+                        ]
+                    },
+                    {
+                        id: "19",
+                        courseId: '5',
+                        topicName: "Modal-Recipe",
+                        subTopics: [
+                            {
+                                id: "20",
+                                courseId: '5',
+                                subtitle: "Modal Reuseable Components"
+                            },
+                    
+                        ]
+                    },
+                    {
+                        id: "21",
+                        courseId: '5',
+                        topicName: "Visible-not Visible",
+                        subTopics: [
+                            {
+                                id: "22",
+                                courseId: '5',
+                                subtitle: "How to applied a Functionlity to toggle"
+                            },
+                    
+                        ]
+                    },
+                    {
+                        id: "23",
+                        courseId: '5',
+                        topicName: "Search & Delete without Mirage Js",
+                        subTopics: [
+                            {
+                                id: "24",
+                                courseId: '5',
+                                subtitle: "How to applied a Functionlity to Search implement"
+                            },
+                            {
+                                id: "25",
+                                courseId: '5',
+                                subtitle: "How to applied a Functionlity to Delete"
+                            },
+                    
+                        ]
+                    },
+                    {
+                        id: "26",
+                        courseId: '5',
+                        topicName: "Weather App Recipe",
+                        subTopics: [
+                            {
+                                id: "27",
+                                courseId: '5',
+                                subtitle: "How can take API & ApiKey"
+                            }
+                    
+                        ]
+                    },
+                    {
+                        id: "28",
+                        courseId: '5',
+                        topicName: "Custom Hooks",
+                        subTopics: [
+                            {
+                                id: "29",
+                                courseId: '5',
+                                subtitle: "useFetch API"
+                            },
+                            {
+                                id: "30",
+                                courseId: '5',
+                                subtitle: "use Counter"
+                            }
+                    
+                        ]
+                    },
+                ],
+                id:'5',
+                roadMapTitle:"React-Recipe"
+            });
 
             server.create('topic', {
                 html: [
@@ -939,19 +1134,49 @@ export default function server({ environment = 'development' } = {}) {
                         title: 'Introduction to HTML',
                         content: 'HTML stands for Hypertext Markup Language. It is the standard markup language for creating web pages. HTML elements are the building blocks of HTML pages, defining the structure and layout of a web document.',
                         courseId: '1',
-                        code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>Introduction to HTML</title>\n</head>\n<body>\n    <h1>Welcome to HTML</h1>\n    <p>HTML is the foundation of web development.</p>\n</body>\n</html>'
+                        code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>Introduction to HTML</title>\n</head>\n<body>\n    <h1>Welcome to HTML</h1>\n    <p>HTML is the foundation of web development.</p>\n</body>\n</html>',
+                        
                     },
                     {
                         id: 2,
                         courseId: 1,
+                        commomId:"1",
                         title: 'What is HTML?',
                         content: 'HTML is a markup language used to create the structure of web pages. It allows web developers to format text, images, links, and other content on the internet using tags.',
                         courseId: '1',
-                        code: '"<p>This is a paragraph in HTML.</p>\n<a href=\"https://www.example.com\">Visit Example</a>'
+                        code: '"<p>This is a paragraph in HTML.</p>\n<a href=\"https://www.example.com\">Visit Example</a>',
+                        subTopics: [
+                            {
+                                id: "34",
+                                courseId: '1',
+                                subtitle: "Headings (<h1> to <h6>)"
+                            },
+                            {
+                                id: 7,
+                                courseId: '1',
+                                subtitle: "Paragraphs (<p>)"
+                            },
+                            {
+                                id: "11",
+                                courseId: '1',
+                                subtitle: "Links (<a>)"
+                            },
+                            {
+                                id: "12",
+                                courseId: '1',
+                                subtitle: "Images (<img>)"
+                            },
+                            {
+                                id: "15",
+                                courseId: '1',
+                                subtitle: "HTML Lists (ordered <ol> and unordered <ul>)"
+                            }
+                        ]
                     },
                     {
                         id: 3,
                         courseId: 1,
+                        commomId:"2",
                         title: 'HTML Elements',
                         content: 'An HTML element is a complete structure that consists of an opening tag, content, and a closing tag, e.g., <h1>This is a Heading</h1>.',
                         courseId: '1',
@@ -960,6 +1185,7 @@ export default function server({ environment = 'development' } = {}) {
                     {
                         id: 4,
                         courseId: 1,
+                        commomId:"4",
                         title: 'HTML Tags',
                         content: 'Tags are the fundamental building blocks of HTML, consisting of an opening tag and a closing tag, such as <p> for a paragraph. Some tags can be self-closing, like <img />.',
                         courseId: '1',
@@ -5387,13 +5613,1369 @@ export default function server({ environment = 'development' } = {}) {
                     }
                 ]
             });
+            server.create('topic', {
+                recipe: [
+                    {
+                        id: 1,
+                        title: 'Grid-Recipe',
+                        content: 'Grid-Recipe ek aisa component hota hai jo data ko grid format mein dikhata hai aur us par operations perform karne ki suvidha deta hai, jaise search, delete, aur edit functionalities. Iske liye aapko kuch basic steps follow karne honge.',
+                        courseId: '5',
+                        ex: 'Example:',
+                        function: '',
+                        code: `
+import { useEffect, useState } from "react"
+import './studentsGrid.css'
+
+
+export default function StudentData() {
+    const [studentData, setStudentData] = useState([])
+    const [search, setSearch] = useState('')
+    const [edit, setEdit] = useState(null)
+    const [updateData, setUpdateData] = useState({ name: "", Class: "", subject: "", Marks: "", Attendance: "" })
+
+    const studentApi = async () => {
+        const response = await fetch("/api/students")
+        const result = await response.json()
+        console.log(result.students)
+        setStudentData(result.students)
+    }
+    useEffect(() => {
+        studentApi()
+    }, [])
+
+    const searchfilter = async () => {
+        const response = await fetch(/api/search?q={search})
+        const result = await response.json()
+        console.log(result)
+        setStudentData(result)
+    }
+
+    useEffect(() => {
+        searchfilter()
+    }, [search])
+
+    const handledeletebutton = async (id) => {
+        console.log("Original :------", studentData)
+        console.log(id)
+        const response = await fetch(/api/delete/{id}, {
+            method: "DELETE"
+        })
+        studentApi()
+    }
+
+    const handleEdit = async (id) => {
+        console.log(id)
+        const response = await fetch(/api/edit/{id}, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updateData)
+        })
+        studentApi()
+        setEdit(null)
+    }
+
+    const handleSave = (student) => {
+        setEdit(student.id)
+        setUpdateData({ ...student })
+    }
+    const handleEditChange = (e) => {
+        const { name, value } = e.target;
+        setUpdateData((predata) => ({ ...predata, [name]: value }))
+    }
+
+    const tableData = studentData.map((student, index) => (
+        <tr key={student.id}>
+            <td>
+                {
+                    edit === student.id ? (<input type="text" name="name" value={updateData.name} onChange={handleEditChange} />) : (student.name)
+                }
+            </td>
+            <td>
+                {
+                    edit === student.id ? (<input type="number" name="Class" value={updateData.Class} onChange={handleEditChange} />) : (student.Class)
+                }
+            </td>
+            <td>
+                {
+                    edit === student.id ? (<input type="text" name="subject" value={updateData.subject} onChange={handleEditChange} />) : (student.subject)
+                }
+            </td>
+            <td>
+                {
+                    edit === student.id ? (<input type="number" name="Marks" value={updateData.Marks} onChange={handleEditChange} />) : (student.Marks)
+                }
+            </td>
+            <td>
+                {
+                    edit === student.id ? (<input type="text" name="Attendance" value={updateData.Attendance} onChange={handleEditChange} />) : (student.Attendance)
+                }
+            </td>
+            <td ><button onClick={() => handledeletebutton(student.id)}>{student.delete}</button></td>
+            <td>{edit === student.id ? (<button onClick={() => handleEdit(student.id)}>save</button>)
+                : (<button onClick={() => handleSave(student)}>{student.Edit}</button>)}</td>
+        </tr>
+    ))
+
+    return (
+        <>
+            <div>
+                <input type="search" placeholder="Search a name...."
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="searchInput"
+                />
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                            <th>Attendance</th>
+                            <th>Delete-Name</th>
+                            <th>Edit-Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableData}
+                    </tbody>
+                </table>
+            </div>
+        </>
+    )
+}
+    `
+                    },
+                    {
+                        id: 2,
+                        title: 'Search functionality(Backend) with Mirage Js',
+                        content: 'Using Mirage JS to implement search functionality on the backend involves creating a mock server that can respond to search requests based on the data you have. Here’s a step-by-step guide on how to set this up',
+                        courseId: '5',
+                        ex: 'Example',
+                        code: `
+Step 1: Install Mirage JS: Make sure you have Mirage JS installed in your project. You can add it using npm or yarn:
+
+npm install miragejs
+# or
+yarn add miragejs
+
+Step 2: Set Up Mirage Server:
+                this.get('/search', (schema, request) => {
+                console.log(request)
+                let qdata = request.queryParams.q.toLowerCase();
+                let valueData = schema.students.all().models;
+                if (qdata) {
+                    valueData = valueData.filter(student => (
+                        student.name.toLowerCase().includes(qdata) 
+                    ))
+                }
+                return valueData
+
+Step 3 : Fetch Data with Search
+const [search, setSearch] = useState("");
+
+const searchfilter = async () => {
+    const response = await fetch(/api/search?q={search})
+    const result = await response.json()
+    console.log(result)
+    setStudentData(result)
+}
+
+useEffect(() => {
+    searchfilter()
+}, [search])
+})
+
+return (
+    <div>
+      <input
+        type="text"
+        placeholder="Search recipes..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <ul>
+        {recipes.map(recipe => (
+          <li key={recipe.id}>{recipe.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+
+                  `
+                    },
+                    {
+                        id: 3,
+                        title: 'Delete functionality (Backend) with Mirage Js',
+                        content: 'To implement delete functionality in your Mirage JS backend, you need to set up a route that handles DELETE requests for your recipes. Here’s how you can do it step by step:.',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+Step: 1: Make a delete API:
+            this.delete('/delete/:id',(schema,request) => {
+                console.log(request.params)
+                let id = request.params.id
+                console.log(id)
+                return schema.students.find(id).destroy();
+            })
+
+
+Step: 2: How can be implement:
+const handledeletebutton = async (id) => {
+        console.log("Original :------", studentData)
+        console.log(id)
+        const response = await fetch(/api/delete/{id}, {
+            method: "DELETE"
+        })
+        studentApi() - (ye vo hai jisse ki pura data render ho rha hai ui pr or usse data me item ko delete kr rhe ho)
+    }
+             `
+                    },
+                    {
+                        id: 3,
+                        title: 'Edit functionality (Backend) with Mirage Js',
+                        content: 'To implement edit functionality using Mirage JS on the backend, you will need to set up a route that handles PUT or PATCH requests for updating recipes. Here’s a step-by-step guide on how to do this:',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+Step: 1: Make a Edit API:
+             this.put('/edit/:id', (schema, request) => {
+                let id = request.params.id;
+                let updatedData = JSON.parse(request.requestBody)
+                let editDat = schema.students.find(id).update(updatedData)
+                return editDat
+            })
+
+
+Step: 2: How can be implement:
+
+const handleSave = (student) => {
+    setEdit(student.id)
+    setUpdateData({ ...student })
+}
+const handleEditChange = (e) => {
+    const { name, value } = e.target;
+    setUpdateData((predata) => ({ ...predata, [name]: value }))
+}
+
+const tableData = studentData.map((student, index) => (
+    <tr key={student.id}>
+        <td>
+            {
+                edit === student.id ? (<input type="text" name="name" value={updateData.name} onChange={handleEditChange} />) : (student.name)
+            }
+        </td>
+        <td>
+            {
+                edit === student.id ? (<input type="number" name="Class" value={updateData.Class} onChange={handleEditChange} />) : (student.Class)
+            }
+        </td>
+        <td>
+            {
+                edit === student.id ? (<input type="text" name="subject" value={updateData.subject} onChange={handleEditChange} />) : (student.subject)
+            }
+        </td>
+        <td>
+            {
+                edit === student.id ? (<input type="number" name="Marks" value={updateData.Marks} onChange={handleEditChange} />) : (student.Marks)
+            }
+        </td>
+        <td>
+            {
+                edit === student.id ? (<input type="text" name="Attendance" value={updateData.Attendance} onChange={handleEditChange} />) : (student.Attendance)
+            }
+        </td>
+        <td ><button onClick={() => handledeletebutton(student.id)}>{student.delete}</button></td>
+        <td>{edit === student.id ? (<button onClick={() => handleEdit(student.id)}>save</button>)
+            : (<button onClick={() => handleSave(student)}>{student.Edit}</button>)}</td>
+    </tr>
+))
+             `
+                    },   
+                    {
+                        id: 5,
+                        title: 'Tab-Recipe',
+                        content: 'To implement Tab-Recipe using, of index. so we can pass a index to different item and content will render acoording to index. ',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+ import { useState } from "react";
+import './tab.css'
+
+const tab =[
+    {id:"1",title:"Tab-1",context:"Render Tab-1 "},
+    {id:"2",title:"Tab-2",context:"Render Tab-2 "},
+    {id:"3",title:"Tab-3",context:"Render Tab-3 "},
+    {id:"4",title:"Tab-4",context:"Render Tab-4 "},
+]
+
+export default function TabComponents(){
+        const [activeIndex,setActiveIndex] =useState(0)
+
+        const handleIndex =(index) => {
+            setActiveIndex(index)
+        }
+
+        return(
+            <>
+            <ul>
+                {tab.map((tab,index) => (
+                    <li onClick={() => handleIndex(index)} className={activeIndex === index ? "active": ""}>{tab.title}</li>
+                ))}
+            </ul>
+            {tab[activeIndex] && tab[activeIndex].context}
+            </>
+        )
+    
+}
+
+             `
+                    },
+                    {
+                        id: 6,
+                        title: 'How can be take Data',
+                        content: 'you can take data either mirage js or make a json. so according to take data fetch all data in UI',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+ const tab =[
+    {id:"1",title:"Tab-1",context:"Render Tab-1 "},
+    {id:"2",title:"Tab-2",context:"Render Tab-2 "},
+    {id:"3",title:"Tab-3",context:"Render Tab-3 "},
+    {id:"4",title:"Tab-4",context:"Render Tab-4 "},
+]`
+                    },
+                    {
+                        id: 7,
+                        title: 'How can be implement with index',
+                        content: 'To implement a tabbed recipe interface using an index to manage the active tab, you can modify the existing code. Here’s how to do it using an index-based approach:',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+export default function TabComponents(){
+        const [activeIndex,setActiveIndex] =useState(0)
+
+        const handleIndex =(index) => {
+            setActiveIndex(index)
+        }
+
+        return(
+            <>
+            <ul>
+                {tab.map((tab,index) => (
+                    <li onClick={() => handleIndex(index)} className={activeIndex === index ? "active": ""}>{tab.title}</li>
+                ))}
+            </ul>
+            {tab[activeIndex] && tab[activeIndex].context}
+            </>
+        )
+    
+}`
+                    },
+                    {
+                        id: 8,
+                        title: 'Nested Comment-Recipe',
+                        content: 'To create a nested comment Mirage Js structure in React.js, you can follow these steps::',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+export default function NestedComments({ comment }) {
+    return (
+        <>
+            <ul>
+                {comment.title}
+                {comment.replies && comment.replies.map((comment) => (
+                    <li>
+                        <NestedComments comment={comment} />
+                    </li>
+                ))}
+
+            </ul>
+        </>
+    )
+}
+`
+                    },
+                    {
+                        id: 9,
+                        title: 'How can be take Nexted  Data',
+                        content: 'To create a nested Data with Mirage Js and we can make a data like below structure:',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+ const commentData = [
+    {
+      id: 1,
+      title: 'This is the first comment.',
+      replies: [
+        {
+          id: 2,
+          title: 'This is a reply to the first comment.',
+          replies: [
+            {
+              id:2.1,
+              title: "This is first nexted comments"
+            },
+            {
+              id:2.2,
+              title: "This is first final comments",
+              replies:[
+                {
+                  id:"2.3",
+                  title:"First Finally Comments"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: 'This is the second comment.',
+      replies: [
+        {
+          id: 2,
+          title: 'This is a reply to the second comment.',
+          replies: []
+        }
+      ]
+    },
+  ]
+
+  
+`
+                    },         
+                    {
+                        id: 10,
+                        title: 'How can be implement on UI',
+                        content: 'we can implement a nested data thriught by Ul & li tags:',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+import './App.css'
+import NestedComments from './nested-comments/nestedComments'
+function App() {
+  const commentData = [
+    {
+      id: 1,
+      title: 'This is the first comment.',
+      replies: [
+        {
+          id: 2,
+          title: 'This is a reply to the first comment.',
+          replies: [
+            {
+              id:2.1,
+              title: "This is first nexted comments"
+            },
+            {
+              id:2.2,
+              title: "This is first final comments",
+              replies:[
+                {
+                  id:"2.3",
+                  title:"First Finally Comments"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: 'This is the second comment.',
+      replies: [
+        {
+          id: 2,
+          title: 'This is a reply to the second comment.',
+          replies: []
+        }
+      ]
+    },
+  ]
+
+  return (
+    <>
+      <h2>Nested Comment</h2>
+      {commentData.map((comment) => (
+        <NestedComments comment={comment}/>
+      ))}
+    </>
+  )
+}
+
+export default App
+
+
+`
+                    },
+                    {
+                        id: 11,
+                        title: 'Nested Menu- Recipe',
+                        content: 'we can implement a nexted menu throught by Ul & li tags:',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+export default function NestedMenu({menu,handleNextedItem,handleShow,isOpen}){
+    console.log(handleShow)
+    return (
+        <>
+        <ul>
+           <span onClick={handleShow}>
+           {menu.title}
+           </span> 
+            {isOpen && menu.nestedMenu && menu.nestedMenu.map((menu) => (
+                <NestedMenu menu={menu} handleNextedItem={handleNextedItem} />
+            ))}
+        </ul>
+        </>
+    )
+}
+
+`
+                    },
+                    {
+                        id: 12,
+                        title: 'How can be take Nested Data',
+                        content: 'we can implement a nested menu throught by Ul & li tags:',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+const nextedMenu =[
+        {
+            id:"1",
+            title:"index",
+        },
+        {
+            id:"2",
+            title:"Starred",
+        },
+        {
+            id:"3",
+            title:"Snoozed",
+        },
+        {
+            id:"4",
+            title:"Sent",
+        },
+        {
+            id:"5",
+            title:"Drift",
+            nestedMenu:[
+                {
+                    id:"5.1",
+                    title:"Social",
+                },
+                {
+                    id:"5.2",
+                    title:"Updates"
+                },
+                {
+                    id:"5.3",
+                    title:"Forms"
+                },
+                {
+                    id:"5.4",
+                    title:"Promotions"
+                }
+            ]
+        },
+        {
+            id:"6",
+            title:"Categories",
+            nestedMenu:[
+                {
+                    id:"7",
+                    title:"Social"
+                },
+                {
+                    id:"8",
+                    title:"Updates"
+                },
+                {
+                    id:"9",
+                    title:"Forms"
+                },
+                {
+                    id:"10",
+                    title:"Promotions"
+                }
+            ]
+        }
+]
+export default nextedMenu
+
+`
+                    },
+                    {
+                        id: 13,
+                        title: 'How can be implement on UI',
+                        content: 'we can implement a nested menu throught by Ul & li tags:',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+import './App.css'
+import { useState,useEffect } from 'react'
+import NestedMenu from './nested-Menu/nestedMenu'
+
+function App() {
+  const [nestMenu, setNestMenu] = useState([])
+  const [show, setShow] = useState(false)
+  
+  const nestMenuData = async () => {
+    const response = await fetch('/api/nextedMenus')
+    const result = await response.json()
+    console.log(result.nextedMenus)
+    setNestMenu(result.nextedMenus)
+  }
+
+  useEffect(() => {
+      nestMenuData()
+  }, [])
+
+  const handleShow = (id) => {
+      setShow(show === id ? null : id)
+  }
+
+  const handleNextedItem =(id) => {
+      alert(id)
+  }
+
+
+  return (
+    <> 
+      <h2>Nested Menu</h2>
+      {nestMenu.map((item) => (
+          <NestedMenu menu={item} handleShow={() => handleShow(item.id)} handleNextedItem ={handleNextedItem} isOpen={show === item.id}/>
+      ))}
+    </>
+  )
+}
+export default App
+
+
+`
+                    },
+                    {
+                        id: 14,
+                        title: 'Router-Recipe',
+                        content: 'In React, routing is typically managed using a library called React Router. It allows you to handle navigation between different components and pages in your application without reloading the entire page. Here’s a quick overview of how to set it up and use it.',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+Installation: 
+First, install React Router using npm or yarn:
+npm install react-router-dom
+
+import React from 'react'
+import { BrowserRouter as  Router, Routes, Route,Link,useParams,Outlet,Navigate,useSearchParams,useNavigate } from 'react-router-dom'
+
+import './App.css'
+import FirstPage from './Router-Path/firstRouterPage'
+
+function Home() {
+    const navigate = useNavigate()
+
+  function handleGoToAbout(){
+      navigate('/about')
+  }
+
+  return (
+    <h2>
+      Welcome to Home
+      <button onClick={handleGoToAbout}>Go to About</button>
+    </h2>
+  )
+}
+
+
+function About() { 
+  return (
+    <h2>
+      Welcome to About
+      <Link to={'team'}>Team</Link>
+      <Link to={'history'}>History</Link>
+      <Outlet />
+    </h2>
+  )
+}
+
+function Navigation(){
+  return(
+    <nav>
+      <ul>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='/about'>About</Link>
+        </li>
+        <li>
+          <Link to='/user/123456'>User Profile</Link>
+        </li>
+        <li>
+          <Link to='/user/987654/account/abcder'>Account</Link>
+        </li>
+        <li>
+          <Link to='/dashboard'>Dashboard</Link>
+        </li>
+        <li>
+          <Link to='/search/?q=Hello'>Search Page</Link>
+        </li>
+        <li>
+          <Link to='/sa/ty/am'>Satyam Page</Link>
+        </li>
+        <li>
+          <Link to='/go/firstPage'>Check Skills</Link>
+        </li>
+      </ul>
+    </nav>
+  )
+}
+
+function UserProfile(){
+  const useParam = useParams()
+  console.log(useParam)
+  return(
+    <h2>User Profile of {useParam.userId}</h2>
+  )
+}
+
+function AccountInfo(){
+  const params =useParams()
+  console.log(params)
+
+  return (
+    <h2>
+      Account id is {params.accountId}
+    </h2>
+  )
+}
+
+function Team(){
+  return(
+    <h2>
+      Our Teams
+    </h2>
+  )
+}
+
+function History(){
+  return(
+    <h2>
+      Our History
+    </h2>
+  )
+}
+
+function Dashboard(){
+  return(
+    <h2>
+        Welcome to Dashboard
+    </h2>
+  )
+}
+
+function ProtectedRoute({isLoggedIn,children}){
+
+  return(
+      isLoggedIn ? children : <Navigate to={'/'} />
+  )
+}
+
+function SearchPage(){
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('q');
+  return(
+    <h2>
+      Search Result for: {query}
+    </h2>
+  )
+}
+
+function NotFound(){
+  return(
+    <h2>
+      404 Page not Found
+    </h2>
+  )
+}
+
+function SatyamPage(){
+  return(
+    <>
+    WELCOME TO SATYAM PAGE
+    </>
+  )
+}
+function App() {
+  const isLoggedIn =true
+  return (
+    <Router>
+      <Navigation />
+      <Routes>
+      <Route path='*' element={<NotFound />}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />}>
+          <Route path='team' element={<Team />} />
+          <Route path='history' element={<History />}/>
+        </Route>
+        <Route path='/user/:userId' element={<UserProfile />} />
+        <Route path='/user/:userId/account/:accountId' element={<AccountInfo />} />
+        <Route path='/dashboard' element={<ProtectedRoute isLoggedIn={isLoggedIn}>
+          <Dashboard />
+        </ProtectedRoute>}/>
+        <Route path='/search' element={<SearchPage /> }/>
+        <Route path='/sa/ty/am' element={<SatyamPage />}/>
+        <Route path='/go/firstPage' element={<FirstPage />}/>
+      </Routes>
+    </Router>
+  )
+}
+
+export default App
+
+
+`
+                    },
+                    {
+                        id: 15,
+                        title: 'How can be Setup Step by Step',
+                        content: 'In React, We can be setup one by one.',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+Basic Setup: 
+
+1.Import Necessary Components:In your main application file (usually App.js), import the necessary components from react-router-dom:
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+2. Define Your Routes: Wrap your application with the Router component, and use Route components to define the different routes:
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import NotFound from './NotFound';
+
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
+        <Route component={NotFound} />
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
+
+Components Explained
+Router: This component wraps the entire application and keeps the UI in sync with the URL.
+Route: This component is used to define a route. It takes a path prop and a component prop (or a render prop) to specify what should be displayed when the path matches.
+Switch: This component renders the first child Route that matches the location, ensuring that only one route is rendered at a time.
+`
+                    },
+                    {
+                        id: 16,
+                        title: 'Navigating Between Routes',
+                        content: 'To navigate between different routes, you can use the Link or NavLink components:',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+import { Link } from 'react-router-dom';
+function Navigation() {
+  return (
+    <nav>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+    </nav>
+  );
+}
+
+Additional Features
+Nested Routes: You can create nested routes for more complex applications.
+Route Parameters: Use route parameters to pass dynamic data in the URL.
+Redirects: Use the Redirect component to redirect users to different routes.
+
+Example of Route Parameters: Here's how you might set up a route with parameters:
+
+<Route path="/user/:id" component={UserProfile} />
+
+In the UserProfile component, you can access the id parameter using the useParams hook:
+import { useParams } from 'react-router-dom';
+
+function UserProfile() {
+  const { id } = useParams();
+  return <div>User ID: {id}</div>;
+}
+
+`
+                    },
+                    {
+                        id: 17,
+                        title: ' What is React Router? How do you install React Router?',
+                        content: 'React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+
+You can install React Router using npm or yarn: 
+Using npm: 
+npm install react-router-dom
+Using Yarn:
+yarn add react-router-dom
+`
+                    },
+                    {
+                        id: 18,
+                        title: 'What are the benefits of using React Router?',
+                        content: 'Declarative Routing, Dynamic Routing, Code Splitting, History Management, Server-Side Rendering',
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+1. Declarative Routing: React Router provides a declarative way to define routing in your application using JSX syntax. 
+2. Dynamic Routing: React Router supports dynamic routing, that allows you to define routes with parameters that can change based on user input or application state. 
+3. Code Splitting: React Router supports code splitting that allows you to split your application into smaller chunks that are loaded on demand.
+4. History Management: React Router provides a history API that allows you to programmatically navigate between different pages in your application.
+5. Server-Side Rendering: React Router is compatible with server-side rendering (SSR) frameworks like Next.js..
+`
+                    },
+                    {
+                        id: 19,
+                        title: 'Modal-Recipe',
+                        content: "Creating a modal for displaying a recipe in React involves several steps, including setting up the modal component, styling it, and managing its visibility through state. Heres a step-by-step guide to building a simple recipe modal",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+import './modal.css'
+export default function Modal({ isopen, onclose, children }) {
+    if (!isopen) return null
+    return (
+        <>
+            <div className='modal-overlay'>
+                <div className="modal-content">
+                    <button onClick={onclose}>Close</button>
+                    {children}
+                </div>
+            </div>
+        </>
+    )
+} 
+
+function App() {
+    const [showModal,setShowModal] = useState(false)
+    const handleOpenModal = () => setShowModal(true);
+    const handleCloseModal = () => setShowModal(false);  
+    return (
+      <>
+        <button onClick={handleOpenModal}>Open-Modal</button>
+        <Modal onclose={handleCloseModal}isopen={showModal} >
+            <h1>I am Open Right Now</h1>
+        </Modal>
+      </>
+    )
+  }
+  
+  export default App
+`
+                    },
+                    {
+                        id: 20,
+                        title: 'Modal Reuseable Components',
+                        content: "Creating a modal for displaying a recipe in React involves several steps, including setting up the modal component, styling it, and managing its visibility through state. Heres a step-by-step guide to building a simple recipe modal",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+import './modal.css'
+export default function Modal({ isopen, onclose, children }) {
+    if (!isopen) return null
+    return (
+        <>
+            <div className='modal-overlay'>
+                <div className="modal-content">
+                    <button onClick={onclose}>Close</button>
+                    {children}
+                </div>
+            </div>
+        </>
+    )
+} 
+`
+                    },
+                    {
+                        id: 21,
+                        title: 'Visible-not Visible',
+                        content: "In React, you can control the visibility of an element using several methods:",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+1. Conditional Rendering: This is the most common approach. You can use a conditional statement (e.g., ternary operator or && operator) to render the element based on a state variable.
+import { useState } from "react"
+
+export default function ShowHide(){
+    const [visible,setVisible] = useState(false)
+    
+    const handleVisble = () => {
+        setVisible((previsible) => (!previsible))
+    }
+    return(
+        <>
+        <button onClick={handleVisble}>Click me </button>
+        {visible && (<h2 onClick={() => alert("Hello ")}>Welcome to Visible Content</h2>)}
+        </>
+    )
+}
+`
+                    },
+                    {
+                        id: 22,
+                        title: 'How to applied a Functionlity to toggle',
+                        content: "In React, you can control the visibility of an element using several methods:",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+1. Conditional Rendering: This is the most common approach. You can use a conditional statement (e.g., ternary operator or && operator) to render the element based on a state variable.
+import { useState } from "react"
+
+export default function ShowHide(){
+    const [visible,setVisible] = useState(false)
+    
+    const handleVisble = () => {
+        setVisible((previsible) => (!previsible))
+    }
+    return(
+        <>
+        <button onClick={handleVisble}>Click me </button>
+        {visible && (<h2 onClick={() => alert("Hello ")}>Welcome to Visible Content</h2>)}
+        </>
+    )
+}
+`
+                    },
+                    {
+                        id: 23,
+                        title: 'Search & Delete without Mirage Js',
+                        content: "If you're looking to implement search and delete functionality in a React application without using Mirage JS, here's a breakdown of how you can achieve it:",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+import { useEffect } from "react"
+import { useState } from "react"
+import Input from "../Common-Components/input"
+import Button from "../Common-Components/button"
+
+export default function StudentsInfo() {
+    const [studentData, setStudentsData] = useState([])
+    const [search, setSearch] = useState('')
+
+    const studentInfo = async () => {
+        const response = await fetch('/public/Data/students.json')
+        const result = await response.json()
+        console.log(result)
+        setStudentsData(result)
+    }
+    useEffect(() => {
+        studentInfo()
+    }, [])
+
+    const filterStudents = studentData.filter((itm) => {
+        return itm.name.toLowerCase().includes(search.toLowerCase())
+    })
+    console.log(filterStudents)
+
+    const handleSeach = (e) => {
+        console.log(e.target.value)
+        setSearch(e.target.value)
+    }
+
+    const handleDelte = (id) => {
+        const deleteStudents= studentData.filter((item) => item.id !==id)
+        setStudentsData(deleteStudents)
+    }
+    return (
+        <>
+            <Input value={search} onchange={handleSeach} type={"search"} />
+            <ul>
+                {filterStudents.map((itm,index) => (
+                    <>
+                        <li key={itm.id}>{itm.name} <Button onclick={() => handleDelte(itm.id)}>{itm.deletBtn}</Button></li>
+                    </>
+                ))}
+            </ul>
+        </>
+    )
+}
+`
+                    },
+                    {
+                        id: 24,
+                        title: 'How to applied a Functionlity to Search implement.',
+                        content: "To implement search functionality in React.js, you can follow these steps:",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+export default function StudentsInfo() {
+    const [studentData, setStudentsData] = useState([])
+    const [search, setSearch] = useState('')
+
+    const studentInfo = async () => {
+        const response = await fetch('/public/Data/students.json')
+        const result = await response.json()
+        console.log(result)
+        setStudentsData(result)
+    }
+    useEffect(() => {
+        studentInfo()
+    }, [])
+
+    const filterStudents = studentData.filter((itm) => {
+        return itm.name.toLowerCase().includes(search.toLowerCase())
+    })
+    console.log(filterStudents)
+
+    const handleSeach = (e) => {
+        console.log(e.target.value)
+        setSearch(e.target.value)
+    }
+
+    return (
+        <>
+            <Input value={search} onchange={handleSeach} type={"search"} />
+            <ul>
+                {filterStudents.map((itm,index) => (
+                    <>
+                        <li key={itm.id}>{itm.name}</li>
+                    </>
+                ))}
+            </ul>
+        </>
+    )
+}
+`
+                    },
+                    {
+                        id: 25,
+                        title: 'How to applied a Functionlity to Delete.',
+                        content: "To implement Delete functionality in React.js, you can follow these steps:",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+export default function StudentsInfo() {
+    const [studentData, setStudentsData] = useState([])
+    const studentInfo = async () => {
+        const response = await fetch('/public/Data/students.json')
+        const result = await response.json()
+        console.log(result)
+        setStudentsData(result)
+    }
+    useEffect(() => {
+        studentInfo()
+    }, [])
+    
+      const handleDelte = (id) => {
+        const deleteStudents= studentData.filter((item) => item.id !==id)
+        setStudentsData(deleteStudents)
+    }
+
+    return (
+        <>
+            <ul>
+                {filterStudents.map((itm,index) => (
+                    <>
+                        <li key={itm.id}>{itm.name}</li>
+                    </>
+                ))}
+            </ul>
+        </>
+    )
+}
+`
+                    },
+                    {
+                        id: 26,
+                        title: 'Weather App Recipe',
+                        content: "To make a weather API",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+import { useState } from "react";
+import './weather.css'
+
+export default function Weather() {
+    const [cityName, setCityName] = useState('')
+    const [weatherData, setWeatherData] = useState(null)
+    const apiKey = "5cd03ffa4ade7224dfb98adb9b6ca421"
+
+    const getWeather = async () => {
+        const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q={cityName}&appid={apiKey}&units=metric")
+        const result = await response.json();
+        console.log(result)
+        setWeatherData(result)
+    }
+
+    return (
+        <>
+            <div className="weather-container">
+                <input type="text" placeholder="Search a weather" onChange={(e) => setCityName(e.target.value)} />
+                <button onClick={getWeather}>Get Weather</button>
+                {weatherData && (
+                    <div className="weather-info ">
+                        <h2>City Name: {weatherData.name}</h2>
+                        <p>Temp:-{weatherData.main.temp}</p>
+                        <p>Description:- {weatherData.weather[0].description}</p>
+                    </div>
+                )}
+
+            </div>
+        </>
+    )
+}
+`
+                    },
+                    {
+                        id: 27,
+                        title: 'How can take API & ApiKey',
+                        content: "we can make a api throught openweather.com .",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+const getWeather = async () => {
+        const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q={cityName}&appid={apiKey}&units=metric")
+        const result = await response.json();
+        console.log(result)
+        setWeatherData(result)
+    }
+`
+                    },
+                    {
+                        id: 28,
+                        title: 'Custom Hooks',
+                        content: "In React JS, custom hooks are JavaScript functions that let you extract and reuse stateful logic between different components. They allow you to encapsulate complex logic and share it across your application, making your components cleaner and more maintainable.",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+import { useEffect } from "react";
+import { useState } from "react";
+
+ const useFetch = (url) => {
+        const [data,setData] =useState([]);
+        const [title,setTitle] =useState([])
+        const [loading,setLoading] = useState(true);
+
+        useEffect(() => {
+            const fetchUrl = async() => {
+                const response = await fetch(url)
+                const result = await response.json()
+                setData(result)
+                setTitle(result)
+                setLoading(false)
+            }
+            fetchUrl()
+        },[url])
+        return {url,data,loading,title}
+}   
+
+export default useFetch
+`
+                    },
+                    {
+                        id: 29,
+                        title: 'useFetch API',
+                        content: "In React JS, custom hooks are JavaScript functions that let you extract and reuse stateful logic between different components. They allow you to encapsulate complex logic and share it across your application, making your components cleaner and more maintainable.",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+import { useEffect } from "react";
+import { useState } from "react";
+
+ const useFetch = (url) => {
+        const [data,setData] =useState([]);
+        const [title,setTitle] =useState([])
+        const [loading,setLoading] = useState(true);
+
+        useEffect(() => {
+            const fetchUrl = async() => {
+                const response = await fetch(url)
+                const result = await response.json()
+                setData(result)
+                setTitle(result)
+                setLoading(false)
+            }
+            fetchUrl()
+        },[url])
+        return {url,data,loading,title}
+}   
+
+export default useFetch
+`
+                    },
+                    {
+                        id: 30,
+                        title: 'use Counter',
+                        content: "In React JS, The useCounter hook is useful for managing a counter value with additional options for minimum and maximum limits. .",
+                        courseId: '5',
+                        ex: 'Examples:',
+                        function: '',
+                        code: `
+import { useState } from "react";
+
+export default function useCouter(){
+    const [count,setCount] = useState(0)
+
+    function handleIncrese(){
+        setCount(count+1)
+    }
+    function handleDecrese(){
+        setCount(count-1)
+    }
+    return {count,handleDecrese,handleIncrese}
+}
+`
+                    },
+                ]
+            });
 
 
         },
 
         routes() {
             this.namespace = "api"
-            this.get('/courseLists', (schema) => {
+            this.get('/courseLists', (schema,request) => {
+                console.log(schema,request)
                 return schema.courseLists.all();
             })
 
@@ -5402,7 +6984,6 @@ export default function server({ environment = 'development' } = {}) {
             })
 
             this.get("/topics/search", (schema, request) => {
-
                 let searchTerm = request.queryParams.term.toLowerCase();
                 const topicsModels = schema.topics.all().models;
                 const topicAttrs = topicsModels.flatMap((item) => {

@@ -1,8 +1,10 @@
-import './button.css'
-export default function Button(){
-    return(
-        <>
-        <button onClick={onClick} className={classNameButton}>{children}</button>
-        </>
-    )
+import './button.css';
+export default function Button({ onClick, classNameButton, children }) {
+  return (
+    <>
+      <button onClick={onClick} className={classNameButton}>
+        {children}
+      </button>
+    </>
+  );
 }

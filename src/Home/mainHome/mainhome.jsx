@@ -1,12 +1,11 @@
+import ContentCom from '../Content/content';
+import Header from '../Header/header';
 
-import ContentCom from "../Content/content";
-import Header from "../Header/header";
-
-export default function Home(){;
-    return(
-        <>
-            <Header  />
-            <ContentCom />
-        </>
-    )
+export default function Home() {
+  return (
+    <>
+      <Header />
+      <ContentCom />
+    </>
+  );
 }

@@ -1,33 +1,33 @@
-.sidebar{
-    color: hsl(24.6, 95%, 53.1%);
-    margin-top: 15px;
-    margin-bottom: 28px;
-    cursor: pointer;
-    width: 100%;
-    border: solid 1px;
-    padding: 10px;
-    border-radius: 20px;
+.sidebar {
+  color: hsl(24.6, 95%, 53.1%);
+  margin-top: 15px;
+  margin-bottom: 28px;
+  cursor: pointer;
+  width: 100%;
+  border: solid 1px;
+  padding: 10px;
+  border-radius: 20px;
 }
-.sidebar:hover{
-    background-color: hsl(24.6, 95%, 53.1%);
-    color: white;
-    border: solid 1px hsl(24.6, 95%, 53.1%);
+.sidebar:hover {
+  background-color: hsl(24.6, 95%, 53.1%);
+  color: white;
+  border: solid 1px hsl(24.6, 95%, 53.1%);
 }
-.leftList-Conatiner{
-    width: 17%;
-    height: 560px;
-    overflow-y: scroll;
-    padding: 10px;
-    margin-left: 20px;
-    border-radius: 16px;
-    background-color: #3e3e3e;
-} 
-.leftList-Conatiner::-webkit-scrollbar{
-    display: none;
+.leftList-Conatiner {
+  width: 17%;
+  height: 560px;
+  overflow-y: scroll;
+  padding: 10px;
+  margin-left: 20px;
+  border-radius: 16px;
+  background-color: #3e3e3e;
 }
-body.light  .leftList-Conatiner{
-    background-color: rgb(233, 231, 231);
+.leftList-Conatiner::-webkit-scrollbar {
+  display: none;
 }
-.newsheet{
-    display: flex;
+body.light .leftList-Conatiner {
+  background-color: rgb(233, 231, 231);
+}
+.newsheet {
+  display: flex;
 }

@@ -107,18 +107,17 @@ body.dark .search-search-div input{
     background-color: white;
 } */
 
-.search-content-inner-div{
-    border: solid red;
+.search-content-inner-div {
+  border: solid red;
 }
-.search-content-div{
-    border: solid darkblue !important;
-}
-
-.search-results{
-    border: solid !important;
+.search-content-div {
+  border: solid darkblue !important;
 }
 
-li{
-    color: black;
+.search-results {
+  border: solid !important;
 }
 
+li {
+  color: black;
+}

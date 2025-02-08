@@ -25,12 +25,18 @@
 }
 
 .allData-cont-div1 h2 {
+<<<<<<< HEAD
   font-size: 14px;
+=======
+    font-size: 15px;
+    /* color: #333; */
+>>>>>>> ae1e46e6a24b5c86f86602ff58863260a765158f
 }
 /* .leftside-ul li{
     margin-top: 20px;
 } */
 li {
+<<<<<<< HEAD
   list-style: none;
   font-size: 13px;
   margin: 10px 0;
@@ -58,12 +64,30 @@ li {
 }
 .sub-container::-webkit-scrollbar {
   width: 3px;
+=======
+    list-style: none;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    /* border: solid; */
+>>>>>>> ae1e46e6a24b5c86f86602ff58863260a765158f
 }
 
 /* li:hover {
     background-color: #e0e0e0;
     color: black;
+<<<<<<< HEAD
 } */
+=======
+}
+.subtopic-list li{
+    /* border: solid red; */
+    margin-left: 20px;
+}
+>>>>>>> ae1e46e6a24b5c86f86602ff58863260a765158f
 
 .allData-cont-div1::-webkit-scrollbar {
   width: 4px;
@@ -107,6 +131,7 @@ body.light .allData-cont-div2 div {
   font-size: 20px;
   cursor: pointer;
 }
+<<<<<<< HEAD
 .selectedTopic {
   background-color: #e0e0e0;
   border-left: 4px solid white;
@@ -114,6 +139,17 @@ body.light .allData-cont-div2 div {
   padding: 10px;
   color: hsl(24.6 95% 53.1%);
   transition: background-color 0.1s;
+=======
+.selectedTopic{
+    background-color: #e0e0e0;
+    border-left: 4px solid white;
+    padding-left: 10px;
+    color: hsl(24.6 95% 53.1%);
+    transition: background-color 0.1s;
+    cursor: pointer;
+    /* padding: 20px; */
+    font-size: 15px;
+>>>>>>> ae1e46e6a24b5c86f86602ff58863260a765158f
 }
 .selectedSubTopic {
   background-color: #e0e0e0;
@@ -215,3 +251,67 @@ body.dark .code-example pre {
     rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
+<<<<<<< HEAD
+=======
+/* .selectedSubTopic {
+    background-color: pink;
+    color: hsl(24.6 95% 53.1%);
+} */
+
+.topic-container {
+    margin-bottom: 20px;
+}
+
+.topic-section {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.topic-title {
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.topic-title:hover {
+    color: hsl(24.6 95% 53.1%);
+}
+
+.subtopic-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.subtopic-item {
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.subtopic-item:hover {
+    background-color: #e0e0e0;
+}
+
+.selectedTopic {
+    background-color: #e0e0e0;
+    border-left: 4px solid hsl(24.6 95% 53.1%);
+    padding-left: 10px;
+    color: hsl(24.6 95% 53.1%);
+    cursor: pointer;
+}
+
+.selectedSubTopic {
+    background-color: hsl(24.6 95% 53.1%);
+    color: white;
+}
+
+.topic-section h2{
+    cursor: pointer;
+    padding: 15px;
+}
+>>>>>>> ae1e46e6a24b5c86f86602ff58863260a765158f

@@ -1659,24 +1659,14 @@ export default function server({ environment = 'development' } = {}) {
                             </head>
                             <body>
                             
-                            <h1>HTML Tables</h1>
-                            <p>HTML tables are defined using the table tag. They consist of rows and cells.</p>
+                            Basic Example: 2. 
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username">
                             
-                            <h2>Example Table</h2>
-                            <table border="1">
-                                <tr>
-                                    <th>Header 1</th>
-                                    <th>Header 2</th>
-                                </tr>
-                                <tr>
-                                    <td>Row 1, Cell 1</td>
-                                    <td>Row 1, Cell 2</td>
-                                </tr>
-                                <tr>
-                                    <td>Row 2, Cell 1</td>
-                                    <td>Row 2, Cell 2</td>
-                                </tr>
-                            </table>
+                            Checkbox Example: 3.
+                            <label for="subscribe">
+                            <input type="checkbox" id="subscribe" name="subscribe"> Subscribe to newsletter
+                            </label>
                             
                             </body>
                             </html>
@@ -1764,25 +1754,213 @@ export default function server({ environment = 'development' } = {}) {
                             </head>
                             <body>
                             
-                            <h1>HTML Media</h1>
-                            <p>HTML5 introduced the &lt;audio&gt; and &lt;video&gt; tags for embedding media content directly into web pages..</p>
+                            Key Attributes
+                            name: The name of the textarea, used to identify the form data after submission.
                             
-                            <h2>Embedding Audio</h2>
-                            <p>The &lt;audio&gt; tag allows you to embed sound content. You can provide multiple source files for different formats.</p>
-                            <audio controls>
-                                <source src="audio.mp3" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                                <p>Please download the audio file: <a href="audio.mp3">audio.mp3</a></p>
-                            </audio>
+                            rows: Specifies the number of visible text lines.
                             
-                            <h2>Embedding Video</h2>
-                            <p>The &lt;video&gt; tag allows you to embed video content. Like the audio tag, you can provide different formats for compatibility.</p>
-                            <video width="320" height="240" controls>
-                                <source src="video.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                                <p>Please download the video file: <a href="video.mp4">video.mp4</a></p>
+                            cols: Specifies the visible width of the textarea, measured in character units.
+                            
+                            placeholder: Provides a short hint that describes the expected value of the textarea (e.g., "Type your message here...").
+                            
+                            maxlength: Limits the maximum number of characters that can be entered.
+                            
+                            required: Indicates that the textarea must be filled out before submitting the form.
+                            
+                            readonly: Makes the textarea non-editable, allowing users to see the text but not change it.
+                            
+                            disabled: Disables the textarea, preventing user interaction and submission.
+                            
+                            <form action="/submit" method="post">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" cols="50" placeholder="Type your message here..." required></textarea>
+                            <button type="submit">Send</button>
+                            </form>`,
+          },
+          {
+            id: 23,
+            courseId: '1',
+            title: 'Select dropdowns (<select>)',
+            content:
+              'The <select> element in HTML is used to create a dropdown list, allowing users to choose one or more options from a predefined list. Here’s a detailed overview of how to use <select> elements, their attributes, and best practices.:',
+            code: `
+                            <select name="options" id="options">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            </select>
+                            .`,
+          },
+          {
+            id: 24,
+            title: 'HTML Semantic Elements',
+            content:
+              'Semantic elements clearly describe their meaning in a human- and machine-readable way, such as <article>, <section>, and <aside>.',
+            courseId: '1',
+            code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Semantic Elements</title>\n</head>\n<body>\n    <article>\n        <h2>Article Title</h2>\n        <p>This is the content of the article.</p>\n    </article>\n    <section>\n        <h2>Section Title</h2>\n        <p>This is a section of the document.</p>\n    </section>\n    <aside>\n        <h2>Related Information</h2>\n        <p>This is some related information.</p>\n    </aside>\n</body>\n</html>',
+          },
+          {
+            id: 25,
+            courseId: '1',
+            title:
+              'Using semantic tags (<header>, <nav>, <section>, <article>, <footer>)',
+            content:
+              'Semantic tags in HTML5 clearly define the structure and meaning of the content, enhancing accessibility and SEO. The <header>, <nav>, <section>, <article>, and <footer> tags are essential for organizing web pages.',
+            code: '<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Semantic HTML Example</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }\n        header, footer { background-color: #f4f4f4; padding: 20px; text-align: center; }\n        nav { margin: 20px 0; }\n        section { padding: 20px; }\n        article { margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; }\n    </style>\n</head>\n<body>\n\n<header>\n    <h1>My Blog</h1>\n    <p>Welcome to my blog where I share my thoughts and experiences.</p>\n</header>\n\n<nav>\n    <ul>\n        <li><a href="#home">Home</a></li>\n        <li><a href="#about">About</a></li>\n        <li><a href="#contact">Contact</a></li>\n    </ul>\n</nav>\n\n<section>\n    <h2>Latest Articles</h2>\n\n    <article>\n        <h3>Understanding Semantic HTML</h3>\n        <p>Semantic HTML tags clearly describe their meaning in a human- and machine-readable way.</p>\n        <p><a href="#">Read more...</a></p>\n    </article>\n\n    <article>\n        <h3>The Benefits of Clean Code</h3>\n        <p>Writing clean code improves maintainability and reduces errors.</p>\n        <p><a href="#">Read more...</a></p>\n    </article>\n</section>\n\n<footer>\n    <p>&copy; 2024 My Blog. All rights reserved.</p>\n</footer>\n\n</body>\n</html>',
+          },
+          {
+            id: 26,
+            title: 'Importance of semantic HTML for accessibility and SEO',
+            content:
+              'HTML provides a wide range of tags for various functionalities, from structuring content to creating forms and multimedia elements. Below is a list of commonly used HTML tags.',
+            courseId: '1',
+            code: `
+                            Importance for Accessibility: 
+                            Clear Structure: Semantic tags (like <header>, <nav>, <section>, <article>, and <footer>) help create a logical structure for web content. This makes it easier for assistive technologies (like screen readers) to navigate and interpret the page.
+                            
+                            Meaningful Elements: Each semantic element conveys meaning about the content it contains. For example, <article> indicates that the content is a standalone piece, while <nav> clearly defines navigation links. This helps users understand the context and purpose of different sections.
+                            
+                            Enhanced Navigation: Screen readers can announce the roles of different parts of the page, allowing users to quickly jump to relevant sections, such as the main content or navigation.
+                            
+                            Improved Focus Management: Semantic elements can help manage focus more effectively, allowing keyboard users to navigate through a webpage in a meaningful way.
+                            
+                            Accessibility Standards Compliance: Using semantic HTML helps meet web accessibility standards, such as the Web Content Accessibility Guidelines (WCAG), making your site more inclusive for all users.
+                            `,
+          },
+          {
+            id: 27,
+            courseId: 1,
+            title: 'HTML Attributes',
+            content:
+              'Attributes provide additional information about HTML elements and are specified in the opening tag in name/value pairs, like <a href="https://www.example.com">.',
+            courseId: '1',
+            code: '<!DOCTYPE html>\n<html>\n<body>\n\n<h2>The href Attribute</h2>\n\n<p>HTML links are defined with the a tag. The link address is specified in the href attribute:</p>\n\n<a href=\"https://www.w3schools.com\">Visit W3Schools</a>\n\n</body>\n</html>',
+          },
+          {
+            id: 28,
+            title: 'HTML Classes',
+            content:
+              'The class attribute is used to specify a class for an HTML element, which can be styled with CSS. Multiple elements can share the same class to apply the same styles.',
+            courseId: '1',
+            code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Classes</title>\n    <style>\n        .my-class {\n            color: blue;\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n\n<div class="my-class">This div has a class.</div>\n\n</body>\n</html>',
+          },
+          {
+            id: 29,
+            title: 'HTML Id',
+            content:
+              'The id attribute is used to specify a unique id for an HTML element. It is often used for styling and scripting purposes, allowing you to target specific elements.',
+            courseId: '1',
+            code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Id</title>\n    <style>\n        #uniqueId {\n            color: green;\n            font-size: 20px;\n        }\n    </style>\n</head>\n<body>\n\n<div id="uniqueId">This div has a unique id.</div>\n\n</body>\n</html>',
+          },
+          {
+            id: 30,
+            title: 'HTML Style',
+            content:
+              'You can use the style attribute to add CSS styles to HTML elements, allowing you to change their appearance directly within the HTML. This is useful for quick styling but is generally better handled with external CSS files for larger projects.',
+            courseId: '1',
+            code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>HTML Style</title>\n</head>\n<body>\n\n<h1 style="color: blue;">This is a blue heading</h1>\n<p style="font-size: 20px;">This is a larger paragraph. Inline styles can be applied directly to individual elements.</p>\n\n</body>\n</html>',
+          },
+          {
+            id: 31,
+            title: 'Data attributes (data-*)',
+            content:
+              'The data-* attribute is used to store custom data private to the page or application. It provides a way to embed custom data attributes on all HTML elements.',
+            courseId: '1',
+            code: '<div data-user-id="12345">User Info</div>',
+          },
+          {
+            id: '32',
+            courseId: '1',
+            title: 'Multimedia Elements',
+            content:
+              'HTML5 introduced multimedia elements like <audio> and <video> that allow developers to embed audio and video directly into web pages. These elements support various formats and come with built-in controls for playback.',
+            code: '<!DOCTYPE html>\n<html>\n<head>\n    <title>Multimedia Elements</title>\n</head>\n<body>\n    <h1>Embedding Multimedia</h1>\n    <h2>Audio Example</h2>\n    <audio controls>\n        <source src="audio.mp3" type="audio/mpeg">\n        Your browser does not support the audio element.\n        <p>Please download the audio file: <a href="audio.mp3">audio.mp3</a></p>\n    </audio>\n    <h2>Video Example</h2>\n    <video width="320" height="240" controls>\n        <source src="video.mp4" type="video/mp4">\n        Your browser does not support the video tag.\n        <p>Please download the video file: <a href="video.mp4">video.mp4</a></p>\n    </video>\n</body>\n</html>',
+          },
+          {
+            id: 33,
+            title: 'Embedding videos (<video>)',
+            content:
+              'The <video> element in HTML is used to embed video content directly into a web page. It provides a standardized way to play videos without relying on external plugins. Here’s how to use the <video> element, along with its attributes and best practices..',
+            courseId: '1',
+            code: `
+                            Basic Syntax:
+                            
+                            <video width="640" height="360" controls>
+                            <source src="video.mp4" type="video/mp4">
+                            <source src="video.webm" type="video/webm">
+                            Your browser does not support the video tag.
                             </video>
                             
+                            Example.2:
+                            
+                            <video width="640" height="360" controls poster="thumbnail.jpg">
+                            <source src="video.mp4" type="video/mp4">
+                            <source src="video.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                            </video>
+                            
+                                    `,
+          },
+          {
+            id: 34,
+            title: 'Embedding audio (<audio>)',
+            content:
+              'The <audio> element in HTML is used to embed audio content directly into a web page. It provides a standardized way to play audio files without relying on external plugins. Here’s how to use the <audio> element, along with its attributes and best practices.',
+            courseId: '1',
+            code: `
+                            <audio controls>
+                            <source src="audio.mp3" type="audio/mpeg">
+                            <source src="audio.ogg" type="audio/ogg">
+                            Your browser does not support the audio tag.
+                            </audio>
+                            
+                            Example.2: 
+                            
+                            <audio controls>
+                            <source src="audio.mp3" type="audio/mpeg">
+                            <source src="audio.ogg" type="audio/ogg">
+                            Your browser does not support the audio tag.
+                            </audio>`,
+          },
+          {
+            id: 35,
+            title: 'Using iframes (<iframe>)',
+            content:
+              'The <iframe> element in HTML is used to embed another HTML document within the current document. This allows you to display content such as videos, maps, or other web pages directly within your page. Here’s a guide on how to use <iframe>, along with its attributes, best practices, and examples..',
+            courseId: '1',
+            code: `
+                            Basic Syntax:
+                            
+                            <iframe src="https://www.example.com" width="600" height="400" title="Description of the content"></iframe>`,
+          },
+          {
+            id: '36',
+            courseId: '1',
+            title: 'Responsive Design Basics',
+            content:
+              'Responsive design ensures that your website looks good on all devices, from desktops to smartphones. Here are some basic concepts and techniques you can use in HTML and CSS to achieve responsive design.',
+            code: `<!DOCTYPE html>
+                            <html lang="en">
+                            <head>
+                                <meta charset="UTF-8">
+                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                <title>Responsive Design Basics</title>
+                                <style>
+                                    body { font-family: Arial, sans-serif; }
+                                    .container { width: 80%; margin: auto; }
+                                    
+                                    @media (max-width: 600px) {
+                                        .container {
+                                            width: 100%; /* Full width on smaller screens */
+                                        }
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <div class="container">
+                                    <h1>Responsive Design</h1>
+                                    <p>This content adjusts based on screen size.</p>
+                                </div>
                             </body>
                             </html>
                         `,
@@ -1818,18 +1996,7 @@ export default function server({ environment = 'development' } = {}) {
     </head>
     <body>
 
-    <header>
-    <h1>My Blog</h1>
-    <p>Welcome to my blog where I share my thoughts and experiences.</p>
-    </header>
 
-    <nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    </nav>
 
     <section>
     <h2>Latest Articles</h2>
@@ -3094,14 +3261,14 @@ export default function server({ environment = 'development' } = {}) {
                 height: 100vh;
                 background-color: #f0f0f0;
             }
-    
+            
             .box {
                 width: 100px;
                 height: 100px;
                 background-color: #007BFF;
                 transition: transform 0.5s ease;
             }
-    
+            
             .box:hover {
                 transform: translate(50px, 30px) rotate(45deg);
             }
@@ -3139,14 +3306,14 @@ export default function server({ environment = 'development' } = {}) {
                 height: 100vh;
                 background-color: #f0f0f0;
             }
-    
+            
             .box {
                 width: 100px;
                 height: 100px;
                 background-color: #007BFF;
                 transition: transform 0.5s ease;
             }
-    
+            
             .box:hover {
                 transform: scale(1.2) skew(15deg, 10deg);
             }
@@ -3186,14 +3353,14 @@ export default function server({ environment = 'development' } = {}) {
                 height: 100vh;
                 background-color: #f0f0f0;
             }
-    
+            
             .box {
                 width: 100px;
                 height: 100px;
                 background-color: #007BFF;
                 transition: transform 0.5s ease;
             }
-    
+            
             .box:hover {
                 transform: translate(30px, 20px) rotate(45deg) scale(1.2) skew(10deg, 5deg);
             }
@@ -3230,11 +3397,11 @@ export default function server({ environment = 'development' } = {}) {
                 height: 100vh;
                 background-color: #f0f0f0;
             }
-    
+            
             .scene {
                 perspective: 1000px; /* Sets the perspective for 3D space */
             }
-    
+            
             .box {
                 width: 100px;
                 height: 100px;
@@ -3242,15 +3409,15 @@ export default function server({ environment = 'development' } = {}) {
                 transition: transform 0.5s;
                 transform-style: preserve-3d; /* Preserve 3D transformations */
             }
-    
+            
             .box:hover {
                 transform: rotateY(180deg) rotateX(20deg); /* Rotate on hover */
             }
-        </style>
-    </head>
-    <body>
-    
-        <div class="scene">
+            </style>
+            </head>
+            <body>
+            
+            <div class="scene">
             <div class="box"></div>
         </div>
     
@@ -3283,11 +3450,11 @@ export default function server({ environment = 'development' } = {}) {
                 height: 100vh;
                 background-color: #f0f0f0;
             }
-    
+            
             .scene {
                 perspective: 600px; /* Set perspective for the 3D scene */
             }
-    
+            
             .box {
                 width: 100px;
                 height: 100px;
@@ -3295,15 +3462,15 @@ export default function server({ environment = 'development' } = {}) {
                 transition: transform 0.5s;
                 transform-style: preserve-3d; /* Preserve 3D transformations */
             }
-    
+            
             .box:hover {
                 transform: rotateY(180deg); /* Rotate on hover */
             }
-        </style>
-    </head>
-    <body>
-    
-        <div class="scene">
+            </style>
+            </head>
+            <body>
+            
+            <div class="scene">
             <div class="box"></div>
         </div>
     
@@ -3347,13 +3514,13 @@ export default function server({ environment = 'development' } = {}) {
                 background-color: #f0f0f0;
                 perspective: 800px; /* Set perspective for the 3D scene */
             }
-    
+            
             .scene {
                 width: 200px;
                 height: 200px;
                 position: relative;
             }
-    
+            
             .box {
                 width: 100px;
                 height: 100px;
@@ -3361,15 +3528,15 @@ export default function server({ environment = 'development' } = {}) {
                 position: absolute;
                 transition: transform 0.5s;
             }
-    
+            
             .box:hover {
                 transform: translateZ(50px) rotateY(45deg); /* Move closer and rotate */
             }
-        </style>
-    </head>
-    <body>
-    
-        <div class="scene">
+            </style>
+            </head>
+            <body>
+            
+            <div class="scene">
             <div class="box"></div>
         </div>
     
@@ -3402,13 +3569,13 @@ export default function server({ environment = 'development' } = {}) {
                 background-color: #f0f0f0;
                 perspective: 800px; /* Perspective for 3D space */
             }
-    
+            
             .scene {
                 width: 200px;
                 height: 200px;
                 position: relative;
             }
-    
+            
             .box {
                 width: 100px;
                 height: 100px;
@@ -3416,15 +3583,15 @@ export default function server({ environment = 'development' } = {}) {
                 position: absolute;
                 transition: transform 0.5s;
             }
-    
+            
             .box:hover {
                 transform: translateZ(50px) rotateY(45deg); /* Move closer and rotate */
             }
-        </style>
-    </head>
-    <body>
-    
-        <div class="scene">
+            </style>
+            </head>
+            <body>
+            
+            <div class="scene">
             <div class="box"></div>
         </div>
     
@@ -3456,7 +3623,7 @@ export default function server({ environment = 'development' } = {}) {
                 background-color: #f0f0f0;
                 perspective: 1000px; /* Perspective for 3D effect */
             }
-    
+            
             .scene {
                 width: 200px;
                 height: 200px;
@@ -3464,31 +3631,31 @@ export default function server({ environment = 'development' } = {}) {
                 transform-style: preserve-3d; /* Preserve 3D transformations */
                 transition: transform 0.6s; /* Smooth transition */
             }
-    
+            
             .card {
                 width: 100%;
                 height: 100%;
                 position: absolute;
                 backface-visibility: hidden; /* Hide back face */
             }
-    
+            
             .front {
                 background-color: #007BFF; /* Front color */
             }
-    
+            
             .back {
                 background-color: #FF5733; /* Back color */
                 transform: rotateY(180deg); /* Rotate back face */
             }
-    
+            
             .scene:hover {
                 transform: rotateY(180deg); /* Flip the card on hover */
             }
-        </style>
-    </head>
-    <body>
-    
-        <div class="scene">
+            </style>
+            </head>
+            <body>
+            
+            <div class="scene">
             <div class="card front"></div>
             <div class="card back"></div>
         </div>

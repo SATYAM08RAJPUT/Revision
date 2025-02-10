@@ -7,7 +7,6 @@ import HtmlRoadMap from './HTML-ROADMAP/htmlroadmap';
 
 function App() {
   const message = 'Hello, world';
-
   console.log(message);
 
   return (

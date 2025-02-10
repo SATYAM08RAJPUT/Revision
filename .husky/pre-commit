@@ -1,0 +1,2 @@
+mkdir -p .husky
+echo 'npx lint-staged' > .husky/pre-commit

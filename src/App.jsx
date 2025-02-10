@@ -6,7 +6,6 @@ import './App.css';
 import HtmlRoadMap from './HTML-ROADMAP/htmlroadmap';
 
 function App() {
-  const example = undefinedVariable;
   return (
     <div className="app">
       <Router>

@@ -6,7 +6,10 @@ import './App.css';
 import HtmlRoadMap from './HTML-ROADMAP/htmlroadmap';
 
 function App() {
-  const value = '12';
+  const message = 'Hello, world';
+
+  console.log(message);
+
   return (
     <div className="app">
       <Router>

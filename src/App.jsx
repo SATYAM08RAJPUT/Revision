@@ -1,10 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home/mainHome/mainhome';
-import CourseList from './MultiSectionViewer/multiSectionViewer';
-import AllDataFile from './AllFile/TopicList';
 import './App.css';
-import HtmlRoadMap from './HTML-ROADMAP/htmlroadmap';
-import Satyam from './satyam/satyam';
+import Button from './Components/Button/button';
 
 function App() {
   const message = 'Hello, world';
@@ -12,22 +7,7 @@ function App() {
 
   return (
     <div className="app">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/course" element={<CourseList />} />
-          <Route path="/course/:courseId/RoadMap" element={<HtmlRoadMap />} />
-          <Route
-            path="/course/:courseId/topics/:topicId"
-            element={<AllDataFile />}
-          />
-          <Route
-            path="/course/:courseId/RoadMap/:topicId"
-            element={<AllDataFile />}
-          />
-        </Routes>
-      </Router>
-      <Satyam />
+      <Button onclick={() => alert('Yes Bro')}>{'Click me'}</Button>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import CourseList from './MultiSectionViewer/multiSectionViewer';
 import AllDataFile from './AllFile/TopicList';
 import './App.css';
 import HtmlRoadMap from './HTML-ROADMAP/htmlroadmap';
+import Satyam from './satyam/satyam';
 
 function App() {
   const message = 'Hello, world';
@@ -26,6 +27,7 @@ function App() {
           />
         </Routes>
       </Router>
+      <Satyam />
     </div>
   );
 }

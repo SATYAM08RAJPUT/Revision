@@ -10,7 +10,8 @@
     "format": "prettier --write src",
     "preview": "vite preview",
     "test": "react-scripts test",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate-docs": "jsdoc src/ --destination docs/"
   },
   "lint-staged": {
     "*.js": [
@@ -46,6 +47,7 @@
     "globals": "^15.9.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
+    "jsdoc": "^4.0.4",
     "lint-staged": "^15.4.3",
     "postcss": "^8.5.1",
     "prettier": "^3.5.0",

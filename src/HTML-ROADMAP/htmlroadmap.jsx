@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import './htmlroadmap.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../Home/Header/header';
-import { useRef } from 'react';
+import React from 'react';
+
 export default function HtmlRoadMap() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [htmlRoadMap, setHtmlRoadMap] = useState([]);
   const { courseId } = useParams();
-  const topRef = useRef(null);
   console.log(courseId);
 
   const fetchCssRoad = async () => {
@@ -25,11 +25,6 @@ export default function HtmlRoadMap() {
   const handleTopicClick = (item) => {
     navigate(`/course/${item.courseId}/RoadMap/${item.id}`);
     // navigate(`/course/${item.courseId}/topics/${item.id}`);
-  };
-  const handleScroll = () => {
-    if (textRef.current) {
-      textRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   const handleSubTitle = (event, subitem) => {
@@ -66,7 +61,6 @@ export default function HtmlRoadMap() {
         <Header />
         <div className="back-button-div">
           <div>
-            {/* <h1>Road Map:{selectedRoadmap[0]. roadMapTitle}</h1> */}
             <br />
             <h1 style={{ color: 'hsl(24.6, 95%, 53.1%)', fontSize: '50px' }}>
               Road Map: {selectedRoadmap[0].roadMapTitle}

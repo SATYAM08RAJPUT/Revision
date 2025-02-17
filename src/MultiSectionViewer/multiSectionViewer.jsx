@@ -3,6 +3,7 @@ import './multiSectionViewer.css';
 import { Button } from '@mui/material';
 import Header from '../Home/Header/header';
 import { useNavigate, useParams } from 'react-router-dom';
+import React from 'react';
 
 const CourseList = () => {
   const [cheatsheetData, setCheatsheetData] = useState([]);
@@ -57,7 +58,7 @@ const CourseList = () => {
 
         <div className="cheatsheet-main-container">
           {cheatsheetData.map((cheatsheet) =>
-            cheatsheet.chatsheets.map((itm, index) => (
+            cheatsheet.chatsheets.map((itm) => (
               <div key={itm.id}>
                 <div className="center">
                   <div className="image-circle">

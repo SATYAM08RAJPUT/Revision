@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../Modal/modal.css';
 import { CiSearch } from 'react-icons/ci';
 import useArrowPress from '../CustomHook/useArrowPress';
+
 const Search = ({ handleCloseModal }) => {
   const [input, setInput] = useState('');
   const [searchedData, setSearchData] = useState([]);

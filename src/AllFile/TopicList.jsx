@@ -127,7 +127,7 @@ const AllDataFile = () => {
                       className="sub-container"
                     >
                       <h2
-                        onClick={(event) => handleToggle(topic)}
+                        onClick={() => handleToggle(topic)}
                         className={isSelected ? 'selectedTopic' : ''}
                       >
                         {topic.topicName}

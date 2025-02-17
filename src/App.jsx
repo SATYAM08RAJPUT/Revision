@@ -6,7 +6,7 @@ import './App.css';
 import HtmlRoadMap from './HTML-ROADMAP/htmlroadmap';
 import Satyam from './satyam/satyam';
 import * as Sentry from '@sentry/react';
-import { Integrations } from '@sentry/tracing';
+import React from 'react';
 
 Sentry.init({
   dsn: 'https://d9fd5720310bff92d1fcea5a0b51cd10@o4508816938434560.ingest.us.sentry.io/4508817061838848',

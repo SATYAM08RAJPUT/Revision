@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Button from '../../Common-Components copy/Button/button';
 import ImageCom from '../../Common-Components copy/Image/img';
 import './content.css';
-import logo2 from '../../../public/logoImage/logo2.png';
+// import logo2 from '../../../public/logoImage/logo2.png';
 import { BsLightningCharge } from 'react-icons/bs';
 
 export default function ContentCom() {

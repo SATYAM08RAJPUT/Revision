@@ -6,8 +6,9 @@ import Search from '../../Search/search';
 import { BsLightningCharge } from 'react-icons/bs';
 import { useMediaQuery } from 'react-responsive';
 import { IoIosMenu } from 'react-icons/io';
+import React from 'react';
 
-export default function Header({ topicData }) {
+export default function Header() {
   const [theme, setTheme] = useState('light');
   const [isModalVisible, setIsModalVisible] = useState(false);
   const isSmallScreen = useMediaQuery({ maxWidth: 400 });

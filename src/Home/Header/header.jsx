@@ -34,13 +34,9 @@ export default function Header() {
     setIsModalVisible(!isModalVisible);
   };
 
-  const handleMenuClick = () => {
-    console.log(topicData);
-  };
-
   return (
     <div className="header">
-      <IoIosMenu className="bar" onClick={handleMenuClick} />
+      <IoIosMenu className="bar" />
       <div className="left-sideheader">
         <Link to={'/'}>
           <BsLightningCharge className="header-icon" />

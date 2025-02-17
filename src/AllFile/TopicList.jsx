@@ -6,15 +6,13 @@ import { IoMdArrowRoundBack } from 'react-icons/io';
 import React, { useRef } from 'react';
 
 const AllDataFile = () => {
-  const { courseId, topicId, commomId } = useParams();
+  const { courseId, topicId } = useParams();
   const [topicsData, setTopicsData] = useState([]);
   const [expandedTopicId, setExpandedTopicId] = useState(null);
   const [selectContent, setSelectedContent] = useState(0);
   const [loading, setLoading] = useState(true);
   const [roadmap, setRoadMap] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
   const [selectedTopicId, setSelectedTopicId] = useState(null);
-  const [topPosition, setTopPosition] = useState('0px');
   const navigate = useNavigate();
   const subContainersRef = useRef([]);
 

@@ -1,0 +1,52 @@
+name: React CI Workflow
+
+on:
+  push:
+    branches:
+      - '*' # Har branch ke liye CI run hoga
+  pull_request:
+    branches:
+      - '*' # Pull request par bhi CI run hoga
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run tests
+      - name: Run tests
+        run: npm test -- --coverage
+
+      # Build the app for production
+      - name: Build production app
+        run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: build
+    environment: production # Ya staging, depending on aap kis environment me deploy kar rahe ho
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1
+        with:
+          netlify_token: ${{ secrets.NETLIFY_TOKEN }}
+          deploy_path: './build'

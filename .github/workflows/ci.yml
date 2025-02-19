@@ -45,13 +45,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up SSH key for deployment
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H your-server.com >> ~/.ssh/known_hosts
-
-      - name: Deploy to server
-        run: |
-          ssh username@your-server.com 'cd /path/to/your/project && git pull && npm install && pm2 restart your-app'
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1
+        with:
+          netlify_token: ${{ secrets.NETLIFY_TOKEN }}
+          deploy_path: './build'

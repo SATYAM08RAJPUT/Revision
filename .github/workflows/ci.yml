@@ -3,10 +3,10 @@ name: React CI Workflow
 on:
   push:
     branches:
-      - main
+      - '*' # Har branch ke liye CI run hoga
   pull_request:
     branches:
-      - main
+      - '*' # Pull request par bhi CI run hoga
 
 jobs:
   build:

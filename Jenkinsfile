@@ -8,17 +8,16 @@ pipeline {
             }
         }
 
-    stage('Install Dependencies') {
-    steps {
-        bat 'npm install'
-    }
-}
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+            }
+        }
 
-stage('Build React App') {
-    steps {
-        bat 'npm run build'
+        stage('Build React App') {
+            steps {
+                bat 'npm run build'
+            }
+        }
     }
-}
-
-}
 }

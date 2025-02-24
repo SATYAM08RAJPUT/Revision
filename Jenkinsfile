@@ -21,3 +21,4 @@ stage('Build React App') {
 }
 
 }
+}

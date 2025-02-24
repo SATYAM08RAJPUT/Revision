@@ -14,10 +14,10 @@ pipeline {
     }
 }
 
-        stage('Build React App') {
-            steps {
-                sh 'npm run build'
-            }
-        }
+stage('Build React App') {
+    steps {
+        bat 'npm run build'
     }
+}
+
 }

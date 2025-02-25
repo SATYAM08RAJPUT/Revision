@@ -7,9 +7,17 @@ pipeline {
     }
 
     stages {
+         stage('Install Git') {
+            steps {
+                bat 'choco install git -y'  // Windows ke liye
+            }
+        }
+    }
         stage('Checkout Code') {
             steps {
-                git credentialsId: 'your-jenkins-git-credential-id', url: 'https://github.com/SATYAM08RAJPUT/Revision.git', branch: 'main'
+               git branch: 'main'
+                git credentialsId: 'github-credentials',
+                 url: 'https://github.com/SATYAM08RAJPUT/Revision.git', 
             }
         }
 

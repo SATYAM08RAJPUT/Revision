@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', credentialsId: 'github-credentials17', url: 'https://github.com/SATYAM08RAJPUT/Revision.git'
+                git branch: 'main', credentialsId: 'github-credentials17', 
+                url: 'https://github.com/SATYAM08RAJPUT/Revision.git'
             }
         }
 
@@ -24,9 +25,10 @@ pipeline {
         stage('Build React App') {
             steps {
              bat '''
-             set CI=false
-            npm run build
-            '''
+       chcp 65001
+set NODE_ENV=production
+npm run build
+             '''
             }
         }
 

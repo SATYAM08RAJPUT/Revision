@@ -5,7 +5,7 @@ pipeline {
         HUSKY = "0"  // Disable Husky for CI/CD
         CI = "false"  // Prevent ESLint from blocking the build
         NETLIFY_AUTH_TOKEN = credentials('NETLIFY_AUTH_TOKEN')  // Netlify token from Jenkins Credentials
-        NETLIFY_SITE_ID = 'your-site-id'  // Netlify site ID
+        NETLIFY_SITE_ID = ''  // Netlify site ID
     }
 
     stages {

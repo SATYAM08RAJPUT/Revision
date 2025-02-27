@@ -4,20 +4,20 @@ pipeline {
     environment {
         HUSKY = "0"  // Disable Husky for CI/CD
         CI = "false"  // Prevent ESLint from blocking the build
+        NETLIFY_AUTH_TOKEN = credentials('NETLIFY_AUTH_TOKEN')  // Netlify token from Jenkins Credentials
+        NETLIFY_SITE_ID = 'your-site-id'  // Netlify site ID
     }
 
     stages {
-         stage('Install Git') {
+        stage('Install Git') {
             steps {
-                bat 'choco install git -y'  // Windows ke liye
+                bat 'choco install git -y'  // Windows ke liye Chocolatey se Git install
             }
         }
-    }
+
         stage('Checkout Code') {
             steps {
-               git branch: 'main'
-                git credentialsId: 'github-credentials17',
-                 url: 'https://github.com/SATYAM08RAJPUT/Revision.git', 
+                git branch: 'main', credentialsId: 'github-credentials17', url: 'https://github.com/SATYAM08RAJPUT/Revision.git'
             }
         }
 
@@ -45,12 +45,11 @@ pipeline {
             }
         }
 
-       stage('Deploy App') {
-        steps {
-        bat 'npm install -g netlify-cli'
-        bat 'netlify deploy --prod --dir=build --auth=your-netlify-auth-token --site your-site-id'
-    }
-}
-
+        stage('Deploy to Netlify') {
+            steps {
+                bat 'npm install -g netlify-cli'
+                bat 'netlify deploy --prod --dir=build --auth=%NETLIFY_AUTH_TOKEN% --site=%NETLIFY_SITE_ID%'
+            }
+        }
     }
 }

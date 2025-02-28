@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import './allRoadMap.css';
 
 const AllRoadMapData = () => {
-  const { courseId, topicId } = useParams();
+  const { courseId } = useParams();
   const [roadmapData, setRoadmapData] = useState([]);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);

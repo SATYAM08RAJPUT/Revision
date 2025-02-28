@@ -39,7 +39,7 @@ pipeline {
         stage('Deploy to Netlify') {
             steps {
                 bat 'npm install -g netlify-cli'
-                bat 'npx netlify deploy --prod --dir=build --auth="nfp_d7EjXbLwPL8dgpnmtc3coLbWdWGffd4a0663" --site="your-actual-netlify-site-id"'
+                bat 'npx netlify deploy --prod --dir=build --auth="nfp_d7EjXbLwPL8dgpnmtc3coLbWdWGffd4a0663" --site=" 4aa83ac9-92e5-46c5-8955-dd0b098d75cd"'
             }
         }
     }

@@ -4,7 +4,7 @@ pipeline {
     environment {
         HUSKY = "0"
         CI = "false"
-        NETLIFY_AUTH_TOKEN = credentials('Token_Netlify')  // Fetch from Jenkins credentials
+        NETLIFY_AUTH_TOKEN = credentials('Jenkin__Deployment')  // Fetch from Jenkins credentials
         NETLIFY_SITE_ID = ' 4aa83ac9-92e5-46c5-8955-dd0b098d75cd'  // Replace with your actual Site ID
     }
 
@@ -39,8 +39,8 @@ pipeline {
         stage('Deploy to Netlify') {
                 steps {
                     bat 'npm install -g netlify-cli'
-                    bat 'npx netlify link --id 4aa83ac9-92e5-46c5-8955-dd0b098d75cd --auth="your-netlify-auth-token"'
-                    bat 'npx netlify deploy --prod --dir=build --auth="your-netlify-auth-token" --json'
+                    bat 'npx netlify link --id 4aa83ac9-92e5-46c5-8955-dd0b098d75cd --auth="nfp_UX5TqRUL5iJPQTo26CvMSCyJuuQYVNNB02e8"'
+                    bat 'npx netlify deploy --prod --dir=build --auth="nfp_UX5TqRUL5iJPQTo26CvMSCyJuuQYVNNB02e8" --json'
                 }
         }
 

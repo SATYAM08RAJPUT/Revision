@@ -40,9 +40,10 @@ pipeline {
                 steps {
                     bat 'npm install -g netlify-cli'
                     bat 'npx netlify link --id 4aa83ac9-92e5-46c5-8955-dd0b098d75cd --auth="nfp_UX5TqRUL5iJPQTo26CvMSCyJuuQYVNNB02e8"'
-                    bat 'npx netlify deploy --prod --dir=build --auth="nfp_UX5TqRUL5iJPQTo26CvMSCyJuuQYVNNB02e8"'
+                    bat 'npx netlify deploy --prod --dir=build --auth=%nfp_UX5TqRUL5iJPQTo26CvMSCyJuuQYVNNB02e8% --build "npm run build"'
                 }
         }
+
 
 
     }

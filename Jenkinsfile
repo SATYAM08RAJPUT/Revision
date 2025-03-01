@@ -37,13 +37,19 @@ pipeline {
         }
 
         stage('Deploy to Netlify') {
-                steps {
-                bat 'npm install -g netlify-cli'
-                bat 'npm install -g netlify-cli@latest' 
-                bat 'npx netlify unlink'  // 🔥 Unlink old site if needed
-                bat 'npx netlify link --id "%NETLIFY_SITE_ID%"'  // ✅ Correct linking
+            steps {
+                bat 'npm install -g netlify-cli@latest'
+
+                // ✅ Check if already linked, then skip linking
+                bat '''
+                npx netlify status || (
+                    echo "Site not linked, linking now..." &&
+                    npx netlify link --id %NETLIFY_SITE_ID%
+                )
+                '''
+                // ✅ Deploy to Netlify
                 bat 'npx netlify deploy --prod --dir=build --auth %NETLIFY_AUTH_TOKEN% --json'
-                }
+            }
         }
     }
 }             

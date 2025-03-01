@@ -4,7 +4,7 @@ pipeline {
     environment {
         HUSKY = "0"
         CI = "false"
-        NETLIFY_AUTH_TOKEN = credentials('Jenkin__Deployment')  // Fetch from Jenkins credentials
+        NETLIFY_AUTH_TOKEN = 'nfp_UX5TqRUL5iJPQTo26CvMSCyJuuQYVNNB02e8'  // Fetch from Jenkins credentials
         NETLIFY_SITE_ID = '4aa83ac9-92e5-46c5-8955-dd0b098d75cd'  // Replace with your actual Site ID
     }
 

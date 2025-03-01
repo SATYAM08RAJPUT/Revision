@@ -42,7 +42,8 @@ pipeline {
                 bat 'npm install -g netlify-cli@latest' 
                 bat 'npx netlify unlink'  // 🔥 Unlink old site if needed
                 bat 'npx netlify link --id "%NETLIFY_SITE_ID%"'  // ✅ Correct linking
-                bat 'npx netlify deploy --prod --dir=build --auth "%NETLIFY_AUTH_TOKEN%" --json'
+                bat 'npx netlify deploy --prod --dir=build --auth "nfp_UX5TqRUL5iJPQTo26CvMSCyJuuQYVNNB02e8" --build "npm run build" --json'
+
                 }
         }
     }

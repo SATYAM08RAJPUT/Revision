@@ -40,13 +40,15 @@ pipeline {
             steps {
                 bat 'npm install -g netlify-cli@latest'
 
-                // ✅ Check if already linked, then skip linking
+                // ✅ Check if already linked, then link only if needed
                 bat '''
-                npx netlify status || (
-                    echo "Site not linked, linking now..." &&
+                npx netlify status
+                if %ERRORLEVEL% NEQ 0 (
+                    echo Site not linked, linking now...
                     npx netlify link --id %NETLIFY_SITE_ID%
                 )
                 '''
+
                 // ✅ Deploy to Netlify
                 bat 'npx netlify deploy --prod --dir=build --auth %NETLIFY_AUTH_TOKEN% --json'
             }

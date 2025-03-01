@@ -38,11 +38,11 @@ pipeline {
 
         stage('Deploy to Netlify') {
                 steps {
-               bat 'npm install -g netlify-cli'
+                bat 'npm install -g netlify-cli'
                 bat 'npm install -g netlify-cli@latest' 
-                bat 'npx netlify unlink'  // 🔥 Force unlink old link
-                bat 'npx netlify link --id "%4aa83ac9-92e5-46c5-8955-dd0b098d75cd%"'  // 🔥 Correctly link the site
-                bat 'npx netlify deploy --prod --dir=build --auth "%nfp_UX5TqRUL5iJPQTo26CvMSCyJuuQYVNNB02e8%" --build "npm run build"'  // 🔥 Explicit build command
+                bat 'npx netlify unlink'  // 🔥 Unlink old site if needed
+                bat 'npx netlify link --id "%NETLIFY_SITE_ID%"'  // ✅ Correct linking
+                bat 'npx netlify deploy --prod --dir=build --auth "%NETLIFY_AUTH_TOKEN%" --build "npm run build"'
                 }
         }
     }
